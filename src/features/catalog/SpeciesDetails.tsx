@@ -77,6 +77,13 @@ function VariantDialog({ card, onClose }: { card: CardRecord; onClose: () => voi
           >
             {t('common.source')} ↗
           </a>
+          {view.imageSourceUrl && (
+            <p className="catalog-disclaimer">
+              <a href={view.imageSourceUrl} target="_blank" rel="noreferrer">
+                {t('catalog.imageSource')} ↗
+              </a>
+            </p>
+          )}
         </div>
       </div>
     </dialog>

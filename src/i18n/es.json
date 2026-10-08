@@ -196,7 +196,8 @@
     "ambiguousShort": "Asociación pendiente de revisión",
     "ambiguous": "Esta carta contiene varias especies o una asociación incompleta. Se muestra como referencia; su asignación para combates está pendiente.",
     "cardNotice": "Los tipos, rarezas y textos impresos pertenecen al TCG. Las reglas y estadísticas de combate de PokePrisma se crearán en una fase posterior.",
-    "customCard": "Carta propia de PokePrisma"
+    "customCard": "Carta propia de PokePrisma",
+    "imageSource": "Origen de la ilustración: archivo Pokémon TCG"
   },
   "pokemonTypes": {
     "normal": "Normal",

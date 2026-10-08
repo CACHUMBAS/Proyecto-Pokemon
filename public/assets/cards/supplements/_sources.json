@@ -1,0 +1,2476 @@
+{
+  "provider": "PokemonTCG/pokemon-tcg-data historical archive",
+  "commit": "39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11",
+  "checkedAt": "2026-10-08",
+  "processing": "Original PNG -> WebP; aspect ratio preserved, max widths 245/600, quality 88/93; no regenerated artwork or text",
+  "cards": [
+    {
+      "id": "2011bw-1",
+      "setId": "2011bw",
+      "speciesId": 495,
+      "archiveId": "mcd11-1",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/1_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/1.png",
+      "low": "/assets/cards/supplements/mcd11-1-low.webp",
+      "high": "/assets/cards/supplements/mcd11-1-high.webp",
+      "originalSha256": "4b2bbfe2843b0a98454776663823757332304d3149a5ad6b73bb93203f75cbd8",
+      "outputs": {
+        "low": {
+          "bytes": 29476,
+          "sha256": "e96cf3b934248abdf2607766bde43ac91ad3bb434da693905f82501084492545",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 257784,
+          "sha256": "ff0e07faa5fe254edd2879e8188c6ce63741f67f04ddfe0e676525e4049b6bed",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-10",
+      "setId": "2011bw",
+      "speciesId": 599,
+      "archiveId": "mcd11-10",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/10_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/10.png",
+      "low": "/assets/cards/supplements/mcd11-10-low.webp",
+      "high": "/assets/cards/supplements/mcd11-10-high.webp",
+      "originalSha256": "58b9e3b034ba666d9e6aba41a46cbe4bc029ecb1bd9e2dbdec4628cab1e41659",
+      "outputs": {
+        "low": {
+          "bytes": 35258,
+          "sha256": "0319f03019271266f5db3e2d66d55ec46e89e1bec0621304ad0380f774b0c949",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 275430,
+          "sha256": "c01d38c06e4f91e322a9eb30309371ab7b7743ada223f13e53006f49650617d7",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-11",
+      "setId": "2011bw",
+      "speciesId": 519,
+      "archiveId": "mcd11-11",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/11_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/11.png",
+      "low": "/assets/cards/supplements/mcd11-11-low.webp",
+      "high": "/assets/cards/supplements/mcd11-11-high.webp",
+      "originalSha256": "68fbafca5d4687647608fe99eaab0bdfbf702e998443bc4bbbdea7fa5be802a6",
+      "outputs": {
+        "low": {
+          "bytes": 29848,
+          "sha256": "7f54dddc6a2b17986202a2fedc7ff2a84ad48ead3cb8bd80789b664c9b593f95",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 256832,
+          "sha256": "d1f32b0bcabb38877650600569aefac6e35bc9238ff58daeea4d2dd3e269e132",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-12",
+      "setId": "2011bw",
+      "speciesId": 531,
+      "archiveId": "mcd11-12",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/12_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/12.png",
+      "low": "/assets/cards/supplements/mcd11-12-low.webp",
+      "high": "/assets/cards/supplements/mcd11-12-high.webp",
+      "originalSha256": "e9e6ae7d965c73f300f27cdea96db6acdade104cae15ec02dead4fb2bdcc93de",
+      "outputs": {
+        "low": {
+          "bytes": 27488,
+          "sha256": "01b2459fc8ffec469118bc38fc172516566821458f2af90f29696ba1b31ddaed",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 251406,
+          "sha256": "e3cecd1273b1223351b2bc6ae4f214f93ce92e85be6a79c38b2186270a5ecf7c",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-2",
+      "setId": "2011bw",
+      "speciesId": 556,
+      "archiveId": "mcd11-2",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/2_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/2.png",
+      "low": "/assets/cards/supplements/mcd11-2-low.webp",
+      "high": "/assets/cards/supplements/mcd11-2-high.webp",
+      "originalSha256": "de52f7b6460296a0858f585e8f6959f58195d2d125fffb5fc5fad5037fa6b3a5",
+      "outputs": {
+        "low": {
+          "bytes": 28176,
+          "sha256": "1dbf092b8e3e8d8a381257762acaa2f11c8de299e10cd8299f608d99cd9a6b1d",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 240184,
+          "sha256": "9d656e9803561e30574e8843a105fabe8841ec29556f21b0d2c3d399c7538a33",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-3",
+      "setId": "2011bw",
+      "speciesId": 498,
+      "archiveId": "mcd11-3",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/3_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/3.png",
+      "low": "/assets/cards/supplements/mcd11-3-low.webp",
+      "high": "/assets/cards/supplements/mcd11-3-high.webp",
+      "originalSha256": "4fbf836f3f5600777b650a5a6e262d4659eb3a1a29f583ea22433e37d920f20f",
+      "outputs": {
+        "low": {
+          "bytes": 28062,
+          "sha256": "ba6c4e44df10f96f2d840b4d91521a383d6255d1b73bdd7e11c72b25fe5a8eb5",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 247590,
+          "sha256": "370f35b75274a465c9087edaa6d167d394359567468ed05f162fba467d5ed747",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-4",
+      "setId": "2011bw",
+      "speciesId": 501,
+      "archiveId": "mcd11-4",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/4_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/4.png",
+      "low": "/assets/cards/supplements/mcd11-4-low.webp",
+      "high": "/assets/cards/supplements/mcd11-4-high.webp",
+      "originalSha256": "4053734b7d4c9ecf885aca164bf0a308c412b32da77eccd1a070d4e02a3b3f5a",
+      "outputs": {
+        "low": {
+          "bytes": 29226,
+          "sha256": "b2dcfdcb0e4b655e76a75025caeb6b897e9b869631b3853b0df815cfca385dfc",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 250642,
+          "sha256": "70ba3903f0af4219462c6defa4a721cebfe5f79f4d9a988d7c4b47e765b7f379",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-5",
+      "setId": "2011bw",
+      "speciesId": 594,
+      "archiveId": "mcd11-5",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/5_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/5.png",
+      "low": "/assets/cards/supplements/mcd11-5-low.webp",
+      "high": "/assets/cards/supplements/mcd11-5-high.webp",
+      "originalSha256": "9d41e323d060aa4517f9da84d41f3bb607921a07a68f09fba4ee659b4d001c84",
+      "outputs": {
+        "low": {
+          "bytes": 29008,
+          "sha256": "31089c17309fddda95e0c6474b3ec19657186891cb8f13bdf8f72cb5cc1510c5",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 239870,
+          "sha256": "3bc33a24cc3a7d75db958ee4e51a57be8cf069a90f4858fd3eec24adb5f08bdd",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-6",
+      "setId": "2011bw",
+      "speciesId": 522,
+      "archiveId": "mcd11-6",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/6_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/6.png",
+      "low": "/assets/cards/supplements/mcd11-6-low.webp",
+      "high": "/assets/cards/supplements/mcd11-6-high.webp",
+      "originalSha256": "d45ccab2a6b955849aed2c00ec955c330f86bfd7892c566e485e24cdeff6a7a6",
+      "outputs": {
+        "low": {
+          "bytes": 30172,
+          "sha256": "34d550c40dbdf9023a75abd34724dfc3a4fc49ac5c142a688b70d5506aee3d72",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 256576,
+          "sha256": "61ceccdb651e0a535bdd5a85fee65da9198c779e8fe1cca42ebedb59ff952093",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-7",
+      "setId": "2011bw",
+      "speciesId": 517,
+      "archiveId": "mcd11-7",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/7_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/7.png",
+      "low": "/assets/cards/supplements/mcd11-7-low.webp",
+      "high": "/assets/cards/supplements/mcd11-7-high.webp",
+      "originalSha256": "ba3474cb41eadcf7e116a8d7417c7ad3dedfa9cb4a6d1f10aaff0eebf3afffe1",
+      "outputs": {
+        "low": {
+          "bytes": 24352,
+          "sha256": "7e112970b440cee6db5fae33cb9b27bf50f8ab503a19c06210997991f343b304",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 231564,
+          "sha256": "24e2c183f3cc3d1d36f458029cfe14bf2cbdd39d7d0d29f877dd1854ac34093e",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-8",
+      "setId": "2011bw",
+      "speciesId": 551,
+      "archiveId": "mcd11-8",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/8_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/8.png",
+      "low": "/assets/cards/supplements/mcd11-8-low.webp",
+      "high": "/assets/cards/supplements/mcd11-8-high.webp",
+      "originalSha256": "33d5c14258596a133e206b85e0ddec65747eb94a63e78075bf629b819b475199",
+      "outputs": {
+        "low": {
+          "bytes": 29012,
+          "sha256": "f9c0c017cc9c83449b14b8959ff21bb94a603b27362cc4d149b00fa3cdea3b77",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 262756,
+          "sha256": "6bd4465e4da7fe53e8c5987df8a6357546e5979b915337a1655969f10c0a7db0",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2011bw-9",
+      "setId": "2011bw",
+      "speciesId": 570,
+      "archiveId": "mcd11-9",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd11/9_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd11/9.png",
+      "low": "/assets/cards/supplements/mcd11-9-low.webp",
+      "high": "/assets/cards/supplements/mcd11-9-high.webp",
+      "originalSha256": "b2f3873f6204d8d3901a5f0847c9a156ab8d781c0f5095d23bf4994e6d3d7fba",
+      "outputs": {
+        "low": {
+          "bytes": 26052,
+          "sha256": "9ae6009a0f5347aac231e9fd9382b7d9d9d9ef314245e671de33838a14300ec3",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 248652,
+          "sha256": "e9131fcee83dab51cb4445343fa4984b8bfacb8924eb04fbbdf32d0b76e75f32",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2012bw-1",
+      "setId": "2012bw",
+      "speciesId": 496,
+      "archiveId": "mcd12-1",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/1_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/1.png",
+      "low": "/assets/cards/supplements/mcd12-1-low.webp",
+      "high": "/assets/cards/supplements/mcd12-1-high.webp",
+      "originalSha256": "cbfc5ee6d73c1704f11cd3d40f8a29d5033a1cba53fcbc7d3ba2174d6b7d2887",
+      "outputs": {
+        "low": {
+          "bytes": 31058,
+          "sha256": "cdc3d074bd9cceb84c50964a69086ebdfce4854a041712f12e5d6d76434ea308",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 159612,
+          "sha256": "a757dad59c36f667650f2956bb02ef40fa747f14f8a65eccea122853e9b7df0a",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-10",
+      "setId": "2012bw",
+      "speciesId": 559,
+      "archiveId": "mcd12-10",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/10_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/10.png",
+      "low": "/assets/cards/supplements/mcd12-10-low.webp",
+      "high": "/assets/cards/supplements/mcd12-10-high.webp",
+      "originalSha256": "3751488791671f82db6c93975bd538c3f4a51e8d252f99dd5c44d21a3583eb6a",
+      "outputs": {
+        "low": {
+          "bytes": 25910,
+          "sha256": "55d670f44e95ce63eae3726f5afe20edb56e3d025a21856ba359fde6f416a37b",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 138686,
+          "sha256": "5152b3b16728f30d50472e11e3499a625e0ee8877e6cfb44f0bcb202887826a1",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-11",
+      "setId": "2012bw",
+      "speciesId": 600,
+      "archiveId": "mcd12-11",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/11_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/11.png",
+      "low": "/assets/cards/supplements/mcd12-11-low.webp",
+      "high": "/assets/cards/supplements/mcd12-11-high.webp",
+      "originalSha256": "39156666a6ef44d9991d53d72ea8d9833bf907bd63155bf91eb0f29cbba1e6e6",
+      "outputs": {
+        "low": {
+          "bytes": 38760,
+          "sha256": "f1c4d3a90e1951ae465f4f827d5afaf846b8b9b84b94ceba5b6cc218bd2fa040",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 199892,
+          "sha256": "952a86e32ad5c4f6cc5468eb90d0ca3be6afbf81476b423862a4a85094a44ba2",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-12",
+      "setId": "2012bw",
+      "speciesId": 610,
+      "archiveId": "mcd12-12",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/12_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/12.png",
+      "low": "/assets/cards/supplements/mcd12-12-low.webp",
+      "high": "/assets/cards/supplements/mcd12-12-high.webp",
+      "originalSha256": "3b25aeda597e80a755575218457f5a3b5dcf45603a26c87d6c202c0bbeee2cdc",
+      "outputs": {
+        "low": {
+          "bytes": 27688,
+          "sha256": "819ae27605fd271365e08f3a5f95ce3f7d713827c33210cae58ca7baca0e03f3",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 137752,
+          "sha256": "30443c4ba6eb86e99aa88483254fc62b6b5ae8ebaa30b514918ac7e1580f7024",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-2",
+      "setId": "2012bw",
+      "speciesId": 511,
+      "archiveId": "mcd12-2",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/2_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/2.png",
+      "low": "/assets/cards/supplements/mcd12-2-low.webp",
+      "high": "/assets/cards/supplements/mcd12-2-high.webp",
+      "originalSha256": "4680a0811eb76e16e15b89dec13483b3ec0cd69b6f8469106ff391653c5f3fea",
+      "outputs": {
+        "low": {
+          "bytes": 27634,
+          "sha256": "df39c6b47181ce9c920ce96dce67476ca94c1faf05aa46be94af8de8b81210f6",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 138552,
+          "sha256": "6d43cc944c7bf8edd1a7c8bbe6980797521f7a39120375ad20a90123b7ac4a6a",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-3",
+      "setId": "2012bw",
+      "speciesId": 557,
+      "archiveId": "mcd12-3",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/3_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/3.png",
+      "low": "/assets/cards/supplements/mcd12-3-low.webp",
+      "high": "/assets/cards/supplements/mcd12-3-high.webp",
+      "originalSha256": "f7b61b0871ac6bd0512dff9c7a7610db4796ffa3bb7f7b56e832cbff86fc1d35",
+      "outputs": {
+        "low": {
+          "bytes": 28318,
+          "sha256": "e3a38501d17e34d7bd1291ec1287b5481dbf05835f4e15427b5464277d74cacc",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 143276,
+          "sha256": "c0cdf811145ce879dcdc37a3978053447b191a9e2da0db24c05d6564cd48ad31",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-4",
+      "setId": "2012bw",
+      "speciesId": 499,
+      "archiveId": "mcd12-4",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/4_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/4.png",
+      "low": "/assets/cards/supplements/mcd12-4-low.webp",
+      "high": "/assets/cards/supplements/mcd12-4-high.webp",
+      "originalSha256": "73cf564de8340491bea17453bae87f155571556f50289900fa78755e9e22baea",
+      "outputs": {
+        "low": {
+          "bytes": 30194,
+          "sha256": "fee3ce48b414eefcf9a6c4d3e347174b31836b70431e03b834c33b3522d252c2",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 147976,
+          "sha256": "abdc2de65f176b3308ee81721eb4125b1c4181d7260e1cb6b2787a4a1f6366ac",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-5",
+      "setId": "2012bw",
+      "speciesId": 502,
+      "archiveId": "mcd12-5",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/5_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/5.png",
+      "low": "/assets/cards/supplements/mcd12-5-low.webp",
+      "high": "/assets/cards/supplements/mcd12-5-high.webp",
+      "originalSha256": "0b3b6f4f999bab05992b0a88c87b45126da15c37d3b3584702d8eacf0de0dae9",
+      "outputs": {
+        "low": {
+          "bytes": 33756,
+          "sha256": "b66caf641608b11bbd996b215b84b05e4b20a2ca9856c86d39fc6419dec7a161",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 157004,
+          "sha256": "4ed1f2968ac12c27b4755073189412215ef89333d4528a719911eae54a2769a0",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-6",
+      "setId": "2012bw",
+      "speciesId": 587,
+      "archiveId": "mcd12-6",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/6_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/6.png",
+      "low": "/assets/cards/supplements/mcd12-6-low.webp",
+      "high": "/assets/cards/supplements/mcd12-6-high.webp",
+      "originalSha256": "d22ba9b5a8d61a24c2eecb25dc1fa5e8d4419fefd864a9f6ef355eac42060f5b",
+      "outputs": {
+        "low": {
+          "bytes": 30828,
+          "sha256": "7f31284adc82c0bf5fd6ce83e485c8464363a34d1ebc98f4b79f06aa1b418a7e",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 148960,
+          "sha256": "05e4aca68979e720e7b26bdd55c0a98562b8ddeab0704ebd36645e5e29a1d98c",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-7",
+      "setId": "2012bw",
+      "speciesId": 527,
+      "archiveId": "mcd12-7",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/7_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/7.png",
+      "low": "/assets/cards/supplements/mcd12-7-low.webp",
+      "high": "/assets/cards/supplements/mcd12-7-high.webp",
+      "originalSha256": "4c13f8b3522c4d8293cd1729f1dc040444bf4830f38fec85edc23d13c45f7521",
+      "outputs": {
+        "low": {
+          "bytes": 27422,
+          "sha256": "d773cd3170f48f2179603ea84d768e13e9d8bdc1eea4b4ab4aede51f1308cf40",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 131774,
+          "sha256": "6d01f5af9ea9db364ee6804af2c64f5d6d4e426d79dbf7dcf2fbcf21bdc9b44d",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-8",
+      "setId": "2012bw",
+      "speciesId": 529,
+      "archiveId": "mcd12-8",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/8_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/8.png",
+      "low": "/assets/cards/supplements/mcd12-8-low.webp",
+      "high": "/assets/cards/supplements/mcd12-8-high.webp",
+      "originalSha256": "b515d32be29f849a9e48a13f5c727aec84487640e7f2dd94835290edc0b18567",
+      "outputs": {
+        "low": {
+          "bytes": 29810,
+          "sha256": "1b490a82c9f7635a907ab79a889c5462d4d7f086865fbbcc6898c3b85b242fff",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 148062,
+          "sha256": "7b0e176086c321b18244b1ec940825b41b76977c59bc436b6c262373dd5d3718",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2012bw-9",
+      "setId": "2012bw",
+      "speciesId": 509,
+      "archiveId": "mcd12-9",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd12/9_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd12/9.png",
+      "low": "/assets/cards/supplements/mcd12-9-low.webp",
+      "high": "/assets/cards/supplements/mcd12-9-high.webp",
+      "originalSha256": "b895c033d6e8fdd85200ceed55f19a635747b842761480ff476e5c1290d779a3",
+      "outputs": {
+        "low": {
+          "bytes": 29154,
+          "sha256": "fc239f4ffe35aac0804fb810ca27653bd5e96172610007b25e69283996f7fdbd",
+          "width": 245,
+          "height": 337
+        },
+        "high": {
+          "bytes": 151488,
+          "sha256": "1ab39c11ca8a19e23b841bdd7e45d495301b54967eb63f7de3f1747dce9dde82",
+          "width": 600,
+          "height": 825
+        }
+      }
+    },
+    {
+      "id": "2016xy-1",
+      "setId": "2016xy",
+      "speciesId": 37,
+      "archiveId": "mcd16-1",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/1_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/1.png",
+      "low": "/assets/cards/supplements/mcd16-1-low.webp",
+      "high": "/assets/cards/supplements/mcd16-1-high.webp",
+      "originalSha256": "9b02ed3f08f84472e3ad8893caed91ae84438cf0247bb58755759761e35320f3",
+      "outputs": {
+        "low": {
+          "bytes": 27978,
+          "sha256": "4c5290cdf724229e7db3bcafd893f980c22dd7582da71d55faa7ff691c7ff091",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 243982,
+          "sha256": "5564c71d226ae4650f370632405856bb4e054ab7092d8d5cf81660322f69add3",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-10",
+      "setId": "2016xy",
+      "speciesId": 702,
+      "archiveId": "mcd16-10",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/10_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/10.png",
+      "low": "/assets/cards/supplements/mcd16-10-low.webp",
+      "high": "/assets/cards/supplements/mcd16-10-high.webp",
+      "originalSha256": "6b2e11be136b03cb7928ce252e0ccbbb233162373df4faf08c44a90d80f9ed6f",
+      "outputs": {
+        "low": {
+          "bytes": 30264,
+          "sha256": "5c72d2062aefbf0b6a2361b0a714fbc810668567f50bf1cf4a44a5aae91bae8b",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 265110,
+          "sha256": "0f6d838c193661886ec0b62d49bd18341870df8e39030d68c634cebdae5b6ee8",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-11",
+      "setId": "2016xy",
+      "speciesId": 52,
+      "archiveId": "mcd16-11",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/11_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/11.png",
+      "low": "/assets/cards/supplements/mcd16-11-low.webp",
+      "high": "/assets/cards/supplements/mcd16-11-high.webp",
+      "originalSha256": "4b1af84c403cea4b34c3a280a2b91bb82866f21bbbe83a9c1135ef23fcfc1098",
+      "outputs": {
+        "low": {
+          "bytes": 28384,
+          "sha256": "fa8e377de2e6ae4f17df19f889b8e4505f99b2e5ac9f201d3511097b0013daf5",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 245166,
+          "sha256": "dc7814f4d29458a8d1f7ac7dde5af4d5d424918de2d7e0f4b7fba5b6b07700dd",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-12",
+      "setId": "2016xy",
+      "speciesId": 133,
+      "archiveId": "mcd16-12",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/12_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/12.png",
+      "low": "/assets/cards/supplements/mcd16-12-low.webp",
+      "high": "/assets/cards/supplements/mcd16-12-high.webp",
+      "originalSha256": "122883973e9f3b2d00d90698d012b37073d5672690aa2bf0d73966ae874e9181",
+      "outputs": {
+        "low": {
+          "bytes": 26364,
+          "sha256": "c76742a32216d25ed01c4eb4c7a1da9e2334f81dc05e927febffeba4abc327f9",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 233810,
+          "sha256": "868fd80a5089b73dda843ca6f05bdc3ca71cc90901f3480515dbd50098753425",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-2",
+      "setId": "2016xy",
+      "speciesId": 255,
+      "archiveId": "mcd16-2",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/2_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/2.png",
+      "low": "/assets/cards/supplements/mcd16-2-low.webp",
+      "high": "/assets/cards/supplements/mcd16-2-high.webp",
+      "originalSha256": "d90b961fcd0736fe9ac37945d378746b6797f353ccdcece93a0b581d9f331e12",
+      "outputs": {
+        "low": {
+          "bytes": 26682,
+          "sha256": "553dd6a8cd5f312cfd297d46440c8d0d65f2700d2be59accd3db93256a08d6d3",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 232380,
+          "sha256": "f19a4a4c211591aacd5c75527639ea635e3360b141c29545331bd3fedaf919aa",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-3",
+      "setId": "2016xy",
+      "speciesId": 653,
+      "archiveId": "mcd16-3",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/3_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/3.png",
+      "low": "/assets/cards/supplements/mcd16-3-low.webp",
+      "high": "/assets/cards/supplements/mcd16-3-high.webp",
+      "originalSha256": "05d49520caab8f2db71477f6c20af4d8d32669aef2aaca3f6e24c9570fe62283",
+      "outputs": {
+        "low": {
+          "bytes": 27490,
+          "sha256": "c8553a79c5ee1d111da2be949af493caa0ae975968850d5707f218190a98c83f",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 234958,
+          "sha256": "6e0e2f0e18aefa9e42d6da8578834c63207ec9ed4bb981032f5c040090b42753",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-4",
+      "setId": "2016xy",
+      "speciesId": 129,
+      "archiveId": "mcd16-4",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/4_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/4.png",
+      "low": "/assets/cards/supplements/mcd16-4-low.webp",
+      "high": "/assets/cards/supplements/mcd16-4-high.webp",
+      "originalSha256": "fad7ba35695fcf51a11a1807b694c2cbcd8042f45d48e18d2487219ade4abe45",
+      "outputs": {
+        "low": {
+          "bytes": 29918,
+          "sha256": "67142bbe1c7fc2d0f2befc67f3a2ad274b595bc5deda8fbc5b38bf65cea1e5d2",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 232138,
+          "sha256": "fa36b156b23b0b4b0ef6ebc4afc6d38b9746ff09be8e5399feb52b9433d9227b",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-5",
+      "setId": "2016xy",
+      "speciesId": 158,
+      "archiveId": "mcd16-5",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/5_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/5.png",
+      "low": "/assets/cards/supplements/mcd16-5-low.webp",
+      "high": "/assets/cards/supplements/mcd16-5-high.webp",
+      "originalSha256": "2fbf8aedcf1290d1241cbff6def34c9eeadaab2d3c5fdc8fe29fab30b2c6be2d",
+      "outputs": {
+        "low": {
+          "bytes": 29376,
+          "sha256": "d85748706f04a743f793733cff049836b6e9249c66e876aefae99b68a7d66721",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 230294,
+          "sha256": "930ec40e3d8bc6a77ca9ca2ad05b0bf26c86b1b3478451c668de31cb6f117dda",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-6",
+      "setId": "2016xy",
+      "speciesId": 25,
+      "archiveId": "mcd16-6",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/6_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/6.png",
+      "low": "/assets/cards/supplements/mcd16-6-low.webp",
+      "high": "/assets/cards/supplements/mcd16-6-high.webp",
+      "originalSha256": "960261de9e3aa1eb6320583c7220e6325ff908364de4637a721750f13b5452d2",
+      "outputs": {
+        "low": {
+          "bytes": 29626,
+          "sha256": "1d2512df53bd5688029d4945e8c429105b9f8270c6ad4e15a58de2ecc18bddc7",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 237174,
+          "sha256": "68f290bb6fe150e2149d42d12c10d576e569e34cb43894ca09f8d1581a6dee0e",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-7",
+      "setId": "2016xy",
+      "speciesId": 559,
+      "archiveId": "mcd16-7",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/7_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/7.png",
+      "low": "/assets/cards/supplements/mcd16-7-low.webp",
+      "high": "/assets/cards/supplements/mcd16-7-high.webp",
+      "originalSha256": "9c22d22e129795222be02fe0f4078f7672d21fd76117d99ce996d31f914f8750",
+      "outputs": {
+        "low": {
+          "bytes": 25984,
+          "sha256": "b5747623ae50c7f6590923b99b04a47cf05f4a32009903312294d7282d30678b",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 229078,
+          "sha256": "f20cc8df1a8468405168c89a607ce5adb07e3ea790101602c360e0c88cde8b6e",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-8",
+      "setId": "2016xy",
+      "speciesId": 39,
+      "archiveId": "mcd16-8",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/8_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/8.png",
+      "low": "/assets/cards/supplements/mcd16-8-low.webp",
+      "high": "/assets/cards/supplements/mcd16-8-high.webp",
+      "originalSha256": "abe75fef75d285891c7414645b225661b8fce8221faf354c98cd6d9cab4a940b",
+      "outputs": {
+        "low": {
+          "bytes": 29184,
+          "sha256": "7cd7e48a80094f23c0f6dc1c3b0b1ce5e705753ab244069f95e5f2d9dd20b164",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 246670,
+          "sha256": "869337b67ec57191c4fe58cc79db9065aef7d0ab6287cef1839de368afd35c6a",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2016xy-9",
+      "setId": "2016xy",
+      "speciesId": 175,
+      "archiveId": "mcd16-9",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd16/9_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd16/9.png",
+      "low": "/assets/cards/supplements/mcd16-9-low.webp",
+      "high": "/assets/cards/supplements/mcd16-9-high.webp",
+      "originalSha256": "e707ef0b998accc42d9a6488d294997110c032199ca400b90891ccb83050c188",
+      "outputs": {
+        "low": {
+          "bytes": 28256,
+          "sha256": "099071ed3b034588a1bb734252b614a0a61c2e2c502f8824a790165efa6bdcf0",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 251824,
+          "sha256": "299a021c880cf7efc780c82ca0299a6dbacf12ff4fd74697ad14d30fe55811b5",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-1",
+      "setId": "2019sm",
+      "speciesId": 10,
+      "archiveId": "mcd19-1",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/1_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/1.png",
+      "low": "/assets/cards/supplements/mcd19-1-low.webp",
+      "high": "/assets/cards/supplements/mcd19-1-high.webp",
+      "originalSha256": "5d2725bdfe6b21e26797c87653c53621824ef709d868041ea956ba52495b6fb8",
+      "outputs": {
+        "low": {
+          "bytes": 22966,
+          "sha256": "3f19c2af0ee49474ecc84a5d99059eb02a86644a0a9c9f3a6d9a5fac7003e3e7",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 226752,
+          "sha256": "c0596d06c2d7832c4f0be74e9000facec222811fa6ff7b112a52b9c4ee88f78c",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-10",
+      "setId": "2019sm",
+      "speciesId": 52,
+      "archiveId": "mcd19-10",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/10_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/10.png",
+      "low": "/assets/cards/supplements/mcd19-10-low.webp",
+      "high": "/assets/cards/supplements/mcd19-10-high.webp",
+      "originalSha256": "b1e70e4c6da6cb4e29e7b4eb4e5f8b2ed9613aed6c05446a79bbeb9875dee2e2",
+      "outputs": {
+        "low": {
+          "bytes": 30478,
+          "sha256": "e518ba657aae043540fbb180dcc38fe52e7db093c54a3b7d9142c03f7f21149b",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 257102,
+          "sha256": "3d4e7566a28a7deda18b9daa228425feab79cb3d67c4707ea070ef1b1ecfa6e8",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-11",
+      "setId": "2019sm",
+      "speciesId": 51,
+      "archiveId": "mcd19-11",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/11_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/11.png",
+      "low": "/assets/cards/supplements/mcd19-11-low.webp",
+      "high": "/assets/cards/supplements/mcd19-11-high.webp",
+      "originalSha256": "966f900671635fca1412086ccdd1a0e7dd3b643bd4b8e4e7e8d94f041cd1a8e6",
+      "outputs": {
+        "low": {
+          "bytes": 25954,
+          "sha256": "9eb58754e85e60be3d12a9350aeb4ed89bbb48bdd6454cbf5787d40c71b8261a",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 221432,
+          "sha256": "bdfa4f258523d73c324711120a02f15fc47209b7c0895383bdc2549af06ca2ae",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-12",
+      "setId": "2019sm",
+      "speciesId": 133,
+      "archiveId": "mcd19-12",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/12_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/12.png",
+      "low": "/assets/cards/supplements/mcd19-12-low.webp",
+      "high": "/assets/cards/supplements/mcd19-12-high.webp",
+      "originalSha256": "994a96979d7aa9bdb965b272f708b0b0b39c93c32efcc26424034876ea326df2",
+      "outputs": {
+        "low": {
+          "bytes": 19304,
+          "sha256": "beaa8d600bcf18382cad053c3e2437b3a1d446ba283a49f617e4127297a9dad2",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 207608,
+          "sha256": "a5049c19e6363b5754b41d85d72fad88d8b2da8fcde7271823df360d8bf4b8d8",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-2",
+      "setId": "2019sm",
+      "speciesId": 103,
+      "archiveId": "mcd19-2",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/2_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/2.png",
+      "low": "/assets/cards/supplements/mcd19-2-low.webp",
+      "high": "/assets/cards/supplements/mcd19-2-high.webp",
+      "originalSha256": "343e5134827903aed9b55f0ea6c88c6548c8d46dcca28e53a2bb6d20e75100c7",
+      "outputs": {
+        "low": {
+          "bytes": 24066,
+          "sha256": "2f899f0fd454a4313ed813abb3b870bea433a0a04e69fe41df4072ca7f86da5e",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 208272,
+          "sha256": "22d2c1dd41c103efe432e4260f2ce301a16f70516be553c313eadb3f1547681f",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-3",
+      "setId": "2019sm",
+      "speciesId": 126,
+      "archiveId": "mcd19-3",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/3_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/3.png",
+      "low": "/assets/cards/supplements/mcd19-3-low.webp",
+      "high": "/assets/cards/supplements/mcd19-3-high.webp",
+      "originalSha256": "d016818cdcd83405606605a67824a5414e8b26db0630fef16a486852adfcaa33",
+      "outputs": {
+        "low": {
+          "bytes": 28216,
+          "sha256": "b8fb2fd2e7d8bf77baf4f008756ffa2a14ffe252d00ef38a3da88a8eb789ea26",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 250596,
+          "sha256": "a6b007e3345252e8b396e360cb752c54f4ed3892990b1c9bea52d47dc835a026",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-4",
+      "setId": "2019sm",
+      "speciesId": 27,
+      "archiveId": "mcd19-4",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/4_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/4.png",
+      "low": "/assets/cards/supplements/mcd19-4-low.webp",
+      "high": "/assets/cards/supplements/mcd19-4-high.webp",
+      "originalSha256": "4b9d74e358b80d591bb64b3b6e493658eb7df1282f0ea402f994b62de64a9f52",
+      "outputs": {
+        "low": {
+          "bytes": 27220,
+          "sha256": "8689ae256002ddb91754ccc35a1669c0f4663e802d9f74e977e87679c23fe20b",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 251568,
+          "sha256": "b5e2dc3200aaa18ed55c6fa9e7de03866bf809acdf1db89c4a6cf6b4d3beb3ee",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-5",
+      "setId": "2019sm",
+      "speciesId": 131,
+      "archiveId": "mcd19-5",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/5_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/5.png",
+      "low": "/assets/cards/supplements/mcd19-5-low.webp",
+      "high": "/assets/cards/supplements/mcd19-5-high.webp",
+      "originalSha256": "1ec58a713f0a092c88376a15956e8c56cecd1a6b38d617fcf77339357d60cdb9",
+      "outputs": {
+        "low": {
+          "bytes": 29836,
+          "sha256": "f407d5784ed4b503d24cf74423810ef952456ed0217b194f7b04d4449ee861ce",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 255912,
+          "sha256": "ad469b1f2bf48134d866ec766fe2d78dec37b4aed88caec78f44b459d8e19d6f",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-6",
+      "setId": "2019sm",
+      "speciesId": 25,
+      "archiveId": "mcd19-6",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/6_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/6.png",
+      "low": "/assets/cards/supplements/mcd19-6-low.webp",
+      "high": "/assets/cards/supplements/mcd19-6-high.webp",
+      "originalSha256": "c93d4e42e262e6137fc21d2756c28c216359a46f42e6e54df5e5c6e6a7af4787",
+      "outputs": {
+        "low": {
+          "bytes": 24778,
+          "sha256": "50c48f9086d10d91ba01e59603918bc14fab6e008f0e9f0fbb006795946a611c",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 233494,
+          "sha256": "c51d7e454060b8e87483b30037a58644f290d381a02b2ea03d957115c7034f0d",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-7",
+      "setId": "2019sm",
+      "speciesId": 92,
+      "archiveId": "mcd19-7",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/7_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/7.png",
+      "low": "/assets/cards/supplements/mcd19-7-low.webp",
+      "high": "/assets/cards/supplements/mcd19-7-high.webp",
+      "originalSha256": "8f8a77750b5506cc5af59ee9ca37ac92011ef5a5e319e6b4a1168c5d3153fa7a",
+      "outputs": {
+        "low": {
+          "bytes": 25270,
+          "sha256": "6658be90aaeb7640423de1d20a180a85a8dcabe07608ba0ef4226e7f3c057cf3",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 241144,
+          "sha256": "4496a9f3ef8242ee210a9ef33f1c242562016481d37b79de15f24b3a07553b2c",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-8",
+      "setId": "2019sm",
+      "speciesId": 56,
+      "archiveId": "mcd19-8",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/8_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/8.png",
+      "low": "/assets/cards/supplements/mcd19-8-low.webp",
+      "high": "/assets/cards/supplements/mcd19-8-high.webp",
+      "originalSha256": "18198c461da1bc7d1116f9e776197feb9291164ce272ff1f84afabdc24715f11",
+      "outputs": {
+        "low": {
+          "bytes": 26428,
+          "sha256": "81e0201447c448b25b5645f3be4c0ef99f74a4612016a4edde934b8eb6354647",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 249214,
+          "sha256": "b728c034bfee2cd9281f3d1de4b9e0a2f7aa5e83744651a813c97eeeb5c20125",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2019sm-9",
+      "setId": "2019sm",
+      "speciesId": 95,
+      "archiveId": "mcd19-9",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd19/9_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd19/9.png",
+      "low": "/assets/cards/supplements/mcd19-9-low.webp",
+      "high": "/assets/cards/supplements/mcd19-9-high.webp",
+      "originalSha256": "40da1e03398a08fffcca885dce06bb143cc9a2e4278ef4a44e1e53f3c491bb30",
+      "outputs": {
+        "low": {
+          "bytes": 28776,
+          "sha256": "28f5f6fdb637458352bfff520417fc267ce95d81a80bc2cef8ce3a07ac559beb",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 253580,
+          "sha256": "0a5d162c4e7d813159eae8a2cfcf36ccd8eb6392174dc2607e4fe847c99f6109",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-1",
+      "setId": "2021swsh",
+      "speciesId": 1,
+      "archiveId": "mcd21-1",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/1_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/1.png",
+      "low": "/assets/cards/supplements/mcd21-1-low.webp",
+      "high": "/assets/cards/supplements/mcd21-1-high.webp",
+      "originalSha256": "5cc946243b18e749a5f714b04f8dc81710b4b33c88ec707a3f9ea65bf8cb8f51",
+      "outputs": {
+        "low": {
+          "bytes": 18742,
+          "sha256": "47589e71ba7ac9257ef32427f6245d90c5142fd0dd834f3ac0f7850b5fee0258",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 124384,
+          "sha256": "257cd0e55db4edc23d07152aa1bfccb00de565f581c45f2cec56556f2c721de6",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-10",
+      "setId": "2021swsh",
+      "speciesId": 155,
+      "archiveId": "mcd21-10",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/10_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/10.png",
+      "low": "/assets/cards/supplements/mcd21-10-low.webp",
+      "high": "/assets/cards/supplements/mcd21-10-high.webp",
+      "originalSha256": "4eeb5a51c96e5d68d55b665bc2d06f1c6add8e976d2f51bb366bd58372f953c0",
+      "outputs": {
+        "low": {
+          "bytes": 23298,
+          "sha256": "489bdf5fbc6dc310cdff60c474c43fae868692767bd7d162e38161fc231653a3",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 167306,
+          "sha256": "d3ee1c213180ad04cf2be9a048036c0229d786df280598d8d3feed9b1a568cc7",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-11",
+      "setId": "2021swsh",
+      "speciesId": 255,
+      "archiveId": "mcd21-11",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/11_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/11.png",
+      "low": "/assets/cards/supplements/mcd21-11-low.webp",
+      "high": "/assets/cards/supplements/mcd21-11-high.webp",
+      "originalSha256": "28a6fe70d8a56cb3942c1423736c255728aa60062ce0b16499dca24f84a723d1",
+      "outputs": {
+        "low": {
+          "bytes": 20482,
+          "sha256": "687b6e979a9fe1c2701da8ab5cc63a83c64b25026743b3d0d8647f1347a6dfbb",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 127362,
+          "sha256": "c64e6208bcf563712e692cfa48e801e0b59057754ea7865cb28abcef3f66f122",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-13",
+      "setId": "2021swsh",
+      "speciesId": 498,
+      "archiveId": "mcd21-13",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/13_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/13.png",
+      "low": "/assets/cards/supplements/mcd21-13-low.webp",
+      "high": "/assets/cards/supplements/mcd21-13-high.webp",
+      "originalSha256": "ecfdc806a9af327eab4728967ab55b00ae784a1b131ca736ddf5d86bfac59a15",
+      "outputs": {
+        "low": {
+          "bytes": 23656,
+          "sha256": "bf50bbbcdcc39b8ecdcdca2e8ce093142bd1ae7e4e1ed704231d22e57939d157",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 151686,
+          "sha256": "5552b4a372843ba8b9dc2854ec9c88b00427bcb41b4b2f773a424a045e3c4e27",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-14",
+      "setId": "2021swsh",
+      "speciesId": 653,
+      "archiveId": "mcd21-14",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/14_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/14.png",
+      "low": "/assets/cards/supplements/mcd21-14-low.webp",
+      "high": "/assets/cards/supplements/mcd21-14-high.webp",
+      "originalSha256": "ba24befb2384f572ab2cbc502784ce8c37307d099955eccc30a1a5053d198b03",
+      "outputs": {
+        "low": {
+          "bytes": 22964,
+          "sha256": "7e738a6f5161e28f695f6fa9f92823d20130845121cbd052ec8013f6b8c1def0",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 156258,
+          "sha256": "1054e6566d13ca909e5841c3b1266ebe40d7642b9dd62ad8a02915c4d5952764",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-15",
+      "setId": "2021swsh",
+      "speciesId": 725,
+      "archiveId": "mcd21-15",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/15_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/15.png",
+      "low": "/assets/cards/supplements/mcd21-15-low.webp",
+      "high": "/assets/cards/supplements/mcd21-15-high.webp",
+      "originalSha256": "7a6728a704e0a0e54dcbcdf4dc356461716dfda1ec1085298a2eb9760187a359",
+      "outputs": {
+        "low": {
+          "bytes": 23764,
+          "sha256": "4cd882b3aa4e303a8d9fc896c4cba8397bac9cb93a739520d03f04ace50a8cec",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 173296,
+          "sha256": "f9c42c29dc66cd35c0fa7fde02bba141e5ac352a14bdde7433169662d3178f93",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-16",
+      "setId": "2021swsh",
+      "speciesId": 813,
+      "archiveId": "mcd21-16",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/16_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/16.png",
+      "low": "/assets/cards/supplements/mcd21-16-low.webp",
+      "high": "/assets/cards/supplements/mcd21-16-high.webp",
+      "originalSha256": "ba0b9b9db58716e5a0f0611c02696ddd5a8c99f39e47362a46a83a97d4f52666",
+      "outputs": {
+        "low": {
+          "bytes": 23736,
+          "sha256": "56f5bcdc701ee7a2bd0caf1bf41715aa16d47f37475314b35146854baff1c099",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 164600,
+          "sha256": "be91583a33d8d89e08aa6957f850e0abba9c2967e55869035410ae67a4d9f22a",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-17",
+      "setId": "2021swsh",
+      "speciesId": 7,
+      "archiveId": "mcd21-17",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/17_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/17.png",
+      "low": "/assets/cards/supplements/mcd21-17-low.webp",
+      "high": "/assets/cards/supplements/mcd21-17-high.webp",
+      "originalSha256": "acca10365b20d5611f1805878a29f84734dae0307844d0b7fee52bd0a2dadb45",
+      "outputs": {
+        "low": {
+          "bytes": 27184,
+          "sha256": "0c5296d51765871e45a9919dba21d32a0724dba223cb2e18d0c560089393fcdc",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 186198,
+          "sha256": "fc0c6eb14781cc4afec8ff0302276fd033e09b90ebb0446c1c5911c33cf41cea",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-18",
+      "setId": "2021swsh",
+      "speciesId": 158,
+      "archiveId": "mcd21-18",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/18_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/18.png",
+      "low": "/assets/cards/supplements/mcd21-18-low.webp",
+      "high": "/assets/cards/supplements/mcd21-18-high.webp",
+      "originalSha256": "d1c4c414853c4a1c7c6c2e2e03068f32667a45ad3353155d064e53d362e5747a",
+      "outputs": {
+        "low": {
+          "bytes": 24948,
+          "sha256": "fbe03091de4a68dbc2ffa9006ccce595804736b4e25b0057ddbf304276cd2e37",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 135218,
+          "sha256": "b3d2f379e55aeec6bec9e0fbc31735201b821b9ba9ada3efa1d07acab8e952dd",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-19",
+      "setId": "2021swsh",
+      "speciesId": 258,
+      "archiveId": "mcd21-19",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/19_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/19.png",
+      "low": "/assets/cards/supplements/mcd21-19-low.webp",
+      "high": "/assets/cards/supplements/mcd21-19-high.webp",
+      "originalSha256": "64a00e9c9ab824d38b1db804be9bd7e64160032d2d145b6522bd987e2c205a0c",
+      "outputs": {
+        "low": {
+          "bytes": 23186,
+          "sha256": "18443ab2861e9021b9ecf2b73812c99e17f83810a8eee8985337710e89ec5e90",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 142872,
+          "sha256": "53e754d7cf9704f05989f803a61c0e4fe2f161510c7e2fd0647e6635d3159c48",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-2",
+      "setId": "2021swsh",
+      "speciesId": 152,
+      "archiveId": "mcd21-2",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/2_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/2.png",
+      "low": "/assets/cards/supplements/mcd21-2-low.webp",
+      "high": "/assets/cards/supplements/mcd21-2-high.webp",
+      "originalSha256": "4ae487d324819df84000cd48d522a196502f518830f59117baac60858849939b",
+      "outputs": {
+        "low": {
+          "bytes": 20312,
+          "sha256": "a8777ddb9f541cc63bbeb4c879e289ceffe3ced1dbd1d921798abe5e51747dd4",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 132966,
+          "sha256": "07c384c170929bd4bc08593f352e61a2dd7f1efef0b57361c2be91f22459f4f3",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-20",
+      "setId": "2021swsh",
+      "speciesId": 393,
+      "archiveId": "mcd21-20",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/20_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/20.png",
+      "low": "/assets/cards/supplements/mcd21-20-low.webp",
+      "high": "/assets/cards/supplements/mcd21-20-high.webp",
+      "originalSha256": "8491fb5eae95b8d32c21cca17eb3917031d6e9c6d76c3809c01e1863b4c224b0",
+      "outputs": {
+        "low": {
+          "bytes": 24836,
+          "sha256": "5890996e21deae3ac0d9b1f493179be0046371356f3725f3df2113594117a188",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 177280,
+          "sha256": "d3a9ca94c27a9ba6cde542e497608c1c7b82a20501e5142d563f30615ecbab1d",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-21",
+      "setId": "2021swsh",
+      "speciesId": 501,
+      "archiveId": "mcd21-21",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/21_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/21.png",
+      "low": "/assets/cards/supplements/mcd21-21-low.webp",
+      "high": "/assets/cards/supplements/mcd21-21-high.webp",
+      "originalSha256": "95c5d5b1fb656849020179f7c054524fb94843a0f8edb09f96040324b35c4a4b",
+      "outputs": {
+        "low": {
+          "bytes": 24134,
+          "sha256": "76aab46581d4480667ceed54b6bc6f377cffa9ca87a94e011ccc3b853f0ddb85",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 135776,
+          "sha256": "fd028ab03221ac913f1da8b0d9e614e4268b1fa106809e3d671c68337909c003",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-22",
+      "setId": "2021swsh",
+      "speciesId": 656,
+      "archiveId": "mcd21-22",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/22_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/22.png",
+      "low": "/assets/cards/supplements/mcd21-22-low.webp",
+      "high": "/assets/cards/supplements/mcd21-22-high.webp",
+      "originalSha256": "1cddcb3bca6c41cfeb2084e4c1f4a6079dabb13ba155535179fd56864151220b",
+      "outputs": {
+        "low": {
+          "bytes": 23124,
+          "sha256": "58a83952837abb058decb47144888767b613ecd3ab78f40b26c254d6b0ef36c0",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 129496,
+          "sha256": "04fa2a43ed7737c0f875b73358defa5c2a634a93bb64f6eb3a77ca972167ec0d",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-23",
+      "setId": "2021swsh",
+      "speciesId": 728,
+      "archiveId": "mcd21-23",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/23_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/23.png",
+      "low": "/assets/cards/supplements/mcd21-23-low.webp",
+      "high": "/assets/cards/supplements/mcd21-23-high.webp",
+      "originalSha256": "d7f5664796a1e9e0bcaa0f136e6d647788ff8dc4a5f6ae9f799d5100bffb99fc",
+      "outputs": {
+        "low": {
+          "bytes": 25086,
+          "sha256": "ab62385d787b0b703fbbae5a157ba6b03baf35f041fc4559b850923167d4ad52",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 171906,
+          "sha256": "505c032a7861feac0cf0b3e75a4e0fc725368211b9396b9c788316c375056399",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-24",
+      "setId": "2021swsh",
+      "speciesId": 816,
+      "archiveId": "mcd21-24",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/24_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/24.png",
+      "low": "/assets/cards/supplements/mcd21-24-low.webp",
+      "high": "/assets/cards/supplements/mcd21-24-high.webp",
+      "originalSha256": "e5ddcc0755f9fcc9b448ba5199b6553a66ebc0cc99127b4e8ac257963ffbb00d",
+      "outputs": {
+        "low": {
+          "bytes": 25858,
+          "sha256": "f2adc474dcd87ffdf54dd591a49a7a37a6d44106057df997becd74273e963ebb",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 180358,
+          "sha256": "4e3b3372f4f668138057a1c3e01348e65fbc62fcb35912c03ba08e330d1bda10",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-25",
+      "setId": "2021swsh",
+      "speciesId": 25,
+      "archiveId": "mcd21-25",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/25_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/25.png",
+      "low": "/assets/cards/supplements/mcd21-25-low.webp",
+      "high": "/assets/cards/supplements/mcd21-25-high.webp",
+      "originalSha256": "6010943931420052790a87fafeb59c46ce2bbfe5bcf2f6511d67946530aaaed6",
+      "outputs": {
+        "low": {
+          "bytes": 21426,
+          "sha256": "0de1fbe1a8f4389dd2108e527ba1ad6ce9930d9df044787eb2d52667448e00fd",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 128152,
+          "sha256": "6157132c55a4cc6b2903193e32cc0066acc466acb5df582c586ee4844641976b",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-3",
+      "setId": "2021swsh",
+      "speciesId": 252,
+      "archiveId": "mcd21-3",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/3_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/3.png",
+      "low": "/assets/cards/supplements/mcd21-3-low.webp",
+      "high": "/assets/cards/supplements/mcd21-3-high.webp",
+      "originalSha256": "476d30805bf01e600a0f44be7fad2e4258befe9947a68f47cab2cf01684eb631",
+      "outputs": {
+        "low": {
+          "bytes": 21126,
+          "sha256": "799e4bbbde9d48dec33bfb7a133c9ab2205735ca739d61faa413a22b34e037fe",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 145506,
+          "sha256": "52740570f0b8c872292477187dd4234f4ae93932d7798436125bab73a7f837f3",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-4",
+      "setId": "2021swsh",
+      "speciesId": 387,
+      "archiveId": "mcd21-4",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/4_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/4.png",
+      "low": "/assets/cards/supplements/mcd21-4-low.webp",
+      "high": "/assets/cards/supplements/mcd21-4-high.webp",
+      "originalSha256": "42130f116a2825aeb3d9e9de315896a67834c07d67ffe75d32894832a81ae53d",
+      "outputs": {
+        "low": {
+          "bytes": 22794,
+          "sha256": "ad7625a5f71d7146a17595f7ef656e05b11ec730b91645f9b8751b8cec45f86a",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 142072,
+          "sha256": "2265f0dc83bdc5219d90e5aca6234cacc249b6fa3351df9bde54d85c72eb0b3c",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-5",
+      "setId": "2021swsh",
+      "speciesId": 495,
+      "archiveId": "mcd21-5",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/5_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/5.png",
+      "low": "/assets/cards/supplements/mcd21-5-low.webp",
+      "high": "/assets/cards/supplements/mcd21-5-high.webp",
+      "originalSha256": "4e37fe933e29db0c33b66ede36f9809a6328c377054bebed663e1a652507b17e",
+      "outputs": {
+        "low": {
+          "bytes": 20470,
+          "sha256": "563a518fde11ba5ae05033fa3296eadd3af668ea4f785541283f922347458c1e",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 133810,
+          "sha256": "15412a2d32be5b46431aeb888209156402918dceeb7ed392a2d9a3df5e45b527",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-6",
+      "setId": "2021swsh",
+      "speciesId": 650,
+      "archiveId": "mcd21-6",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/6_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/6.png",
+      "low": "/assets/cards/supplements/mcd21-6-low.webp",
+      "high": "/assets/cards/supplements/mcd21-6-high.webp",
+      "originalSha256": "06e2bff7c941b7af1d9bf74787da5793b1c2ac50e54dfca5bab00dc7a77ae5d1",
+      "outputs": {
+        "low": {
+          "bytes": 23458,
+          "sha256": "886accc46c30c4a999d7cec53f0e3c87972a85b0c27a77f311dae5e7c76f191a",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 163188,
+          "sha256": "979fb57e62f305b924f38c71bc1477b07058b210cf370b4b6a7061a175f50553",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-7",
+      "setId": "2021swsh",
+      "speciesId": 722,
+      "archiveId": "mcd21-7",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/7_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/7.png",
+      "low": "/assets/cards/supplements/mcd21-7-low.webp",
+      "high": "/assets/cards/supplements/mcd21-7-high.webp",
+      "originalSha256": "be9dddd79af1febe78e70c0e98ac3b65ab5a77cbd1e1ebe13385f9aab45f6bec",
+      "outputs": {
+        "low": {
+          "bytes": 20260,
+          "sha256": "f97d8823ec33c9395afc556785c6bc4eb198ab002565ae61f37a3c48c0fc78cd",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 138984,
+          "sha256": "67076b95bf7c0831142fbe1b548ce974d742b18028582b2cdfba9f8445967b67",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-8",
+      "setId": "2021swsh",
+      "speciesId": 810,
+      "archiveId": "mcd21-8",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/8_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/8.png",
+      "low": "/assets/cards/supplements/mcd21-8-low.webp",
+      "high": "/assets/cards/supplements/mcd21-8-high.webp",
+      "originalSha256": "15f1322d89bb6ad8d7c1cbc64dce6caec9a4194307c147864e8128ab0ad7f387",
+      "outputs": {
+        "low": {
+          "bytes": 21328,
+          "sha256": "0d09d973868f39c6fb7ad48d209e6b648b9a0cb1f783f7d2acad2ed62ba17b7a",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 140752,
+          "sha256": "fbdd1a05f68e0e3a8b8ec946abfb57d3dfa16eb37857637ea1821fa51d8bc335",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2021swsh-9",
+      "setId": "2021swsh",
+      "speciesId": 4,
+      "archiveId": "mcd21-9",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd21/9_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd21/9.png",
+      "low": "/assets/cards/supplements/mcd21-9-low.webp",
+      "high": "/assets/cards/supplements/mcd21-9-high.webp",
+      "originalSha256": "795c5140b0ac3fc2f95037d4fac8e853679cb76cba6cd3b4235c4ca472963a88",
+      "outputs": {
+        "low": {
+          "bytes": 26014,
+          "sha256": "0a328ad6f8c470cb2a45e4c3983871a1eaafe93bca68f2bc85640c2843efacce",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 178976,
+          "sha256": "4fa79ab6d26132342f1102d81e8d9969ccd69f796cf814183a2d09429147d608",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-1",
+      "setId": "2022swsh",
+      "speciesId": 165,
+      "archiveId": "mcd22-1",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/1_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/1.png",
+      "low": "/assets/cards/supplements/mcd22-1-low.webp",
+      "high": "/assets/cards/supplements/mcd22-1-high.webp",
+      "originalSha256": "c8970fc7f860d831b16a29dd094bf0e2dae14e7ea6dd515e83a72414ab6abbc3",
+      "outputs": {
+        "low": {
+          "bytes": 22188,
+          "sha256": "41139b602d96e095119f46ad2025febaf76fb687e574fb7c0eb35c33b1244d8f",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 154606,
+          "sha256": "60850b173dacb555674ca347df54afdc557905e5c41268ebb7f5861bde4b261b",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-10",
+      "setId": "2022swsh",
+      "speciesId": 602,
+      "archiveId": "mcd22-10",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/10_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/10.png",
+      "low": "/assets/cards/supplements/mcd22-10-low.webp",
+      "high": "/assets/cards/supplements/mcd22-10-high.webp",
+      "originalSha256": "32a1d01b64f7958b62569b550b082ca9a546cf9e4410342a22b2f52ace4ac4ea",
+      "outputs": {
+        "low": {
+          "bytes": 21624,
+          "sha256": "c87ed4ddf60fecda3f21258299e112cc2a784d1436b3633841dfda994848ebdf",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 135130,
+          "sha256": "c4b47e0e98e2abbfc12777ec8c8d461bb4849254efd2f8aed0ca656d1cc5eb44",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-11",
+      "setId": "2022swsh",
+      "speciesId": 742,
+      "archiveId": "mcd22-11",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/11_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/11.png",
+      "low": "/assets/cards/supplements/mcd22-11-low.webp",
+      "high": "/assets/cards/supplements/mcd22-11-high.webp",
+      "originalSha256": "a158929dd87ee282b40baf621d87d6951fbc55f39d3f4b40afd28802cd8ad0c2",
+      "outputs": {
+        "low": {
+          "bytes": 23292,
+          "sha256": "fd3c5e7c6762297e365c595c3c8f2874bdeb1e8c7f29e2d28d791f254cf8131e",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 162076,
+          "sha256": "ba5bdf0504a6f7d407a0440ddcb7c0519b2d6763f39f1784d1674b89c3295a90",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-12",
+      "setId": "2022swsh",
+      "speciesId": 760,
+      "archiveId": "mcd22-12",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/12_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/12.png",
+      "low": "/assets/cards/supplements/mcd22-12-low.webp",
+      "high": "/assets/cards/supplements/mcd22-12-high.webp",
+      "originalSha256": "f3ccdf6adb064883c3f6f00ac3a786ee90df6287efbe8518b758d65bf7efe256",
+      "outputs": {
+        "low": {
+          "bytes": 28258,
+          "sha256": "e3767f0cfcd96af6e9a39a66dfff7c8508e8f23cf4153257f30ec58a3e1e15d3",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 187334,
+          "sha256": "919cb422d0122631f4212c1cfd08981007d0793db17a90832f2a860f93073144",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-13",
+      "setId": "2022swsh",
+      "speciesId": 675,
+      "archiveId": "mcd22-13",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/13_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/13.png",
+      "low": "/assets/cards/supplements/mcd22-13-low.webp",
+      "high": "/assets/cards/supplements/mcd22-13-high.webp",
+      "originalSha256": "8e31c9459947c753d58299719a6e8202c7d42e110472eac135742891a60e05b3",
+      "outputs": {
+        "low": {
+          "bytes": 27188,
+          "sha256": "ce1bdffa9f7d43e8f51ac2c35bfd4f49163653b2f33a2b814bcd4e1e01bcd373",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 191862,
+          "sha256": "5220b4af063ff90048876e8711fd6de218b4ae2876a315f5eb361b00539bbbbe",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-14",
+      "setId": "2022swsh",
+      "speciesId": 780,
+      "archiveId": "mcd22-14",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/14_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/14.png",
+      "low": "/assets/cards/supplements/mcd22-14-low.webp",
+      "high": "/assets/cards/supplements/mcd22-14-high.webp",
+      "originalSha256": "3fcd8251f7f7e1e8ce7889b6d35cbf79f19881b17c7165fbe9c96488b7735ec7",
+      "outputs": {
+        "low": {
+          "bytes": 33490,
+          "sha256": "85053e1b5be21b0b4049bd17c880b3796684e3769474958569bc59b0d9f5126e",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 228728,
+          "sha256": "00a61e3f7b38850ab3761c85fffb5d6e50872ac72d8c04c5c6d0367a919159a6",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-15",
+      "setId": "2022swsh",
+      "speciesId": 235,
+      "archiveId": "mcd22-15",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/15_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/15.png",
+      "low": "/assets/cards/supplements/mcd22-15-low.webp",
+      "high": "/assets/cards/supplements/mcd22-15-high.webp",
+      "originalSha256": "33ace45a3d78ff60ed8b6863ab934c7a8428319386d6e1d059a858acb3498cad",
+      "outputs": {
+        "low": {
+          "bytes": 29354,
+          "sha256": "180bfd5700cf1ffe188dbad3443bc31e95d2a137a789aede3794ce0f6fd8063c",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 237124,
+          "sha256": "02c42afb28120ceaf6e5894c683e4209ebf49b02f4e5c94cb3dd05b2ba032fb8",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-2",
+      "setId": "2022swsh",
+      "speciesId": 722,
+      "archiveId": "mcd22-2",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/2_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/2.png",
+      "low": "/assets/cards/supplements/mcd22-2-low.webp",
+      "high": "/assets/cards/supplements/mcd22-2-high.webp",
+      "originalSha256": "ca4b318d767d788da3d900becff544505e79c67f713b37e7b666d017c37e068e",
+      "outputs": {
+        "low": {
+          "bytes": 31118,
+          "sha256": "c004c0e15eab18d53369cc4620ba4d9fc65099d818408896fb763120f059dc27",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 228788,
+          "sha256": "57a3b548f8ddff3f83bec4e26c7e326106d30655b3d5517ca70c34a245da8b13",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-3",
+      "setId": "2022swsh",
+      "speciesId": 829,
+      "archiveId": "mcd22-3",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/3_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/3.png",
+      "low": "/assets/cards/supplements/mcd22-3-low.webp",
+      "high": "/assets/cards/supplements/mcd22-3-high.webp",
+      "originalSha256": "453cc6e55d62180a33853a38ccc207249b4352041f8e25cb59e9afaec2a58d2f",
+      "outputs": {
+        "low": {
+          "bytes": 23974,
+          "sha256": "c1ddb22835926597f23452d47ed7a2f023aa69f449a5d241a5fa7b5a9aa0ea05",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 203536,
+          "sha256": "802bde2d1b5e7ec6238ca4ecb209f82bf409abf96106e41eacbf86b04b8c3dfa",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-4",
+      "setId": "2022swsh",
+      "speciesId": 58,
+      "archiveId": "mcd22-4",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/4_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/4.png",
+      "low": "/assets/cards/supplements/mcd22-4-low.webp",
+      "high": "/assets/cards/supplements/mcd22-4-high.webp",
+      "originalSha256": "61617857125b681db087bd5b0c716616fe21db841d4f265da698978b768051ca",
+      "outputs": {
+        "low": {
+          "bytes": 27188,
+          "sha256": "648b030b331fafe8923cde392532e117330f6ddf60ae4f7730b987cfc6f410ba",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 213030,
+          "sha256": "11a89df70d9d6a9afbc6df7e74dc348d0c60276657f340337d3f487ae0321233",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-5",
+      "setId": "2022swsh",
+      "speciesId": 494,
+      "archiveId": "mcd22-5",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/5_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/5.png",
+      "low": "/assets/cards/supplements/mcd22-5-low.webp",
+      "high": "/assets/cards/supplements/mcd22-5-high.webp",
+      "originalSha256": "6864e6da2b2ef813bba074750a4994de3541ba831860f5a8e04ed672c94a01a4",
+      "outputs": {
+        "low": {
+          "bytes": 27038,
+          "sha256": "52defb0495738c9f0d685134fea3c9f82b941ade9e6e78d8cf4d77c51a858c51",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 213570,
+          "sha256": "31bc457368de02fb081459372d51a546fde7a63768877fbe625c159725ff8f8e",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-6",
+      "setId": "2022swsh",
+      "speciesId": 131,
+      "archiveId": "mcd22-6",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/6_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/6.png",
+      "low": "/assets/cards/supplements/mcd22-6-low.webp",
+      "high": "/assets/cards/supplements/mcd22-6-high.webp",
+      "originalSha256": "b68aa83573421385b439228599cb1d6fd4f334d044b7d3bc461cce24fb0a4854",
+      "outputs": {
+        "low": {
+          "bytes": 26222,
+          "sha256": "d51eae612cabfd7035fb86a97179009cfbf47f2091b93a292de47eb1d35deae6",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 181276,
+          "sha256": "97a60643ba1aa9896104b0217d9719fd293ac0aaaeb2fd6b3c34ae5c9ebe0d39",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-7",
+      "setId": "2022swsh",
+      "speciesId": 25,
+      "archiveId": "mcd22-7",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/7_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/7.png",
+      "low": "/assets/cards/supplements/mcd22-7-low.webp",
+      "high": "/assets/cards/supplements/mcd22-7-high.webp",
+      "originalSha256": "2bff9136c6c7e0f60ea4b84bcdd9db0617a3335e8797720c18cf4f30b41cc94b",
+      "outputs": {
+        "low": {
+          "bytes": 25394,
+          "sha256": "88590c110e12bcd520ca404244cfd54af2e128456b2c09b405297c0040ff2dfe",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 189476,
+          "sha256": "462486d070ac3f784c4e71ca69ced68194dc1057c874f011f0a9f2eeb0d11d56",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-8",
+      "setId": "2022swsh",
+      "speciesId": 170,
+      "archiveId": "mcd22-8",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/8_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/8.png",
+      "low": "/assets/cards/supplements/mcd22-8-low.webp",
+      "high": "/assets/cards/supplements/mcd22-8-high.webp",
+      "originalSha256": "9e07a7f13cab9c1a820a81c37046c50ad7ecf250615ed8a4d8b7551ff237ba70",
+      "outputs": {
+        "low": {
+          "bytes": 19436,
+          "sha256": "9b45052687e33d186d1c4528444c2a5e565be25ec82fee0244036db2e33ab92b",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 131078,
+          "sha256": "bc2c180318bf536840d7c004d7bbf33ab52ba8cab0465c75a95e8436a89f5406",
+          "width": 600,
+          "height": 837
+        }
+      }
+    },
+    {
+      "id": "2022swsh-9",
+      "setId": "2022swsh",
+      "speciesId": 180,
+      "archiveId": "mcd22-9",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json",
+      "originalUrl": "https://images.pokemontcg.io/mcd22/9_hires.png",
+      "originalSmallUrl": "https://images.pokemontcg.io/mcd22/9.png",
+      "low": "/assets/cards/supplements/mcd22-9-low.webp",
+      "high": "/assets/cards/supplements/mcd22-9-high.webp",
+      "originalSha256": "e2179bb7fc5671f9fc4b6044aa4e5fe90db0e0c3b0de5e9d07a4c52d11270472",
+      "outputs": {
+        "low": {
+          "bytes": 21180,
+          "sha256": "4626c2bae7b3202d65584f6876f54cbfd22359a06ede03a46bfef53a028b707d",
+          "width": 245,
+          "height": 342
+        },
+        "high": {
+          "bytes": 137314,
+          "sha256": "b1de6aca99f71faf729f60aaa23b7566a5062cb8baf8f62e8af1ae8c2a5f2c7f",
+          "width": 600,
+          "height": 837
+        }
+      }
+    }
+  ],
+  "uncovered": [
+    {
+      "id": "2021swsh-12",
+      "reason": "Species mismatch",
+      "tcgdex": [
+        391
+      ],
+      "archive": [
+        390
+      ]
+    },
+    "McDonald's Collection 2024",
+    "McDonald's Collection 2023",
+    {
+      "id": "2014xy-1",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-5",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-8",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-2",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-3",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-4",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-11",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-10",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-12",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-7",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-9",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2014xy-6",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-6",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-8",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-4",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-10",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-3",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-1",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-5",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-11",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-2",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-12",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-9",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2015xy-7",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-5",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-8",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-9",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-1",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-3",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-4",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-11",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-12",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-2",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-10",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-7",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2017sm-6",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-4",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-2",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-1",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-6",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-5",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-8",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-7",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-10",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-3",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-11",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-12",
+      "reason": "No source image responds successfully"
+    },
+    {
+      "id": "2018sm-9",
+      "reason": "No source image responds successfully"
+    }
+  ]
+}

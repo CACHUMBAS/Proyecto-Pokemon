@@ -10,5 +10,6 @@ export interface CardPreview {
   language: Locale | 'other'
   presentation?: 'tcg' | 'prisma'
   illustrator?: string
+  imageSourceUrl?: string
   sourceUrl?: string
 }

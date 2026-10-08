@@ -30,3 +30,20 @@ Importado el 8 de octubre de 2026. Manifiesto: `catalog/manifest.json`; versión
 - 23.770 registros TCGdex: 20.132 Pokémon y 3.638 apoyos. 15.495 tienen localización ES; 1.357 no proporcionan imagen. Se conserva la cobertura real EN/ES, sin atribuir cobertura de todos los idiomas o todas las ediciones históricas.
 - Se distinguen los tipos del TCG de los tipos de especie. Las 129 asociaciones ambiguas se reservan para revisión antes de usarlas en combate. Las cartas propias de respaldo llevan una marca explícita; ninguna especie necesitó ese respaldo en esta instantánea.
 - Se conservan los avisos de proyecto fan. Los datos de API no otorgan por sí solos derechos sobre las marcas o ilustraciones. No se han incorporado audio, servicios de pago ni claves.
+
+## Ilustraciones recuperadas de McDonald’s
+
+Corrección del 8 de octubre de 2026, rama `fix/imagenes-mcdonalds`.
+
+TCGdex devuelve McDonald’s 2011 sin imágenes en sus doce registros EN y sin cartas ES. Se contrastó `https://api.tcgdex.net/v2/en/sets/2011bw` y se reprodujo la ausencia en la ficha de Snivy.
+
+Se recuperaron **87 ilustraciones inglesas** de seis colecciones: 2011 (12), 2012 (12), 2016 (12), 2019 (12), 2021 (24) y 2022 (15). Fuente histórica: https://github.com/PokemonTCG/pokemon-tcg-data/tree/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en. Se concilió el nombre exacto de la expansión y, dentro de ella, identificador/número de carta y especie nacional; no se eligieron imágenes por semejanza de nombre.
+
+- `assets/cards/supplements/_sources.json` registra cada URL original, revisión del archivo, identidad y hashes de las imágenes originales y servidas.
+- Los 174 WebP (lista/ampliación) ocupan 19.283.498 bytes en total. Se conserva la proporción y el contenido de las imágenes PNG originales, con anchuras máximas 245/600 píxeles; no se ha regenerado arte ni texto. Se cargan individualmente conforme se necesitan.
+- El archivo histórico anuncia el cierre de su API para marzo de 2027. La web usa copias locales de estas imágenes, sin llamadas a esa API ni nuevas claves/dependencias.
+- Las imágenes originales de TCGdex conservan prioridad si están disponibles. El suplemento se mantiene separado de la instantánea importada; `catalog:import` no lo sobrescribe. Las fichas indican el idioma real y enlazan el origen de la ilustración por separado de los datos de TCGdex.
+- Se preservan las referencias del catálogo sin imagen cuando no se ha podido recuperar una correspondencia fiable. Entre McDonald’s quedan 2014, 2015, 2017 y 2018 (ambos tamaños de las URLs del archivo fallan), 2023 y 2024 (sin edición en el archivo consultado), y `2021swsh-12` (TCGdex la asocia a 391 y el archivo a 390). No se le asigna una imagen contradictoria.
+- El recuento original de 1.357 registros sin imagen en TCGdex sigue describiendo esa fuente; 87 cuentan ahora con respaldo visual local en la aplicación. No se afirma que estén recuperadas todas las ilustraciones ausentes del catálogo.
+
+Comprobaciones: 39 pruebas automatizadas correctas; tipos, lint y compilación correctos. Los 174 archivos se decodificaron en el navegador. Las doce cartas de 2011 se abrieron y ampliaron en ES/EN, con proveedores externos bloqueados, comprobando imagen local, procedencia y cierre por teclado. Capturas de escritorio y móvil revisadas; no se añadieron cuentas ni costes.

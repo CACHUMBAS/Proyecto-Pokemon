@@ -1,0 +1,700 @@
+{
+  "cards": [
+    {
+      "id": "2011bw-1",
+      "setId": "2011bw",
+      "speciesId": 495,
+      "low": "/assets/cards/supplements/mcd11-1-low.webp",
+      "high": "/assets/cards/supplements/mcd11-1-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-10",
+      "setId": "2011bw",
+      "speciesId": 599,
+      "low": "/assets/cards/supplements/mcd11-10-low.webp",
+      "high": "/assets/cards/supplements/mcd11-10-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-11",
+      "setId": "2011bw",
+      "speciesId": 519,
+      "low": "/assets/cards/supplements/mcd11-11-low.webp",
+      "high": "/assets/cards/supplements/mcd11-11-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-12",
+      "setId": "2011bw",
+      "speciesId": 531,
+      "low": "/assets/cards/supplements/mcd11-12-low.webp",
+      "high": "/assets/cards/supplements/mcd11-12-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-2",
+      "setId": "2011bw",
+      "speciesId": 556,
+      "low": "/assets/cards/supplements/mcd11-2-low.webp",
+      "high": "/assets/cards/supplements/mcd11-2-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-3",
+      "setId": "2011bw",
+      "speciesId": 498,
+      "low": "/assets/cards/supplements/mcd11-3-low.webp",
+      "high": "/assets/cards/supplements/mcd11-3-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-4",
+      "setId": "2011bw",
+      "speciesId": 501,
+      "low": "/assets/cards/supplements/mcd11-4-low.webp",
+      "high": "/assets/cards/supplements/mcd11-4-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-5",
+      "setId": "2011bw",
+      "speciesId": 594,
+      "low": "/assets/cards/supplements/mcd11-5-low.webp",
+      "high": "/assets/cards/supplements/mcd11-5-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-6",
+      "setId": "2011bw",
+      "speciesId": 522,
+      "low": "/assets/cards/supplements/mcd11-6-low.webp",
+      "high": "/assets/cards/supplements/mcd11-6-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-7",
+      "setId": "2011bw",
+      "speciesId": 517,
+      "low": "/assets/cards/supplements/mcd11-7-low.webp",
+      "high": "/assets/cards/supplements/mcd11-7-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-8",
+      "setId": "2011bw",
+      "speciesId": 551,
+      "low": "/assets/cards/supplements/mcd11-8-low.webp",
+      "high": "/assets/cards/supplements/mcd11-8-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2011bw-9",
+      "setId": "2011bw",
+      "speciesId": 570,
+      "low": "/assets/cards/supplements/mcd11-9-low.webp",
+      "high": "/assets/cards/supplements/mcd11-9-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd11.json"
+    },
+    {
+      "id": "2012bw-1",
+      "setId": "2012bw",
+      "speciesId": 496,
+      "low": "/assets/cards/supplements/mcd12-1-low.webp",
+      "high": "/assets/cards/supplements/mcd12-1-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-10",
+      "setId": "2012bw",
+      "speciesId": 559,
+      "low": "/assets/cards/supplements/mcd12-10-low.webp",
+      "high": "/assets/cards/supplements/mcd12-10-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-11",
+      "setId": "2012bw",
+      "speciesId": 600,
+      "low": "/assets/cards/supplements/mcd12-11-low.webp",
+      "high": "/assets/cards/supplements/mcd12-11-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-12",
+      "setId": "2012bw",
+      "speciesId": 610,
+      "low": "/assets/cards/supplements/mcd12-12-low.webp",
+      "high": "/assets/cards/supplements/mcd12-12-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-2",
+      "setId": "2012bw",
+      "speciesId": 511,
+      "low": "/assets/cards/supplements/mcd12-2-low.webp",
+      "high": "/assets/cards/supplements/mcd12-2-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-3",
+      "setId": "2012bw",
+      "speciesId": 557,
+      "low": "/assets/cards/supplements/mcd12-3-low.webp",
+      "high": "/assets/cards/supplements/mcd12-3-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-4",
+      "setId": "2012bw",
+      "speciesId": 499,
+      "low": "/assets/cards/supplements/mcd12-4-low.webp",
+      "high": "/assets/cards/supplements/mcd12-4-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-5",
+      "setId": "2012bw",
+      "speciesId": 502,
+      "low": "/assets/cards/supplements/mcd12-5-low.webp",
+      "high": "/assets/cards/supplements/mcd12-5-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-6",
+      "setId": "2012bw",
+      "speciesId": 587,
+      "low": "/assets/cards/supplements/mcd12-6-low.webp",
+      "high": "/assets/cards/supplements/mcd12-6-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-7",
+      "setId": "2012bw",
+      "speciesId": 527,
+      "low": "/assets/cards/supplements/mcd12-7-low.webp",
+      "high": "/assets/cards/supplements/mcd12-7-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-8",
+      "setId": "2012bw",
+      "speciesId": 529,
+      "low": "/assets/cards/supplements/mcd12-8-low.webp",
+      "high": "/assets/cards/supplements/mcd12-8-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2012bw-9",
+      "setId": "2012bw",
+      "speciesId": 509,
+      "low": "/assets/cards/supplements/mcd12-9-low.webp",
+      "high": "/assets/cards/supplements/mcd12-9-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd12.json"
+    },
+    {
+      "id": "2016xy-1",
+      "setId": "2016xy",
+      "speciesId": 37,
+      "low": "/assets/cards/supplements/mcd16-1-low.webp",
+      "high": "/assets/cards/supplements/mcd16-1-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-10",
+      "setId": "2016xy",
+      "speciesId": 702,
+      "low": "/assets/cards/supplements/mcd16-10-low.webp",
+      "high": "/assets/cards/supplements/mcd16-10-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-11",
+      "setId": "2016xy",
+      "speciesId": 52,
+      "low": "/assets/cards/supplements/mcd16-11-low.webp",
+      "high": "/assets/cards/supplements/mcd16-11-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-12",
+      "setId": "2016xy",
+      "speciesId": 133,
+      "low": "/assets/cards/supplements/mcd16-12-low.webp",
+      "high": "/assets/cards/supplements/mcd16-12-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-2",
+      "setId": "2016xy",
+      "speciesId": 255,
+      "low": "/assets/cards/supplements/mcd16-2-low.webp",
+      "high": "/assets/cards/supplements/mcd16-2-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-3",
+      "setId": "2016xy",
+      "speciesId": 653,
+      "low": "/assets/cards/supplements/mcd16-3-low.webp",
+      "high": "/assets/cards/supplements/mcd16-3-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-4",
+      "setId": "2016xy",
+      "speciesId": 129,
+      "low": "/assets/cards/supplements/mcd16-4-low.webp",
+      "high": "/assets/cards/supplements/mcd16-4-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-5",
+      "setId": "2016xy",
+      "speciesId": 158,
+      "low": "/assets/cards/supplements/mcd16-5-low.webp",
+      "high": "/assets/cards/supplements/mcd16-5-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-6",
+      "setId": "2016xy",
+      "speciesId": 25,
+      "low": "/assets/cards/supplements/mcd16-6-low.webp",
+      "high": "/assets/cards/supplements/mcd16-6-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-7",
+      "setId": "2016xy",
+      "speciesId": 559,
+      "low": "/assets/cards/supplements/mcd16-7-low.webp",
+      "high": "/assets/cards/supplements/mcd16-7-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-8",
+      "setId": "2016xy",
+      "speciesId": 39,
+      "low": "/assets/cards/supplements/mcd16-8-low.webp",
+      "high": "/assets/cards/supplements/mcd16-8-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2016xy-9",
+      "setId": "2016xy",
+      "speciesId": 175,
+      "low": "/assets/cards/supplements/mcd16-9-low.webp",
+      "high": "/assets/cards/supplements/mcd16-9-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd16.json"
+    },
+    {
+      "id": "2019sm-1",
+      "setId": "2019sm",
+      "speciesId": 10,
+      "low": "/assets/cards/supplements/mcd19-1-low.webp",
+      "high": "/assets/cards/supplements/mcd19-1-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-10",
+      "setId": "2019sm",
+      "speciesId": 52,
+      "low": "/assets/cards/supplements/mcd19-10-low.webp",
+      "high": "/assets/cards/supplements/mcd19-10-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-11",
+      "setId": "2019sm",
+      "speciesId": 51,
+      "low": "/assets/cards/supplements/mcd19-11-low.webp",
+      "high": "/assets/cards/supplements/mcd19-11-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-12",
+      "setId": "2019sm",
+      "speciesId": 133,
+      "low": "/assets/cards/supplements/mcd19-12-low.webp",
+      "high": "/assets/cards/supplements/mcd19-12-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-2",
+      "setId": "2019sm",
+      "speciesId": 103,
+      "low": "/assets/cards/supplements/mcd19-2-low.webp",
+      "high": "/assets/cards/supplements/mcd19-2-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-3",
+      "setId": "2019sm",
+      "speciesId": 126,
+      "low": "/assets/cards/supplements/mcd19-3-low.webp",
+      "high": "/assets/cards/supplements/mcd19-3-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-4",
+      "setId": "2019sm",
+      "speciesId": 27,
+      "low": "/assets/cards/supplements/mcd19-4-low.webp",
+      "high": "/assets/cards/supplements/mcd19-4-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-5",
+      "setId": "2019sm",
+      "speciesId": 131,
+      "low": "/assets/cards/supplements/mcd19-5-low.webp",
+      "high": "/assets/cards/supplements/mcd19-5-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-6",
+      "setId": "2019sm",
+      "speciesId": 25,
+      "low": "/assets/cards/supplements/mcd19-6-low.webp",
+      "high": "/assets/cards/supplements/mcd19-6-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-7",
+      "setId": "2019sm",
+      "speciesId": 92,
+      "low": "/assets/cards/supplements/mcd19-7-low.webp",
+      "high": "/assets/cards/supplements/mcd19-7-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-8",
+      "setId": "2019sm",
+      "speciesId": 56,
+      "low": "/assets/cards/supplements/mcd19-8-low.webp",
+      "high": "/assets/cards/supplements/mcd19-8-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2019sm-9",
+      "setId": "2019sm",
+      "speciesId": 95,
+      "low": "/assets/cards/supplements/mcd19-9-low.webp",
+      "high": "/assets/cards/supplements/mcd19-9-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd19.json"
+    },
+    {
+      "id": "2021swsh-1",
+      "setId": "2021swsh",
+      "speciesId": 1,
+      "low": "/assets/cards/supplements/mcd21-1-low.webp",
+      "high": "/assets/cards/supplements/mcd21-1-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-10",
+      "setId": "2021swsh",
+      "speciesId": 155,
+      "low": "/assets/cards/supplements/mcd21-10-low.webp",
+      "high": "/assets/cards/supplements/mcd21-10-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-11",
+      "setId": "2021swsh",
+      "speciesId": 255,
+      "low": "/assets/cards/supplements/mcd21-11-low.webp",
+      "high": "/assets/cards/supplements/mcd21-11-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-13",
+      "setId": "2021swsh",
+      "speciesId": 498,
+      "low": "/assets/cards/supplements/mcd21-13-low.webp",
+      "high": "/assets/cards/supplements/mcd21-13-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-14",
+      "setId": "2021swsh",
+      "speciesId": 653,
+      "low": "/assets/cards/supplements/mcd21-14-low.webp",
+      "high": "/assets/cards/supplements/mcd21-14-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-15",
+      "setId": "2021swsh",
+      "speciesId": 725,
+      "low": "/assets/cards/supplements/mcd21-15-low.webp",
+      "high": "/assets/cards/supplements/mcd21-15-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-16",
+      "setId": "2021swsh",
+      "speciesId": 813,
+      "low": "/assets/cards/supplements/mcd21-16-low.webp",
+      "high": "/assets/cards/supplements/mcd21-16-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-17",
+      "setId": "2021swsh",
+      "speciesId": 7,
+      "low": "/assets/cards/supplements/mcd21-17-low.webp",
+      "high": "/assets/cards/supplements/mcd21-17-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-18",
+      "setId": "2021swsh",
+      "speciesId": 158,
+      "low": "/assets/cards/supplements/mcd21-18-low.webp",
+      "high": "/assets/cards/supplements/mcd21-18-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-19",
+      "setId": "2021swsh",
+      "speciesId": 258,
+      "low": "/assets/cards/supplements/mcd21-19-low.webp",
+      "high": "/assets/cards/supplements/mcd21-19-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-2",
+      "setId": "2021swsh",
+      "speciesId": 152,
+      "low": "/assets/cards/supplements/mcd21-2-low.webp",
+      "high": "/assets/cards/supplements/mcd21-2-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-20",
+      "setId": "2021swsh",
+      "speciesId": 393,
+      "low": "/assets/cards/supplements/mcd21-20-low.webp",
+      "high": "/assets/cards/supplements/mcd21-20-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-21",
+      "setId": "2021swsh",
+      "speciesId": 501,
+      "low": "/assets/cards/supplements/mcd21-21-low.webp",
+      "high": "/assets/cards/supplements/mcd21-21-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-22",
+      "setId": "2021swsh",
+      "speciesId": 656,
+      "low": "/assets/cards/supplements/mcd21-22-low.webp",
+      "high": "/assets/cards/supplements/mcd21-22-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-23",
+      "setId": "2021swsh",
+      "speciesId": 728,
+      "low": "/assets/cards/supplements/mcd21-23-low.webp",
+      "high": "/assets/cards/supplements/mcd21-23-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-24",
+      "setId": "2021swsh",
+      "speciesId": 816,
+      "low": "/assets/cards/supplements/mcd21-24-low.webp",
+      "high": "/assets/cards/supplements/mcd21-24-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-25",
+      "setId": "2021swsh",
+      "speciesId": 25,
+      "low": "/assets/cards/supplements/mcd21-25-low.webp",
+      "high": "/assets/cards/supplements/mcd21-25-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-3",
+      "setId": "2021swsh",
+      "speciesId": 252,
+      "low": "/assets/cards/supplements/mcd21-3-low.webp",
+      "high": "/assets/cards/supplements/mcd21-3-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-4",
+      "setId": "2021swsh",
+      "speciesId": 387,
+      "low": "/assets/cards/supplements/mcd21-4-low.webp",
+      "high": "/assets/cards/supplements/mcd21-4-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-5",
+      "setId": "2021swsh",
+      "speciesId": 495,
+      "low": "/assets/cards/supplements/mcd21-5-low.webp",
+      "high": "/assets/cards/supplements/mcd21-5-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-6",
+      "setId": "2021swsh",
+      "speciesId": 650,
+      "low": "/assets/cards/supplements/mcd21-6-low.webp",
+      "high": "/assets/cards/supplements/mcd21-6-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-7",
+      "setId": "2021swsh",
+      "speciesId": 722,
+      "low": "/assets/cards/supplements/mcd21-7-low.webp",
+      "high": "/assets/cards/supplements/mcd21-7-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-8",
+      "setId": "2021swsh",
+      "speciesId": 810,
+      "low": "/assets/cards/supplements/mcd21-8-low.webp",
+      "high": "/assets/cards/supplements/mcd21-8-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2021swsh-9",
+      "setId": "2021swsh",
+      "speciesId": 4,
+      "low": "/assets/cards/supplements/mcd21-9-low.webp",
+      "high": "/assets/cards/supplements/mcd21-9-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd21.json"
+    },
+    {
+      "id": "2022swsh-1",
+      "setId": "2022swsh",
+      "speciesId": 165,
+      "low": "/assets/cards/supplements/mcd22-1-low.webp",
+      "high": "/assets/cards/supplements/mcd22-1-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-10",
+      "setId": "2022swsh",
+      "speciesId": 602,
+      "low": "/assets/cards/supplements/mcd22-10-low.webp",
+      "high": "/assets/cards/supplements/mcd22-10-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-11",
+      "setId": "2022swsh",
+      "speciesId": 742,
+      "low": "/assets/cards/supplements/mcd22-11-low.webp",
+      "high": "/assets/cards/supplements/mcd22-11-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-12",
+      "setId": "2022swsh",
+      "speciesId": 760,
+      "low": "/assets/cards/supplements/mcd22-12-low.webp",
+      "high": "/assets/cards/supplements/mcd22-12-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-13",
+      "setId": "2022swsh",
+      "speciesId": 675,
+      "low": "/assets/cards/supplements/mcd22-13-low.webp",
+      "high": "/assets/cards/supplements/mcd22-13-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-14",
+      "setId": "2022swsh",
+      "speciesId": 780,
+      "low": "/assets/cards/supplements/mcd22-14-low.webp",
+      "high": "/assets/cards/supplements/mcd22-14-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-15",
+      "setId": "2022swsh",
+      "speciesId": 235,
+      "low": "/assets/cards/supplements/mcd22-15-low.webp",
+      "high": "/assets/cards/supplements/mcd22-15-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-2",
+      "setId": "2022swsh",
+      "speciesId": 722,
+      "low": "/assets/cards/supplements/mcd22-2-low.webp",
+      "high": "/assets/cards/supplements/mcd22-2-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-3",
+      "setId": "2022swsh",
+      "speciesId": 829,
+      "low": "/assets/cards/supplements/mcd22-3-low.webp",
+      "high": "/assets/cards/supplements/mcd22-3-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-4",
+      "setId": "2022swsh",
+      "speciesId": 58,
+      "low": "/assets/cards/supplements/mcd22-4-low.webp",
+      "high": "/assets/cards/supplements/mcd22-4-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-5",
+      "setId": "2022swsh",
+      "speciesId": 494,
+      "low": "/assets/cards/supplements/mcd22-5-low.webp",
+      "high": "/assets/cards/supplements/mcd22-5-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-6",
+      "setId": "2022swsh",
+      "speciesId": 131,
+      "low": "/assets/cards/supplements/mcd22-6-low.webp",
+      "high": "/assets/cards/supplements/mcd22-6-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-7",
+      "setId": "2022swsh",
+      "speciesId": 25,
+      "low": "/assets/cards/supplements/mcd22-7-low.webp",
+      "high": "/assets/cards/supplements/mcd22-7-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-8",
+      "setId": "2022swsh",
+      "speciesId": 170,
+      "low": "/assets/cards/supplements/mcd22-8-low.webp",
+      "high": "/assets/cards/supplements/mcd22-8-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    },
+    {
+      "id": "2022swsh-9",
+      "setId": "2022swsh",
+      "speciesId": 180,
+      "low": "/assets/cards/supplements/mcd22-9-low.webp",
+      "high": "/assets/cards/supplements/mcd22-9-high.webp",
+      "sourceUrl": "https://github.com/PokemonTCG/pokemon-tcg-data/blob/39a26a144c8b6ef6c2fb17b2c29d0bb7121e3a11/cards/en/mcd22.json"
+    }
+  ]
+}

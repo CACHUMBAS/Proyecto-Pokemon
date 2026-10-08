@@ -187,7 +187,8 @@
     "ambiguousShort": "Mapping awaits review",
     "ambiguous": "This card includes multiple species or an incomplete mapping. It is shown for reference; its assignment for battles is pending.",
     "cardNotice": "Printed types, rarities and text belong to the TCG. PokePrisma battle rules and stats will be developed in a later phase.",
-    "customCard": "Custom PokePrisma card"
+    "customCard": "Custom PokePrisma card",
+    "imageSource": "Artwork source: Pokémon TCG archive"
   },
   "pokemonTypes": {
     "normal": "Normal",

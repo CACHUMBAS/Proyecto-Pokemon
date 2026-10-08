@@ -81,3 +81,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon. Cada fase se desarrolla en su rama con comprobaciones y commits. La base visual está en `feat/base-pokeprisma`, a partir de `docs/plan-inicial`. El catálogo se desarrolla en `feat/catalogo-pokeprisma`, desde `d216ebc`.
 
 No requiere claves ni cuentas de servicios para ejecutarse. No se han creado recursos de Supabase ni publicado esta web. Las funciones persistentes y multijugador se construirán en sus fases, manteniendo presupuesto inicial de cero euros. Las credenciales locales están excluidas de Git.
+
+### Corrección de ilustraciones de McDonald’s
+
+Se han recuperado 87 imágenes mediante un archivo histórico verificado, incluidas las doce cartas de 2011. Las copias locales en `public/assets/cards/supplements` permiten mostrarlas sin depender de la disponibilidad del proveedor. El idioma y la procedencia aparecen en la ficha. El índice de respaldo está en `src/catalog/artwork-supplements.json`; una importación del catálogo no lo reemplaza. Los casos sin fuente fiable siguen identificados como imagen no disponible. Véanse el apartado McDonald’s de [fuentes](public/_sources.md) y su registro por carta `public/assets/cards/supplements/_sources.json`.

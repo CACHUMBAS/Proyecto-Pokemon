@@ -1,3 +1,4 @@
+import { verifiedArtwork } from '../../catalog/artwork.ts'
 import type { CardRecord, CatalogLocale } from '../../catalog/types.ts'
 import type { CardPreview } from '../../types/card-preview.ts'
 export function toCardPreview(
@@ -5,9 +6,10 @@ export function toCardPreview(
   locale: CatalogLocale,
   quality: 'low' | 'high' = 'low',
 ): CardPreview {
+  const artwork = verifiedArtwork(card)
   const language = card.localizations[locale]?.imageUrl
     ? locale
-    : card.localizations.en?.imageUrl
+    : card.localizations.en?.imageUrl || artwork
       ? 'en'
       : card.localizations.es?.imageUrl
         ? 'es'
@@ -16,14 +18,18 @@ export function toCardPreview(
           : 'en'
   const localization =
     card.localizations[language] || card.localizations.en || card.localizations.es!
+  const supplement = language === 'en' && !localization.imageUrl ? artwork : undefined
   return {
     id: card.id,
     name: localization.name,
-    imageUrl: localization.imageUrl
-      ? card.origin === 'tcgdex'
-        ? `${localization.imageUrl}/${quality}.webp`
-        : localization.imageUrl
-      : null,
+    imageSourceUrl: supplement?.sourceUrl,
+    imageUrl: supplement
+      ? supplement[quality]
+      : localization.imageUrl
+        ? card.origin === 'tcgdex'
+          ? `${localization.imageUrl}/${quality}.webp`
+          : localization.imageUrl
+        : null,
     origin: card.origin,
     language,
     rarityLabel: card.rarity,
@@ -39,6 +45,8 @@ export function toCardPreview(
 
 export function orderVariants(cards: CardRecord[]): CardRecord[] {
   const hasImage = (card: CardRecord) =>
-    Boolean(card.localizations.en?.imageUrl || card.localizations.es?.imageUrl)
+    Boolean(
+      card.localizations.en?.imageUrl || card.localizations.es?.imageUrl || verifiedArtwork(card),
+    )
   return [...cards].sort((a, b) => Number(hasImage(b)) - Number(hasImage(a)))
 }
