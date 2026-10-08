@@ -48,6 +48,7 @@ Las ilustraciones de las tres cartas están en inglés y así se identifican en 
 - `src/components`: tarjetas, idioma, botones y estructura compartida.
 - `src/features`: portada, catálogo, fichas de especie, muestras y ruta no encontrada.
 - `src/catalog`: contratos, normalización, consulta y pruebas del catálogo.
+- `src/battle`: validación de la composición de equipos y sus pruebas.
 - `scripts/catalog`: importación, caché y validación de cobertura.
 - `public/catalog`: manifiesto e instantáneas versionadas; índice y un archivo de variantes por especie.
 - `src/i18n`: diccionarios y sincronización de idioma.
@@ -85,3 +86,9 @@ No requiere claves ni cuentas de servicios para ejecutarse. No se han creado rec
 ### Corrección de ilustraciones de McDonald’s
 
 Se han recuperado 87 imágenes mediante un archivo histórico verificado, incluidas las doce cartas de 2011. Las copias locales en `public/assets/cards/supplements` permiten mostrarlas sin depender de la disponibilidad del proveedor. El idioma y la procedencia aparecen en la ficha. El índice de respaldo está en `src/catalog/artwork-supplements.json`; una importación del catálogo no lo reemplaza. Los casos sin fuente fiable siguen identificados como imagen no disponible. Véanse el apartado McDonald’s de [fuentes](public/_sources.md) y su registro por carta `public/assets/cards/supplements/_sources.json`.
+
+### Validación de equipos
+
+`validatePokemonTeam` recibe los identificadores de las cartas elegidas, un catálogo de confianza y el índice de especies. Exige seis Pokémon de especies distintas; rechaza cartas repetidas o desconocidas, cartas de apoyo y asociaciones de especie ambiguas o inexistentes. Devuelve el equipo en el orden elegido o errores estructurados con posiciones desde cero, sin equipos parciales ni cambios en los datos de entrada.
+
+Es una base interna sin pantalla nueva: todavía no comprueba propiedad de las cartas, estadísticas, movimientos ni apoyos, y no habilita combates. La propiedad deberá validarse con el inventario autorizado del jugador al incorporar cuentas y persistencia. Los datos externos deben validarse antes de llamar a esta función tipada.

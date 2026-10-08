@@ -13,7 +13,7 @@
     "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "test": "node --test src/catalog/*.test.ts scripts/catalog/*.test.ts",
+    "test": "node --test src/catalog/*.test.ts src/battle/*.test.ts scripts/catalog/*.test.ts",
     "catalog:import": "node scripts/catalog/import.ts"
   },
   "dependencies": {
