@@ -34,6 +34,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 - `/`: portada, carrusel manual de tres cartas, presentación y recorrido del proyecto.
 - `/catalogo`: las 1.025 especies, búsqueda por nombre o número nacional y filtros combinables por generación, tipo de Pokémon, rareza y expansión. Los filtros se guardan en la URL.
 - `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
+- `/equipo`: constructor de un equipo de prueba de seis especies, selección de ilustraciones, cambio de primer Pokémon y guardado local.
 - `/diseno`: tres cartas verificadas de TCGdex y una muestra propia sin imagen; filtros y fichas de procedencia.
 - Cualquier ruta desconocida: pantalla de recuperación con enlace al inicio.
 - Selector ES/EN: guarda solo el idioma; sigue funcionando si el navegador bloquea almacenamiento.
@@ -91,4 +92,12 @@ Se han recuperado 87 imágenes mediante un archivo histórico verificado, inclui
 
 `validatePokemonTeam` recibe los identificadores de las cartas elegidas, un catálogo de confianza y el índice de especies. Exige seis Pokémon de especies distintas; rechaza cartas repetidas o desconocidas, cartas de apoyo y asociaciones de especie ambiguas o inexistentes. Devuelve el equipo en el orden elegido o errores estructurados con posiciones desde cero, sin equipos parciales ni cambios en los datos de entrada.
 
-Es una base interna sin pantalla nueva: todavía no comprueba propiedad de las cartas, estadísticas, movimientos ni apoyos, y no habilita combates. La propiedad deberá validarse con el inventario autorizado del jugador al incorporar cuentas y persistencia. Los datos externos deben validarse antes de llamar a esta función tipada.
+El validador comprueba la composición: todavía no comprueba propiedad de las cartas, estadísticas, movimientos ni apoyos, y no habilita combates. La propiedad deberá validarse con el inventario autorizado del jugador al incorporar cuentas y persistencia. Los datos externos deben validarse antes de llamar a esta función tipada.
+
+### Constructor de equipo de prueba
+
+En `/equipo` puedes buscar las 1.025 especies, elegir ilustraciones, completar seis plazas, sustituir una variante en su misma plaza, quitar miembros y elegir quién va primero. Está disponible en ES/EN y se adapta a móvil y escritorio.
+
+Se guarda un único borrador en `pokeprisma.team-draft.v1`, solo con identificadores de cartas y especies. Al recuperarlo se contrasta con el catálogo. Los errores de red conservan el borrador para reintentar; un borrador inválido requiere descartarlo explícitamente. Las pestañas escuchan cambios de almacenamiento y comparan la selección guardada antes de escribir. Si el almacenamiento está bloqueado o lleno, se permite editar en memoria con un aviso de que no se ha guardado. No es un inventario ni concede propiedad de cartas, no sincroniza entre dispositivos y aún no permite combatir.
+
+Comprobaciones de este bloque: [revisión del constructor](docs/revision-equipo.md).
