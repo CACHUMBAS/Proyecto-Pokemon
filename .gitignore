@@ -1,0 +1,18 @@
+# Configuración local y secretos
+.env
+.env.*
+!.env.example
+.vercel/
+.supabase/
+
+# Dependencias y compilación
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
