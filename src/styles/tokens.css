@@ -1,0 +1,13 @@
+:root {
+  --bg: #090f19;
+  --surface: #111c2a;
+  --surface-high: #1b2a39;
+  --text: #eef4f4;
+  --muted: #a7b3c3;
+  --mint: #a2f4d5;
+  --cyan: #8cdded;
+  --lavender: #b5b0f7;
+  --border: #2c3949;
+  --font-body: 'Manrope Variable', sans-serif;
+  --font-display: 'Space Grotesk Variable', sans-serif;
+}

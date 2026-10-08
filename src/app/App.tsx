@@ -14,5 +14,9 @@ export function App() {
     }
     previousPath.current = pathname
   }, [pathname, hash])
-  return <AppShell><Outlet /></AppShell>
+  return (
+    <AppShell>
+      <Outlet />
+    </AppShell>
+  )
 }

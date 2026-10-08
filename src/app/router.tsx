@@ -5,9 +5,12 @@ import { DesignPreviewPage } from '../features/preview/DesignPreviewPage'
 import { NotFoundPage } from '../features/not-found/NotFoundPage'
 
 export const router = createBrowserRouter([
-  { element: <App />, children: [
-    { path: '/', element: <LandingPage /> },
-    { path: '/diseno', element: <DesignPreviewPage /> },
-    { path: '*', element: <NotFoundPage /> },
-  ] },
+  {
+    element: <App />,
+    children: [
+      { path: '/', element: <LandingPage /> },
+      { path: '/diseno', element: <DesignPreviewPage /> },
+      { path: '*', element: <NotFoundPage /> },
+    ],
+  },
 ])
