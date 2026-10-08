@@ -10,7 +10,7 @@
 
 **Spec:** [Diseño acordado](../specs/2026-10-08-pokeprisma-design.md).
 
-**Estado:** implementación completada y comprobada. Revisión independiente final y publicación de la rama pendientes de cerrar. Estrategias y límites registrados en `docs/revision-fase-2.md`.
+**Estado:** completada y revisada. Catálogo entregado en `feat/catalogo-pokeprisma`; 35 pruebas correctas, revisión independiente y correcciones verificadas. Estrategias y límites registrados en `docs/revision-fase-2.md`.
 
 ## Global Constraints
 
@@ -80,6 +80,6 @@
 - [x] Revisar informe de cobertura contra el índice importado y documentar exclusiones o datos ambiguos.
 - [x] Medir tiempos y peso de los recursos; evitar cargar todo el catálogo o sus imágenes al visitar la portada.
 - [x] Revisar permisos de recursos y confirmar que no se han añadido costes ni secretos.
-- [ ] Guardar resultados, capturas y limitaciones; subir la rama con sus commits.
+- [x] Guardar resultados, capturas y limitaciones; subir la rama con sus commits.
 
 Referencias: https://pokeapi.co/docs/v2, https://tcgdex.dev/, https://tcgdex.dev/rest/card y https://tcgdex.dev/assets. Se comprobarán de nuevo al implementar.
