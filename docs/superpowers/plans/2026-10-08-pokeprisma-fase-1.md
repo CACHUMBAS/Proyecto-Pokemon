@@ -1,6 +1,6 @@
 # PokePrisma — Plan de implementación de la fase 1
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Construir una base web local, adaptable y bilingüe que permita revisar la identidad visual de PokePrisma antes de implementar el juego.
 
@@ -10,7 +10,7 @@
 
 **Spec:** [Diseño de PokePrisma](../specs/2026-10-08-pokeprisma-design.md).
 
-**Estado:** plan para revisión. Ninguna tarea de implementación se ha ejecutado. Ejecución propuesta: implementar secuencialmente en este chat, con revisión de la fase antes de avanzar.
+**Estado:** fase 1 implementada y verificada el 8 de octubre de 2026. Ejecución secuencial en este chat y revisión independiente del código. Véase [revisión de la fase](../../revision-fase-1.md). El juego completo sigue en desarrollo.
 
 ## Global Constraints
 
@@ -91,14 +91,14 @@ public/
 - `LanguageSwitcher` usa el idioma de i18next y cambia `document.documentElement.lang`.
 - `router` define `/`, `/diseno` y la ruta comodín. Las rutas de juego autenticadas se añadirán en su fase.
 
-- [ ] **Step 1:** Crear la rama `feat/base-pokeprisma` desde la documentación revisada; comprobar que no hay cambios ajenos pendientes.
-- [ ] **Step 2:** Verificar versiones estables compatibles y preparar React/Vite/TypeScript; conservar los documentos y fijar el archivo de dependencias bloqueadas. Añadir exclusiones de dependencias, compilación y credenciales locales.
-- [ ] **Step 3:** Crear los scripts `dev`, `build`, `preview`, `lint` y `typecheck`; `typecheck` debe ejecutar el compilador de TypeScript sin emitir archivos.
-- [ ] **Step 4:** Implementar el contenedor y las rutas con contenido mínimo suficiente para recorrerlas. El inicio explica sobres, colección y combates sin declarar funcionalidades aún inexistentes como listas para jugar.
-- [ ] **Step 5:** Configurar español por defecto e inglés seleccionable. Guardar únicamente la preferencia de idioma local; si el almacenamiento falla o contiene un idioma desconocido, usar español. Centralizar los textos y nombres accesibles en los dos diccionarios.
-- [ ] **Step 6:** Ejecutar `npm run typecheck`, `npm run lint` y `npm run build`; los tres deben terminar sin errores.
-- [ ] **Step 7:** Comprobar en navegador cambio de idioma, recarga y ruta desconocida. Confirmar el cambio de `lang`, foco visible y navegación por teclado. Registrar limitaciones reales si la herramienta de navegador no está disponible.
-- [ ] **Step 8:** Commit: `chore: crear base navegable y bilingue de PokePrisma`.
+- [x] **Step 1:** Crear la rama `feat/base-pokeprisma` desde la documentación revisada; comprobar que no hay cambios ajenos pendientes.
+- [x] **Step 2:** Verificar versiones estables compatibles y preparar React/Vite/TypeScript; conservar los documentos y fijar el archivo de dependencias bloqueadas. Añadir exclusiones de dependencias, compilación y credenciales locales.
+- [x] **Step 3:** Crear los scripts `dev`, `build`, `preview`, `lint` y `typecheck`; `typecheck` debe ejecutar el compilador de TypeScript sin emitir archivos.
+- [x] **Step 4:** Implementar el contenedor y las rutas con contenido mínimo suficiente para recorrerlas. El inicio explica sobres, colección y combates sin declarar funcionalidades aún inexistentes como listas para jugar.
+- [x] **Step 5:** Configurar español por defecto e inglés seleccionable. Guardar únicamente la preferencia de idioma local; si el almacenamiento falla o contiene un idioma desconocido, usar español. Centralizar los textos y nombres accesibles en los dos diccionarios.
+- [x] **Step 6:** Ejecutar `npm run typecheck`, `npm run lint` y `npm run build`; los tres deben terminar sin errores.
+- [x] **Step 7:** Comprobar en navegador cambio de idioma, recarga y ruta desconocida. Confirmar el cambio de `lang`, foco visible y navegación por teclado. Registrar limitaciones reales si la herramienta de navegador no está disponible.
+- [x] **Step 8:** Commit: `chore: crear base navegable y bilingue de PokePrisma`.
 
 ## Task 2: Identidad visual y tarjeta holográfica
 
@@ -110,13 +110,13 @@ public/
 - `Button` admite las propiedades estándar de botón y `variant: 'primary' | 'secondary'`; el tipo predeterminado es `button`.
 - Los objetos de muestra no se guardan como inventario de usuario ni contienen estadísticas atribuidas falsamente a una carta oficial.
 
-- [ ] **Step 1:** Definir tokens iniciales de fondo azul tinta, superficies, texto, acentos cian/violeta, espaciado y tipografía; comprobar contraste antes de reutilizarlos.
-- [ ] **Step 2:** Crear una pequeña selección de cartas de muestra con datos comprobados y procedencia registrada. Incluir un ejemplo sin imagen para comprobar la alternativa, identificado como muestra del diseño.
-- [ ] **Step 3:** Implementar la tarjeta con proporción estable, imagen alternativa y reflejo holográfico decorativo. En puntero preciso, limitar la inclinación; en táctil, presentar una variante estática. No iniciar movimientos si está activo `prefers-reduced-motion`.
-- [ ] **Step 4:** Componer la portada con marca PokePrisma, propuesta del juego y una composición visual de cartas; añadir `/diseno` para revisar estados de controles y tarjetas. No recoger contraseñas ni presentar un inicio de sesión que parezca operativo.
-- [ ] **Step 5:** Comprobar 320, 390, 768 y 1440 px; las cartas, textos y navegación no deben producir desbordamiento horizontal. Verificar selección por teclado, foco visible e imagen ausente.
-- [ ] **Step 6:** Comprobar ambos idiomas, texto largo y movimiento reducido. Los reflejos no cubren información necesaria y no se usan destellos rápidos.
-- [ ] **Step 7:** Ejecutar `npm run typecheck`, `npm run lint` y `npm run build`; commit: `feat: definir identidad visual y cartas de PokePrisma`.
+- [x] **Step 1:** Definir tokens iniciales de fondo azul tinta, superficies, texto, acentos cian/violeta, espaciado y tipografía; comprobar contraste antes de reutilizarlos.
+- [x] **Step 2:** Crear una pequeña selección de cartas de muestra con datos comprobados y procedencia registrada. Incluir un ejemplo sin imagen para comprobar la alternativa, identificado como muestra del diseño.
+- [x] **Step 3:** Implementar la tarjeta con proporción estable, imagen alternativa y reflejo holográfico decorativo. En puntero preciso, limitar la inclinación; en táctil, presentar una variante estática. No iniciar movimientos si está activo `prefers-reduced-motion`.
+- [x] **Step 4:** Componer la portada con marca PokePrisma, propuesta del juego y una composición visual de cartas; añadir `/diseno` para revisar estados de controles y tarjetas. No recoger contraseñas ni presentar un inicio de sesión que parezca operativo.
+- [x] **Step 5:** Comprobar 320, 390, 768 y 1440 px; las cartas, textos y navegación no deben producir desbordamiento horizontal. Verificar selección por teclado, foco visible e imagen ausente.
+- [x] **Step 6:** Comprobar ambos idiomas, texto largo y movimiento reducido. Los reflejos no cubren información necesaria y no se usan destellos rápidos.
+- [x] **Step 7:** Ejecutar `npm run typecheck`, `npm run lint` y `npm run build`; commit: `feat: definir identidad visual y cartas de PokePrisma`.
 
 ## Task 3: Revisión y entrega de la fase
 
@@ -124,12 +124,12 @@ public/
 
 **Interfaces:** consume las rutas, idiomas y componentes de las tareas 1 y 2. Produce una base visual revisable y una lista explícita de funciones aún no implementadas.
 
-- [ ] **Step 1:** Recorrer `/`, `/diseno` y una ruta desconocida en ambos idiomas y comprobar consola, enlaces, imágenes y uso con teclado. Repetir tamaños únicamente si hubo cambios que afecten a su comportamiento.
-- [ ] **Step 2:** Ejecutar `npm run typecheck`, `npm run lint`, `npm run build` y `git diff --check`. Registrar los resultados obtenidos, sin convertir verificaciones pendientes en aprobadas.
-- [ ] **Step 3:** Actualizar README con instrucciones de ejecución y alcance real de la fase. Guardar capturas de la propuesta visual cuando el navegador esté disponible.
-- [ ] **Step 4:** Revisar el diff de la fase frente al plan; resolver defectos importantes antes de presentarla.
-- [ ] **Step 5:** Commit: `docs: registrar revision de la base PokePrisma`; subir `feat/base-pokeprisma` a GitHub.
-- [ ] **Step 6:** Presentar la base visual y preparar el plan de catálogo con las interfaces efectivamente construidas. No declarar completo el juego por terminar esta fase.
+- [x] **Step 1:** Recorrer `/`, `/diseno` y una ruta desconocida en ambos idiomas y comprobar consola, enlaces, imágenes y uso con teclado. Repetir tamaños únicamente si hubo cambios que afecten a su comportamiento.
+- [x] **Step 2:** Ejecutar `npm run typecheck`, `npm run lint`, `npm run build` y `git diff --check`. Registrar los resultados obtenidos, sin convertir verificaciones pendientes en aprobadas.
+- [x] **Step 3:** Actualizar README con instrucciones de ejecución y alcance real de la fase. Guardar capturas de la propuesta visual cuando el navegador esté disponible.
+- [x] **Step 4:** Revisar el diff de la fase frente al plan; resolver defectos importantes antes de presentarla.
+- [x] **Step 5:** Commit: `docs: registrar revision de la base PokePrisma`; subir `feat/base-pokeprisma` a GitHub.
+- [x] **Step 6:** Presentar la base visual y preparar el plan de catálogo con las interfaces efectivamente construidas. No declarar completo el juego por terminar esta fase.
 
 ## Dependencias para fases posteriores
 
