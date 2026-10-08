@@ -29,7 +29,7 @@ El alcance de TCGdex es su catálogo EN y las localizaciones ES disponibles. No 
 
 ## Comprobaciones
 
-- `npm test`: 26 pruebas, sin fallos. Normalización, identidad, tipos, imágenes e idiomas ausentes, cartas ambiguas y propias, filtros antes de paginar, combinación de rareza/expansión sobre una misma variante, consultas compartidas, caché válida/corrupta, reintento y conservación del manifiesto ante una publicación fallida.
+- `npm test`: 35 pruebas, sin fallos. Normalización, identidad, tipos, imágenes e idiomas ausentes, cartas ambiguas y propias, filtros antes de paginar, combinación de rareza/expansión sobre una misma variante, consultas compartidas, caché válida/corrupta, reintento y conservación del manifiesto ante una publicación fallida.
 - `npm run typecheck`, `npm run lint`, `npm run build`: correctos.
 - Rutas de catálogo, detalle y especie inexistente en ES/EN a 320, 390, 768 y 1440 px: sin desbordamiento horizontal.
 - Búsqueda `#1025` encuentra Pecharunt; filtros reinician la página. La recarga y la vuelta desde una ficha conservan búsqueda/filtros.
@@ -50,7 +50,7 @@ El catálogo completo ocupa 9.537.771 bytes repartidos en 1.029 archivos, incluy
 | Índice de 1.025 especies | 1.001.731 bytes | 81.424 bytes |
 | Variantes de Pikachu (247 cartas) | 87.423 bytes | 7.059 bytes |
 
-Compilación: 414,66 kB de JavaScript entre todos los fragmentos (132,80 kB gzip) y 33,99 kB de CSS (9,34 kB gzip), además de fuentes y tres imágenes locales ya existentes. Las rutas de catálogo se cargan bajo demanda. Las ilustraciones externas son diferidas; las tarjetas TCG usan WebP pequeño y el diálogo solicita la versión grande. Los tamaños gzip son cálculos de compilación, no una medición del servidor público.
+Compilación: 415,10 kB de JavaScript entre todos los fragmentos (132,90 kB gzip) y 33,99 kB de CSS (9,34 kB gzip), además de fuentes y tres imágenes locales ya existentes. Las rutas de catálogo se cargan bajo demanda. Las ilustraciones externas son diferidas; las tarjetas TCG usan WebP pequeño y el diálogo solicita la versión grande. Los tamaños gzip son cálculos de compilación, no una medición del servidor público.
 
 Una pasada en `vite preview`, Edge sin limitación artificial y equipo local: 159 ms hasta el título de portada y 274 ms desde pulsar Catálogo hasta sus resultados. Son medidas locales orientativas, no una puntuación Lighthouse ni una garantía de velocidad en redes móviles.
 
@@ -63,7 +63,18 @@ Una pasada en `vite preview`, Edge sin limitación artificial y equipo local: 15
 
 ## Revisión independiente
 
-Pendiente de cerrar sobre el conjunto de esta rama. Se registrarán aquí los hallazgos y su comprobación antes de la subida final.
+Un revisor independiente examinó el rango `d216ebc..800e02f`, el plan, los contratos y los casos de revisión. No encontró problemas críticos. Se corrigieron los siguientes hallazgos en una pasada:
+
+1. Repetir una importación podía truncar archivos publicados antes de sustituir el manifiesto. Ahora cada escritura usa un temporal y un renombrado atómico, y los archivos idénticos se reutilizan sin abrirlos para escritura. Una prueba simula una escritura interrumpida y comprueba que el archivo servido y el manifiesto conservan su contenido.
+2. Un archivo podía contener cartas sin localización ES/EN utilizable y romper la ficha. Se rechaza antes de guardarlo en caché y se permite reintentar.
+3. Un archivo vacío, parcial o con identificadores duplicados podía contradecir el recuento del índice. Ahora se concilian las cartas TCG y el respaldo propio esperado por separado.
+4. Una imagen española mostrada en la interfaz inglesa podía llevar un aviso que decía «English». Aunque la revisión lo clasificó como menor, se trató como una corrección funcional de procedencia: el idioma indicado era falso. El aviso usa ahora el idioma efectivo. Se reprodujo con la carta real `sm3.5-1` y se comprobó en el navegador.
+
+Las pruebas de estos errores fallaron antes de los cambios y pasaron después. Durante la importación real de comprobación, Windows bloqueó temporalmente el reemplazo de un archivo existente (EPERM). La auditoría confirmó que el catálogo seguía íntegro. Se añadió una regresión para reutilizar archivos idénticos; la importación repetida terminó correctamente y conservó la misma versión y los mismos recuentos.
+
+Resultado final: 35 pruebas correctas, tipos y análisis de código sin errores, compilación correcta y recorrido de interfaz ES/EN repetido sin errores. Se pasaron los 1.025 archivos de variantes por la validación utilizada en el navegador. No se aplazan hallazgos menores de esta revisión.
+
+Se mantiene fuera de esta entrega, de forma explícita: cuentas/economía/combates y asignaciones jugables de formas (requieren sus siguientes fases); ediciones ajenas al catálogo EN/ES (exigirían nuevas fuentes y conciliación); dispositivos físicos y Safari (necesitan una validación adicional antes de afirmar compatibilidad completa).
 
 ## Siguiente fase
 

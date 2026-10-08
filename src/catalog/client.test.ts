@@ -67,3 +67,75 @@ test('failed detail requests are retryable, successful details are cached per sn
   await repo.listVariants(25)
   assert.equal(detailRequests, 2)
 })
+
+test('unsupported card languages are rejected before caching and can be retried', async () => {
+  const valid = JSON.parse(
+    readFileSync(new URL(`../../public${manifest.variantsPath}/25.json`, import.meta.url), 'utf8'),
+  )
+  const invalid = structuredClone(valid)
+  invalid[0].localizations = { fr: { name: 'Pikachu', imageUrl: null } }
+  let broken = true
+  const repo = createCatalogRepository((async (url: string | URL | Request) => {
+    const path = String(url)
+    return Response.json(
+      path.endsWith('/25.json')
+        ? broken
+          ? invalid
+          : valid
+        : path.endsWith('manifest.json')
+          ? manifest
+          : records,
+    )
+  }) as typeof fetch)
+  await assert.rejects(() => repo.listVariants(25), /catalog/i)
+  broken = false
+  assert.equal((await repo.listVariants(25)).length, records[0].cardCount)
+})
+test('variant shards must match the index and contain unique identities', async (t) => {
+  const valid = JSON.parse(
+    readFileSync(new URL(`../../public${manifest.variantsPath}/25.json`, import.meta.url), 'utf8'),
+  )
+  for (const [name, variants] of [
+    ['empty', []],
+    ['partial', valid.slice(0, -1)],
+    ['duplicate', [...valid.slice(0, -1), valid[0]]],
+    ['unexpected custom card', [...valid, { ...valid[0], id: 'prisma-25', origin: 'pokeprisma' }]],
+  ] as const) {
+    await t.test(name, async () => {
+      const repo = createCatalogRepository((async (url: string | URL | Request) => {
+        const path = String(url)
+        return Response.json(
+          path.endsWith('/25.json')
+            ? variants
+            : path.endsWith('manifest.json')
+              ? manifest
+              : records,
+        )
+      }) as typeof fetch)
+      await assert.rejects(() => repo.listVariants(25), /catalog/i)
+    })
+  }
+})
+
+test('an expected custom fallback is accepted separately from the TCG count', async () => {
+  const { fallbackCard } = await import('./normalize.ts')
+  const species = { ...records[0], cardCount: 0 }
+  const custom = fallbackCard(species)
+  let missing = true
+  const fallbackManifest = { ...manifest, species: 1, expectedSpecies: 1, fallbackSpecies: [25] }
+  const repo = createCatalogRepository((async (url: string | URL | Request) => {
+    const path = String(url)
+    return Response.json(
+      path.endsWith('/25.json')
+        ? missing
+          ? []
+          : [custom]
+        : path.endsWith('manifest.json')
+          ? fallbackManifest
+          : [species],
+    )
+  }) as typeof fetch)
+  await assert.rejects(() => repo.listVariants(25), /catalog/i)
+  missing = false
+  assert.deepEqual(await repo.listVariants(25), [custom])
+})

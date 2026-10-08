@@ -1,4 +1,4 @@
-import { mkdir, readFile, rename, stat, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, rename, stat, unlink, writeFile } from 'node:fs/promises'
 import { join, resolve, sep } from 'node:path'
 import { randomUUID } from 'node:crypto'
 
@@ -30,6 +30,21 @@ export async function cachedText(
   await rename(temporary, path)
   return value
 }
+async function writeAtomically(path: string, value: string): Promise<void> {
+  try {
+    if ((await readFile(path, 'utf8')) === value) return
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error
+  }
+  const temporary = path + '.' + randomUUID() + '.tmp'
+  try {
+    await writeFile(temporary, value)
+    await rename(temporary, path)
+  } finally {
+    await unlink(temporary).catch(() => {})
+  }
+}
+
 export async function publishSnapshot(
   directory: string,
   manifest: unknown,
@@ -45,10 +60,8 @@ export async function publishSnapshot(
   const manifestText = JSON.stringify(manifest)
   for (const [path, value] of serialized) {
     await mkdir(resolve(path, '..'), { recursive: true })
-    await writeFile(path, value)
+    await writeAtomically(path, value)
   }
   await mkdir(root, { recursive: true })
-  const temporary = join(root, `manifest-${randomUUID()}.tmp`)
-  await writeFile(temporary, manifestText)
-  await rename(temporary, join(root, 'manifest.json'))
+  await writeAtomically(join(root, 'manifest.json'), manifestText)
 }

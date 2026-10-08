@@ -232,7 +232,11 @@ export function SpeciesDetails() {
                 <p>{t(`rarities.${card.rarity}`, { defaultValue: card.rarity })}</p>
                 <span>{card.set.name}</span>
                 {view.imageUrl && view.language !== locale && (
-                  <small className="language-fallback">{t('catalog.languageFallback')}</small>
+                  <small className="language-fallback">
+                    {t('catalog.languageFallback', {
+                      language: t(view.language === 'es' ? 'common.spanish' : 'common.english'),
+                    })}
+                  </small>
                 )}
                 {card.mapping !== 'species' && (
                   <small className="mapping-note">{t('catalog.ambiguousShort')}</small>

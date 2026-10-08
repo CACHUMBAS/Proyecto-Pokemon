@@ -192,7 +192,7 @@
     "cardsFound": "{{count}} carta en esta selección",
     "cardsFound_other": "{{count}} cartas en esta selección",
     "clearCardFilters": "Ver todas sus cartas",
-    "languageFallback": "Ilustración disponible en inglés",
+    "languageFallback": "Ilustración disponible en {{language}}",
     "ambiguousShort": "Asociación pendiente de revisión",
     "ambiguous": "Esta carta contiene varias especies o una asociación incompleta. Se muestra como referencia; su asignación para combates está pendiente.",
     "cardNotice": "Los tipos, rarezas y textos impresos pertenecen al TCG. Las reglas y estadísticas de combate de PokePrisma se crearán en una fase posterior.",

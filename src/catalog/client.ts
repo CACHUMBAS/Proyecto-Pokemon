@@ -30,6 +30,7 @@ function validSpecies(value: unknown): value is SpeciesRecord {
         typeof f.isDefault === 'boolean',
     ) &&
     Number.isInteger(value.cardCount) &&
+    Number(value.cardCount) >= 0 &&
     Array.isArray(value.facets) &&
     value.facets.every((f) => obj(f) && typeof f.rarity === 'string' && typeof f.setId === 'string')
   )
@@ -53,7 +54,7 @@ function validCard(value: unknown): value is CardRecord {
     return false
   const locales = Object.values(value.localizations)
   return (
-    locales.length > 0 &&
+    (obj(value.localizations.es) || obj(value.localizations.en)) &&
     locales.every(
       (l) =>
         obj(l) &&
@@ -76,6 +77,8 @@ function validManifest(value: unknown): value is CatalogManifest {
   return (
     value.speciesFile === `${prefix}/species.json` &&
     value.variantsPath === `${prefix}/variants` &&
+    Array.isArray(value.fallbackSpecies) &&
+    value.fallbackSpecies.every((id) => Number.isInteger(id) && Number(id) > 0) &&
     strings(value.rarities) &&
     Array.isArray(value.sets) &&
     value.sets.every((s) => obj(s) && typeof s.id === 'string' && typeof s.name === 'string') &&
@@ -119,7 +122,8 @@ export function createCatalogRepository(fetcher: typeof fetch = fetch) {
     async listVariants(id: number) {
       if (!Number.isInteger(id) || id < 1) throw new Error('Invalid catalog species ID')
       const { manifest, species } = await load()
-      if (!species.some((s) => s.id === id)) throw new Error('Unknown catalog species ID')
+      const entry = species.find((s) => s.id === id)
+      if (!entry) throw new Error('Unknown catalog species ID')
       const key = `${manifest.version}/${id}`
       if (!details.has(key)) {
         if (details.size >= 20) details.delete(details.keys().next().value!)
@@ -130,7 +134,11 @@ export function createCatalogRepository(fetcher: typeof fetch = fetch) {
               if (
                 !Array.isArray(value) ||
                 !value.every(validCard) ||
-                value.some((c) => !c.speciesIds.includes(id))
+                value.some((c) => c.category !== 'Pokemon' || !c.speciesIds.includes(id)) ||
+                new Set(value.map((c) => c.id)).size !== value.length ||
+                value.filter((c) => c.origin === 'tcgdex').length !== entry.cardCount ||
+                value.filter((c) => c.origin === 'pokeprisma').length !==
+                  (manifest.fallbackSpecies.includes(id) ? 1 : 0)
               )
                 throw new Error('Invalid catalog variants')
               return value

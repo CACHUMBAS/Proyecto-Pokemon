@@ -86,3 +86,66 @@ test('failed refresh preserves previous cache and failed publication preserves m
     await rm(directory, { recursive: true, force: true })
   }
 })
+
+test('interrupted same-version publication keeps the published shard and manifest intact', async (t) => {
+  const fs = await import('node:fs/promises')
+  const { syncBuiltinESMExports } = await import('node:module')
+  const directory = await mkdtemp(join(tmpdir(), 'prisma-atomic-'))
+  const file = 'snapshots/same/species.json'
+  const payload = { pokemon: [25, 26] }
+  try {
+    await publishSnapshot(directory, { version: 'same' }, { [file]: payload })
+    const original = fs.default.writeFile
+    t.mock.method(
+      fs.default,
+      'writeFile',
+      async (...[path, data, options]: Parameters<typeof original>) => {
+        if (String(path).includes('species.json')) {
+          await original(path, '{', options)
+          throw new Error('simulated disk-full interruption')
+        }
+        return original(path, data, options)
+      },
+    )
+    syncBuiltinESMExports()
+    await assert.rejects(
+      () => publishSnapshot(directory, { version: 'same' }, { [file]: { pokemon: [25, 26, 27] } }),
+      /disk-full/,
+    )
+    assert.deepEqual(JSON.parse(await readFile(join(directory, file), 'utf8')), payload)
+    assert.deepEqual(JSON.parse(await readFile(join(directory, 'manifest.json'), 'utf8')), {
+      version: 'same',
+    })
+  } finally {
+    t.mock.restoreAll()
+    syncBuiltinESMExports()
+    await rm(directory, { recursive: true, force: true })
+  }
+})
+
+test('identical published shards are reused without opening them for writing', async (t) => {
+  const fs = await import('node:fs/promises')
+  const { syncBuiltinESMExports } = await import('node:module')
+  const directory = await mkdtemp(join(tmpdir(), 'prisma-reuse-'))
+  const file = 'snapshots/same/species.json'
+  const payload = { pokemon: [25] }
+  try {
+    await publishSnapshot(directory, { version: 'same' }, { [file]: payload })
+    const original = fs.default.writeFile
+    t.mock.method(
+      fs.default,
+      'writeFile',
+      async (...[path, data, options]: Parameters<typeof original>) => {
+        if (String(path).includes('species.json')) throw new Error('existing shard is locked')
+        return original(path, data, options)
+      },
+    )
+    syncBuiltinESMExports()
+    await publishSnapshot(directory, { version: 'same' }, { [file]: payload })
+    assert.deepEqual(JSON.parse(await readFile(join(directory, file), 'utf8')), payload)
+  } finally {
+    t.mock.restoreAll()
+    syncBuiltinESMExports()
+    await rm(directory, { recursive: true, force: true })
+  }
+})

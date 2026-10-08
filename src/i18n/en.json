@@ -183,7 +183,7 @@
     "cardsFound": "{{count}} card in this selection",
     "cardsFound_other": "{{count}} cards in this selection",
     "clearCardFilters": "View all its cards",
-    "languageFallback": "Artwork available in English",
+    "languageFallback": "Artwork available in {{language}}",
     "ambiguousShort": "Mapping awaits review",
     "ambiguous": "This card includes multiple species or an incomplete mapping. It is shown for reference; its assignment for battles is pending.",
     "cardNotice": "Printed types, rarities and text belong to the TCG. PokePrisma battle rules and stats will be developed in a later phase.",
