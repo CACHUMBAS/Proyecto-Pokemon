@@ -47,3 +47,5 @@ Se recuperaron **87 ilustraciones inglesas** de seis colecciones: 2011 (12), 201
 - El recuento original de 1.357 registros sin imagen en TCGdex sigue describiendo esa fuente; 87 cuentan ahora con respaldo visual local en la aplicación. No se afirma que estén recuperadas todas las ilustraciones ausentes del catálogo.
 
 Comprobaciones: 39 pruebas automatizadas correctas; tipos, lint y compilación correctos. Los 174 archivos se decodificaron en el navegador. Las doce cartas de 2011 se abrieron y ampliaron en ES/EN, con proveedores externos bloqueados, comprobando imagen local, procedencia y cierre por teclado. Capturas de escritorio y móvil revisadas; no se añadieron cuentas ni costes.
+
+Revisión independiente de `5b8f8ef..2d10947`: sin hallazgos críticos, importantes ni menores. Se verificaron identidad, idioma y procedencia de los 87 registros, junto con las cuatro pruebas específicas y los hashes de los 174 archivos. Los casos sin fuente fiable y la discrepancia de `2021swsh-12` permanecen documentados; no se sustituyen por arte de otra carta.
