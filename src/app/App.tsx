@@ -3,18 +3,22 @@ import { Outlet, useLocation } from 'react-router'
 import { AppShell } from '../components/layout/AppShell'
 
 export function App() {
-  const { pathname, hash, key } = useLocation()
-  const previousNavigation = useRef(key)
+  const location = useLocation()
+  const previousNavigation = useRef(location)
   useEffect(() => {
-    if (hash) {
-      document.getElementById(hash.slice(1))?.scrollIntoView()
-    } else if (previousNavigation.current !== key) {
-      // The same route can be activated again, including after clearing an anchor.
+    const previous = previousNavigation.current
+    if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView()
+    else if (
+      previous.key !== location.key &&
+      (previous.pathname !== location.pathname ||
+        previous.hash !== location.hash ||
+        (location.pathname === '/' && previous.search === location.search))
+    ) {
       window.scrollTo({ top: 0, behavior: 'instant' })
       document.getElementById('main')?.focus({ preventScroll: true })
     }
-    previousNavigation.current = key
-  }, [pathname, hash, key])
+    previousNavigation.current = location
+  }, [location])
   return (
     <AppShell>
       <Outlet />

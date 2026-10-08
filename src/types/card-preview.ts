@@ -8,6 +8,7 @@ export interface CardPreview {
   typeLabels: string[]
   origin: 'tcgdex' | 'pokeprisma'
   language: Locale | 'other'
+  presentation?: 'tcg' | 'prisma'
   illustrator?: string
   sourceUrl?: string
 }

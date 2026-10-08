@@ -105,3 +105,30 @@
     background-position: 50% 50%;
   }
 }
+.pokemon-card-prisma {
+  background: radial-gradient(circle at 50% 30%, #2c4b55, #13222f 70%);
+}
+.pokemon-card-prisma img {
+  position: absolute;
+  top: 10%;
+  height: 65%;
+  width: 100%;
+  object-fit: contain;
+}
+.prisma-card-label {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 24px;
+  text-align: center;
+}
+.prisma-card-label strong {
+  display: block;
+  font: 500 24px var(--font-display);
+}
+.prisma-card-label small {
+  display: block;
+  margin-top: 10px;
+  font: 10px var(--font-body);
+  color: var(--mint);
+}

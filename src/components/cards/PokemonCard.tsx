@@ -35,7 +35,8 @@ function resetReflection(event: PointerEvent<HTMLElement>) {
 export function PokemonCard({ card, onSelect, priority = false }: Props) {
   const { t } = useTranslation()
   const [failedUrl, setFailedUrl] = useState<string | null>(null)
-  const name = card.origin === 'pokeprisma' ? t(card.name) : card.name
+  const name =
+    card.origin === 'pokeprisma' && card.presentation !== 'prisma' ? t(card.name) : card.name
   const missing = !card.imageUrl || failedUrl === card.imageUrl
   const contents = (
     <>
@@ -58,12 +59,18 @@ export function PokemonCard({ card, onSelect, priority = false }: Props) {
           onError={() => setFailedUrl(card.imageUrl)}
         />
       )}
+      {card.presentation === 'prisma' && !missing && (
+        <span className="prisma-card-label">
+          <strong>{name}</strong>
+          <small>{t('catalog.customCard')}</small>
+        </span>
+      )}
       <span className="card-foil" aria-hidden="true" />
       <span className="card-glint" aria-hidden="true" />
     </>
   )
   const shared = {
-    className: `pokemon-card${missing ? ' pokemon-card-missing' : ''}`,
+    className: `pokemon-card${missing ? ' pokemon-card-missing' : ''}${card.presentation === 'prisma' ? ' pokemon-card-prisma' : ''}`,
     onPointerMove: moveReflection,
     onPointerLeave: resetReflection,
   }

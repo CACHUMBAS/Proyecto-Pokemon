@@ -24,7 +24,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <NavLink to="/" end>
             {t('nav.home')}
           </NavLink>
-          <Link to="/#universo">{t('nav.universe')}</Link>
+          <NavLink to="/catalogo">{t('nav.catalog')}</NavLink>
           <NavLink to="/diseno">{t('nav.preview')}</NavLink>
         </nav>
         <LanguageSwitcher />
@@ -43,6 +43,9 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
         <div className="footer-bottom">
           <p>{t('footer.note')}</p>
+          <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">
+            {t('footer.pokemon')} ↗
+          </a>
           <a href="https://tcgdex.dev/" target="_blank" rel="noreferrer">
             {t('footer.sources')} ↗
           </a>

@@ -27,7 +27,7 @@ export function LandingPage() {
           </h1>
           <p className="hero-description">{t('hero.description')}</p>
           <div className="hero-actions">
-            <Link className="button button-primary" to="/diseno">
+            <Link className="button button-primary" to="/catalogo">
               {t('hero.cta')}
               <span aria-hidden="true">↗</span>
             </Link>
@@ -193,19 +193,19 @@ export function LandingPage() {
             <p className="eyebrow">{t('roadmap.eyebrow')}</p>
             <h2 id="roadmap-title">{t('roadmap.title')}</h2>
             <p>{t('roadmap.intro')}</p>
-            <Link className="text-link" to="/diseno">
+            <Link className="text-link" to="/catalogo">
               {t('roadmap.cta')}
               <span aria-hidden="true">↗</span>
             </Link>
           </div>
           <ol className="roadmap-list">
             {[1, 2, 3, 4].map((step) => (
-              <li key={step} className={step === 1 ? 'current-step' : ''}>
+              <li key={step} className={step === 2 ? 'current-step' : ''}>
                 <span className="step-index">0{step}</span>
                 <div>
                   <div className="step-title">
                     <h3>{t(`roadmap.step${step}`)}</h3>
-                    <span>{t(step === 1 ? 'roadmap.now' : 'roadmap.later')}</span>
+                    <span>{t(step < 3 ? 'roadmap.done' : 'roadmap.later')}</span>
                   </div>
                   <p>{t(`roadmap.desc${step}`)}</p>
                 </div>
