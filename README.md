@@ -2,7 +2,7 @@
 
 Un universo web de cartas Pokémon y combates por turnos, para móvil y ordenador.
 
-**Estado: fase 1, base visual funcional.** Esta entrega permite explorar la portada, cambiar entre español e inglés, navegar por las muestras, filtrar cartas y abrir sus fichas. El catálogo completo, las cuentas, los sobres, la economía y los combates pertenecen a las siguientes fases.
+**Estado: fase 2, catálogo navegable.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Las cuentas, la colección personal, los sobres, la economía y los combates pertenecen a las siguientes fases.
 
 ## Abrir en VS Code
 
@@ -18,6 +18,7 @@ npm start
 ## Comprobar y compilar
 
 ```sh
+npm test
 npm run typecheck
 npm run lint
 npm run build
@@ -31,6 +32,8 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 ## Qué se puede probar
 
 - `/`: portada, carrusel manual de tres cartas, presentación y recorrido del proyecto.
+- `/catalogo`: las 1.025 especies, búsqueda por nombre o número nacional y filtros combinables por generación, tipo de Pokémon, rareza y expansión. Los filtros se guardan en la URL.
+- `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
 - `/diseno`: tres cartas verificadas de TCGdex y una muestra propia sin imagen; filtros y fichas de procedencia.
 - Cualquier ruta desconocida: pantalla de recuperación con enlace al inicio.
 - Selector ES/EN: guarda solo el idioma; sigue funcionando si el navegador bloquea almacenamiento.
@@ -43,21 +46,38 @@ Las ilustraciones de las tres cartas están en inglés y así se identifican en 
 
 - `src/app`: rutas y contenedor de la aplicación.
 - `src/components`: tarjetas, idioma, botones y estructura compartida.
-- `src/features`: portada, vista de muestras y ruta no encontrada.
+- `src/features`: portada, catálogo, fichas de especie, muestras y ruta no encontrada.
+- `src/catalog`: contratos, normalización, consulta y pruebas del catálogo.
+- `scripts/catalog`: importación, caché y validación de cobertura.
+- `public/catalog`: manifiesto e instantáneas versionadas; índice y un archivo de variantes por especie.
 - `src/i18n`: diccionarios y sincronización de idioma.
 - `src/styles`: fuentes locales, tokens y estilos comunes.
 - `public/assets/cards`: tres ilustraciones de muestra, sin dependencia de la API al navegar.
+
+## Actualizar el catálogo
+
+El catálogo importado está incluido: **no necesitas ejecutar la importación para abrir la web**.
+
+```sh
+npm run catalog:import
+npm run catalog:import -- --refresh
+```
+
+El primer comando reutiliza respuestas válidas durante siete días en `.cache/catalog`; el segundo vuelve a descargarlas. Ambos requieren conexión a Internet y no requieren claves. Un fallo de validación conserva el manifiesto anterior. Las revisiones de las tablas oficiales de PokéAPI y del árbol de ilustraciones están fijadas en `scripts/catalog/import.ts`: `--refresh` no cambia esas revisiones. Si PokéAPI añade especies, hay que actualizar y comprobar esas revisiones antes de publicar un catálogo nuevo. No se elimina automáticamente ninguna instantánea antigua.
+
+El índice EN y las traducciones ES se concilian por identificador, nunca por nombre. Hay 129 asociaciones ambiguas y 1.357 registros sin imagen en la fuente; se identifican o se muestran con alternativa. El catálogo comprende los registros EN/ES disponibles en TCGdex, no una afirmación de contener todas las ediciones japonesas ni todas las cartas históricas. Las imágenes del catálogo se solicitan a sus proveedores conforme se necesitan. Las fichas cargan variantes por especie; la portada no descarga los 9,54 MB de metadatos.
 
 ## Documentación
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
 - [Revisión de la fase 1](docs/revision-fase-1.md).
-- [Plan inicial de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
+- [Plan de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
+- [Revisión de la fase 2](docs/revision-fase-2.md).
 - [Procedencia de imágenes y tipografías](public/_sources.md).
 
 ## Desarrollo
 
-Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon. Cada fase se desarrolla en su rama con comprobaciones y commits. La base visual está en `feat/base-pokeprisma`, a partir de `docs/plan-inicial`.
+Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon. Cada fase se desarrolla en su rama con comprobaciones y commits. La base visual está en `feat/base-pokeprisma`, a partir de `docs/plan-inicial`. El catálogo se desarrolla en `feat/catalogo-pokeprisma`, desde `d216ebc`.
 
 No requiere claves ni cuentas de servicios para ejecutarse. No se han creado recursos de Supabase ni publicado esta web. Las funciones persistentes y multijugador se construirán en sus fases, manteniendo presupuesto inicial de cero euros. Las credenciales locales están excluidas de Git.
