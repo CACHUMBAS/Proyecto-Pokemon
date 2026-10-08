@@ -1,0 +1,18 @@
+.site-header { min-height: 106px; display: flex; gap: 24px; align-items: center; justify-content: space-between; border-bottom: 1px solid #26303e; }
+.brand { display: inline-flex; align-items: center; gap: 12px; color: #9df4d8; text-decoration: none; font: 650 24px 'Space Grotesk Variable', sans-serif; letter-spacing: -1px; }
+.brand > span { color: #f1f5f7; }
+.brand-light { font-weight: 400; }
+.brand small { display: block; margin-top: 3px; font: 9px 'Manrope Variable', sans-serif; letter-spacing: 3px; color: #a1aabb; }
+.main-nav { display: flex; gap: 30px; }
+.main-nav a { padding-block: 14px; text-decoration: none; font-size: 13px; color: #a1aabb; }
+.main-nav a.active, .main-nav a:hover { color: #9df4d8; }
+.language-switcher { display: flex; border: 1px solid #303c4d; border-radius: 8px; padding: 3px; }
+.language-switcher button { border: 0; border-radius: 5px; background: transparent; color: #a1aabb; min-width: 44px; min-height: 44px; font-size: 12px; }
+.language-switcher button[aria-pressed='true'] { background: #25363d; color: #b5f8df; }
+.site-footer { border-top: 1px solid #26303e; padding-block: 40px 24px; }
+.footer-top, .footer-bottom { display: flex; gap: 24px; justify-content: space-between; align-items: center; }
+.footer-top > span { font-size: 12px; color: #a1aabb; }
+.footer-bottom { margin-top: 28px; font-size: 11px; color: #a1aabb; }
+.footer-bottom p { max-width: 540px; }
+.micro-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; }
+@media (max-width: 700px) { .site-header { flex-wrap: wrap; gap: 10px; padding-top: 18px; } .main-nav { order: 3; width: 100%; justify-content: space-between; gap: 10px; } .brand { font-size: 21px; } .footer-top, .footer-bottom { flex-wrap: wrap; } }

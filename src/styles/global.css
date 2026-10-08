@@ -1,0 +1,14 @@
+:root { font-family: 'Manrope Variable', sans-serif; color: #f1f5f7; background: #090f19; font-synthesis: none; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: inherit; }
+button { font: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid #98f5d5; outline-offset: 5px; }
+.page-width { width: min(1320px, calc(100% - 80px)); margin-inline: auto; }
+.section-space { padding-block: 80px; }
+h1, h2 { font-family: 'Space Grotesk Variable', sans-serif; white-space: pre-line; }
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+main:focus { outline: none; }
+.skip-link { position: fixed; top: 10px; left: 10px; transform: translateY(-160%); z-index: 100; background: #98f5d5; color: #090f19; padding: 16px; }
+.skip-link:focus { transform: none; }
+@media (max-width: 600px) { .page-width { width: calc(100% - 36px); } }
