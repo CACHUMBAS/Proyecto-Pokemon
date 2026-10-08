@@ -811,3 +811,13 @@
     transform: none;
   }
 }
+
+.artwork-language {
+  display: block;
+  margin-top: 5px;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  color: var(--muted);
+}

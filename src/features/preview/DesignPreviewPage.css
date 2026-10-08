@@ -46,6 +46,7 @@
   gap: 8px;
 }
 .filter-group button {
+  min-width: 44px;
   padding: 10px 16px;
   min-height: 44px;
   color: var(--muted);
@@ -241,6 +242,7 @@
     gap: 4px;
   }
   .filter-group button {
+    min-width: 44px;
     padding-inline: 10px;
     font-size: 10px;
   }
@@ -294,6 +296,7 @@
     font-size: 22px;
   }
   .filter-group button {
+    min-width: 44px;
     padding-inline: 9px;
   }
 }

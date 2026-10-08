@@ -85,6 +85,7 @@ export function LandingPage() {
           <div className="showcase-bottom">
             <span className="micro-label">
               {t('hero.index')} <span className="muted">/ 03</span>
+              <small className="artwork-language">{t('hero.cardLanguage')}</small>
             </span>
             <div className="showcase-controls">
               <button
