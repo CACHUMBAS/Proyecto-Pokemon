@@ -2,7 +2,7 @@
 
 Un universo web de cartas Pokémon y combates por turnos, para móvil y ordenador.
 
-**Estado: fase 2, catálogo navegable.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Las cuentas, la colección personal, los sobres, la economía y los combates pertenecen a las siguientes fases.
+**Estado: catálogo navegable y constructor de equipo de prueba local.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Las cuentas, la colección personal, los sobres, la economía y los combates pertenecen a las siguientes fases.
 
 ## Abrir en VS Code
 
@@ -70,6 +70,9 @@ El primer comando reutiliza respuestas válidas durante siete días en `.cache/c
 El índice EN y las traducciones ES se concilian por identificador, nunca por nombre. Hay 129 asociaciones ambiguas y 1.357 registros sin imagen en la fuente; se identifican o se muestran con alternativa. El catálogo comprende los registros EN/ES disponibles en TCGdex, no una afirmación de contener todas las ediciones japonesas ni todas las cartas históricas. Las imágenes del catálogo se solicitan a sus proveedores conforme se necesitan. Las fichas cargan variantes por especie; la portada no descarga los 9,54 MB de metadatos.
 
 ## Documentación
+
+- [Contexto para agentes](docs/CONTEXTO-IA.md).
+- [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
