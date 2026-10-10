@@ -224,6 +224,34 @@
   font-size: 12px;
   margin-top: 16px;
 }
+.team-picker-controls {
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+}
+.team-picker-controls .team-search {
+  flex: 1;
+  min-width: 0;
+}
+.team-type-filter {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.team-type-filter select {
+  min-height: 52px;
+  border: 1px solid #455a6b;
+  border-radius: 9px;
+  background: #111f2c;
+  color: var(--text);
+  font: inherit;
+  font-size: 16px;
+  padding: 12px 16px;
+  min-width: 170px;
+}
 .team-species-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -349,6 +377,13 @@
   }
   .team-picker-heading p:last-child {
     margin: 0;
+  }
+  .team-picker-controls {
+    flex-direction: column;
+  }
+  .team-type-filter select {
+    min-width: 0;
+    width: 100%;
   }
   .team-variants .button {
     padding-inline: 7px;

@@ -247,6 +247,8 @@
     "pickerHint": "Busca una especie y elige la carta que la representará. Una nueva ilustración sustituye a la anterior.",
     "search": "Buscar por nombre o número de Pokédex",
     "searchPlaceholder": "Pikachu, Umbreon, #006…",
+    "typeFilter": "Tipo de Pokémon",
+    "allTypes": "Todos los tipos",
     "speciesCount_one": "{{count}} especie encontrada",
     "speciesCount_other": "{{count}} especies encontradas",
     "chooseSpecies": "Elegir ilustración de {{name}}",

@@ -238,6 +238,8 @@
     "pickerHint": "Find a species and choose the card that represents it. A new illustration replaces the previous one.",
     "search": "Search by name or Pokédex number",
     "searchPlaceholder": "Pikachu, Umbreon, #006…",
+    "typeFilter": "Pokémon type",
+    "allTypes": "All types",
     "speciesCount_one": "{{count}} species found",
     "speciesCount_other": "{{count}} species found",
     "chooseSpecies": "Choose artwork for {{name}}",

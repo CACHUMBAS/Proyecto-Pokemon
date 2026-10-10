@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { catalogRepository } from '../../catalog/client'
 import { listSpecies } from '../../catalog/repository'
@@ -172,11 +172,22 @@ export function TeamPicker({
   const { t, i18n } = useTranslation()
   const locale = i18n.resolvedLanguage === 'en' ? 'en' : 'es'
   const [search, setSearch] = useState('')
+  const [typeFilter, setTypeFilter] = useState('')
   const [page, setPage] = useState(1)
   const [selected, setSelected] = useState<SpeciesRecord | null>(null)
   const input = useRef<HTMLInputElement>(null)
   const heading = useRef<HTMLHeadingElement>(null)
-  const result = listSpecies(species, { search, page, pageSize: 12, locale })
+  const types = useMemo(
+    () => [...new Set(species.flatMap((s) => s.types))].sort(),
+    [species],
+  )
+  const result = listSpecies(species, {
+    search,
+    type: typeFilter || undefined,
+    page,
+    pageSize: 12,
+    locale,
+  })
   const knownSpecies = new Set(species.map((entry) => entry.id))
   function turn(next: number) {
     setPage(next)
@@ -208,19 +219,38 @@ export function TeamPicker({
             </div>
             <p>{t('team.pickerHint')}</p>
           </div>
-          <label className="team-search">
-            {t('team.search')}
-            <input
-              ref={input}
-              type="search"
-              value={search}
-              placeholder={t('team.searchPlaceholder')}
-              onChange={(event) => {
-                setSearch(event.target.value)
-                setPage(1)
-              }}
-            />
-          </label>
+          <div className="team-picker-controls">
+            <label className="team-search">
+              {t('team.search')}
+              <input
+                ref={input}
+                type="search"
+                value={search}
+                placeholder={t('team.searchPlaceholder')}
+                onChange={(event) => {
+                  setSearch(event.target.value)
+                  setPage(1)
+                }}
+              />
+            </label>
+            <label className="team-type-filter">
+              {t('team.typeFilter')}
+              <select
+                value={typeFilter}
+                onChange={(event) => {
+                  setTypeFilter(event.target.value)
+                  setPage(1)
+                }}
+              >
+                <option value="">{t('team.allTypes')}</option>
+                {types.map((type) => (
+                  <option key={type} value={type}>
+                    {t(`pokemonTypes.${type}`, { defaultValue: type })}
+                  </option>
+                ))}
+              </select>
+            </label>
+          </div>
           <p className="team-hint" role="status">
             {t('team.speciesCount', { count: result.total })}
           </p>
