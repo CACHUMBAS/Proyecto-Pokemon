@@ -1,13 +1,14 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-12 (cambio de nombre a Lumemon). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-12 (propuesta de reglas de combate). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base de este cambio: `3f78710`, rama `feat/team-type-filter`, con el filtro de tipos añadido por Antigravity y el constructor de equipos de `ac75b2f`.
+- Base del bloque de documentación actual: `bc5be88`, rama `chore/rename-lumemon`. Incluye el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
+- Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - La rama activa, cambios pendientes y ascendencia se consultan siempre en Git. Estos nombres son una referencia fechada, no una orden de cambiar de rama.
 
 ## Nombre actual y compatibilidad
@@ -62,13 +63,23 @@ Verificación registrada por Antigravity para `3f78710` (`feat/team-type-filter`
 
 El documento de diseño distingue requisitos del usuario de propuestas iniciales. Sus valores de estados, reglas de desempate, rareza, movimientos y economía requieren concreción y pruebas. Léelo cuando una tarea toque esas reglas; no transformes una propuesta en un hecho implementado.
 
+## Propuesta de reglas preparada el 12 de octubre
+
+El usuario autorizó redactar el documento del siguiente bloque. Se ha preparado [Reglas de combate v0.1](superpowers/specs/2026-10-12-lumemon-battle-rules-design.md), pendiente de revisión; la petición no se ha convertido en una implementación completa del motor.
+
+Propone cinco presupuestos por rareza (240/252/264/276/288), cuatro estadísticas normalizadas por especie y perfiles distintos por variante, movimientos con potencia/recarga propias, afinidad ×1,25, tabla de 18 tipos, orden de resolución, estados, cuatro efectos de apoyo y límite de 60 turnos. Incluye el mapeo explícito de las 42 etiquetas actuales y ejemplos calculables. Son decisiones de diseño propuestas, no cifras oficiales ni equilibrio demostrado.
+
+El catálogo actual no guarda estadísticas base ni movimientos de combate. Se necesitará una instantánea de datos de batalla separada, con perfiles/movimientos/apoyos verificados; no se puede empezar una partida usando solamente el borrador local. No cambiar claves, IDs, el contrato del validador de composición o los datos publicados por leer esta propuesta.
+
+Verificación documental del 2026-10-12: 42 etiquetas de rareza cubiertas sin duplicados; 324 relaciones de tipos contrastadas con la revisión fijada de PokéAPI; cinco presupuestos, dos perfiles y ejemplos de daño/curación/veneno/recargas comprobados; enlaces locales correctos, sin marcadores incompletos y solo cinco archivos Markdown modificados. No hay nuevos resultados de pruebas de aplicación: este bloque no toca código. El equilibrio sigue pendiente de partidas de prueba.
+
 ## Pendiente: no anunciar como disponible
 
 Motor de combate, tabla de tipos integrada, daño, estadísticas propias por variante, movimientos, estados, apoyos, tutorial, IA de rivales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión, música y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato, pendiente de la instrucción concreta del usuario: acordar un bloque pequeño del motor (contratos de combate, datos y reglas), antes de intentar un tutorial completo. Este archivo no ordena comenzarlo.
+Siguiente candidato: revisar la propuesta escrita y, con aprobación del usuario, preparar un bloque pequeño de contratos mínimos y cálculo de efectividad/daño con pruebas. La resolución de turnos, estados/apoyos, datos jugables y tutorial irán después. Este archivo no autoriza implementar esos bloques.
 
 ## Mapa de código y comandos
 
@@ -107,6 +118,7 @@ La clave local del equipo es `pokeprisma.team-draft.v1`. Un error de red no debe
 2. Código, Git, manifiesto y comprobaciones actuales: estado real.
 3. Este resumen: decisiones y mapa; actualizar si queda obsoleto.
 4. [Diseño del juego](superpowers/specs/2026-10-08-pokeprisma-design.md): visión y reglas propuestas, no lista de funciones terminadas. La fecha inicial es histórica; el nombre se actualizó a Lumemon.
-5. [README](../README.md), [revisión de catálogo](revision-fase-2.md) y [revisión de equipos](revision-equipo.md): uso y evidencia.
+5. [Reglas de combate v0.1](superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): propuesta concreta para revisión; no reglas ya aprobadas ni motor disponible.
+6. [README](../README.md), [revisión de catálogo](revision-fase-2.md) y [revisión de equipos](revision-equipo.md): uso y evidencia.
 
 Al cerrar una tarea, modifica solo las secciones que cambian: fecha, entrega realizada, evidencia y pendientes. No borres requisitos futuros ni marques una fase completa por terminar uno de sus componentes. Si documentación y código discrepan, señala la diferencia y corrige el estado tras comprobarlo.

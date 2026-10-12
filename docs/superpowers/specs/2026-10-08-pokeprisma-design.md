@@ -5,6 +5,8 @@ Estado original (8 de octubre): documento inicial para revisión, con decisiones
 
 Nombre actualizado a Lumemon el 12 de octubre de 2026; antes PokePrisma. Se conserva la ruta histórica de este documento. Este cambio no modifica las reglas propuestas.
 
+Complemento del 12 de octubre: [reglas de combate v0.1](2026-10-12-lumemon-battle-rules-design.md), con valores y casos concretos propuestos para revisión. No implica que el motor esté implementado ni que el equilibrio esté aprobado.
+
 ## 1. Objetivo y alcance acordado
 
 Crear un juego web personal que pueda abrirse posteriormente a más jugadores. Debe funcionar en navegador tanto en móvil como en ordenador, en español e inglés, con una identidad visual de Pokédex tecnológica y cartas holográficas. Presupuesto inicial: cero euros. Sin fecha de entrega impuesta.

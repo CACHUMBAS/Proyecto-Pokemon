@@ -77,6 +77,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
+- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; documento para revisión, todavía sin motor.
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
 - [Revisión de la fase 1](docs/revision-fase-1.md).
 - [Plan de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
