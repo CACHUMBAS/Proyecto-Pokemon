@@ -1,6 +1,8 @@
-# PokePrisma
+# Lumemon
 
 Un universo web de cartas Pokémon y combates por turnos, para móvil y ordenador.
+
+Desde el 12 de octubre de 2026, el proyecto se llama **Lumemon** (antes PokePrisma). El repositorio sigue siendo `CACHUMBAS/Proyecto-Pokemon` y la carpeta local conserva su nombre. Las claves `pokeprisma.locale.v1` y `pokeprisma.team-draft.v1`, los IDs y el origen interno `pokeprisma` se mantienen para conservar los datos existentes. Las rutas, ramas y documentos históricos pueden contener el nombre anterior.
 
 **Estado: catálogo navegable y constructor de equipo de prueba local.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Las cuentas, la colección personal, los sobres, la economía y los combates pertenecen a las siguientes fases.
 
@@ -13,7 +15,7 @@ npm ci
 npm start
 ```
 
-`npm start` y `npm run dev` hacen lo mismo. Abre [PokePrisma local](http://127.0.0.1:5174/). El puerto 5174 es fijo para evitar confundir este proyecto con otras webs locales. Para detenerlo, pulsa Ctrl+C en la terminal que lo inició.
+`npm start` y `npm run dev` hacen lo mismo. Abre [Lumemon local](http://127.0.0.1:5174/). El puerto 5174 es fijo para evitar confundir este proyecto con otras webs locales. Para detenerlo, pulsa Ctrl+C en la terminal que lo inició.
 
 ## Comprobar y compilar
 
@@ -41,7 +43,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 - Teclado: enlace para saltar al contenido, filtros, selección de carta, Escape para cerrar ficha y foco restaurado.
 - Reflejos holográficos con ratón; acabado estático en táctil y con movimiento reducido.
 
-Las ilustraciones de las tres cartas están en inglés y así se identifican en sus fichas. Sus tipos y rarezas son del TCG impreso; todavía no son estadísticas del combate de PokePrisma. No existe un inventario, sesión o saldo simulado.
+Las ilustraciones de las tres cartas están en inglés y así se identifican en sus fichas. Sus tipos y rarezas son del TCG impreso; todavía no son estadísticas del combate de Lumemon. No existe un inventario, sesión o saldo simulado.
 
 ## Estructura
 
@@ -99,7 +101,7 @@ El validador comprueba la composición: todavía no comprueba propiedad de las c
 
 ### Constructor de equipo de prueba
 
-En `/equipo` puedes buscar las 1.025 especies, elegir ilustraciones, completar seis plazas, sustituir una variante en su misma plaza, quitar miembros y elegir quién va primero. Está disponible en ES/EN y se adapta a móvil y escritorio.
+En `/equipo` puedes buscar las 1.025 especies, filtrarlas por tipo de Pokémon, elegir ilustraciones, completar seis plazas, sustituir una variante en su misma plaza, quitar miembros y elegir quién va primero. Está disponible en ES/EN y se adapta a móvil y escritorio.
 
 Se guarda un único borrador en `pokeprisma.team-draft.v1`, solo con identificadores de cartas y especies. Al recuperarlo se contrasta con el catálogo. Los errores de red conservan el borrador para reintentar; un borrador inválido requiere descartarlo explícitamente. Las pestañas escuchan cambios de almacenamiento y comparan la selección guardada antes de escribir. Si el almacenamiento está bloqueado o lleno, se permite editar en memoria con un aviso de que no se ha guardado. No es un inventario ni concede propiedad de cartas, no sincroniza entre dispositivos y aún no permite combatir.
 

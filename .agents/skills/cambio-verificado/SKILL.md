@@ -7,7 +7,7 @@ description: Use when implementing or debugging a scoped change in an existing w
 
 ## Antes de editar
 
-Lee las instrucciones del repositorio. En PokePrisma están en `AGENTS.md`, con el estado en `docs/CONTEXTO-IA.md`, ambos relativos a la raíz del proyecto. No supongas que conoces la rama, herramientas o pruebas de otra sesión.
+Lee las instrucciones del repositorio. En Lumemon están en `AGENTS.md`, con el estado en `docs/CONTEXTO-IA.md`, ambos relativos a la raíz del proyecto. No supongas que conoces la rama, herramientas o pruebas de otra sesión.
 
 Define un resultado observable y limita los archivos afectados. Consulta el código actual y sus llamadores antes de proponer interfaces. Continúa dentro de lo autorizado; pregunta solo por ambigüedades que cambien el resultado o por operaciones que requieran permiso. Detente si el alcance crece y explica qué nueva decisión hace falta.
 

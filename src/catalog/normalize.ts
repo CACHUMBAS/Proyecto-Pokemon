@@ -139,7 +139,7 @@ export function fallbackCard(species: SpeciesRecord): CardRecord {
     },
     rarity: 'prisma',
     tcgTypes: [],
-    set: { id: 'prisma', name: 'PokePrisma' },
+    set: { id: 'prisma', name: 'Lumemon' },
     illustrator: null,
   }
 }

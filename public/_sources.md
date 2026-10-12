@@ -12,7 +12,7 @@ Imágenes en inglés. La interfaz lo señala en la vitrina y en las fichas. Los 
 
 - API y documentación de imágenes: https://tcgdex.dev/assets
 - Pokémon y sus ilustraciones pertenecen a sus respectivos titulares. La disponibilidad en una API no equivale a autorización para explotación comercial.
-- El emblema geométrico de PokePrisma, la carta sin imagen y las figuras de sobres/equipo/combate son gráficos SVG/CSS creados para esta interfaz. No se presentan como productos o cartas oficiales.
+- El emblema geométrico de Lumemon, la carta sin imagen y las figuras de sobres/equipo/combate son gráficos SVG/CSS creados para esta interfaz. No se presentan como productos o cartas oficiales.
 - Tipografías locales mediante Fontsource: Manrope y Space Grotesk, SIL Open Font License 1.1. Paquetes y licencias conservados en las dependencias: https://fontsource.org/fonts/manrope y https://fontsource.org/fonts/space-grotesk.
 - No se han añadido música ni archivos de audio en esta fase.
 

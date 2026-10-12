@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "PokePrisma · Tu próxima leyenda",
-    "description": "Descubre PokePrisma: un proyecto de colección de cartas Pokémon y combates por turnos."
+    "title": "Lumemon · Tu próxima leyenda",
+    "description": "Descubre Lumemon: un proyecto de colección de cartas Pokémon y combates por turnos."
   },
   "nav": {
     "home": "Inicio",
@@ -24,7 +24,7 @@
     "details": "Ver detalles de {{name}}",
     "missing": "Imagen no disponible",
     "official": "Carta de TCGdex",
-    "custom": "Muestra de PokePrisma",
+    "custom": "Muestra de Lumemon",
     "language": "Idioma de la carta",
     "english": "Inglés",
     "spanish": "Español",
@@ -34,7 +34,7 @@
     "type": "Tipo TCG",
     "rarity": "Rareza TCG",
     "sample": "Carta de muestra",
-    "cardNotice": "Estas cartas muestran la dirección visual. Todavía no forman parte de un inventario ni tienen estadísticas de combate de PokePrisma."
+    "cardNotice": "Estas cartas muestran la dirección visual. Todavía no forman parte de un inventario ni tienen estadísticas de combate de Lumemon."
   },
   "hero": {
     "eyebrow": "UN NUEVO UNIVERSO POR DESCUBRIR",
@@ -45,7 +45,7 @@
     "cta": "Explora las cartas",
     "secondary": "Descubre el proyecto",
     "note": "Catálogo disponible · Juego en desarrollo",
-    "specimen": "VITRINA PRISMA",
+    "specimen": "VITRINA LUMEMON",
     "specimenSub": "Ilustraciones que cuentan historias",
     "hint": "Mueve el cursor sobre la carta",
     "caption": "Una colección de posibilidades.",
@@ -54,7 +54,7 @@
     "cardLanguage": "Ilustración de carta en inglés"
   },
   "universe": {
-    "eyebrow": "EL UNIVERSO POKEPRISMA",
+    "eyebrow": "EL UNIVERSO LUMEMON",
     "title": "Colecciona emoción.\nConstruye tu historia.",
     "intro": "Tres formas de vivir una misma aventura. Este es el juego que estamos preparando.",
     "packsTitle": "Cada sobre, una posibilidad.",
@@ -71,7 +71,7 @@
   "roadmap": {
     "eyebrow": "PASO A PASO",
     "title": "Una gran aventura\nempieza con una buena base.",
-    "intro": "Así crecerá PokePrisma. Cada etapa se construirá y se probará antes de avanzar.",
+    "intro": "Así crecerá Lumemon. Cada etapa se construirá y se probará antes de avanzar.",
     "now": "AHORA",
     "later": "DESPUÉS",
     "step1": "Identidad y experiencia",
@@ -97,7 +97,7 @@
     "count_other": "{{count}} cartas de muestra",
     "selection": "Selecciona una carta para conocer su procedencia.",
     "motion": "Los reflejos se adaptan a tu preferencia de movimiento reducido. En móvil, las cartas conservan un acabado estático.",
-    "noImageName": "Prisma por descubrir",
+    "noImageName": "Carta por descubrir",
     "noImageRarity": "Muestra visual",
     "noImageType": "Sin asignar",
     "noImageDetails": "Este ejemplo permite revisar cómo se ve una carta cuando su imagen no está disponible.",
@@ -138,16 +138,16 @@
     "tagline": "Descubre. Colecciona. Conecta.",
     "note": "Proyecto fan en desarrollo. No afiliado a Nintendo, Game Freak ni The Pokémon Company.",
     "sources": "Cartas: TCGdex",
-    "build": "CATÁLOGO PRISMA · 2026",
+    "build": "CATÁLOGO LUMEMON · 2026",
     "pokemon": "Pokémon: PokéAPI"
   },
   "notFound": {
     "label": "RUTA NO ENCONTRADA",
     "title": "Este camino aún no está en el mapa.",
-    "description": "Vuelve al inicio y continúa explorando PokePrisma."
+    "description": "Vuelve al inicio y continúa explorando Lumemon."
   },
   "catalog": {
-    "eyebrow": "POKÉDEX / ARCHIVO PRISMA",
+    "eyebrow": "POKÉDEX / ARCHIVO LUMEMON",
     "title": "El universo,\ncarta a carta.",
     "description": "Busca tu Pokémon favorito, descubre sus ilustraciones y explora todas las generaciones. Cada especie es el comienzo de una colección.",
     "species": "Especies",
@@ -179,7 +179,7 @@
     "emptyTitle": "Todavía no hay una coincidencia.",
     "emptyBody": "Prueba otro nombre o ajusta los filtros para seguir explorando.",
     "notice": "Catálogo de consulta. Las cartas aún no forman parte de un inventario. Los nombres de expansiones se conservan tal como los facilita TCGdex en inglés.",
-    "loading": "Abriendo el archivo Prisma…",
+    "loading": "Abriendo el archivo Lumemon…",
     "errorTitle": "No hemos podido abrir el catálogo.",
     "errorBody": "Comprueba la conexión y vuelve a intentarlo. Tu progreso no se modifica.",
     "retry": "Volver a intentar",
@@ -196,8 +196,8 @@
     "languageFallback": "Ilustración disponible en {{language}}",
     "ambiguousShort": "Asociación pendiente de revisión",
     "ambiguous": "Esta carta contiene varias especies o una asociación incompleta. Se muestra como referencia; su asignación para combates está pendiente.",
-    "cardNotice": "Los tipos, rarezas y textos impresos pertenecen al TCG. Las reglas y estadísticas de combate de PokePrisma se crearán en una fase posterior.",
-    "customCard": "Carta propia de PokePrisma",
+    "cardNotice": "Los tipos, rarezas y textos impresos pertenecen al TCG. Las reglas y estadísticas de combate de Lumemon se crearán en una fase posterior.",
+    "customCard": "Carta propia de Lumemon",
     "imageSource": "Origen de la ilustración: archivo Pokémon TCG"
   },
   "pokemonTypes": {
@@ -254,7 +254,7 @@
     "chooseSpecies": "Elegir ilustración de {{name}}",
     "changeSpecies": "Cambiar especie",
     "variantsTitle": "Elige tu {{name}}",
-    "variantHint": "Elige una ilustración. Sus valores impresos pertenecen al TCG; las estadísticas de PokePrisma se definirán más adelante.",
+    "variantHint": "Elige una ilustración. Sus valores impresos pertenecen al TCG; las estadísticas de Lumemon se definirán más adelante.",
     "filterVariants": "Filtrar por expansión, rareza o identificador",
     "add": "Añadir al equipo",
     "replace": "Cambiar ilustración",

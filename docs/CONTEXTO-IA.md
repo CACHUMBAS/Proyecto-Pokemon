@@ -1,14 +1,29 @@
-# PokePrisma — contexto de continuidad
+# Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-10 (filtro de tipo en equipo). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-12 (cambio de nombre a Lumemon). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Último bloque de aplicación comprobado: `ac75b2f`, rama `feat/constructor-equipo`.
-- Este paquete de continuidad se crea en `docs/contexto-antigravity`, descendiente de ese commit. Un agente nuevo debe conservar esta base o una posterior; no cambiar a `main` sin comprobar que contiene el trabajo.
+- Base de este cambio: `3f78710`, rama `feat/team-type-filter`, con el filtro de tipos añadido por Antigravity y el constructor de equipos de `ac75b2f`.
+- Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - La rama activa, cambios pendientes y ascendencia se consultan siempre en Git. Estos nombres son una referencia fechada, no una orden de cambiar de rama.
+
+## Nombre actual y compatibilidad
+
+El usuario ha elegido **Lumemon** y autorizado cambiar los archivos, actualizar este contexto y subir una rama nueva a GitHub. PokePrisma es el nombre anterior; PokéLume y otras propuestas no son nombres vigentes. Esta tarea no autoriza desplegar ni fusionar con la rama principal.
+
+La interfaz ES/EN, el logotipo textual, títulos, metadatos, nombre del paquete npm y documentación activa usan Lumemon. Se mantienen por compatibilidad:
+
+- Carpeta local `PokePrisma` y repositorio `CACHUMBAS/Proyecto-Pokemon`.
+- Claves locales `pokeprisma.locale.v1` y `pokeprisma.team-draft.v1`, con su mismo formato y versión.
+- Origen de cartas `pokeprisma`, IDs `prisma-*`, identificadores de expansión/rareza/presentación `prisma`, instantánea y rutas del catálogo. El nombre visible de la expansión propia pasa a Lumemon.
+- Nombres de ramas, commits, rutas y documentos de revisiones/planes históricos. Son referencias del historial, no la marca actual.
+
+No hagas un reemplazo global de estos identificadores ni borres almacenamiento para cambiar la marca. Una migración futura tendría que conservar los datos guardados.
+
+Verificado el 2026-10-12: 59 pruebas correctas (`npm test`), lint y build con typecheck. En Edge, sobre la compilación local: marca, título y metadatos en ES/EN; inicio, catálogo, ficha de Pikachu, equipo, muestras y ruta inexistente; anchos 320/390/1440 px sin desbordamiento. Se restauraron un idioma EN y un equipo de Umbreon guardados con las claves anteriores, conservados al recargar y navegar; sin errores JavaScript. Revisadas capturas de cabecera, portada móvil y sobre. No se han añadido dependencias ni modificado las reglas del juego.
 
 ## Usuario y forma de trabajar
 
@@ -32,7 +47,7 @@ La instantánea `523febef1a683029` contiene 1.025 especies, 23.770 registros de 
 
 Última verificación de aplicación registrada para `ac75b2f`: 59 pruebas, lint, typecheck incluido en build y compilación correctos. Se comprobó Edge en 320/390/768/1440 px, ES/EN, añadir seis, impedir séptima especie, sustituir, promover, retirar, recargar, navegar, red fallida, borrador corrupto, almacenamiento bloqueado y dos pestañas. Es evidencia histórica; ejecuta lo pertinente después de cambiar código.
 
-Verificación de `feat/team-type-filter`: 59 pruebas, lint, typecheck y build correctos. Filtro por tipo de Pokémon (PokéAPI) añadido al selector de `/equipo` con "Todos los tipos", combinación con búsqueda, paginación reseteada al cambiar filtro, mensaje de vacío, ES/EN y diseño responsive.
+Verificación registrada por Antigravity para `3f78710` (`feat/team-type-filter`): 59 pruebas, lint, typecheck y build correctos. Filtro por tipo de Pokémon (PokéAPI) añadido al selector de `/equipo` con "Todos los tipos", combinación con búsqueda, paginación reseteada al cambiar filtro, mensaje de vacío, ES/EN y diseño responsive.
 
 ## Lo que el usuario quiere como producto final
 
@@ -49,7 +64,7 @@ El documento de diseño distingue requisitos del usuario de propuestas iniciales
 
 ## Pendiente: no anunciar como disponible
 
-Motor de combate, tabla de tipos integrada, daño, estadísticas propias por variante, movimientos, estados, apoyos, tutorial, IA de rivales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión, música y publicación de PokePrisma.
+Motor de combate, tabla de tipos integrada, daño, estadísticas propias por variante, movimientos, estados, apoyos, tutorial, IA de rivales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión, música y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
@@ -91,7 +106,7 @@ La clave local del equipo es `pokeprisma.team-draft.v1`. Un error de red no debe
 1. Instrucciones actuales del usuario: alcance y autorizaciones.
 2. Código, Git, manifiesto y comprobaciones actuales: estado real.
 3. Este resumen: decisiones y mapa; actualizar si queda obsoleto.
-4. [Diseño del juego](superpowers/specs/2026-10-08-pokeprisma-design.md): visión y reglas propuestas, no lista de funciones terminadas. Su cabecera es histórica.
+4. [Diseño del juego](superpowers/specs/2026-10-08-pokeprisma-design.md): visión y reglas propuestas, no lista de funciones terminadas. La fecha inicial es histórica; el nombre se actualizó a Lumemon.
 5. [README](../README.md), [revisión de catálogo](revision-fase-2.md) y [revisión de equipos](revision-equipo.md): uso y evidencia.
 
 Al cerrar una tarea, modifica solo las secciones que cambian: fecha, entrega realizada, evidencia y pendientes. No borres requisitos futuros ni marques una fase completa por terminar uno de sus componentes. Si documentación y código discrepan, señala la diferencia y corrige el estado tras comprobarlo.

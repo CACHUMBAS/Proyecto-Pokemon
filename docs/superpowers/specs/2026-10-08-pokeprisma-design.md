@@ -1,7 +1,9 @@
-# PokePrisma — Diseño del juego
+# Lumemon — Diseño del juego
 
 Fecha: 8 de octubre de 2026.
-Estado: documento inicial para revisión. Recoge decisiones acordadas y propuestas de implementación; aún no hay producto implementado.
+Estado original (8 de octubre): documento inicial para revisión, con decisiones acordadas y propuestas de implementación. El estado actual de la aplicación está en [CONTEXTO-IA.md](../../CONTEXTO-IA.md).
+
+Nombre actualizado a Lumemon el 12 de octubre de 2026; antes PokePrisma. Se conserva la ruta histórica de este documento. Este cambio no modifica las reglas propuestas.
 
 ## 1. Objetivo y alcance acordado
 
@@ -17,7 +19,7 @@ El juego usa reglas propias simplificadas. No reproduce el reglamento del TCG f�
 
 | Área | Decisión |
 | --- | --- |
-| Nombre | PokePrisma |
+| Nombre | Lumemon |
 | Plataforma | Página web para móvil y ordenador |
 | Idiomas | Español e inglés |
 | Identidad | Pokédex tecnológica con cartas holográficas |
@@ -93,7 +95,7 @@ PokéAPI aporta las relaciones de tipos de Pokémon y movimientos. Se aplican in
 
 Se define una selección de movimientos implementados, con daño directo o efectos de estado conocidos. Cada especie recibe hasta cuatro movimientos compatibles. Mostrar una descripción en una API no significa que su efecto se pueda ejecutar: movimientos o habilidades que el motor no implemente no aparecerán como opciones jugables.
 
-Las estadísticas de combate se identifican como reglas de PokePrisma, diferenciadas del texto impreso de las cartas físicas. La fórmula de daño, los multiplicadores de rareza y el mapeo de movimientos se concretan en una configuración versionada en la fase del motor y se prueban antes de integrarse en partidas con recompensas.
+Las estadísticas de combate se identifican como reglas de Lumemon, diferenciadas del texto impreso de las cartas físicas. La fórmula de daño, los multiplicadores de rareza y el mapeo de movimientos se concretan en una configuración versionada en la fase del motor y se prueban antes de integrarse en partidas con recompensas.
 
 ### Estados propuestos
 
@@ -211,4 +213,4 @@ La primera fase tiene un plan propio. Las fases siguientes tendrán planes concr
 - https://supabase.com/docs/guides/auth/social-login/auth-google — acceso con Google.
 - https://vercel.com/docs/plans/hobby — alojamiento para uso personal.
 
-Las cuotas y los servicios se verificarán nuevamente al configurarlos. Los detalles de equilibrio de este documento son propuestas propias para PokePrisma, no reglas atribuidas a Pokémon ni funcionalidades garantizadas por sus API.
+Las cuotas y los servicios se verificarán nuevamente al configurarlos. Los detalles de equilibrio de este documento son propuestas propias para Lumemon, no reglas atribuidas a Pokémon ni funcionalidades garantizadas por sus API.

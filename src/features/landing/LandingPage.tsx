@@ -55,8 +55,8 @@ export function LandingPage() {
           <div className="orbital orbital-one" aria-hidden="true" />
           <div className="orbital orbital-two" aria-hidden="true" />
           <div className="showcase-coordinate" aria-hidden="true">
-            PKP—{String(active + 1).padStart(3, '0')}
-            <br />✦ PRISM SERIES
+            LUM—{String(active + 1).padStart(3, '0')}
+            <br />✦ LUMEMON SERIES
           </div>
           <div className="card-stage">
             {sampleCards.map((card, index) => {
@@ -119,7 +119,7 @@ export function LandingPage() {
           <span>{t('hero.captionSub')}</span>
         </p>
         <span className="strip-line" aria-hidden="true" />
-        <span className="micro-label">POKÉMON / TCG / PRISMA</span>
+        <span className="micro-label">POKÉMON / TCG / LUMEMON</span>
       </div>
       <section
         id="universo"
@@ -142,9 +142,9 @@ export function LandingPage() {
             <div className="pack-art" aria-hidden="true">
               <div className="pack pack-back" />
               <div className="pack pack-front">
-                <span>POKEPRISMA</span>
+                <span>LUMEMON</span>
                 <PrismMark />
-                <span>PRISM COLLECTION</span>
+                <span>LUMEMON COLLECTION</span>
               </div>
               <i className="pack-spark">✧</i>
             </div>

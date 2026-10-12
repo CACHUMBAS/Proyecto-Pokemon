@@ -1,4 +1,4 @@
-# PokePrisma — instrucciones para agentes
+# Lumemon — instrucciones para agentes
 
 Estas reglas son específicas de este repositorio y sirven para Antigravity, Codex y otros agentes compatibles. Las instrucciones actuales del usuario y las políticas del entorno tienen prioridad. No transfieren permisos ni acceso a herramientas entre aplicaciones.
 
@@ -27,6 +27,7 @@ Estas reglas son específicas de este repositorio y sirven para Antigravity, Cod
 ## Invariantes del producto
 
 - Web React/Vite/TypeScript, móvil y escritorio, ES/EN; reutiliza componentes y estilo existentes.
+- La marca actual es Lumemon (antes PokePrisma). Conserva las claves `pokeprisma.locale.v1` y `pokeprisma.team-draft.v1`, el origen `pokeprisma`, los IDs `prisma-*` y los identificadores técnicos `prisma`: el cambio de marca no autoriza una migración de datos ni renombrar la carpeta o el repositorio.
 - Catálogo no equivale a colección. `/equipo` es un borrador local de prueba, no propiedad de cartas ni persistencia de cuenta.
 - Seis especies distintas; IDs del catálogo, nunca nombres para enlazar variantes. No habilites asociaciones ambiguas ni interpretes tipos/textos del TCG como reglas de combate.
 - Presupuesto inicial cero. No publiques claves, `.env`, tokens ni datos personales en commits, documentación o respuestas.

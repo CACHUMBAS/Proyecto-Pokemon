@@ -13,10 +13,10 @@ export function AppShell({ children }: { children: ReactNode }) {
         {t('nav.skip')}
       </a>
       <header className="site-header page-width">
-        <Link to="/" className="brand" aria-label={`PokePrisma · ${t('nav.home')}`}>
+        <Link to="/" className="brand" aria-label={`Lumemon · ${t('nav.home')}`}>
           <PrismMark />
           <span>
-            Poke<span className="brand-light">Prisma</span>
+            Lume<span className="brand-light">mon</span>
             <small>CARD UNIVERSE</small>
           </span>
         </Link>
@@ -37,7 +37,7 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="footer-top">
           <Link to="/" className="brand">
             <PrismMark />
-            <span>PokePrisma</span>
+            <span>Lumemon</span>
           </Link>
           <span>{t('footer.tagline')}</span>
           <span className="micro-label">{t('footer.build')}</span>
