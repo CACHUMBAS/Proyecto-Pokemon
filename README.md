@@ -77,7 +77,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
-- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; documento para revisión, todavía sin motor.
+- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño implementado, resto del motor pendiente.
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
 - [Revisión de la fase 1](docs/revision-fase-1.md).
 - [Plan de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
@@ -107,3 +107,9 @@ En `/equipo` puedes buscar las 1.025 especies, filtrarlas por tipo de Pokémon, 
 Se guarda un único borrador en `pokeprisma.team-draft.v1`, solo con identificadores de cartas y especies. Al recuperarlo se contrasta con el catálogo. Los errores de red conservan el borrador para reintentar; un borrador inválido requiere descartarlo explícitamente. Las pestañas escuchan cambios de almacenamiento y comparan la selección guardada antes de escribir. Si el almacenamiento está bloqueado o lleno, se permite editar en memoria con un aviso de que no se ha guardado. No es un inventario ni concede propiedad de cartas, no sincroniza entre dispositivos y aún no permite combatir.
 
 Comprobaciones de este bloque: [revisión del constructor](docs/revision-equipo.md).
+
+### Primer cálculo de combate
+
+`src/battle/type-chart.ts` calcula ventajas, resistencias e inmunidades de los 18 tipos de Pokémon, incluyendo dobles tipos. `src/battle/damage.ts` aplica las reglas `lumemon-damage-v1`: afinidad, quemadura, impulso y barrera, con un único redondeo exacto y vida mínima cero. `damage` devuelve la vida realmente perdida, limitada por la disponible; no el daño teórico de un golpe que exceda esa vida.
+
+Son funciones puras, todavía sin conectar al tablero: no resuelven turnos, aplican estados, consumen apoyos ni crean partidas. El llamador debe validar especie, movimiento y permiso para actuar. No emplean estadísticas del TCG ni consultan APIs en cada ataque. Las fuentes fijadas y sus hashes están en [fixtures de combate](src/battle/fixtures/README.md); el alcance está en el [plan del cálculo](docs/superpowers/plans/2026-10-13-lumemon-battle-damage.md).

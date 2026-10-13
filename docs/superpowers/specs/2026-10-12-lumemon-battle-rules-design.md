@@ -2,7 +2,7 @@
 
 Fecha: 12 de octubre de 2026. Base: `bc5be88`. Rama: `docs/reglas-combate-lumemon`.
 
-**Estado: propuesta para revisión, sin motor implementado.** Este bloque concreta el [diseño del juego](2026-10-08-pokeprisma-design.md). Las cifras son reglas propias de Lumemon, no estadísticas oficiales de las cartas ni un equilibrio demostrado. El usuario ha autorizado redactar este documento; aprobar su implementación será un paso posterior.
+**Estado a 13 de octubre: base de reglas aceptada para continuar; primer cálculo de tipos/daño implementado, resto del motor pendiente.** Este bloque concreta el [diseño del juego](2026-10-08-pokeprisma-design.md). Las cifras son reglas propias de Lumemon, no estadísticas oficiales de las cartas ni un equilibrio demostrado. El usuario autorizó el documento y, tras la explicación del combate, continuar con el primer bloque el 13 de octubre. El [plan de tipos y daño](../plans/2026-10-13-lumemon-battle-damage.md) registra ese alcance. Esto no implica que exista ya una partida jugable.
 
 ## 1. Decisión de diseño
 
@@ -160,7 +160,7 @@ Ejemplos didácticos de Lumemon, no valores oficiales de cartas:
 
 Antes de considerar listo el núcleo: comprobar reparto exacto de B y perfiles distintos; las 324 relaciones de tipos; dobles tipos e inmunidades; prioridad de cambios/apoyos; orden congelado tras velocidad; cancelación por KO; estados y sus excepciones; recargas y caducidad de mejoras; sustituciones, empates y límite de turnos. Con las mismas entradas y sorteos debe obtenerse exactamente el mismo estado y registro, sin mutar los originales. Estos son criterios para pruebas futuras, no pruebas del motor ya superadas.
 
-**Siguiente entrega propuesta tras revisar estas reglas:** tipos de datos mínimos y cálculo puro de efectividad/daño con pruebas. Después: resolución del turno, estados/apoyos y, por último, datos jugables y tutorial. Este documento no ordena implementar todo ese recorrido de una vez.
+**Primer bloque entregado el 13 de octubre:** tipos de datos mínimos y cálculo puro de efectividad/daño con pruebas. No implementa estados puros, aplicación/caducidad de mejoras o el orden del turno; recibe los factores ya validados por el llamador. Siguiente candidato: resolución del turno; después estados/apoyos y, por último, datos jugables y tutorial. Este documento no ordena implementar todo ese recorrido de una vez.
 
 ## Apéndice: tabla de tipos y fuentes
 

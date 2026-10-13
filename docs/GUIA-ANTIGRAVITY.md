@@ -4,9 +4,9 @@
 
 Abre como carpeta de trabajo la raíz del proyecto Lumemon, donde están `package.json` y `AGENTS.md`. En este ordenador es `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. Cierra o deja inactivo el agente de Codex antes de permitir que Antigravity edite esa misma carpeta.
 
-La entrega documental más reciente es `docs/reglas-combate-lumemon`, creada desde `bc5be88` (`chore/rename-lumemon`). Incluye el nombre Lumemon, el constructor y el filtro de tipos de Antigravity. Usa esta rama o una posterior que contenga el trabajo; comprueba el estado y conserva cualquier cambio local antes de cambiar de rama.
+La entrega más reciente es `feat/battle-damage`, creada desde `afc4b10` (`docs/reglas-combate-lumemon`). Incluye el primer cálculo de tipos/daño, las reglas escritas, el nombre Lumemon, el constructor y el filtro de tipos de Antigravity. Usa esta rama o una posterior que contenga el trabajo; comprueba el estado y conserva cualquier cambio local antes de cambiar de rama.
 
-Las [reglas de combate v0.1](superpowers/specs/2026-10-12-lumemon-battle-rules-design.md) son una propuesta para revisión: no son un motor implementado ni una orden de programarlo. Conserva esa distinción en los resúmenes y pide una tarea concreta antes de empezar otro bloque.
+Las [reglas de combate v0.1](superpowers/specs/2026-10-12-lumemon-battle-rules-design.md) guían el equilibrio inicial. Ya existen las funciones puras `getTypeEffectiveness` y `calculateDamage`, pero aún no hay partidas ni resolución de turnos o estados. El [plan del cálculo](superpowers/plans/2026-10-13-lumemon-battle-damage.md) delimita lo entregado. Conserva esa distinción y pide una tarea concreta antes de empezar otro bloque.
 
 La marca visible es Lumemon; la carpeta local sigue llamándose `PokePrisma` y el repositorio `Proyecto-Pokemon`. Las claves de idioma/equipo y los identificadores internos conservan el nombre anterior por compatibilidad. No hagas un reemplazo global ni migres estos datos como parte de otra tarea.
 
@@ -17,7 +17,7 @@ Los archivos están preparados, pero su carga en tu instalación no se ha compro
 ```text
 Estamos trabajando en Lumemon (antes PokePrisma). La carpeta local sigue llamándose PokePrisma; no la renombres ni cambies las claves de almacenamiento. Lee AGENTS.md y docs/CONTEXTO-IA.md desde la raíz del repositorio. Comprueba la rama, el último commit y los cambios pendientes. Confirma si detectas la skill cambio-verificado y lee su SKILL.md.
 
-Por ahora no modifiques archivos ni hagas instalaciones. Resume en cinco puntos qué funciona, qué falta, las reglas de trabajo y cuál sería un siguiente bloque pequeño. Distingue el equipo local de prueba de un inventario con cuenta. Si consultas las reglas de combate v0.1, distínguelas de código implementado y de decisiones ya aprobadas. No empieces ese bloque hasta que te lo pida.
+Por ahora no modifiques archivos ni hagas instalaciones. Resume en cinco puntos qué funciona, qué falta, las reglas de trabajo y cuál sería un siguiente bloque pequeño. Distingue el equipo local de prueba de un inventario con cuenta. Si consultas las reglas de combate v0.1, distingue el cálculo puro de tipos/daño ya implementado de los turnos, estados y partidas aún pendientes. No empieces ese bloque hasta que te lo pida.
 ```
 
 Si no detecta los archivos, comprueba la carpeta abierta y adjunta o menciona `AGENTS.md` explícitamente. Puedes revisar las skills activas en Customizations del panel de agente. No basta con que diga «he entendido»: su resumen debería mencionar Lumemon, el catálogo, `/equipo` con filtro de tipos, la compatibilidad del guardado local y que aún no existen combates ni cuentas.
