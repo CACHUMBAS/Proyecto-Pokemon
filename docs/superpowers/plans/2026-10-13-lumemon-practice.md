@@ -31,11 +31,11 @@
 - practiceReducer(session|null, command): PracticeSession|null; start, turn, replace, exit. turn/replace/exit incluyen battleId y expectedVersion; mensajes obsoletos se ignoran.
 - Sesión y bot se apoyan exclusivamente en resolveTurn/resolveReplacements; sustitución automática solo si el jugador sigue vivo.
 - listBattleSpecies(): copias de metadatos verificados; card-artwork.json replica exactamente los 24 registros seleccionados del catálogo.
-- [ ] RED: precompromiso, legalidad/recargas, inmutabilidad, mensaje duplicado/antiguo, KO de bot/jugador/ambos, final/reinicio, integridad de arte.
-- [ ] Ejecutar pruebas nuevas con stubs. Expected: fallos por implementación ausente.
-- [ ] GREEN: implementar sesión, metadatos y pantalla usando componentes existentes.
-- [ ] Ejecutar npm test, npm run lint, npm run build y npm run battle:check. Expected: todos correctos.
-- [ ] Verificar interfaz real y estados principales en navegador; corregir hallazgos.
-- [ ] Actualizar continuidad, revisar diff, commit y revisión independiente final. Expected: sin hallazgos importantes pendientes.
+- [x] RED: precompromiso, legalidad/recargas, inmutabilidad, mensaje duplicado/antiguo, KO de bot/jugador/ambos, final/reinicio, integridad de arte.
+- [x] Ejecutar pruebas nuevas con stubs. Expected: fallos por implementación ausente.
+- [x] GREEN: implementar sesión, metadatos y pantalla usando componentes existentes.
+- [x] Ejecutar npm test, npm run lint, npm run build y npm run battle:check. Expected: todos correctos.
+- [x] Verificar interfaz real y estados principales en navegador; corregir hallazgos.
+- [x] Actualizar continuidad, revisar diff, commit y revisión independiente final. Expected: sin hallazgos importantes pendientes.
 
 Cierre: push en rama nueva y verificar sincronización. Tutorial guiado, más cartas y servicios quedan para otro bloque.
