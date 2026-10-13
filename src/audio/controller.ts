@@ -122,7 +122,7 @@ export class BattleAudio {
     void this.syncMusic()
   }
   cue(cue: SoundCue): void {
-    this.stopEffects()
+    this.stopTransient()
     if (!this.audible || this.settings.effectsVolume === 0) return
     try {
       this.ports.effects.play(cue, this.settings.effectsVolume / 100)
@@ -130,6 +130,8 @@ export class BattleAudio {
       this.ports.onIssue('unavailable')
     }
     if (!cue.cryPath) return
+    this.release(this.cry)
+    this.cry = null
     try {
       const current = this.ports.media(cue.cryPath)
       this.cry = current
@@ -149,8 +151,11 @@ export class BattleAudio {
       this.ports.onIssue('cry')
     }
   }
-  stopEffects(): void {
+  stopTransient(): void {
     this.ports.effects.stop()
+  }
+  stopEffects(): void {
+    this.stopTransient()
     this.release(this.cry)
     this.cry = null
   }

@@ -115,13 +115,13 @@ test('rejected autoplay is contained and reports issue without throwing', async 
   assert.ok(r.issues.includes('music'))
   r.engine.dispose()
 })
-test('a cry is cancelled by a new cue and a pending play cannot survive mute', async () => {
+test('a cry is cancelled by a new cry and a pending play cannot survive mute', async () => {
   const r = rig()
   await r.engine.enable()
   r.engine.cue({ kind: 'switch', cryPath: '/assets/audio/cries/25.mp3' })
   const cry = r.media.at(-1)!
   assert.match(cry.src, /25.mp3/)
-  r.engine.cue({ kind: 'hit' })
+  r.engine.cue({ kind: 'switch', cryPath: '/assets/audio/cries/1.ogg' })
   assert.equal(cry.src, '')
   r.engine.disable()
   await Promise.resolve()
@@ -129,4 +129,19 @@ test('a cry is cancelled by a new cue and a pending play cannot survive mute', a
     r.media.every((m) => m.paused),
     true,
   )
+})
+
+test('a switch cry survives subsequent frame effects until explicit cancellation', async () => {
+  const r = rig()
+  await r.engine.enable()
+  r.engine.cue({ kind: 'switch', cryPath: '/assets/audio/cries/25.mp3' })
+  const cry = r.media.at(-1)!
+  r.engine.stopTransient()
+  r.engine.cue({ kind: 'attack', type: 'electric' })
+  await Promise.resolve()
+  assert.equal(cry.src, '/assets/audio/cries/25.mp3')
+  assert.equal(cry.paused, false)
+  r.engine.disable()
+  assert.equal(cry.src, '')
+  assert.equal(cry.paused, true)
 })

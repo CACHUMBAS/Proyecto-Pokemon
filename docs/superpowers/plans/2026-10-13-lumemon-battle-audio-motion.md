@@ -30,8 +30,14 @@
 - buildPlaybackFrames(before, after, events): PlaybackFrame[]; clones visuales, siempre último snapshot igual a after.
 - presentationReducer(state, command): comando de práctica o avance/salto asociado a battleId/version; ignora acciones durante reproducción y callbacks obsoletos.
 - BattleAudio: activar por gesto, configurar preferencias, música contextual, señales, pausa/limpieza. Adaptadores de media/contexto inyectados para comprobar fallos/carreras.
-- [ ] RED: orden/HP/KO/sustitución/inmunidad, stale timers y salto, preferencias corruptas y ciclos de audio.
-- [ ] GREEN: módulos puros y UI con audio/animaciones por tipo.
-- [ ] npm test, lint, build, battle:check. Expected: correctos.
-- [ ] Navegador: activar/mutar música, gritos, controles, móvil, secuencia, salida y final sin bloquear.
-- [ ] Documentar verificación, commit, revisión independiente y push.
+- [x] RED: orden/HP/KO/sustitución/inmunidad, stale timers y salto, preferencias corruptas y ciclos de audio.
+- [x] GREEN: módulos puros y UI con audio/animaciones por tipo.
+- [x] npm test, lint, build, battle:check. Expected: correctos.
+- [x] Navegador: activar/mutar música, gritos, controles, móvil, secuencia, salida y final sin bloquear.
+- [x] Documentar verificación, commit, revisión independiente y push.
+
+## Cierre de revisión
+
+Revisión independiente e0570ef..9bb4478: dos P2 corregidos en un pase. Los gritos sobreviven a los frames ordinarios; cancelación explícita conservada. Movimiento reducido/checkbox solo suprimen movimiento, conservando mensajes, duración y audio; Saltar omite el resto. Regresión de controlador RED→GREEN y regresión de navegador RED→GREEN, 123 pruebas correctas, lint/build y battle:check correctos. No hay menores pendientes.
+
+Límites revisados: música solo en /practica; FX propios; reglas/campaña/apoyos nuevos fuera; streaming dependiente de red/proveedor; procedencia sin dictamen de licencia comercial; mezcla subjetiva pendiente de escucha; caída real del proveedor, otros navegadores y preferencia OS no simulados. Son límites de la entrega, no funciones terminadas.

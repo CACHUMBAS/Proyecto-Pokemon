@@ -27,7 +27,7 @@ export function PracticePage() {
         ? 'finished'
         : 'battle',
   )
-  const { play, stop } = audio
+  const { play, stop, stopTransient } = audio
   const [choice, setChoice] = useState<{
     battleId: string
     version: number
@@ -46,12 +46,12 @@ export function PracticePage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [battleId, play, stop])
   useEffect(() => {
-    if (frame && playback.animations) {
+    if (frame) {
       const cue = frameCue(frame)
       if (cue) play(cue)
     }
-    return stop
-  }, [frame, playback.animations, play, stop])
+    return stopTransient
+  }, [frame, play, stopTransient])
   useEffect(() => {
     if (!playing) heading.current?.focus({ preventScroll: true })
   }, [battleId, version, playing])
@@ -117,6 +117,7 @@ export function PracticePage() {
           <BattleBoard
             battle={battle}
             frame={frame}
+            motion={playback.animations}
             playing={playing}
             cueKey={battleId + ':' + version + ':' + presentation.cursor}
             onSkip={() => {

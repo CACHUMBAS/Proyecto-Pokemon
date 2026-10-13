@@ -370,3 +370,7 @@
 .practice-arena {
   scroll-margin-top: 96px;
 }
+
+.practice-arena[data-motion='off'] .practice-fighter meter::-webkit-meter-optimum-value {
+  transition: none;
+}

@@ -21,17 +21,14 @@ export function useBattlePlayback() {
     const skip = () => {
       if (document.hidden) dispatch({ kind: 'skip', ...token })
     }
-    const timer = window.setTimeout(
-      () => dispatch({ kind: reducedMotion || !animations ? 'skip' : 'tick', ...token }),
-      reducedMotion || !animations ? 0 : frame.duration,
-    )
+    const timer = window.setTimeout(() => dispatch({ kind: 'tick', ...token }), frame.duration)
     skip()
     document.addEventListener('visibilitychange', skip)
     return () => {
       clearTimeout(timer)
       document.removeEventListener('visibilitychange', skip)
     }
-  }, [frame, battleId, version, cursor, reducedMotion, animations])
+  }, [frame, battleId, version, cursor])
   function skip() {
     if (battleId && version !== undefined)
       dispatch({ kind: 'skip', battleId, expectedVersion: version, cursor })

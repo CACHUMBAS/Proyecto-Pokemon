@@ -82,6 +82,7 @@ export function useBattleAudio(scene: 'setup' | 'battle' | 'finished') {
   }, [scene])
   const play = useCallback((cue: SoundCue) => controller.current?.cue(cue), [])
   const stop = useCallback(() => controller.current?.stopEffects(), [])
+  const stopTransient = useCallback(() => controller.current?.stopTransient(), [])
   function toggle() {
     if (enabled) {
       controller.current?.disable()
@@ -102,5 +103,5 @@ export function useBattleAudio(scene: 'setup' | 'battle' | 'finished') {
       /* Playback still works without storage. */
     }
   }
-  return { settings, enabled, issue, mediaHost, toggle, configure, play, stop }
+  return { settings, enabled, issue, mediaHost, toggle, configure, play, stop, stopTransient }
 }

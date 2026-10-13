@@ -13,6 +13,7 @@ import { fighterMotion } from './fighter-motion'
 import { describe } from './event-description'
 
 interface Props {
+  motion: boolean
   frame: PlaybackFrame | null
   playing: boolean
   cueKey: string
@@ -27,6 +28,7 @@ interface Props {
 export function BattleBoard({
   battle,
   frame,
+  motion,
   playing,
   cueKey,
   onSkip,
@@ -67,7 +69,12 @@ export function BattleBoard({
         </div>
       )}
       <div className="practice-battle-grid">
-        <section ref={arena} className="practice-arena" aria-label={t('practice.arena')}>
+        <section
+          ref={arena}
+          data-motion={motion ? 'on' : 'off'}
+          className="practice-arena"
+          aria-label={t('practice.arena')}
+        >
           <div className="practice-arena-top">
             <span className="micro-label">LUMEMON / ARENA 01</span>
             <span>{t('practice.local')}</span>
@@ -79,7 +86,9 @@ export function BattleBoard({
               return (
                 <article
                   key={side}
-                  className={'practice-fighter side-' + side + fighterMotion(frame, side)}
+                  className={
+                    'practice-fighter side-' + side + fighterMotion(motion ? frame : null, side)
+                  }
                 >
                   <p className="practice-owner">
                     {t(side === 0 ? 'practice.you' : 'practice.bot')}{' '}
@@ -129,7 +138,7 @@ export function BattleBoard({
                 </article>
               )
             })}
-            <BattleEffects key={cueKey} frame={frame} />
+            <BattleEffects key={cueKey} frame={motion ? frame : null} />
             <span className="practice-versus" aria-hidden="true">
               VS
             </span>
