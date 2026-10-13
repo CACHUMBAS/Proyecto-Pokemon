@@ -1,0 +1,59 @@
+move_id,local_language_id,name
+1,7,Destructor
+1,9,Pound
+2,7,Golpe Kárate
+2,9,Karate Chop
+22,7,Látigo Cepa
+22,9,Vine Whip
+33,7,Placaje
+33,9,Tackle
+47,7,Canto
+47,9,Sing
+52,7,Ascuas
+52,9,Ember
+53,7,Lanzallamas
+53,9,Flamethrower
+55,7,Pistola Agua
+55,9,Water Gun
+57,7,Surf
+57,9,Surf
+58,7,Rayo Hielo
+58,9,Ice Beam
+75,7,Hoja Afilada
+75,9,Razor Leaf
+77,7,Polvo Veneno
+77,9,Poison Powder
+79,7,Somnífero
+79,9,Sleep Powder
+84,7,Impactrueno
+84,9,Thunder Shock
+85,7,Rayo
+85,9,Thunderbolt
+86,7,Onda Trueno
+86,9,Thunder Wave
+88,7,Lanzarrocas
+88,9,Rock Throw
+89,7,Terremoto
+89,9,Earthquake
+94,7,Psíquico
+94,9,Psychic
+95,7,Hipnosis
+95,9,Hypnosis
+98,7,Ataque Rápido
+98,9,Quick Attack
+122,7,Lengüetazo
+122,9,Lick
+129,7,Meteoros
+129,9,Swift
+157,7,Avalancha
+157,9,Rock Slide
+247,7,Bola Sombra
+247,9,Shadow Ball
+261,7,Fuego Fatuo
+261,9,Will-O-Wisp
+280,7,Demolición
+280,9,Brick Break
+473,7,Psicocarga
+473,9,Psyshock
+605,7,Brillo Mágico
+605,9,Dazzling Gleam

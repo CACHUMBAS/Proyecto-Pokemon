@@ -1,6 +1,6 @@
 # Motor local de Lumemon
 
-Este módulo resuelve reglas de combate con datos explícitos y sin interfaz. No convierte las cartas del catálogo en cartas jugables: sus estadísticas propias, movimientos verificables y efectos de apoyo se incorporarán en un bloque de datos separado.
+Este módulo resuelve reglas de combate con datos explícitos y sin interfaz. El adaptador de [datos jugables](data/README.md) conecta ahora una selección de 24 cartas del catálogo con estadísticas propias y movimientos verificables. El mapeo real de apoyos permanece pendiente.
 
 ## API pública
 
@@ -20,6 +20,8 @@ Las salidas incluyen versiones `lumemon-turns-v1` y `lumemon-damage-v1`, identid
 ## Contrato de confianza e integración pendiente
 
 El estado debe ser una salida válida de este motor. Este bloque no ofrece un decodificador de snapshots externos ni garantiza que unas estadísticas o un identificador sean oficiales. `dataVersion` identifica la revisión suministrada; el futuro adaptador de datos deberá comprobar también procedencia, hashes, compatibilidades y propiedad.
+
+El adaptador `createPlayableBattle` verifica que los IDs estén en el conjunto y crea equipos sin apoyos. No sustituye la comprobación de propiedad.
 
 El servicio futuro recogerá las elecciones en secreto, confirmará solo la primera válida, asignará `pass` al vencer los 45 segundos y llamará a la resolución una sola vez en una transacción. La comparación de versión detecta solicitudes obsoletas respecto al snapshot recibido; por sí sola no impide que dos procesos resuelvan el mismo snapshot. Repetir las mismas entradas aquí reproduce el mismo resultado sin guardar ni conceder nada.
 

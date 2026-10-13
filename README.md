@@ -77,7 +77,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
-- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; datos jugables e interfaz pendientes.
+- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; primer conjunto de 24 cartas habilitado; interfaz de combate pendiente.
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
 - [Revisión de la fase 1](docs/revision-fase-1.md).
 - [Plan de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
@@ -118,4 +118,10 @@ Estas dos funciones son puras y se reutilizan desde el motor de turnos descrito 
 
 Ya se pueden resolver partidas completas en código con dos equipos de seis miembros: movimientos, cambios, apoyos, cinco estados, recargas, sustituciones, victorias y empates. Se conserva la versión de estado y se registra el desempate de velocidad para reproducir resultados. Consulta la [API y sus límites](src/battle/README.md).
 
-Esta entrega aún no añade una pantalla de combate ni conecta el catálogo: utiliza datos sintéticos en las pruebas. La selección privada, los 45 segundos, las cuentas y las recompensas corresponden a futuros servicios.
+El motor tiene pruebas sintéticas y ahora también un adaptador con 24 cartas reales seleccionadas, descrito abajo. La pantalla, la selección privada, los 45 segundos, las cuentas y las recompensas corresponden a siguientes bloques.
+
+### Primer conjunto de cartas de combate
+
+Hay 24 cartas habilitadas de 12 especies, con estadísticas propias según rareza/perfil y movimientos reales de PokéAPI adaptados a Lumemon. Las asignaciones están guardadas en una instantánea versionada, con nombres ES/EN, compatibilidad de una sola versión y hashes de fuentes. `createPlayableBattle` conecta seis IDs conocidos por equipo con el motor; rechaza otras cartas y especies repetidas.
+
+Consulta [cartas, fuentes y límites](src/battle/data/README.md). `npm run battle:check` verifica la reproducción sin conexión; `npm run battle:generate` regenera explícitamente tras revisar cambios. Las 1.025 especies del catálogo no quedan automáticamente habilitadas. Aún faltan pantalla y rival automático.

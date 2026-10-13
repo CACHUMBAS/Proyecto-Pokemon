@@ -1,0 +1,13 @@
+id,identifier,species_id,height,weight,base_experience,order,is_default
+1,bulbasaur,1,7,69,64,1,1
+4,charmander,4,6,85,62,5,1
+7,squirtle,7,5,90,63,10,1
+25,pikachu,25,4,60,112,35,1
+37,vulpix,37,6,99,60,66,1
+39,jigglypuff,39,5,55,95,71,1
+63,abra,63,9,195,62,103,1
+66,machop,66,8,195,61,107,1
+92,gastly,92,13,1,62,147,1
+95,onix,95,88,2100,77,151,1
+131,lapras,131,25,2200,187,213,1
+133,eevee,133,3,65,65,215,1

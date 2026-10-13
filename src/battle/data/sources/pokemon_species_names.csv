@@ -1,0 +1,25 @@
+pokemon_species_id,local_language_id,name,genus
+1,7,Bulbasaur,Pokémon Semilla
+1,9,Bulbasaur,Seed Pokémon
+4,7,Charmander,Pokémon Lagartija
+4,9,Charmander,Lizard Pokémon
+7,7,Squirtle,Pokémon Tortuguita
+7,9,Squirtle,Tiny Turtle Pokémon
+25,7,Pikachu,Pokémon Ratón
+25,9,Pikachu,Mouse Pokémon
+37,7,Vulpix,Pokémon Zorro
+37,9,Vulpix,Fox Pokémon
+39,7,Jigglypuff,Pokémon Globo
+39,9,Jigglypuff,Balloon Pokémon
+63,7,Abra,Pokémon Psi
+63,9,Abra,Psi Pokémon
+66,7,Machop,Pokémon Superpoder
+66,9,Machop,Superpower Pokémon
+92,7,Gastly,Pokémon Gas
+92,9,Gastly,Gas Pokémon
+95,7,Onix,Pokémon Serpiente Roca
+95,9,Onix,Rock Snake Pokémon
+131,7,Lapras,Pokémon Transporte
+131,9,Lapras,Transport Pokémon
+133,7,Eevee,Pokémon Evolución
+133,9,Eevee,Evolution Pokémon

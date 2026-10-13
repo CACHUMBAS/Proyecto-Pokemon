@@ -1,0 +1,2640 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "523febef1a683029",
+  "source": {
+    "pokeapiCommit": "2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72",
+    "sourcesDigest": "9dc7b5d8f7a67a0cacba623db6fbfa79eba083c2fcc615e0f772f3ca42c59c4f",
+    "selectionDigest": "97a7a8594923323724ef5d84303afa6e2c3c3257dbb863b49146ce806f326667",
+    "versionGroup": {
+      "id": 18,
+      "slug": "ultra-sun-ultra-moon"
+    }
+  },
+  "species": [
+    {
+      "speciesId": 1,
+      "pokemonId": 1,
+      "slug": "bulbasaur",
+      "names": {
+        "es": "Bulbasaur",
+        "en": "Bulbasaur"
+      },
+      "baseStats": [
+        45,
+        49,
+        49,
+        65,
+        65,
+        45
+      ],
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-22",
+            "type": "grass",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Látigo Cepa",
+            "en": "Vine Whip"
+          },
+          "source": {
+            "moveId": 22,
+            "slug": "vine-whip",
+            "typeId": 12,
+            "damageClassId": 2,
+            "power": 45,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 9
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-75",
+            "type": "grass",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Hoja Afilada",
+            "en": "Razor Leaf"
+          },
+          "source": {
+            "moveId": 75,
+            "slug": "razor-leaf",
+            "typeId": 12,
+            "damageClassId": 2,
+            "power": 55,
+            "accuracy": 95,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 19
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-79",
+            "type": "grass",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "sleep"
+          },
+          "names": {
+            "es": "Somnífero",
+            "en": "Sleep Powder"
+          },
+          "source": {
+            "moveId": 79,
+            "slug": "sleep-powder",
+            "typeId": 12,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 75,
+            "priority": 0,
+            "ailment": "sleep",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 13
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-77",
+            "type": "poison",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "poison"
+          },
+          "names": {
+            "es": "Polvo Veneno",
+            "en": "Poison Powder"
+          },
+          "source": {
+            "moveId": 77,
+            "slug": "poison-powder",
+            "typeId": 4,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 75,
+            "priority": 0,
+            "ailment": "poison",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 13
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 4,
+      "pokemonId": 4,
+      "slug": "charmander",
+      "names": {
+        "es": "Charmander",
+        "en": "Charmander"
+      },
+      "baseStats": [
+        39,
+        52,
+        43,
+        60,
+        50,
+        65
+      ],
+      "types": [
+        "fire"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-52",
+            "type": "fire",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Ascuas",
+            "en": "Ember"
+          },
+          "source": {
+            "moveId": 52,
+            "slug": "ember",
+            "typeId": 10,
+            "damageClassId": 3,
+            "power": 40,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "burn",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 7
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-53",
+            "type": "fire",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Lanzallamas",
+            "en": "Flamethrower"
+          },
+          "source": {
+            "moveId": 53,
+            "slug": "flamethrower",
+            "typeId": 10,
+            "damageClassId": 3,
+            "power": 90,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "burn",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 37
+              },
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-261",
+            "type": "fire",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "burn"
+          },
+          "names": {
+            "es": "Fuego Fatuo",
+            "en": "Will-O-Wisp"
+          },
+          "source": {
+            "moveId": 261,
+            "slug": "will-o-wisp",
+            "typeId": 10,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 85,
+            "priority": 0,
+            "ailment": "burn",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 7,
+      "pokemonId": 7,
+      "slug": "squirtle",
+      "names": {
+        "es": "Squirtle",
+        "en": "Squirtle"
+      },
+      "baseStats": [
+        44,
+        48,
+        65,
+        50,
+        64,
+        43
+      ],
+      "types": [
+        "water"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-55",
+            "type": "water",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Pistola Agua",
+            "en": "Water Gun"
+          },
+          "source": {
+            "moveId": 55,
+            "slug": "water-gun",
+            "typeId": 11,
+            "damageClassId": 3,
+            "power": 40,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 7
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-57",
+            "type": "water",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Surf",
+            "en": "Surf"
+          },
+          "source": {
+            "moveId": 57,
+            "slug": "surf",
+            "typeId": 11,
+            "damageClassId": 3,
+            "power": 90,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-58",
+            "type": "ice",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Rayo Hielo",
+            "en": "Ice Beam"
+          },
+          "source": {
+            "moveId": 58,
+            "slug": "ice-beam",
+            "typeId": 15,
+            "damageClassId": 3,
+            "power": 90,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "freeze",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 25,
+      "pokemonId": 25,
+      "slug": "pikachu",
+      "names": {
+        "es": "Pikachu",
+        "en": "Pikachu"
+      },
+      "baseStats": [
+        35,
+        55,
+        40,
+        50,
+        50,
+        90
+      ],
+      "types": [
+        "electric"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-84",
+            "type": "electric",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Impactrueno",
+            "en": "Thunder Shock"
+          },
+          "source": {
+            "moveId": 84,
+            "slug": "thunder-shock",
+            "typeId": 13,
+            "damageClassId": 3,
+            "power": 40,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "paralysis",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 1
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-85",
+            "type": "electric",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Rayo",
+            "en": "Thunderbolt"
+          },
+          "source": {
+            "moveId": 85,
+            "slug": "thunderbolt",
+            "typeId": 13,
+            "damageClassId": 3,
+            "power": 90,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "paralysis",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 42
+              },
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-86",
+            "type": "electric",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "paralysis"
+          },
+          "names": {
+            "es": "Onda Trueno",
+            "en": "Thunder Wave"
+          },
+          "source": {
+            "moveId": 86,
+            "slug": "thunder-wave",
+            "typeId": 13,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 90,
+            "priority": 0,
+            "ailment": "paralysis",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 18
+              },
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 37,
+      "pokemonId": 37,
+      "slug": "vulpix",
+      "names": {
+        "es": "Vulpix",
+        "en": "Vulpix"
+      },
+      "baseStats": [
+        38,
+        41,
+        40,
+        50,
+        65,
+        65
+      ],
+      "types": [
+        "fire"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-52",
+            "type": "fire",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Ascuas",
+            "en": "Ember"
+          },
+          "source": {
+            "moveId": 52,
+            "slug": "ember",
+            "typeId": 10,
+            "damageClassId": 3,
+            "power": 40,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "burn",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 1
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-53",
+            "type": "fire",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Lanzallamas",
+            "en": "Flamethrower"
+          },
+          "source": {
+            "moveId": 53,
+            "slug": "flamethrower",
+            "typeId": 10,
+            "damageClassId": 3,
+            "power": 90,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "burn",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 36
+              },
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-261",
+            "type": "fire",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "burn"
+          },
+          "names": {
+            "es": "Fuego Fatuo",
+            "en": "Will-O-Wisp"
+          },
+          "source": {
+            "moveId": 261,
+            "slug": "will-o-wisp",
+            "typeId": 10,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 85,
+            "priority": 0,
+            "ailment": "burn",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 20
+              },
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 39,
+      "pokemonId": 39,
+      "slug": "jigglypuff",
+      "names": {
+        "es": "Jigglypuff",
+        "en": "Jigglypuff"
+      },
+      "baseStats": [
+        115,
+        45,
+        20,
+        45,
+        25,
+        20
+      ],
+      "types": [
+        "normal",
+        "fairy"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-1",
+            "type": "normal",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Destructor",
+            "en": "Pound"
+          },
+          "source": {
+            "moveId": 1,
+            "slug": "pound",
+            "typeId": 1,
+            "damageClassId": 2,
+            "power": 40,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 5
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-605",
+            "type": "fairy",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Brillo Mágico",
+            "en": "Dazzling Gleam"
+          },
+          "source": {
+            "moveId": 605,
+            "slug": "dazzling-gleam",
+            "typeId": 18,
+            "damageClassId": 3,
+            "power": 80,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-47",
+            "type": "normal",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "sleep"
+          },
+          "names": {
+            "es": "Canto",
+            "en": "Sing"
+          },
+          "source": {
+            "moveId": 47,
+            "slug": "sing",
+            "typeId": 1,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 55,
+            "priority": 0,
+            "ailment": "sleep",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 63,
+      "pokemonId": 63,
+      "slug": "abra",
+      "names": {
+        "es": "Abra",
+        "en": "Abra"
+      },
+      "baseStats": [
+        25,
+        20,
+        15,
+        105,
+        55,
+        90
+      ],
+      "types": [
+        "psychic"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-94",
+            "type": "psychic",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Psíquico",
+            "en": "Psychic"
+          },
+          "source": {
+            "moveId": 94,
+            "slug": "psychic",
+            "typeId": 14,
+            "damageClassId": 3,
+            "power": 90,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-473",
+            "type": "psychic",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Psicocarga",
+            "en": "Psyshock"
+          },
+          "source": {
+            "moveId": 473,
+            "slug": "psyshock",
+            "typeId": 14,
+            "damageClassId": 3,
+            "power": 80,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-86",
+            "type": "electric",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "paralysis"
+          },
+          "names": {
+            "es": "Onda Trueno",
+            "en": "Thunder Wave"
+          },
+          "source": {
+            "moveId": 86,
+            "slug": "thunder-wave",
+            "typeId": 13,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 90,
+            "priority": 0,
+            "ailment": "paralysis",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 66,
+      "pokemonId": 66,
+      "slug": "machop",
+      "names": {
+        "es": "Machop",
+        "en": "Machop"
+      },
+      "baseStats": [
+        70,
+        80,
+        50,
+        35,
+        35,
+        35
+      ],
+      "types": [
+        "fighting"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-2",
+            "type": "fighting",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Golpe Kárate",
+            "en": "Karate Chop"
+          },
+          "source": {
+            "moveId": 2,
+            "slug": "karate-chop",
+            "typeId": 2,
+            "damageClassId": 2,
+            "power": 50,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 7
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-280",
+            "type": "fighting",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Demolición",
+            "en": "Brick Break"
+          },
+          "source": {
+            "moveId": 280,
+            "slug": "brick-break",
+            "typeId": 2,
+            "damageClassId": 2,
+            "power": 75,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-157",
+            "type": "rock",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Avalancha",
+            "en": "Rock Slide"
+          },
+          "source": {
+            "moveId": 157,
+            "slug": "rock-slide",
+            "typeId": 6,
+            "damageClassId": 2,
+            "power": 75,
+            "accuracy": 90,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 92,
+      "pokemonId": 92,
+      "slug": "gastly",
+      "names": {
+        "es": "Gastly",
+        "en": "Gastly"
+      },
+      "baseStats": [
+        30,
+        35,
+        30,
+        100,
+        35,
+        80
+      ],
+      "types": [
+        "ghost",
+        "poison"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-122",
+            "type": "ghost",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Lengüetazo",
+            "en": "Lick"
+          },
+          "source": {
+            "moveId": 122,
+            "slug": "lick",
+            "typeId": 8,
+            "damageClassId": 2,
+            "power": 30,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "paralysis",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 1
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-247",
+            "type": "ghost",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Bola Sombra",
+            "en": "Shadow Ball"
+          },
+          "source": {
+            "moveId": 247,
+            "slug": "shadow-ball",
+            "typeId": 8,
+            "damageClassId": 3,
+            "power": 80,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 29
+              },
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-95",
+            "type": "psychic",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "sleep"
+          },
+          "names": {
+            "es": "Hipnosis",
+            "en": "Hypnosis"
+          },
+          "source": {
+            "moveId": 95,
+            "slug": "hypnosis",
+            "typeId": 14,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 60,
+            "priority": 0,
+            "ailment": "sleep",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 95,
+      "pokemonId": 95,
+      "slug": "onix",
+      "names": {
+        "es": "Onix",
+        "en": "Onix"
+      },
+      "baseStats": [
+        35,
+        45,
+        160,
+        30,
+        45,
+        70
+      ],
+      "types": [
+        "rock",
+        "ground"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-88",
+            "type": "rock",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Lanzarrocas",
+            "en": "Rock Throw"
+          },
+          "source": {
+            "moveId": 88,
+            "slug": "rock-throw",
+            "typeId": 6,
+            "damageClassId": 2,
+            "power": 50,
+            "accuracy": 90,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 7
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-157",
+            "type": "rock",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Avalancha",
+            "en": "Rock Slide"
+          },
+          "source": {
+            "moveId": 157,
+            "slug": "rock-slide",
+            "typeId": 6,
+            "damageClassId": 2,
+            "power": 75,
+            "accuracy": 90,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 34
+              },
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-89",
+            "type": "ground",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Terremoto",
+            "en": "Earthquake"
+          },
+          "source": {
+            "moveId": 89,
+            "slug": "earthquake",
+            "typeId": 5,
+            "damageClassId": 2,
+            "power": 100,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 131,
+      "pokemonId": 131,
+      "slug": "lapras",
+      "names": {
+        "es": "Lapras",
+        "en": "Lapras"
+      },
+      "baseStats": [
+        130,
+        85,
+        80,
+        85,
+        95,
+        60
+      ],
+      "types": [
+        "water",
+        "ice"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-55",
+            "type": "water",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Pistola Agua",
+            "en": "Water Gun"
+          },
+          "source": {
+            "moveId": 55,
+            "slug": "water-gun",
+            "typeId": 11,
+            "damageClassId": 3,
+            "power": 40,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 1
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-58",
+            "type": "ice",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Rayo Hielo",
+            "en": "Ice Beam"
+          },
+          "source": {
+            "moveId": 58,
+            "slug": "ice-beam",
+            "typeId": 15,
+            "damageClassId": 3,
+            "power": 90,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "freeze",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 32
+              },
+              {
+                "methodId": 4,
+                "method": "machine",
+                "level": 0
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-47",
+            "type": "normal",
+            "kind": "status",
+            "power": 0,
+            "cooldown": 2,
+            "status": "sleep"
+          },
+          "names": {
+            "es": "Canto",
+            "en": "Sing"
+          },
+          "source": {
+            "moveId": 47,
+            "slug": "sing",
+            "typeId": 1,
+            "damageClassId": 1,
+            "power": null,
+            "accuracy": 55,
+            "priority": 0,
+            "ailment": "sleep",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "speciesId": 133,
+      "pokemonId": 133,
+      "slug": "eevee",
+      "names": {
+        "es": "Eevee",
+        "en": "Eevee"
+      },
+      "baseStats": [
+        55,
+        55,
+        50,
+        45,
+        65,
+        55
+      ],
+      "types": [
+        "normal"
+      ],
+      "moves": [
+        {
+          "move": {
+            "id": "pokeapi-33",
+            "type": "normal",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Placaje",
+            "en": "Tackle"
+          },
+          "source": {
+            "moveId": 33,
+            "slug": "tackle",
+            "typeId": 1,
+            "damageClassId": 2,
+            "power": 40,
+            "accuracy": 100,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 1
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-129",
+            "type": "normal",
+            "kind": "damage",
+            "power": 60,
+            "cooldown": 1
+          },
+          "names": {
+            "es": "Meteoros",
+            "en": "Swift"
+          },
+          "source": {
+            "moveId": 129,
+            "slug": "swift",
+            "typeId": 1,
+            "damageClassId": 3,
+            "power": 60,
+            "accuracy": null,
+            "priority": 0,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 17
+              }
+            ]
+          }
+        },
+        {
+          "move": {
+            "id": "pokeapi-98",
+            "type": "normal",
+            "kind": "damage",
+            "power": 40,
+            "cooldown": 0
+          },
+          "names": {
+            "es": "Ataque Rápido",
+            "en": "Quick Attack"
+          },
+          "source": {
+            "moveId": 98,
+            "slug": "quick-attack",
+            "typeId": 1,
+            "damageClassId": 2,
+            "power": 40,
+            "accuracy": 100,
+            "priority": 1,
+            "ailment": "none",
+            "learnedBy": [
+              {
+                "methodId": 1,
+                "method": "level-up",
+                "level": 13
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "cards": [
+    {
+      "id": "base1-44",
+      "speciesId": 1,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        53,
+        72,
+        62,
+        53
+      ],
+      "maxHp": 226,
+      "attack": 102,
+      "defense": 92,
+      "speed": 83,
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-22",
+          "type": "grass",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-75",
+          "type": "grass",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-79",
+          "type": "grass",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "sleep"
+        },
+        {
+          "id": "pokeapi-77",
+          "type": "poison",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "poison"
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-166",
+      "speciesId": 1,
+      "rarity": "Illustration rare",
+      "budget": 276,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        61,
+        82,
+        72,
+        61
+      ],
+      "maxHp": 242,
+      "attack": 112,
+      "defense": 102,
+      "speed": 91,
+      "types": [
+        "grass",
+        "poison"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-22",
+          "type": "grass",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-75",
+          "type": "grass",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-79",
+          "type": "grass",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "sleep"
+        },
+        {
+          "id": "pokeapi-77",
+          "type": "poison",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "poison"
+        }
+      ]
+    },
+    {
+      "id": "base1-46",
+      "speciesId": 4,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        47,
+        70,
+        48,
+        75
+      ],
+      "maxHp": 214,
+      "attack": 100,
+      "defense": 78,
+      "speed": 105,
+      "types": [
+        "fire"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-52",
+          "type": "fire",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-53",
+          "type": "fire",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-261",
+          "type": "fire",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "burn"
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-168",
+      "speciesId": 4,
+      "rarity": "Illustration rare",
+      "budget": 276,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        53,
+        80,
+        56,
+        87
+      ],
+      "maxHp": 226,
+      "attack": 110,
+      "defense": 86,
+      "speed": 117,
+      "types": [
+        "fire"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-52",
+          "type": "fire",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-53",
+          "type": "fire",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-261",
+          "type": "fire",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "burn"
+        }
+      ]
+    },
+    {
+      "id": "base1-63",
+      "speciesId": 7,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        53,
+        64,
+        72,
+        51
+      ],
+      "maxHp": 226,
+      "attack": 94,
+      "defense": 102,
+      "speed": 81,
+      "types": [
+        "water"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-55",
+          "type": "water",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-57",
+          "type": "water",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-58",
+          "type": "ice",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-170",
+      "speciesId": 7,
+      "rarity": "Illustration rare",
+      "budget": 276,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        61,
+        73,
+        83,
+        59
+      ],
+      "maxHp": 242,
+      "attack": 103,
+      "defense": 113,
+      "speed": 89,
+      "types": [
+        "water"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-55",
+          "type": "water",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-57",
+          "type": "water",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-58",
+          "type": "ice",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        }
+      ]
+    },
+    {
+      "id": "base1-58",
+      "speciesId": 25,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        42,
+        60,
+        43,
+        95
+      ],
+      "maxHp": 204,
+      "attack": 90,
+      "defense": 73,
+      "speed": 125,
+      "types": [
+        "electric"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-84",
+          "type": "electric",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-85",
+          "type": "electric",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-86",
+          "type": "electric",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "paralysis"
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-173",
+      "speciesId": 25,
+      "rarity": "Illustration rare",
+      "budget": 276,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        49,
+        68,
+        50,
+        109
+      ],
+      "maxHp": 218,
+      "attack": 98,
+      "defense": 80,
+      "speed": 139,
+      "types": [
+        "electric"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-84",
+          "type": "electric",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-85",
+          "type": "electric",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-86",
+          "type": "electric",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "paralysis"
+        }
+      ]
+    },
+    {
+      "id": "base1-68",
+      "speciesId": 37,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        48,
+        58,
+        57,
+        77
+      ],
+      "maxHp": 216,
+      "attack": 88,
+      "defense": 87,
+      "speed": 107,
+      "types": [
+        "fire"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-52",
+          "type": "fire",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-53",
+          "type": "fire",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-261",
+          "type": "fire",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "burn"
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-037",
+      "speciesId": 37,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        -5,
+        5,
+        0
+      ],
+      "points": [
+        48,
+        48,
+        67,
+        77
+      ],
+      "maxHp": 216,
+      "attack": 78,
+      "defense": 97,
+      "speed": 107,
+      "types": [
+        "fire"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-52",
+          "type": "fire",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-53",
+          "type": "fire",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-261",
+          "type": "fire",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "burn"
+        }
+      ]
+    },
+    {
+      "id": "base2-54",
+      "speciesId": 39,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        115,
+        50,
+        35,
+        40
+      ],
+      "maxHp": 350,
+      "attack": 80,
+      "defense": 65,
+      "speed": 70,
+      "types": [
+        "normal",
+        "fairy"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-1",
+          "type": "normal",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-605",
+          "type": "fairy",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-47",
+          "type": "normal",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-039",
+      "speciesId": 39,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        -5,
+        5,
+        0
+      ],
+      "points": [
+        115,
+        40,
+        45,
+        40
+      ],
+      "maxHp": 350,
+      "attack": 70,
+      "defense": 75,
+      "speed": 70,
+      "types": [
+        "normal",
+        "fairy"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-1",
+          "type": "normal",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-605",
+          "type": "fairy",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-47",
+          "type": "normal",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "base1-43",
+      "speciesId": 63,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        42,
+        69,
+        36,
+        93
+      ],
+      "maxHp": 204,
+      "attack": 99,
+      "defense": 66,
+      "speed": 123,
+      "types": [
+        "psychic"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-94",
+          "type": "psychic",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-473",
+          "type": "psychic",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-86",
+          "type": "electric",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "paralysis"
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-063",
+      "speciesId": 63,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        -5,
+        5,
+        0
+      ],
+      "points": [
+        42,
+        59,
+        46,
+        93
+      ],
+      "maxHp": 204,
+      "attack": 89,
+      "defense": 76,
+      "speed": 123,
+      "types": [
+        "psychic"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-94",
+          "type": "psychic",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-473",
+          "type": "psychic",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-86",
+          "type": "electric",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "paralysis"
+        }
+      ]
+    },
+    {
+      "id": "base1-52",
+      "speciesId": 66,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        80,
+        71,
+        43,
+        46
+      ],
+      "maxHp": 280,
+      "attack": 101,
+      "defense": 73,
+      "speed": 76,
+      "types": [
+        "fighting"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-2",
+          "type": "fighting",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-280",
+          "type": "fighting",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-157",
+          "type": "rock",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-066",
+      "speciesId": 66,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        -5,
+        5,
+        0
+      ],
+      "points": [
+        80,
+        61,
+        53,
+        46
+      ],
+      "maxHp": 280,
+      "attack": 91,
+      "defense": 83,
+      "speed": 76,
+      "types": [
+        "fighting"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-2",
+          "type": "fighting",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-280",
+          "type": "fighting",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-157",
+          "type": "rock",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        }
+      ]
+    },
+    {
+      "id": "base1-50",
+      "speciesId": 92,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        42,
+        76,
+        37,
+        85
+      ],
+      "maxHp": 204,
+      "attack": 106,
+      "defense": 67,
+      "speed": 115,
+      "types": [
+        "ghost",
+        "poison"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-122",
+          "type": "ghost",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-247",
+          "type": "ghost",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-95",
+          "type": "psychic",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-092",
+      "speciesId": 92,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        -5,
+        5,
+        0
+      ],
+      "points": [
+        42,
+        66,
+        47,
+        85
+      ],
+      "maxHp": 204,
+      "attack": 96,
+      "defense": 77,
+      "speed": 115,
+      "types": [
+        "ghost",
+        "poison"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-122",
+          "type": "ghost",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-247",
+          "type": "ghost",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-95",
+          "type": "psychic",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "base1-56",
+      "speciesId": 95,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        38,
+        43,
+        92,
+        67
+      ],
+      "maxHp": 196,
+      "attack": 73,
+      "defense": 122,
+      "speed": 97,
+      "types": [
+        "rock",
+        "ground"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-88",
+          "type": "rock",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-157",
+          "type": "rock",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-89",
+          "type": "ground",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-095",
+      "speciesId": 95,
+      "rarity": "Uncommon",
+      "budget": 252,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        40,
+        45,
+        97,
+        70
+      ],
+      "maxHp": 200,
+      "attack": 75,
+      "defense": 127,
+      "speed": 100,
+      "types": [
+        "rock",
+        "ground"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-88",
+          "type": "rock",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-157",
+          "type": "rock",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-89",
+          "type": "ground",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        }
+      ]
+    },
+    {
+      "id": "base3-10",
+      "speciesId": 131,
+      "rarity": "Rare",
+      "budget": 264,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        95,
+        67,
+        58,
+        44
+      ],
+      "maxHp": 310,
+      "attack": 97,
+      "defense": 88,
+      "speed": 74,
+      "types": [
+        "water",
+        "ice"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-55",
+          "type": "water",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-58",
+          "type": "ice",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-47",
+          "type": "normal",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-131",
+      "speciesId": 131,
+      "rarity": "Uncommon",
+      "budget": 252,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        90,
+        64,
+        56,
+        42
+      ],
+      "maxHp": 300,
+      "attack": 94,
+      "defense": 86,
+      "speed": 72,
+      "types": [
+        "water",
+        "ice"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-55",
+          "type": "water",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-58",
+          "type": "ice",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-47",
+          "type": "normal",
+          "kind": "status",
+          "power": 0,
+          "cooldown": 2,
+          "status": "sleep"
+        }
+      ]
+    },
+    {
+      "id": "base2-51",
+      "speciesId": 133,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        5,
+        -5,
+        0
+      ],
+      "points": [
+        61,
+        60,
+        58,
+        61
+      ],
+      "maxHp": 242,
+      "attack": 90,
+      "defense": 88,
+      "speed": 91,
+      "types": [
+        "normal"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-33",
+          "type": "normal",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-129",
+          "type": "normal",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-98",
+          "type": "normal",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        }
+      ]
+    },
+    {
+      "id": "sv03.5-133",
+      "speciesId": 133,
+      "rarity": "Common",
+      "budget": 240,
+      "profile": [
+        0,
+        -5,
+        5,
+        0
+      ],
+      "points": [
+        61,
+        50,
+        68,
+        61
+      ],
+      "maxHp": 242,
+      "attack": 80,
+      "defense": 98,
+      "speed": 91,
+      "types": [
+        "normal"
+      ],
+      "moves": [
+        {
+          "id": "pokeapi-33",
+          "type": "normal",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        },
+        {
+          "id": "pokeapi-129",
+          "type": "normal",
+          "kind": "damage",
+          "power": 60,
+          "cooldown": 1
+        },
+        {
+          "id": "pokeapi-98",
+          "type": "normal",
+          "kind": "damage",
+          "power": 40,
+          "cooldown": 0
+        }
+      ]
+    }
+  ],
+  "version": "lumemon-roster-d3979d52f16cbe7b"
+}
