@@ -51,7 +51,7 @@ Las ilustraciones de las tres cartas están en inglés y así se identifican en 
 - `src/components`: tarjetas, idioma, botones y estructura compartida.
 - `src/features`: portada, catálogo, fichas de especie, muestras y ruta no encontrada.
 - `src/catalog`: contratos, normalización, consulta y pruebas del catálogo.
-- `src/battle`: validación de la composición de equipos y sus pruebas.
+- `src/battle`: composición de equipos, cálculo de daño y motor local de turnos con sus pruebas.
 - `scripts/catalog`: importación, caché y validación de cobertura.
 - `public/catalog`: manifiesto e instantáneas versionadas; índice y un archivo de variantes por especie.
 - `src/i18n`: diccionarios y sincronización de idioma.
@@ -77,7 +77,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
-- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño implementado, resto del motor pendiente.
+- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; datos jugables e interfaz pendientes.
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
 - [Revisión de la fase 1](docs/revision-fase-1.md).
 - [Plan de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
@@ -112,4 +112,10 @@ Comprobaciones de este bloque: [revisión del constructor](docs/revision-equipo.
 
 `src/battle/type-chart.ts` calcula ventajas, resistencias e inmunidades de los 18 tipos de Pokémon, incluyendo dobles tipos. `src/battle/damage.ts` aplica las reglas `lumemon-damage-v1`: afinidad, quemadura, impulso y barrera, con un único redondeo exacto y vida mínima cero. `damage` devuelve la vida realmente perdida, limitada por la disponible; no el daño teórico de un golpe que exceda esa vida.
 
-Son funciones puras, todavía sin conectar al tablero: no resuelven turnos, aplican estados, consumen apoyos ni crean partidas. El llamador debe validar especie, movimiento y permiso para actuar. No emplean estadísticas del TCG ni consultan APIs en cada ataque. Las fuentes fijadas y sus hashes están en [fixtures de combate](src/battle/fixtures/README.md); el alcance está en el [plan del cálculo](docs/superpowers/plans/2026-10-13-lumemon-battle-damage.md).
+Estas dos funciones son puras y se reutilizan desde el motor de turnos descrito abajo. Por sí solas no aplican estados ni crean partidas. El llamador debe validar especie, movimiento y permiso para actuar. No emplean estadísticas del TCG ni consultan APIs en cada ataque. Las fuentes fijadas y sus hashes están en [fixtures de combate](src/battle/fixtures/README.md); el alcance está en el [plan del cálculo](docs/superpowers/plans/2026-10-13-lumemon-battle-damage.md).
+
+### Motor local de turnos
+
+Ya se pueden resolver partidas completas en código con dos equipos de seis miembros: movimientos, cambios, apoyos, cinco estados, recargas, sustituciones, victorias y empates. Se conserva la versión de estado y se registra el desempate de velocidad para reproducir resultados. Consulta la [API y sus límites](src/battle/README.md).
+
+Esta entrega aún no añade una pantalla de combate ni conecta el catálogo: utiliza datos sintéticos en las pruebas. La selección privada, los 45 segundos, las cuentas y las recompensas corresponden a futuros servicios.

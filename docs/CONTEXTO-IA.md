@@ -1,15 +1,16 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-13 (primer módulo de efectividad y daño). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-13 (motor local de turnos, estados y apoyos). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `afc4b10`, rama `docs/reglas-combate-lumemon`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `991b30c`, rama `feat/battle-damage`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
+- Motor local de turnos en `feat/battle-turns`, desde `991b30c`; conserva todas las entregas anteriores.
 - La rama activa, cambios pendientes y ascendencia se consultan siempre en Git. Estos nombres son una referencia fechada, no una orden de cambiar de rama.
 
 ## Nombre actual y compatibilidad
@@ -44,6 +45,7 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Composición | Validador de seis especies distintas; rechaza IDs desconocidos, duplicados, apoyos en plazas Pokémon y asociaciones ambiguas | No comprueba propiedad, estadísticas, movimientos ni aptitud real para combatir |
 | Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI); ES/EN y móvil | Un borrador local, sin cuenta, apoyos seleccionables ni combate |
 | Cálculo de combate | Tipos de datos mínimos, 18 tipos, dobles tipos e inmunidades, afinidad y modificadores de daño con aritmética exacta | Funciones puras sin conectar a la interfaz; no resuelven turnos, estados, duración de mejoras ni propiedad |
+| Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro con datos sintéticos de prueba; sin pantalla de combate, movimientos/perfiles reales, reloj o servicio de elecciones privadas |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
 
 La instantánea `523febef1a683029` contiene 1.025 especies, 23.770 registros de cartas (20.132 Pokémon y 3.638 apoyos), 129 asociaciones ambiguas y 1.357 registros sin imagen en la fuente. Los respaldos locales de imágenes no modifican esos contadores originales. Verifica cifras futuras en `public/catalog/manifest.json`; no afirmes cobertura de todas las ediciones históricas o japonesas.
@@ -67,7 +69,7 @@ El documento de diseño distingue requisitos del usuario de propuestas iniciales
 
 ## Propuesta de reglas preparada el 12 de octubre
 
-El usuario autorizó redactar el documento del siguiente bloque. Se preparó [Reglas de combate v0.1](superpowers/specs/2026-10-12-lumemon-battle-rules-design.md). El 13 de octubre, tras explicar el combate, el usuario aceptó continuar con el primer bloque. Se implementa su cálculo de tipos/daño; el resto del motor y el equilibrio completo siguen pendientes.
+El usuario autorizó redactar el documento del siguiente bloque. Se preparó [Reglas de combate v0.1](superpowers/specs/2026-10-12-lumemon-battle-rules-design.md). El 13 de octubre, tras explicar el combate, el usuario aceptó continuar con el primer bloque. Primero se implementó el cálculo de tipos/daño; la continuación posterior autorizó el motor local de turnos. El equilibrio completo y su integración jugable siguen pendientes.
 
 Propone cinco presupuestos por rareza (240/252/264/276/288), cuatro estadísticas normalizadas por especie y perfiles distintos por variante, movimientos con potencia/recarga propias, afinidad ×1,25, tabla de 18 tipos, orden de resolución, estados, cuatro efectos de apoyo y límite de 60 turnos. Incluye el mapeo explícito de las 42 etiquetas actuales y ejemplos calculables. Son decisiones de diseño propuestas, no cifras oficiales ni equilibrio demostrado.
 
@@ -83,13 +85,21 @@ Se rechazan números no enteros seguros positivos, potencia cero, objetivos a vi
 
 Verificación: 10 pruebas nuevas fallaron primero ante funciones sin implementar y pasaron después. Suite completa: 69 pruebas; lint, typecheck y build correctos. Se contrastan las 324 relaciones de tipos y se cubren dobles tipos, cero por inmunidad, redondeo, mínimo uno, sobre-daño, valores grandes/incorrectos y entradas congeladas. No cambió la interfaz y no se repitieron pruebas visuales. Revisión final independiente completada sin problemas que corregir en este bloque. El revisor comprobó las diez pruebas nuevas y las fuentes; turnos, balance e integración visual quedan fuera de este bloque.
 
+## Resolución local de turnos — 13 de octubre
+
+El usuario pidió continuar con el siguiente bloque anunciado. Se implementan createBattle, validateAction, resolveTurn y resolveReplacements en src/battle. Orden: cambios → apoyos → movimientos por velocidad fijada → daño residual simultáneo → resultado/sustituciones. Incluye cinco estados con sus inmunidades, cuatro apoyos de un solo uso, recargas, expiración de mejoras, KO, victoria inmediata y empate por doble KO o turno 60.
+
+El motor clona las entradas, incrementa la versión por transición y registra eventos serializables junto con el bit de desempate utilizado. Exige datos explícitos de batalla; no inventa movimientos a partir del catálogo. Su estado es interno y válido, no un snapshot arbitrario recibido de un cliente. La confirmación inmutable de elecciones privadas, tiempo, transacciones e idempotencia global pertenecen al servicio futuro. null en sustituciones solicita alternativa automática; no comprueba ningún reloj.
+
+Verificación: 22 casos nuevos en RED y luego GREEN; 91 pruebas totales, lint, typecheck y build correctos. Sin cambios de interfaz ni dependencias. Revisión independiente completada sin hallazgos que corregir: 22/22 casos y comprobaciones adicionales de aritmética con enteros grandes, acciones inválidas, desempates y mejoras duplicadas. El equilibrio, la integración y los servicios futuros quedan fuera de esta verificación. Contratos y alcance: [API local](../src/battle/README.md) y [plan de turnos](superpowers/plans/2026-10-13-lumemon-battle-turns.md).
+
 ## Pendiente: no anunciar como disponible
 
-Resolución completa del combate e integración del cálculo en partidas, estadísticas propias por variante, movimientos jugables, estados, apoyos, tutorial, IA de rivales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión, música y publicación de Lumemon.
+Integración del motor en una pantalla de combate, estadísticas propias por variante, movimientos jugables verificados, mapeo real de apoyos, tutorial, IA de rivales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión, música y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato, pendiente de una tarea concreta: resolución de un turno con acciones simultáneas, cambios, velocidad y debilitamientos, reutilizando este cálculo. Después se incorporarán estados/apoyos, datos jugables y tutorial. Este archivo no autoriza implementar esos bloques automáticamente.
+Siguiente candidato, pendiente de una tarea concreta: preparar un conjunto pequeño de datos de combate reales y verificados (perfiles, movimientos y procedencia) para conectar después un primer combate contra la máquina y el tutorial. Este archivo no autoriza implementar esos bloques automáticamente.
 
 ## Mapa de código y comandos
 
@@ -101,6 +111,7 @@ Siguiente candidato, pendiente de una tarea concreta: resolución de un turno co
 | `src/features/team` | Constructor, selector y hook de borrador |
 | `src/catalog` | Tipos, normalización, repositorio, cliente, fuentes suplementarias y pruebas |
 | `src/battle/types.ts`, `type-chart.ts`, `damage.ts` | Contratos mínimos, efectividad y pérdida de vida puras; sin interfaz ni turnos |
+| `src/battle/engine-types.ts`, `battle-state.ts`, `battle-effects.ts`, `turn-engine.ts` | Contratos, creación/validación, efectos y resolución de turnos/sustituciones; API y límites en `src/battle/README.md` |
 | `src/battle/team.ts` | Validación estructural del equipo |
 | `src/battle/team-draft.ts` | Formato, restauración, guardado y selección del borrador |
 | `src/i18n/es.json`, `src/i18n/en.json` | Traducciones de interfaz |
@@ -129,7 +140,7 @@ La clave local del equipo es `pokeprisma.team-draft.v1`. Un error de red no debe
 2. Código, Git, manifiesto y comprobaciones actuales: estado real.
 3. Este resumen: decisiones y mapa; actualizar si queda obsoleto.
 4. [Diseño del juego](superpowers/specs/2026-10-08-pokeprisma-design.md): visión y reglas propuestas, no lista de funciones terminadas. La fecha inicial es histórica; el nombre se actualizó a Lumemon.
-5. [Reglas de combate v0.1](superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): guía de reglas iniciales; tipos/daño implementados, resto pendiente. [Plan del cálculo](superpowers/plans/2026-10-13-lumemon-battle-damage.md): alcance y verificación de este bloque.
+5. [Reglas de combate v0.1](superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): guía de reglas iniciales; tipos/daño y turnos locales implementados, datos e integración pendientes. [Plan del cálculo](superpowers/plans/2026-10-13-lumemon-battle-damage.md): alcance y verificación de este bloque.
 6. [README](../README.md), [revisión de catálogo](revision-fase-2.md) y [revisión de equipos](revision-equipo.md): uso y evidencia.
 
 Al cerrar una tarea, modifica solo las secciones que cambian: fecha, entrega realizada, evidencia y pendientes. No borres requisitos futuros ni marques una fase completa por terminar uno de sus componentes. Si documentación y código discrepan, señala la diferencia y corrige el estado tras comprobarlo.
