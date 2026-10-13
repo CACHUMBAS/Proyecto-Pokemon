@@ -119,9 +119,22 @@ Verificación: ocho pruebas nuevas fallaron primero con stubs y pasaron después
 
 Se corrigió una expectativa de prueba: la versión inicial del motor ya era 1, no 0; el contrato de producción se conserva. No se añadieron dependencias. [Plan](superpowers/plans/2026-10-13-lumemon-practice.md).
 
+
+## Audio y animaciones de práctica — 13 de octubre
+
+El usuario pidió música Pokémon conocida, como la empleada en packs de Cobblemon, gritos y animaciones. Rama `feat/battle-audio-motion`, desde `e0570ef`. En `/practica` hay cuatro temas de combate seleccionables (HGSS, DPP, BW, ORAS) reproducidos desde Pokémon Showdown; requieren conexión y su disponibilidad depende del proveedor. Los 12 gritos del conjunto jugable son copias de PokéAPI/cries fijadas a revisión, con hashes y procedencia en `public/assets/audio/cries/_sources.json`. Pikachu llega como MPEG bajo extensión .ogg en origen: conserva bytes/hash, servido correctamente como .mp3. Los otros once son OGG. Los impactos y señales breves se sintetizan; no se presentan como efectos oficiales.
+
+Audio apagado al entrar, activación voluntaria, silencio, volúmenes independientes y prueba del grito. Tema/volúmenes se validan y guardan en `lumemon.audio.v1`; esa clave no sustituye las anteriores. Pausa en pestaña oculta, música detenida al finalizar, reanudada en revancha y limpieza al salir. Fallos de reproducción muestran aviso sin bloquear el motor.
+
+`src/battle/playback.ts` proyecta eventos en snapshots visuales sin alimentar estados intermedios al motor. Ordena movimiento, daño real, estados, KO y sustitución automática; no dibuja impacto para daño cero ni movimiento bloqueado. Acciones bloqueadas durante la secuencia, salto asociado a partida/versión/cursor y cancelación de timers antiguos. Hay efectos CSS por tipo, opción para omitir animaciones y respeto al movimiento reducido del dispositivo. Saltar/omitir la secuencia también omite sus señales sonoras pendientes; música y prueba manual del grito siguen disponibles.
+
+Verificación: 11 casos de lógica se observaron fallar antes de implementar; 12 pruebas nuevas en total. 122 pruebas, lint, typecheck/build y battle:check correctos. Navegador: cuatro temas cargados, reproducción observada de HGSS/BW/ORAS, DPP cargado/pausado a volumen cero, gritos MP3 de Pikachu y OGG de Bulbasaur, entrada/sustitución, mute, preferencias al volver sin autoplay, secuencia con HP previo al golpe, salto, KO/cambio del bot, partida hasta derrota sin animaciones, parada final, revancha y salida. ES/EN y 390/1440 sin desbordamiento observado; capturas de ambos tamaños revisadas. La pausa por visibilidad y errores de autoplay se verifican con adaptadores en pruebas; no se simuló la preferencia de movimiento reducido del sistema ni una caída real del proveedor. No se afirma una escucha humana de la mezcla. Revisión independiente pendiente al redactar esta sección.
+
+Reglas, conjunto de cartas, guardado de equipo y alcance local permanecen como antes. No hay dependencias nuevas, cuentas, premios, publicación ni derechos comerciales inferidos. [Plan](superpowers/plans/2026-10-13-lumemon-battle-audio-motion.md); [fuentes](../public/_sources.md).
+
 ## Pendiente: no anunciar como disponible
 
-Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, tutorial guiado, rivales avanzados, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión, música y publicación de Lumemon.
+Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, tutorial guiado, rivales avanzados, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 

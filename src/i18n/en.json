@@ -388,6 +388,30 @@
       "support": "{{name}} uses a support.",
       "expired": "A temporary boost on {{name}} ends."
     },
-    "actionTitle": "What is your play?"
+    "actionTitle": "What is your play?",
+    "audio": {
+      "title": "Sound and animations",
+      "enable": "Enable audio",
+      "mute": "Mute audio",
+      "settings": "Sound and motion settings",
+      "track": "Battle music",
+      "music": "Music",
+      "effects": "Cries and effects",
+      "preview": "Hear Pokémon",
+      "animations": "Battle animations",
+      "reduced": "Device reduced motion",
+      "source": "Pokémon tracks from HGSS, DPP, BW and ORAS via Pokémon Showdown. Cries from PokéAPI. Music requires a connection.",
+      "error": {
+        "music": "Music could not play. Try another track or enable audio again; you can keep battling.",
+        "cry": "This cry could not play. You can keep battling.",
+        "unavailable": "Your browser could not activate effects. Try switching audio off and on."
+      }
+    },
+    "motion": {
+      "resolving": "Resolving the turn…",
+      "skip": "Skip animation",
+      "ready": "Arena ready · choose your next action",
+      "immune": "No effect"
+    }
   }
 }

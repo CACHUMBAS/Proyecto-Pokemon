@@ -394,6 +394,30 @@
       "blocked": "{{name}} no actúa: {{reason}}.",
       "support": "{{name}} utiliza un apoyo.",
       "expired": "Termina una mejora temporal de {{name}}."
+    },
+    "audio": {
+      "title": "Sonido y animaciones",
+      "enable": "Activar audio",
+      "mute": "Silenciar audio",
+      "settings": "Ajustes de sonido y movimiento",
+      "track": "Música de combate",
+      "music": "Música",
+      "effects": "Gritos y efectos",
+      "preview": "Escuchar Pokémon",
+      "animations": "Animaciones de combate",
+      "reduced": "Movimiento reducido del dispositivo",
+      "source": "Temas Pokémon de HGSS, DPP, BW y ORAS desde Pokémon Showdown. Gritos de PokéAPI. La música requiere conexión.",
+      "error": {
+        "music": "No se pudo reproducir la música. Puedes cambiar de tema o volver a activar el audio; el combate sigue disponible.",
+        "cry": "No se pudo reproducir este grito. El combate sigue disponible.",
+        "unavailable": "Tu navegador no ha activado los efectos. Prueba a desactivar y activar el audio."
+      }
+    },
+    "motion": {
+      "resolving": "Resolviendo el turno…",
+      "skip": "Saltar animación",
+      "ready": "Arena lista · elige tu próxima acción",
+      "immune": "Sin efecto"
     }
   }
 }

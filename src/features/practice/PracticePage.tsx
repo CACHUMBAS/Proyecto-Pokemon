@@ -1,17 +1,33 @@
-import { useEffect, useReducer, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { DEFAULT_PLAYER, practiceReducer } from '../../battle/practice'
+import { DEFAULT_PLAYER } from '../../battle/practice'
+import { activeFighter } from '../../battle/battle-state'
+import { cryPath, frameCue } from '../../audio/cues'
 import type { BattleAction } from '../../battle/engine-types'
 import { PracticeSetup } from './PracticeSetup'
 import { BattleBoard } from './BattleBoard'
 import { BattleLog } from './BattleLog'
+import { AudioControls } from './AudioControls'
+import { useBattlePlayback } from './use-battle-playback'
+import { useBattleAudio } from './use-battle-audio'
 import { Button } from '../../components/ui/Button'
 import './PracticePage.css'
-
+import './BattleEffects.css'
 export function PracticePage() {
   const { t } = useTranslation()
   const [team, setTeam] = useState<string[]>([...DEFAULT_PLAYER])
-  const [session, dispatch] = useReducer(practiceReducer, null)
+  const playback = useBattlePlayback()
+  const { presentation, dispatch, frame, playing, skip } = playback
+  const session = presentation.session
+  const battle = frame?.battle ?? session?.battle
+  const audio = useBattleAudio(
+    !battle
+      ? 'setup'
+      : battle.phase === 'finished' || frame?.event?.kind === 'result'
+        ? 'finished'
+        : 'battle',
+  )
+  const { play, stop } = audio
   const [choice, setChoice] = useState<{
     battleId: string
     version: number
@@ -19,12 +35,28 @@ export function PracticePage() {
   } | null>(null)
   const [confirmExit, setConfirmExit] = useState(false)
   const heading = useRef<HTMLHeadingElement>(null)
-  const battleId = session?.battle.battleId
-  const version = session?.battle.version
+  const battleId = session?.battle.battleId,
+    version = session?.battle.version
+  const initialSpecies = battle ? activeFighter(battle, 0).speciesId : 25
+  // This effect only owns entry audio; changing turns must not replay the lead's cry.
   useEffect(() => {
-    heading.current?.focus({ preventScroll: true })
-  }, [battleId, version])
+    if (battleId) play({ kind: 'switch', cryPath: cryPath(initialSpecies) })
+    return stop
+    // initialSpecies is deliberately captured only when a different match starts.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [battleId, play, stop])
+  useEffect(() => {
+    if (frame && playback.animations) {
+      const cue = frameCue(frame)
+      if (cue) play(cue)
+    }
+    return stop
+  }, [frame, playback.animations, play, stop])
+  useEffect(() => {
+    if (!playing) heading.current?.focus({ preventScroll: true })
+  }, [battleId, version, playing])
   function start() {
+    audio.stop()
     setConfirmExit(false)
     dispatch({ kind: 'start', battleId: crypto.randomUUID(), playerIds: team })
     window.scrollTo({ top: 0, behavior: 'instant' })
@@ -33,7 +65,14 @@ export function PracticePage() {
     choice && choice.battleId === battleId && choice.version === version ? choice.action : null
   return (
     <div className="practice-page page-width">
-      {!session ? (
+      <AudioControls
+        audio={audio}
+        animations={playback.animations}
+        onAnimations={playback.setAnimations}
+        reducedMotion={playback.reducedMotion}
+        speciesId={initialSpecies}
+      />
+      {!session || !battle ? (
         <PracticeSetup team={team} onTeamChange={setTeam} onStart={start} />
       ) : (
         <>
@@ -41,8 +80,8 @@ export function PracticePage() {
             <div>
               <p className="eyebrow">{t('practice.eyebrow')}</p>
               <h1 ref={heading} tabIndex={-1}>
-                {t(session.battle.phase === 'finished' ? 'practice.complete' : 'practice.turn', {
-                  turn: session.battle.turn,
+                {t(battle.phase === 'finished' ? 'practice.complete' : 'practice.turn', {
+                  turn: battle.turn,
                 })}
               </h1>
             </div>
@@ -62,20 +101,28 @@ export function PracticePage() {
                 {t('practice.keepPlaying')}
               </Button>
               <Button
-                onClick={() =>
+                onClick={() => {
+                  audio.stop()
                   dispatch({
                     kind: 'exit',
                     battleId: session.battle.battleId,
                     expectedVersion: session.battle.version,
                   })
-                }
+                }}
               >
                 {t('practice.exit')}
               </Button>
             </div>
           )}
           <BattleBoard
-            battle={session.battle}
+            battle={battle}
+            frame={frame}
+            playing={playing}
+            cueKey={battleId + ':' + version + ':' + presentation.cursor}
+            onSkip={() => {
+              audio.stop()
+              skip()
+            }}
             selected={selected}
             onSelect={(action) =>
               setChoice({
@@ -104,7 +151,7 @@ export function PracticePage() {
             }
             onRematch={start}
           />
-          <BattleLog rounds={session.rounds} />
+          <BattleLog rounds={playing ? presentation.previousRounds : session.rounds} />
         </>
       )}
     </div>

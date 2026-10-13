@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/ui/Button'
 import { activeFighter } from '../../battle/battle-state'
@@ -6,7 +7,16 @@ import type { BattleAction, BattleState } from '../../battle/engine-types'
 import { fighterName, moveName, resultKey } from './practice-data'
 import { PracticeCard } from './PracticeCard'
 
+import type { PlaybackFrame } from '../../battle/playback'
+import { BattleEffects } from './BattleEffects'
+import { fighterMotion } from './fighter-motion'
+import { describe } from './event-description'
+
 interface Props {
+  frame: PlaybackFrame | null
+  playing: boolean
+  cueKey: string
+  onSkip: () => void
   battle: BattleState
   selected: BattleAction | null
   onSelect: (action: BattleAction) => void
@@ -16,6 +26,10 @@ interface Props {
 }
 export function BattleBoard({
   battle,
+  frame,
+  playing,
+  cueKey,
+  onSkip,
   selected,
   onSelect,
   onConfirm,
@@ -23,6 +37,10 @@ export function BattleBoard({
   onRematch,
 }: Props) {
   const { t, i18n } = useTranslation()
+  const arena = useRef<HTMLElement>(null)
+  useEffect(() => {
+    if (playing) arena.current?.scrollIntoView({ block: 'start', behavior: 'instant' })
+  }, [playing])
   const locale = i18n.language === 'en' ? 'en' : 'es'
   const player = activeFighter(battle, 0)
   const enemy = activeFighter(battle, 1)
@@ -43,11 +61,13 @@ export function BattleBoard({
               )}
             </p>
           </div>
-          <Button onClick={onRematch}>{t('practice.rematch')}</Button>
+          <Button disabled={playing} onClick={onRematch}>
+            {t('practice.rematch')}
+          </Button>
         </div>
       )}
       <div className="practice-battle-grid">
-        <section className="practice-arena" aria-label={t('practice.arena')}>
+        <section ref={arena} className="practice-arena" aria-label={t('practice.arena')}>
           <div className="practice-arena-top">
             <span className="micro-label">LUMEMON / ARENA 01</span>
             <span>{t('practice.local')}</span>
@@ -57,7 +77,10 @@ export function BattleBoard({
               const fighter = activeFighter(battle, side)
               const name = fighterName(fighter.id, locale)
               return (
-                <article key={side} className={'practice-fighter side-' + side}>
+                <article
+                  key={side}
+                  className={'practice-fighter side-' + side + fighterMotion(frame, side)}
+                >
                   <p className="practice-owner">
                     {t(side === 0 ? 'practice.you' : 'practice.bot')}{' '}
                     <span>{battle.sides[side].fighters.filter((f) => f.hp > 0).length}/6</span>
@@ -106,10 +129,24 @@ export function BattleBoard({
                 </article>
               )
             })}
+            <BattleEffects key={cueKey} frame={frame} />
             <span className="practice-versus" aria-hidden="true">
               VS
             </span>
           </div>
+          <p className="practice-event" role="status">
+            {frame?.event
+              ? describe(frame.event, t, locale)
+              : t(
+                  playing
+                    ? 'practice.motion.resolving'
+                    : finished
+                      ? 'practice.finishedNote'
+                      : replacement
+                        ? 'practice.replaceHint'
+                        : 'practice.motion.ready',
+                )}
+          </p>
           <div className="practice-enemy-reserves">
             <span>{t('practice.rivalTeam')}</span>
             {battle.sides[1].fighters.map((f, index) => (
@@ -148,7 +185,15 @@ export function BattleBoard({
                   : 'practice.botLocked',
             )}
           </p>
-          {!finished && !replacement && (
+          {playing && (
+            <div className="practice-playback-controls">
+              <p>{t('practice.motion.resolving')}</p>
+              <Button variant="secondary" onClick={onSkip}>
+                {t('practice.motion.skip')}
+              </Button>
+            </div>
+          )}
+          {!playing && !finished && !replacement && (
             <>
               <div className="practice-moves">
                 {player.moves.map((move) => {
@@ -226,7 +271,7 @@ export function BattleBoard({
             <button
               type="button"
               key={f.id}
-              disabled={finished || index === battle.sides[0].active || f.hp === 0}
+              disabled={playing || finished || index === battle.sides[0].active || f.hp === 0}
               className={
                 'practice-reserve' + (index === battle.sides[0].active ? ' is-active' : '')
               }

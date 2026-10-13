@@ -49,3 +49,20 @@ Se recuperaron **87 ilustraciones inglesas** de seis colecciones: 2011 (12), 201
 Comprobaciones: 39 pruebas automatizadas correctas; tipos, lint y compilación correctos. Los 174 archivos se decodificaron en el navegador. Las doce cartas de 2011 se abrieron y ampliaron en ES/EN, con proveedores externos bloqueados, comprobando imagen local, procedencia y cierre por teclado. Capturas de escritorio y móvil revisadas; no se añadieron cuentas ni costes.
 
 Revisión independiente de `5b8f8ef..2d10947`: sin hallazgos críticos, importantes ni menores. Se verificaron identidad, idioma y procedencia de los 87 registros, junto con las cuatro pruebas específicas y los hashes de los 174 archivos. Los casos sin fuente fiable y la discrepancia de `2021swsh-12` permanecen documentados; no se sustituyen por arte de otra carta.
+
+## Música y gritos de la práctica (13 de octubre de 2026)
+
+La selección de repertorio toma como referencia el listado del [pack Original Pokémon Battle Music para Cobblemon](https://modrinth.com/resourcepack/cobblemon-original-pokemon-battle-music); no se afirma que forme parte del mod base.
+
+Los MP3 completos no se incluyen en este repositorio. El navegador los reproduce del [índice público de Pokémon Showdown](https://play.pokemonshowdown.com/audio/), verificado con HTTP 200 y tipo audio/mpeg:
+
+| Juego / tema | URL de reproducción |
+| --- | --- |
+| HeartGold / SoulSilver — entrenador Johto | https://play.pokemonshowdown.com/audio/hgss-johto-trainer.mp3 |
+| Diamond / Pearl — entrenador | https://play.pokemonshowdown.com/audio/dpp-trainer.mp3 |
+| Black / White — entrenador | https://play.pokemonshowdown.com/audio/bw-trainer.mp3 |
+| Omega Ruby / Alpha Sapphire — entrenador | https://play.pokemonshowdown.com/audio/oras-trainer.mp3 |
+
+Gritos: [PokeAPI/cries, revisión b3a9044](https://github.com/PokeAPI/cries/tree/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest). Doce archivos locales, 153.114 bytes en total; identidad, URL exacta, longitud y SHA-256 en `assets/audio/cries/_sources.json`. El archivo 25.ogg contiene MPEG audio: se sirve como 25.mp3 sin cambiar sus bytes. Los otros once contienen Ogg/Vorbis. Se conserva `SOURCE-LICENSE.txt`: el repositorio indica CC0 para su distribución y señala que el contenido de audio tiene copyright de The Pokémon Company. Esto no acredita licencia comercial de los sonidos o temas.
+
+Los efectos de ataque, golpe, estado, KO y resultado se generan mediante Web Audio y son propios de la interfaz. El usuario activa el audio; no hay descarga previa de música ni reproducción automática al entrar.
