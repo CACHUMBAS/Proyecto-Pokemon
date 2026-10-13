@@ -1,17 +1,18 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-13 (primer conjunto verificado de cartas de combate). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-13 (práctica local contra la máquina). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `f32d9fd`, rama `feat/battle-turns`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `b118a54`, rama `feat/battle-data`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
 - Motor local de turnos en `feat/battle-turns`, desde `991b30c`; conserva todas las entregas anteriores.
 - Datos iniciales de combate en `feat/battle-data`, desde `f32d9fd`: 12 especies y 24 cartas del catálogo conectadas al motor.
+- Práctica local en `feat/practice-battle`, desde `b118a54`: ruta `/practica`, equipo inicial editable, bot y tablero ES/EN.
 - La rama activa, cambios pendientes y ascendencia se consultan siempre en Git. Estos nombres son una referencia fechada, no una orden de cambiar de rama.
 
 ## Nombre actual y compatibilidad
@@ -46,8 +47,9 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Composición | Validador de seis especies distintas; rechaza IDs desconocidos, duplicados, apoyos en plazas Pokémon y asociaciones ambiguas | No comprueba propiedad, estadísticas, movimientos ni aptitud real para combatir |
 | Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI); ES/EN y móvil | Un borrador local, sin cuenta, apoyos seleccionables ni combate |
 | Cálculo de combate | Tipos de datos mínimos, 18 tipos, dobles tipos e inmunidades, afinidad y modificadores de daño con aritmética exacta | Funciones puras sin conectar a la interfaz; no resuelven turnos, estados, duración de mejoras ni propiedad |
-| Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro con datos sintéticos de prueba; sin pantalla de combate, movimientos/perfiles reales, reloj o servicio de elecciones privadas |
-| Cartas habilitadas para el motor | 24 cartas de 12 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Selección inicial sin UI, IA, apoyos mapeados o propiedad; las demás cartas del catálogo todavía no son jugables |
+| Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 24 cartas verificadas; sin reloj o servicio de elecciones privadas |
+| Cartas habilitadas para el motor | 24 cartas de 12 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local; sin apoyos mapeados ni propiedad; las demás cartas del catálogo todavía no son jugables |
+| Práctica local | `/practica`: selección de seis, variantes, tablero, bot sencillo, estados, recargas, cambios, KO, registro, resultado y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; selección separada de `/equipo` |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
 
 La instantánea `523febef1a683029` contiene 1.025 especies, 23.770 registros de cartas (20.132 Pokémon y 3.638 apoyos), 129 asociaciones ambiguas y 1.357 registros sin imagen en la fuente. Los respaldos locales de imágenes no modifican esos contadores originales. Verifica cifras futuras en `public/catalog/manifest.json`; no afirmes cobertura de todas las ediciones históricas o japonesas.
@@ -105,13 +107,25 @@ listPlayableCards/getPlayableCard devuelven copias; createPlayableBattle exige s
 
 Verificación: 11 pruebas nuevas en RED→GREEN; 102 pruebas totales, lint y compilación con TypeScript correctos, snapshot regenerado y comprobado exactamente. Incluye un combate completo con estas cartas, colisiones de 80 variantes, números grandes, alteración de fuentes y rechazo de asociaciones incompatibles. Revisión independiente completada sin hallazgos: 11/11 pruebas dirigidas correctas. El ejecutor verificó también los hashes oficiales completos de los cuatro CSV reutilizados de la caché; los otros nueve se descargaron de la revisión fijada durante esta tarea. Sin interfaz nueva ni prueba visual requerida. Detalle: [datos y procedencia](../src/battle/data/README.md), [plan](superpowers/plans/2026-10-13-lumemon-battle-data.md).
 
+## Práctica contra la máquina — 13 de octubre
+
+El usuario autorizó el siguiente bloque con «Continua». `/practica` carga de forma diferida el motor y las 24 cartas. Ofrece seis iniciales listos para jugar, selector de 12 especies/dos variantes, estadísticas propias, cambio de inicial, tablero, reservas, movimientos, recargas, estados, vida, registro y revancha. Reutiliza PokemonCard y el mapeo de procedencia/idioma; los 24 registros de arte son copias exactas del catálogo verificadas por prueba.
+
+`src/battle/practice.ts` mantiene la sesión en memoria. El bot básico puntúa movimientos legales con el propio motor (daño real o 45 puntos por estado aplicado); no cambia voluntariamente, no recibe la elección pendiente del jugador y deja su acción fijada al abrir el turno. No se afirma que sea una IA avanzada ni equilibrio probado. Las sustituciones solo del bot son automáticas; si cae el jugador, espera su reserva. Los comandos incluyen ID de partida y versión para ignorar dobles clics y acciones antiguas. El bit de desempate se obtiene fuera del reducer.
+
+La práctica no usa el borrador de /equipo, cuentas, cartas poseídas, apoyos, tiempo de 45 segundos ni premios. Recargar o salir de la ruta descarta la partida; volver al selector pide confirmación dentro de la pantalla. Queda pendiente el tutorial guiado, aunque hay instrucciones iniciales desplegables.
+
+Verificación: ocho pruebas nuevas fallaron primero con stubs y pasaron después; 110 pruebas totales, lint, build/typecheck y battle:check correctos. Navegador real: ES/EN, 320/390/768/1440 sin desbordamiento observado; cambiar variante/estadísticas, seis plazas, bloqueo de inicio incompleto, promoción, acción con teclado, recarga, sueño/recuperación, parálisis, empate de velocidad, cambio, KO/sustitución, partida completa hasta derrota, revancha limpia, cancelar/salir y recargar. El borrador existente de /equipo siguió accesible. Imágenes iniciales y variantes activas cargaron; no se simuló caída de red ni se verificó manualmente cada una de las 24 imágenes. Revisión final independiente pendiente antes del cierre de la rama.
+
+Se corrigió una expectativa de prueba: la versión inicial del motor ya era 1, no 0; el contrato de producción se conserva. No se añadieron dependencias. [Plan](superpowers/plans/2026-10-13-lumemon-practice.md).
+
 ## Pendiente: no anunciar como disponible
 
-Integración del motor en una pantalla de combate, ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, tutorial, IA de rivales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión, música y publicación de Lumemon.
+Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, tutorial guiado, rivales avanzados, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión, música y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato, pendiente de una tarea concreta: primera pantalla de combate de práctica contra la máquina usando el conjunto de 24 cartas ya disponible; después tutorial y ampliación del conjunto. Mantenerlo explícitamente local, sin cuenta ni recompensas reales. Este archivo no autoriza implementar esos bloques automáticamente.
+Siguiente candidato, pendiente de una tarea concreta: tutorial guiado dentro de la práctica existente; después ampliación del conjunto. Mantenerlo explícitamente local, sin cuenta ni recompensas reales. Este archivo no autoriza implementar esos bloques automáticamente.
 
 ## Mapa de código y comandos
 
@@ -120,6 +134,7 @@ Siguiente candidato, pendiente de una tarea concreta: primera pantalla de combat
 | `src/app/router.tsx` | Rutas; catálogo y equipo se cargan de forma diferida |
 | `src/components` | Tarjetas, botones, idioma, layout; reutilizar |
 | `src/features/catalog` | Pantallas, conversión de cartas a vista, orden de variantes |
+| `src/features/practice`, `src/battle/practice.ts` | Selector, tablero, registro y sesión local contra el bot; arte copiado del catálogo |
 | `src/features/team` | Constructor, selector y hook de borrador |
 | `src/catalog` | Tipos, normalización, repositorio, cliente, fuentes suplementarias y pruebas |
 | `src/battle/types.ts`, `type-chart.ts`, `damage.ts` | Contratos mínimos, efectividad y pérdida de vida puras; sin interfaz ni turnos |

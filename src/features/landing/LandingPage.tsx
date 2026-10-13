@@ -31,9 +31,9 @@ export function LandingPage() {
               {t('hero.cta')}
               <span aria-hidden="true">↗</span>
             </Link>
-            <Link className="text-link" to="/#universo">
+            <Link className="text-link" to="/practica">
               {t('hero.secondary')}
-              <span aria-hidden="true">↓</span>
+              <span aria-hidden="true">↗</span>
             </Link>
           </div>
           <p className="development-note">

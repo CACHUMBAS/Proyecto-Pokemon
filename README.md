@@ -4,7 +4,7 @@ Un universo web de cartas Pokémon y combates por turnos, para móvil y ordenado
 
 Desde el 12 de octubre de 2026, el proyecto se llama **Lumemon** (antes PokePrisma). El repositorio sigue siendo `CACHUMBAS/Proyecto-Pokemon` y la carpeta local conserva su nombre. Las claves `pokeprisma.locale.v1` y `pokeprisma.team-draft.v1`, los IDs y el origen interno `pokeprisma` se mantienen para conservar los datos existentes. Las rutas, ramas y documentos históricos pueden contener el nombre anterior.
 
-**Estado: catálogo navegable y constructor de equipo de prueba local.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Las cuentas, la colección personal, los sobres, la economía y los combates pertenecen a las siguientes fases.
+**Estado: catálogo, constructor de equipo de prueba y práctica local contra la máquina.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Las cuentas, la colección personal, los sobres, la economía y los combates online pertenecen a las siguientes fases.
 
 ## Abrir en VS Code
 
@@ -37,6 +37,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 - `/catalogo`: las 1.025 especies, búsqueda por nombre o número nacional y filtros combinables por generación, tipo de Pokémon, rareza y expansión. Los filtros se guardan en la URL.
 - `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
 - `/equipo`: constructor de un equipo de prueba de seis especies, selección de ilustraciones, cambio de primer Pokémon y guardado local.
+- `/practica`: combate local de seis contra un bot con 24 cartas habilitadas, ES/EN, variantes, registro y revancha.
 - `/diseno`: tres cartas verificadas de TCGdex y una muestra propia sin imagen; filtros y fichas de procedencia.
 - Cualquier ruta desconocida: pantalla de recuperación con enlace al inicio.
 - Selector ES/EN: guarda solo el idioma; sigue funcionando si el navegador bloquea almacenamiento.
@@ -118,10 +119,16 @@ Estas dos funciones son puras y se reutilizan desde el motor de turnos descrito 
 
 Ya se pueden resolver partidas completas en código con dos equipos de seis miembros: movimientos, cambios, apoyos, cinco estados, recargas, sustituciones, victorias y empates. Se conserva la versión de estado y se registra el desempate de velocidad para reproducir resultados. Consulta la [API y sus límites](src/battle/README.md).
 
-El motor tiene pruebas sintéticas y ahora también un adaptador con 24 cartas reales seleccionadas, descrito abajo. La pantalla, la selección privada, los 45 segundos, las cuentas y las recompensas corresponden a siguientes bloques.
+El motor tiene pruebas sintéticas y ahora también un adaptador con 24 cartas reales seleccionadas, descrito abajo. La selección privada en servidor, los 45 segundos, las cuentas y las recompensas corresponden a siguientes bloques.
 
 ### Primer conjunto de cartas de combate
 
 Hay 24 cartas habilitadas de 12 especies, con estadísticas propias según rareza/perfil y movimientos reales de PokéAPI adaptados a Lumemon. Las asignaciones están guardadas en una instantánea versionada, con nombres ES/EN, compatibilidad de una sola versión y hashes de fuentes. `createPlayableBattle` conecta seis IDs conocidos por equipo con el motor; rechaza otras cartas y especies repetidas.
 
-Consulta [cartas, fuentes y límites](src/battle/data/README.md). `npm run battle:check` verifica la reproducción sin conexión; `npm run battle:generate` regenera explícitamente tras revisar cambios. Las 1.025 especies del catálogo no quedan automáticamente habilitadas. Aún faltan pantalla y rival automático.
+Consulta [cartas, fuentes y límites](src/battle/data/README.md). `npm run battle:check` verifica la reproducción sin conexión; `npm run battle:generate` regenera explícitamente tras revisar cambios. Las 1.025 especies del catálogo no quedan automáticamente habilitadas. Estas cartas ya se pueden probar en `/practica`.
+
+### Práctica local
+
+En `/practica` empieza con seis cartas o personaliza especies, ilustraciones e inicial. Selecciona un movimiento o una reserva y confirma el turno. El bot elige antes de tu confirmación; el motor resuelve tipos, velocidad, estados, recargas y KO. Tras una baja elige un relevo; al terminar puedes jugar de nuevo. El registro explica cada turno.
+
+Es una práctica sin reloj, apoyos, cuenta ni recompensas. Al salir de la ruta o recargar se pierde la partida. Su selección no modifica el borrador guardado en `/equipo`; tampoco convierte las cartas en una colección propia. Los valores del combate son los de Lumemon, no los impresos del TCG. Tutorial guiado y balance más amplio pendientes.

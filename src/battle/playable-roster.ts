@@ -1,7 +1,7 @@
 import snapshot from './data/starter-roster.json' with { type: 'json' }
 import { createBattle, requireValid } from './battle-state.ts'
 import type { BattleState } from './engine-types.ts'
-import type { BattleRoster, PlayableCard } from './data-types.ts'
+import type { BattleRoster, PlayableCard, BattleSpecies } from './data-types.ts'
 
 // Build-time verified, bundled data. Never accept an arbitrary client snapshot here.
 const roster = snapshot as unknown as BattleRoster
@@ -31,4 +31,8 @@ export function createPlayableBattle(
     dataVersion: roster.version,
     teams: [makeTeam(teams[0]), makeTeam(teams[1])],
   })
+}
+
+export function listBattleSpecies(): BattleSpecies[] {
+  return structuredClone(roster.species)
 }

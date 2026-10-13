@@ -1,0 +1,530 @@
+[
+  {
+    "id": "base1-44",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Bulbasaur",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/44"
+      }
+    },
+    "speciesIds": [1],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Grass"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "sv03.5-166",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Bulbasaur",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/166"
+      },
+      "es": {
+        "name": "Bulbasaur",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/166"
+      }
+    },
+    "speciesIds": [1],
+    "mapping": "species",
+    "rarity": "Illustration rare",
+    "tcgTypes": ["Grass"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Yoriyuki Ikegami"
+  },
+  {
+    "id": "base1-46",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Charmander",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/46"
+      }
+    },
+    "speciesIds": [4],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Fire"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "sv03.5-168",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Charmander",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/168"
+      },
+      "es": {
+        "name": "Charmander",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/168"
+      }
+    },
+    "speciesIds": [4],
+    "mapping": "species",
+    "rarity": "Illustration rare",
+    "tcgTypes": ["Fire"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "miki kudo"
+  },
+  {
+    "id": "base1-63",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Squirtle",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/63"
+      }
+    },
+    "speciesIds": [7],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Water"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "sv03.5-170",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Squirtle",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/170"
+      },
+      "es": {
+        "name": "Squirtle",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/170"
+      }
+    },
+    "speciesIds": [7],
+    "mapping": "species",
+    "rarity": "Illustration rare",
+    "tcgTypes": ["Water"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "base1-58",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Pikachu",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/58"
+      }
+    },
+    "speciesIds": [25],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Lightning"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "sv03.5-173",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Pikachu",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/173"
+      },
+      "es": {
+        "name": "Pikachu",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/173"
+      }
+    },
+    "speciesIds": [25],
+    "mapping": "species",
+    "rarity": "Illustration rare",
+    "tcgTypes": ["Lightning"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Hiroyuki Yamamoto"
+  },
+  {
+    "id": "base1-68",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Vulpix",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/68"
+      }
+    },
+    "speciesIds": [37],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Fire"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Ken Sugimori"
+  },
+  {
+    "id": "sv03.5-037",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Vulpix",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/037"
+      },
+      "es": {
+        "name": "Vulpix",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/037"
+      }
+    },
+    "speciesIds": [37],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Fire"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "kawayoo"
+  },
+  {
+    "id": "base2-54",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Jigglypuff",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base2/54"
+      }
+    },
+    "speciesIds": [39],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Colorless"],
+    "set": {
+      "id": "base2",
+      "name": "Jungle"
+    },
+    "illustrator": "Kagemaru Himeno"
+  },
+  {
+    "id": "sv03.5-039",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Jigglypuff",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/039"
+      },
+      "es": {
+        "name": "Jigglypuff",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/039"
+      }
+    },
+    "speciesIds": [39],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Colorless"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "saino misaki"
+  },
+  {
+    "id": "base1-43",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Abra",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/43"
+      }
+    },
+    "speciesIds": [63],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Psychic"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "sv03.5-063",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Abra",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/063"
+      },
+      "es": {
+        "name": "Abra",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/063"
+      }
+    },
+    "speciesIds": [63],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Psychic"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "base1-52",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Machop",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/52"
+      }
+    },
+    "speciesIds": [66],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Fighting"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "sv03.5-066",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Machop",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/066"
+      },
+      "es": {
+        "name": "Machop",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/066"
+      }
+    },
+    "speciesIds": [66],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Fighting"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Ryuta Fuse"
+  },
+  {
+    "id": "base1-50",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Gastly",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/50"
+      }
+    },
+    "speciesIds": [92],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Psychic"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Keiji Kinebuchi"
+  },
+  {
+    "id": "sv03.5-092",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Gastly",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/092"
+      },
+      "es": {
+        "name": "Gastly",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/092"
+      }
+    },
+    "speciesIds": [92],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Psychic"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Tomokazu Komiya"
+  },
+  {
+    "id": "base1-56",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Onix",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/56"
+      }
+    },
+    "speciesIds": [95],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Fighting"],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Ken Sugimori"
+  },
+  {
+    "id": "sv03.5-095",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Onix",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/095"
+      },
+      "es": {
+        "name": "Onix",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/095"
+      }
+    },
+    "speciesIds": [95],
+    "mapping": "species",
+    "rarity": "Uncommon",
+    "tcgTypes": ["Fighting"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Shin Nagasawa"
+  },
+  {
+    "id": "base3-10",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Lapras",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base3/10"
+      }
+    },
+    "speciesIds": [131],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": ["Water"],
+    "set": {
+      "id": "base3",
+      "name": "Fossil"
+    },
+    "illustrator": "Ken Sugimori"
+  },
+  {
+    "id": "sv03.5-131",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Lapras",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/131"
+      },
+      "es": {
+        "name": "Lapras",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/131"
+      }
+    },
+    "speciesIds": [131],
+    "mapping": "species",
+    "rarity": "Uncommon",
+    "tcgTypes": ["Water"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "LINNE"
+  },
+  {
+    "id": "base2-51",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Eevee",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base2/51"
+      }
+    },
+    "speciesIds": [133],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Colorless"],
+    "set": {
+      "id": "base2",
+      "name": "Jungle"
+    },
+    "illustrator": "Kagemaru Himeno"
+  },
+  {
+    "id": "sv03.5-133",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Eevee",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/133"
+      },
+      "es": {
+        "name": "Eevee",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/133"
+      }
+    },
+    "speciesIds": [133],
+    "mapping": "species",
+    "rarity": "Common",
+    "tcgTypes": ["Colorless"],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Narumi Sato"
+  }
+]
