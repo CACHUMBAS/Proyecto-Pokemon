@@ -1,3 +1,5 @@
+import { DEFAULT_OPPONENT } from '../../battle/opponents'
+import type { PracticeOpponentId } from '../../battle/opponents'
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { tutorialAction } from '../../battle/tutorial'
@@ -18,6 +20,7 @@ import './BattleEffects.css'
 export function PracticePage() {
   const { t } = useTranslation()
   const [team, setTeam] = useState<string[]>([...DEFAULT_PLAYER])
+  const [opponentId, setOpponentId] = useState<PracticeOpponentId>(DEFAULT_OPPONENT)
   const playback = useBattlePlayback()
   const { presentation, dispatch, frame, playing, skip } = playback
   const session = presentation.session
@@ -57,10 +60,16 @@ export function PracticePage() {
   useEffect(() => {
     if (!playing && !session?.tutorial) heading.current?.focus({ preventScroll: true })
   }, [battleId, version, playing, session?.tutorial])
-  function startBattle(tutorial = false, playerIds = team) {
+  function startBattle(tutorial = false, playerIds = team, matchOpponentId = opponentId) {
     audio.stop()
     setConfirmExit(false)
-    dispatch({ kind: 'start', battleId: crypto.randomUUID(), playerIds, tutorial })
+    dispatch({
+      kind: 'start',
+      battleId: crypto.randomUUID(),
+      playerIds,
+      tutorial,
+      opponentId: matchOpponentId,
+    })
     window.scrollTo({ top: 0, behavior: 'instant' })
   }
   function start() {
@@ -89,6 +98,8 @@ export function PracticePage() {
       />
       {!session || !battle ? (
         <PracticeSetup
+          opponentId={opponentId}
+          onOpponentChange={setOpponentId}
           team={team}
           onTeamChange={setTeam}
           onStart={start}
@@ -104,6 +115,10 @@ export function PracticePage() {
                   turn: battle.turn,
                 })}
               </h1>
+              <p className="practice-matchup">
+                {t('opponents.matchup', { name: t('opponents.' + session.opponentId + '.name') })} ·{' '}
+                {t('opponents.' + session.opponentId + '.level')}
+              </p>
             </div>
             <button
               type="button"
@@ -187,6 +202,7 @@ export function PracticePage() {
               startBattle(
                 false,
                 session.battle.sides[0].fighters.map((f) => f.id),
+                session.opponentId,
               )
             }
           />

@@ -418,7 +418,7 @@
     "label": "First steps",
     "progress": "{{step}} of {{total}}",
     "entryTitle": "Your first battle?",
-    "entryBody": "Learn by playing with a prepared team: attack, read types, switch Pokémon and apply a status. Your team selection is kept.",
+    "entryBody": "Learn by playing with a prepared team: attack, read types, switch Pokémon and apply a status. Your team selection is kept. The tutorial always uses the Versatile opponent.",
     "start": "Learn to battle",
     "begin": "Start lesson",
     "understood": "Got it, let's switch",
@@ -456,6 +456,27 @@
         "title": "You know the essentials",
         "body": "You attacked, read types, switched Pokémon and applied sleep. Abra is asleep: its next attempted move will be blocked. Keep battling to see it and try your own decisions."
       }
+    }
+  },
+  "opponents": {
+    "title": "Choose your opponent",
+    "hint": "Suggested difficulty based on team and rarity. All three opponents use the same battle logic; type advantages matter too.",
+    "team": "Opponent team in entry order",
+    "matchup": "Opponent: {{name}}",
+    "rookie": {
+      "name": "Rookie",
+      "level": "Starter level",
+      "description": "Six common cards to practise familiar types. Eevee leads the team."
+    },
+    "balanced": {
+      "name": "Versatile",
+      "level": "Intermediate",
+      "description": "The classic opponent: five common cards and an uncommon Lapras. Abra leads a team with varied types."
+    },
+    "elite": {
+      "name": "Elite",
+      "level": "High level",
+      "description": "Three special illustration rares and three rare cards. Charizard leads: plan your switches and type matchups."
     }
   }
 }

@@ -424,7 +424,7 @@
     "label": "Primeros pasos",
     "progress": "{{step}} de {{total}}",
     "entryTitle": "¿Tu primer combate?",
-    "entryBody": "Aprende jugando con un equipo preparado: atacar, leer los tipos, cambiar de Pokémon y aplicar un estado. Tu selección de equipo se conserva.",
+    "entryBody": "Aprende jugando con un equipo preparado: atacar, leer los tipos, cambiar de Pokémon y aplicar un estado. Tu selección de equipo se conserva. El tutorial siempre usa el rival Versátil.",
     "start": "Aprender a combatir",
     "begin": "Empezar lección",
     "understood": "Entendido, vamos a cambiar",
@@ -462,6 +462,27 @@
         "title": "Ya conoces lo esencial",
         "body": "Has atacado, leído los tipos, cambiado de Pokémon y aplicado sueño. Abra está dormido: su siguiente intento de movimiento quedará bloqueado. Sigue combatiendo para verlo y prueba tus propias decisiones."
       }
+    }
+  },
+  "opponents": {
+    "title": "Elige tu rival",
+    "hint": "Dificultad orientativa por equipo y rareza. Los tres rivales usan la misma lógica de combate; las ventajas de tipo también cuentan.",
+    "team": "Equipo del rival en orden de salida",
+    "matchup": "Rival: {{name}}",
+    "rookie": {
+      "name": "Iniciación",
+      "level": "Nivel inicial",
+      "description": "Seis cartas comunes para practicar con tipos conocidos. Eevee abre el combate."
+    },
+    "balanced": {
+      "name": "Versátil",
+      "level": "Nivel intermedio",
+      "description": "El rival clásico: cinco cartas comunes y Lapras poco común. Abra abre un equipo de tipos variados."
+    },
+    "elite": {
+      "name": "Élite",
+      "level": "Nivel alto",
+      "description": "Tres ilustraciones especiales raras y tres cartas raras. Charizard abre el combate: prepara tus cambios y tus tipos."
     }
   }
 }

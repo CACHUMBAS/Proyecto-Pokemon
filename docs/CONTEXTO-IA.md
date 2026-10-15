@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-15 (18 especies y 36 cartas jugables). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-15 (tres rivales de práctica con equipos y niveles visibles). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `b115ca0`, rama `feat/guided-battle-tutorial`; entrega en `feat/expanded-battle-roster`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `2463953`, rama `feat/expanded-battle-roster`; entrega en `feat/practice-opponents`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -151,13 +151,21 @@ Verificación automatizada: tres casos fallaron primero por la ausencia de la am
 
 Navegador: doce ilustraciones nuevas cargadas (clásicas EN y alternativas ES), selección de las seis especies y cambio de variantes sin perder plazas; interfaz ES/EN, Ataque Ala de Charizard, Ciclón de Dragonite, recarga, daño, KO y sustitución obligatoria por Blastoise. Capturas de 390/1440 revisadas sin desbordamiento observado. Gritos de Charizard y Dragonite decodificados y reproducción observada en el elemento de audio; los seis nuevos tienen formato, bytes y hash verificados. No se afirma escucha humana ni prueba visual de todos los movimientos. Sin errores de consola observados; audio silenciado y pestaña de prueba cerrada al terminar. Revisión independiente sin hallazgos funcionales: corroboró compatibilidad anterior, 503 filas originales de los 13 CSV, 36 artes y 18 gritos. Único detalle P3 corregido: el mapa de código aún decía 24 cartas. La revisión no repitió el navegador ni evaluó equilibrio competitivo.
 
+## Rivales de práctica — 2026-10-15
+
+Selector ES/EN de tres rivales en /practica: Iniciación (seis comunes, abre Eevee), Versátil (el equipo anterior: cinco comunes y Lapras poco común, abre Abra) y Élite (tres ilustraciones especiales raras y tres raras, abre Charizard). La vista previa muestra los seis, orden, tipos, rarezas e IDs de variantes. Niveles orientativos por composición y rareza: misma lógica del bot, estadísticas originales del conjunto, sin multiplicadores ocultos. No se ha medido equilibrio competitivo ni se garantiza que cada enfrentamiento siga ese orden de dificultad.
+
+La sesión guarda opponentId y lo conserva al resolver turnos/sustituciones. La revancha usa el rival y el equipo de esa partida, con estado nuevo. El tutorial fuerza Versátil y su equipo fijo, incluso con selección incompleta; al volver a la preparación se conservan el rival y equipo elegidos antes del tutorial. Sin persistencia nueva, cuenta o recompensas. El conjunto sigue en 18 especies/36 cartas.
+
+Verificación: 134 pruebas correctas, lint y build con typecheck. Las pruebas nuevas cubren equipos válidos, presupuestos crecientes sin alterar estadísticas, IDs desconocidos, copias independientes, partidas completas, sustituciones, revancha y aislamiento del tutorial. Navegador: selección por flechas con foco visible; Élite real, derrota tras 20 turnos pasivos y revancha en turno 1 con el mismo rival; tutorial fijo al seleccionar Élite con cinco cartas; vuelta conserva esa selección incompleta. Capturas de escritorio 1440 y móvil 390 sin desbordamiento observado, textos ES/EN; Iniciación abre con Eevee en la interfaz móvil EN. Sin errores de consola observados; idioma ES y animaciones restaurados, audio silenciado, tamaño restaurado y pestaña temporal cerrada. Revisión independiente sin hallazgos: confirmó las tres pruebas nuevas, traducciones, política común y sustitución automática del rival en los tres equipos. No repitió el navegador (comprobado por el ejecutor) ni evaluó equilibrio competitivo (fuera de este bloque, dificultad expresamente orientativa). No se han instalado dependencias ni publicado la web.
+
 ## Pendiente: no anunciar como disponible
 
 Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, rivales avanzados, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato, pendiente de una tarea concreta: selección de rivales de práctica con equipos distintos y dificultad explícita, conservando el bot y equipo fijos del tutorial. Mantenerlo explícitamente local, sin cuenta ni recompensas reales. Este archivo no autoriza implementar esos bloques automáticamente.
+Siguiente candidato: mejorar las decisiones del bot (cambios de Pokémon según tipos), con pruebas que eviten anticipar la acción del jugador y conservando la política fija del tutorial. Requiere una nueva tarea; este archivo no autoriza iniciar otro bloque. Autenticación y progreso siguen siendo una fase separada pendiente.
 
 ## Mapa de código y comandos
 
@@ -166,7 +174,7 @@ Siguiente candidato, pendiente de una tarea concreta: selección de rivales de p
 | `src/app/router.tsx` | Rutas; catálogo y equipo se cargan de forma diferida |
 | `src/components` | Tarjetas, botones, idioma, layout; reutilizar |
 | `src/features/catalog` | Pantallas, conversión de cartas a vista, orden de variantes |
-| `src/features/practice`, `src/battle/practice.ts` | Selector, tablero, registro y sesión local contra el bot; arte copiado del catálogo |
+| `src/features/practice`, `src/battle/practice.ts`, `src/battle/opponents.ts` | Selector de equipo/rival, tablero, registro y sesión local contra el bot; arte copiado del catálogo |
 | `src/features/team` | Constructor, selector y hook de borrador |
 | `src/catalog` | Tipos, normalización, repositorio, cliente, fuentes suplementarias y pruebas |
 | `src/battle/types.ts`, `type-chart.ts`, `damage.ts` | Contratos mínimos, efectividad y pérdida de vida puras; sin interfaz ni turnos |

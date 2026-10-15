@@ -1,3 +1,5 @@
+import type { PracticeOpponentId } from '../../battle/opponents'
+import { OpponentPicker } from './OpponentPicker'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/ui/Button'
@@ -5,12 +7,21 @@ import { PracticeCard } from './PracticeCard'
 import { cards, cardsById, species, fighterName } from './practice-data'
 
 interface Props {
+  opponentId: PracticeOpponentId
+  onOpponentChange: (id: PracticeOpponentId) => void
   team: string[]
   onTeamChange: (team: string[]) => void
   onStart: () => void
   onTutorial: () => void
 }
-export function PracticeSetup({ team, onTeamChange, onStart, onTutorial }: Props) {
+export function PracticeSetup({
+  team,
+  onTeamChange,
+  onStart,
+  onTutorial,
+  opponentId,
+  onOpponentChange,
+}: Props) {
   const { t, i18n } = useTranslation()
   const locale = i18n.language === 'en' ? 'en' : 'es'
   const [preferences, setPreferences] = useState<Record<number, string>>({})
@@ -32,6 +43,7 @@ export function PracticeSetup({ team, onTeamChange, onStart, onTutorial }: Props
               {cards.length} <small>{t('practice.artworks')}</small>
             </span>
           </div>
+          <OpponentPicker value={opponentId} onChange={onOpponentChange} />
         </div>
         <aside className="practice-ready" aria-label={t('practice.yourTeam')}>
           <div className="practice-ready-top">
@@ -50,6 +62,9 @@ export function PracticeSetup({ team, onTeamChange, onStart, onTutorial }: Props
           {team.length < 6 && (
             <p role="status">{t('practice.missing', { count: 6 - team.length })}</p>
           )}
+          <p className="practice-matchup">
+            {t('opponents.matchup', { name: t('opponents.' + opponentId + '.name') })}
+          </p>
           <Button disabled={team.length !== 6} onClick={onStart}>
             {t('practice.start')} <span aria-hidden="true">↗</span>
           </Button>

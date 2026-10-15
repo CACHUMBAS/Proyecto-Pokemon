@@ -1,3 +1,6 @@
+import { DEFAULT_OPPONENT, getPracticeOpponent } from './opponents.ts'
+import type { PracticeOpponentId } from './opponents.ts'
+export { DEFAULT_BOT } from './opponents.ts'
 import { TUTORIAL_PLAYER, tutorialAction, advanceTutorial, matchesAction } from './tutorial.ts'
 import type { TutorialStep } from './tutorial.ts'
 import { activeFighter, requireValid } from './battle-state.ts'
@@ -7,12 +10,19 @@ import type { BattleAction, BattleEvent, BattleState, BattleTransition } from '.
 
 export interface PracticeSession {
   battle: BattleState
+  opponentId: PracticeOpponentId
   tutorial: TutorialStep | null
   botAction: BattleAction | null
   rounds: { turn: number; events: BattleEvent[] }[]
 }
 export type PracticeCommand =
-  | { kind: 'start'; battleId: string; playerIds: readonly string[]; tutorial?: boolean }
+  | {
+      kind: 'start'
+      battleId: string
+      playerIds: readonly string[]
+      tutorial?: boolean
+      opponentId?: PracticeOpponentId
+    }
   | {
       kind: 'guide'
       battleId: string
@@ -37,14 +47,6 @@ export const DEFAULT_PLAYER = [
   'base1-58',
   'base1-68',
   'base2-54',
-] as const
-export const DEFAULT_BOT = [
-  'base1-43',
-  'base1-52',
-  'base1-50',
-  'base1-56',
-  'sv03.5-131',
-  'base2-51',
 ] as const
 
 /** Simple, deterministic opponent. It sees the board, never the player's pending choice. */
@@ -77,13 +79,16 @@ export function createPractice(
   battleId: string,
   playerIds: readonly string[] = DEFAULT_PLAYER,
   tutorial = false,
+  opponentId: string = DEFAULT_OPPONENT,
 ): PracticeSession {
+  const opponent = getPracticeOpponent(tutorial ? DEFAULT_OPPONENT : opponentId)
   const battle = createPlayableBattle(battleId, [
     tutorial ? TUTORIAL_PLAYER : playerIds,
-    DEFAULT_BOT,
+    opponent.cardIds,
   ])
   return {
     battle,
+    opponentId: opponent.id,
     botAction: chooseBotAction(battle),
     rounds: [],
     tutorial: tutorial ? 'welcome' : null,
@@ -104,6 +109,7 @@ function advance(session: PracticeSession, transition: BattleTransition): Practi
   else rounds.push({ turn, events })
   return {
     battle,
+    opponentId: session.opponentId,
     rounds,
     tutorial: advanceTutorial(session.tutorial, session.battle, events),
     botAction: battle.phase === 'selection' ? chooseBotAction(battle) : null,
@@ -116,7 +122,7 @@ export function practiceReducer(
   command: PracticeCommand,
 ): PracticeSession | null {
   if (command.kind === 'start')
-    return createPractice(command.battleId, command.playerIds, command.tutorial)
+    return createPractice(command.battleId, command.playerIds, command.tutorial, command.opponentId)
   if (
     !session ||
     command.battleId !== session.battle.battleId ||

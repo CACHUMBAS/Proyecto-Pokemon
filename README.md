@@ -37,7 +37,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 - `/catalogo`: las 1.025 especies, búsqueda por nombre o número nacional y filtros combinables por generación, tipo de Pokémon, rareza y expansión. Los filtros se guardan en la URL.
 - `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
 - `/equipo`: constructor de un equipo de prueba de seis especies, selección de ilustraciones, cambio de primer Pokémon y guardado local.
-- `/practica`: combate local de seis contra un bot con 36 cartas habilitadas, ES/EN, variantes, registro, revancha, música seleccionable, gritos y animaciones por tipo.
+- `/practica`: combate local de seis contra un bot con tres equipos rivales seleccionables y 36 cartas habilitadas, ES/EN, variantes, registro, revancha, música seleccionable, gritos y animaciones por tipo.
 - `/diseno`: tres cartas verificadas de TCGdex y una muestra propia sin imagen; filtros y fichas de procedencia.
 - Cualquier ruta desconocida: pantalla de recuperación con enlace al inicio.
 - Selector ES/EN: guarda solo el idioma; sigue funcionando si el navegador bloquea almacenamiento.
@@ -45,6 +45,8 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 - Reflejos holográficos con ratón; acabado estático en táctil y con movimiento reducido.
 
 Las ilustraciones de las tres cartas están en inglés y así se identifican en sus fichas. Sus tipos y rarezas son del TCG impreso; todavía no son estadísticas del combate de Lumemon. No existe un inventario, sesión o saldo simulado.
+
+En /practica puedes elegir **Iniciación**, **Versátil** o **Élite** y ver sus seis cartas antes de entrar. El nivel depende del equipo y su rareza: los tres usan la misma lógica de combate, sin estadísticas aumentadas. La revancha conserva el rival. **Aprender a combatir** usa siempre el equipo fijo del tutorial y conserva tu selección al volver.
 
 En la práctica, pulsa **Activar audio**. En sus ajustes puedes elegir entre cuatro temas Pokémon, regular música y gritos por separado o desactivar las animaciones. La música requiere conexión; los dieciocho gritos están incluidos localmente. Puedes saltar cada secuencia; el resultado del combate es el mismo. Salir de la ruta detiene el audio.
 
