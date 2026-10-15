@@ -1,6 +1,6 @@
 # Motor local de Lumemon
 
-Este módulo resuelve reglas de combate con datos explícitos y sin interfaz. El adaptador de [datos jugables](data/README.md) conecta ahora una selección de 24 cartas del catálogo con estadísticas propias y movimientos verificables. El mapeo real de apoyos permanece pendiente.
+Este módulo resuelve reglas de combate con datos explícitos y sin interfaz. El adaptador de [datos jugables](data/README.md) conecta ahora una selección de 36 cartas del catálogo con estadísticas propias y movimientos verificables. El mapeo real de apoyos permanece pendiente.
 
 ## API pública
 

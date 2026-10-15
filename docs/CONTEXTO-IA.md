@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-15 (tutorial guiado opcional). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-15 (18 especies y 36 cartas jugables). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `78c01c5`, rama `feat/battle-audio-motion`; entrega en `feat/guided-battle-tutorial`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `b115ca0`, rama `feat/guided-battle-tutorial`; entrega en `feat/expanded-battle-roster`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -47,8 +47,8 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Composición | Validador de seis especies distintas; rechaza IDs desconocidos, duplicados, apoyos en plazas Pokémon y asociaciones ambiguas | No comprueba propiedad, estadísticas, movimientos ni aptitud real para combatir |
 | Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI); ES/EN y móvil | Un borrador local, sin cuenta, apoyos seleccionables ni combate |
 | Cálculo de combate | Tipos de datos mínimos, 18 tipos, dobles tipos e inmunidades, afinidad y modificadores de daño con aritmética exacta | Funciones puras sin conectar a la interfaz; no resuelven turnos, estados, duración de mejoras ni propiedad |
-| Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 24 cartas verificadas; sin reloj o servicio de elecciones privadas |
-| Cartas habilitadas para el motor | 24 cartas de 12 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local; sin apoyos mapeados ni propiedad; las demás cartas del catálogo todavía no son jugables |
+| Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 36 cartas verificadas; sin reloj o servicio de elecciones privadas |
+| Cartas habilitadas para el motor | 36 cartas de 18 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local; sin apoyos mapeados ni propiedad; las demás cartas del catálogo todavía no son jugables |
 | Práctica local | `/practica`: selección de seis, variantes, tablero, bot sencillo, estados, recargas, cambios, KO, registro, resultado y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; selección separada de `/equipo` |
 | Tutorial guiado | Entrada opcional en `/practica`, equipo preparado, cinco pasos, Rayo, tipos/recarga, cambio a Jigglypuff, sueño y continuación libre; ES/EN | Sin guardar progreso; conserva la selección normal y permite omitir la guía entre secuencias |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
@@ -141,13 +141,23 @@ La guía recorre tablero, Rayo, efectividad/recarga, cambio a Jigglypuff y Canto
 
 Verificación: seis casos nuevos, con fallo previo y corrección; 129 pruebas, lint, build/typecheck y battle:check correctos. Navegador: recorrido completo, Rayo y recarga, cambio, sueño, salto de secuencia, continuidad libre y bloqueo real del rival dormido; guía omitida al inicio, selección incompleta preservada al salir y partida normal posterior sin restricciones. Teclado e interfaz ES/EN comprobados; capturas revisadas en 390/1440 px sin desbordamiento observado. En móvil de 390 px se reprodujo y corrigió un foco fuera de pantalla al elegir reserva: ahora el botón Confirmar queda centrado. La revisión independiente de lógica/UI encontró un P2: la revancha fallaba al conservar una selección incompleta. Reproducido en navegador tras una derrota real, corregido usando los IDs de la partida terminada y repetido hasta revancha correcta, con selección de cinco cartas intacta en el menú. Sin otros hallazgos; el revisor no repitió navegador ni revisó documentación en edición. No se amplió esta comprobación a lector de pantalla u otros navegadores. No se añadió persistencia ni se cambiaron las fuentes de audio.
 
+## Ampliación del conjunto — 15 de octubre
+
+Rama `feat/expanded-battle-roster` desde `b115ca0`. Añade Venusaur, Charizard, Blastoise, Gengar, Snorlax y Dragonite con dos ilustraciones reales del catálogo por especie: 18 especies y 36 cartas jugables. Los contadores de práctica se calculan del conjunto cargado. Las estadísticas de las variantes usan la fórmula y clasificación de rareza existentes; las 24 cartas y 12 especies anteriores resultaron idénticas al comparar los datos completos antes/después.
+
+Se reutilizaron los 13 CSV completos de la caché local tras comprobar cada SHA-256 contra el manifiesto fijado. Los subconjuntos y su manifiesto se ampliaron con las filas originales; no se reimportó el catálogo. Nuevo snapshot `lumemon-roster-65c806dfd1ce7612`; versión USUM18 y motor sin cambios. El arte de práctica es copia exacta de los registros seleccionados. Se añadieron seis gritos OGG de la misma revisión de PokéAPI/cries, con bytes/hashes/fuentes registrados. No se añadieron dependencias.
+
+Verificación automatizada: tres casos fallaron primero por la ausencia de la ampliación; después, 131 pruebas correctas, lint, build/typecheck y battle:check. Las dos combinaciones de variantes nuevas completan combates deterministas con el motor; el tutorial mantiene sus seis pruebas. No se afirma equilibrio competitivo ni habilitación de todas las cartas del catálogo. No hay evolución durante el combate: son especies seleccionables directamente.
+
+Navegador: doce ilustraciones nuevas cargadas (clásicas EN y alternativas ES), selección de las seis especies y cambio de variantes sin perder plazas; interfaz ES/EN, Ataque Ala de Charizard, Ciclón de Dragonite, recarga, daño, KO y sustitución obligatoria por Blastoise. Capturas de 390/1440 revisadas sin desbordamiento observado. Gritos de Charizard y Dragonite decodificados y reproducción observada en el elemento de audio; los seis nuevos tienen formato, bytes y hash verificados. No se afirma escucha humana ni prueba visual de todos los movimientos. Sin errores de consola observados; audio silenciado y pestaña de prueba cerrada al terminar. Revisión independiente sin hallazgos funcionales: corroboró compatibilidad anterior, 503 filas originales de los 13 CSV, 36 artes y 18 gritos. Único detalle P3 corregido: el mapa de código aún decía 24 cartas. La revisión no repitió el navegador ni evaluó equilibrio competitivo.
+
 ## Pendiente: no anunciar como disponible
 
 Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, rivales avanzados, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato, pendiente de una tarea concreta: ampliación del conjunto de cartas jugables, conservando la compatibilidad del tutorial. Mantenerlo explícitamente local, sin cuenta ni recompensas reales. Este archivo no autoriza implementar esos bloques automáticamente.
+Siguiente candidato, pendiente de una tarea concreta: selección de rivales de práctica con equipos distintos y dificultad explícita, conservando el bot y equipo fijos del tutorial. Mantenerlo explícitamente local, sin cuenta ni recompensas reales. Este archivo no autoriza implementar esos bloques automáticamente.
 
 ## Mapa de código y comandos
 
@@ -161,7 +171,7 @@ Siguiente candidato, pendiente de una tarea concreta: ampliación del conjunto d
 | `src/catalog` | Tipos, normalización, repositorio, cliente, fuentes suplementarias y pruebas |
 | `src/battle/types.ts`, `type-chart.ts`, `damage.ts` | Contratos mínimos, efectividad y pérdida de vida puras; sin interfaz ni turnos |
 | `src/battle/engine-types.ts`, `battle-state.ts`, `battle-effects.ts`, `turn-engine.ts` | Contratos, creación/validación, efectos y resolución de turnos/sustituciones; API y límites en `src/battle/README.md` |
-| `src/battle/profiles.ts`, `playable-roster.ts`, `data` | Estadísticas propias, conjunto versionado de 24 cartas y adaptador al motor; procedencia en `data/README.md` |
+| `src/battle/profiles.ts`, `playable-roster.ts`, `data` | Estadísticas propias, conjunto versionado de 36 cartas y adaptador al motor; procedencia en `data/README.md` |
 | `scripts/battle` | Selección explícita, carga verificada y generación/check offline de datos de combate |
 | `src/battle/team.ts` | Validación estructural del equipo |
 | `src/battle/team-draft.ts` | Formato, restauración, guardado y selección del borrador |

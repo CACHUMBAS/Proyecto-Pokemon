@@ -9,10 +9,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/44"
       }
     },
-    "speciesIds": [1],
+    "speciesIds": [
+      1
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Grass"],
+    "tcgTypes": [
+      "Grass"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -33,10 +37,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/166"
       }
     },
-    "speciesIds": [1],
+    "speciesIds": [
+      1
+    ],
     "mapping": "species",
     "rarity": "Illustration rare",
-    "tcgTypes": ["Grass"],
+    "tcgTypes": [
+      "Grass"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -53,10 +61,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/46"
       }
     },
-    "speciesIds": [4],
+    "speciesIds": [
+      4
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Fire"],
+    "tcgTypes": [
+      "Fire"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -77,10 +89,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/168"
       }
     },
-    "speciesIds": [4],
+    "speciesIds": [
+      4
+    ],
     "mapping": "species",
     "rarity": "Illustration rare",
-    "tcgTypes": ["Fire"],
+    "tcgTypes": [
+      "Fire"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -97,10 +113,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/63"
       }
     },
-    "speciesIds": [7],
+    "speciesIds": [
+      7
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Water"],
+    "tcgTypes": [
+      "Water"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -121,10 +141,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/170"
       }
     },
-    "speciesIds": [7],
+    "speciesIds": [
+      7
+    ],
     "mapping": "species",
     "rarity": "Illustration rare",
-    "tcgTypes": ["Water"],
+    "tcgTypes": [
+      "Water"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -141,10 +165,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/58"
       }
     },
-    "speciesIds": [25],
+    "speciesIds": [
+      25
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Lightning"],
+    "tcgTypes": [
+      "Lightning"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -165,10 +193,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/173"
       }
     },
-    "speciesIds": [25],
+    "speciesIds": [
+      25
+    ],
     "mapping": "species",
     "rarity": "Illustration rare",
-    "tcgTypes": ["Lightning"],
+    "tcgTypes": [
+      "Lightning"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -185,10 +217,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/68"
       }
     },
-    "speciesIds": [37],
+    "speciesIds": [
+      37
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Fire"],
+    "tcgTypes": [
+      "Fire"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -209,10 +245,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/037"
       }
     },
-    "speciesIds": [37],
+    "speciesIds": [
+      37
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Fire"],
+    "tcgTypes": [
+      "Fire"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -229,10 +269,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base2/54"
       }
     },
-    "speciesIds": [39],
+    "speciesIds": [
+      39
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Colorless"],
+    "tcgTypes": [
+      "Colorless"
+    ],
     "set": {
       "id": "base2",
       "name": "Jungle"
@@ -253,10 +297,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/039"
       }
     },
-    "speciesIds": [39],
+    "speciesIds": [
+      39
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Colorless"],
+    "tcgTypes": [
+      "Colorless"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -273,10 +321,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/43"
       }
     },
-    "speciesIds": [63],
+    "speciesIds": [
+      63
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Psychic"],
+    "tcgTypes": [
+      "Psychic"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -297,10 +349,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/063"
       }
     },
-    "speciesIds": [63],
+    "speciesIds": [
+      63
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Psychic"],
+    "tcgTypes": [
+      "Psychic"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -317,10 +373,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/52"
       }
     },
-    "speciesIds": [66],
+    "speciesIds": [
+      66
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Fighting"],
+    "tcgTypes": [
+      "Fighting"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -341,10 +401,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/066"
       }
     },
-    "speciesIds": [66],
+    "speciesIds": [
+      66
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Fighting"],
+    "tcgTypes": [
+      "Fighting"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -361,10 +425,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/50"
       }
     },
-    "speciesIds": [92],
+    "speciesIds": [
+      92
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Psychic"],
+    "tcgTypes": [
+      "Psychic"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -385,10 +453,14 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/092"
       }
     },
-    "speciesIds": [92],
+    "speciesIds": [
+      92
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Psychic"],
+    "tcgTypes": [
+      "Psychic"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
@@ -405,10 +477,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base1/56"
       }
     },
-    "speciesIds": [95],
+    "speciesIds": [
+      95
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Fighting"],
+    "tcgTypes": [
+      "Fighting"
+    ],
     "set": {
       "id": "base1",
       "name": "Base Set"
@@ -429,35 +505,19 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/095"
       }
     },
-    "speciesIds": [95],
+    "speciesIds": [
+      95
+    ],
     "mapping": "species",
     "rarity": "Uncommon",
-    "tcgTypes": ["Fighting"],
+    "tcgTypes": [
+      "Fighting"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
     },
     "illustrator": "Shin Nagasawa"
-  },
-  {
-    "id": "base3-10",
-    "origin": "tcgdex",
-    "category": "Pokemon",
-    "localizations": {
-      "en": {
-        "name": "Lapras",
-        "imageUrl": "https://assets.tcgdex.net/en/base/base3/10"
-      }
-    },
-    "speciesIds": [131],
-    "mapping": "species",
-    "rarity": "Rare",
-    "tcgTypes": ["Water"],
-    "set": {
-      "id": "base3",
-      "name": "Fossil"
-    },
-    "illustrator": "Ken Sugimori"
   },
   {
     "id": "sv03.5-131",
@@ -473,15 +533,43 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/131"
       }
     },
-    "speciesIds": [131],
+    "speciesIds": [
+      131
+    ],
     "mapping": "species",
     "rarity": "Uncommon",
-    "tcgTypes": ["Water"],
+    "tcgTypes": [
+      "Water"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
     },
     "illustrator": "LINNE"
+  },
+  {
+    "id": "base3-10",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Lapras",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base3/10"
+      }
+    },
+    "speciesIds": [
+      131
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Water"
+    ],
+    "set": {
+      "id": "base3",
+      "name": "Fossil"
+    },
+    "illustrator": "Ken Sugimori"
   },
   {
     "id": "base2-51",
@@ -493,10 +581,14 @@
         "imageUrl": "https://assets.tcgdex.net/en/base/base2/51"
       }
     },
-    "speciesIds": [133],
+    "speciesIds": [
+      133
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Colorless"],
+    "tcgTypes": [
+      "Colorless"
+    ],
     "set": {
       "id": "base2",
       "name": "Jungle"
@@ -517,14 +609,330 @@
         "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/133"
       }
     },
-    "speciesIds": [133],
+    "speciesIds": [
+      133
+    ],
     "mapping": "species",
     "rarity": "Common",
-    "tcgTypes": ["Colorless"],
+    "tcgTypes": [
+      "Colorless"
+    ],
     "set": {
       "id": "sv03.5",
       "name": "151"
     },
     "illustrator": "Narumi Sato"
+  },
+  {
+    "id": "base1-15",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Venusaur",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/15"
+      }
+    },
+    "speciesIds": [
+      3
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Grass"
+    ],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "sv03.5-198",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Venusaur ex",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/198"
+      },
+      "es": {
+        "name": "Venusaur ex",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/198"
+      }
+    },
+    "speciesIds": [
+      3
+    ],
+    "mapping": "species",
+    "rarity": "Special illustration rare",
+    "tcgTypes": [
+      "Grass"
+    ],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Yoriyuki Ikegami"
+  },
+  {
+    "id": "base1-4",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Charizard",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/4"
+      }
+    },
+    "speciesIds": [
+      6
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Fire"
+    ],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "sv03.5-199",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Charizard ex",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/199"
+      },
+      "es": {
+        "name": "Charizard ex",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/199"
+      }
+    },
+    "speciesIds": [
+      6
+    ],
+    "mapping": "species",
+    "rarity": "Special illustration rare",
+    "tcgTypes": [
+      "Fire"
+    ],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "miki kudo"
+  },
+  {
+    "id": "base1-2",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Blastoise",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/2"
+      }
+    },
+    "speciesIds": [
+      9
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Water"
+    ],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Ken Sugimori"
+  },
+  {
+    "id": "sv03.5-200",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Blastoise ex",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/200"
+      },
+      "es": {
+        "name": "Blastoise ex",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/200"
+      }
+    },
+    "speciesIds": [
+      9
+    ],
+    "mapping": "species",
+    "rarity": "Special illustration rare",
+    "tcgTypes": [
+      "Water"
+    ],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Mitsuhiro Arita"
+  },
+  {
+    "id": "base3-5",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Gengar",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base3/5"
+      }
+    },
+    "speciesIds": [
+      94
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Psychic"
+    ],
+    "set": {
+      "id": "base3",
+      "name": "Fossil"
+    },
+    "illustrator": "Keiji Kinebuchi"
+  },
+  {
+    "id": "sv03.5-094",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Gengar",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/094"
+      },
+      "es": {
+        "name": "Gengar",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/094"
+      }
+    },
+    "speciesIds": [
+      94
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Psychic"
+    ],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Tomokazu Komiya"
+  },
+  {
+    "id": "sv03.5-143",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Snorlax",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/143"
+      },
+      "es": {
+        "name": "Snorlax",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/143"
+      }
+    },
+    "speciesIds": [
+      143
+    ],
+    "mapping": "species",
+    "rarity": "Uncommon",
+    "tcgTypes": [
+      "Colorless"
+    ],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "HYOGONOSUKE"
+  },
+  {
+    "id": "base2-11",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Snorlax",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base2/11"
+      }
+    },
+    "speciesIds": [
+      143
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Colorless"
+    ],
+    "set": {
+      "id": "base2",
+      "name": "Jungle"
+    },
+    "illustrator": "Ken Sugimori"
+  },
+  {
+    "id": "base3-4",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Dragonite",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base3/4"
+      }
+    },
+    "speciesIds": [
+      149
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Colorless"
+    ],
+    "set": {
+      "id": "base3",
+      "name": "Fossil"
+    },
+    "illustrator": "Kagemaru Himeno"
+  },
+  {
+    "id": "sv03.5-149",
+    "origin": "tcgdex",
+    "category": "Pokemon",
+    "localizations": {
+      "en": {
+        "name": "Dragonite",
+        "imageUrl": "https://assets.tcgdex.net/en/sv/sv03.5/149"
+      },
+      "es": {
+        "name": "Dragonite",
+        "imageUrl": "https://assets.tcgdex.net/es/sv/sv03.5/149"
+      }
+    },
+    "speciesIds": [
+      149
+    ],
+    "mapping": "species",
+    "rarity": "Rare",
+    "tcgTypes": [
+      "Dragon"
+    ],
+    "set": {
+      "id": "sv03.5",
+      "name": "151"
+    },
+    "illustrator": "Sanosuke Sakuma"
   }
 ]

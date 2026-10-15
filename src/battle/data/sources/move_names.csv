@@ -3,10 +3,14 @@ move_id,local_language_id,name
 1,9,Pound
 2,7,Golpe Kárate
 2,9,Karate Chop
+17,7,Ataque Ala
+17,9,Wing Attack
 22,7,Látigo Cepa
 22,9,Vine Whip
 33,7,Placaje
 33,9,Tackle
+34,7,Golpe Cuerpo
+34,9,Body Slam
 47,7,Canto
 47,9,Sing
 52,7,Ascuas
@@ -47,12 +51,16 @@ move_id,local_language_id,name
 129,9,Swift
 157,7,Avalancha
 157,9,Rock Slide
+239,7,Ciclón
+239,9,Twister
 247,7,Bola Sombra
 247,9,Shadow Ball
 261,7,Fuego Fatuo
 261,9,Will-O-Wisp
 280,7,Demolición
 280,9,Brick Break
+407,7,Carga Dragón
+407,9,Dragon Rush
 473,7,Psicocarga
 473,9,Psyshock
 605,7,Brillo Mágico

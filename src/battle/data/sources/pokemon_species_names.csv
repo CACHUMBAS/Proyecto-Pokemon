@@ -1,10 +1,16 @@
 pokemon_species_id,local_language_id,name,genus
 1,7,Bulbasaur,Pokémon Semilla
 1,9,Bulbasaur,Seed Pokémon
+3,7,Venusaur,Pokémon Semilla
+3,9,Venusaur,Seed Pokémon
 4,7,Charmander,Pokémon Lagartija
 4,9,Charmander,Lizard Pokémon
+6,7,Charizard,Pokémon Llama
+6,9,Charizard,Flame Pokémon
 7,7,Squirtle,Pokémon Tortuguita
 7,9,Squirtle,Tiny Turtle Pokémon
+9,7,Blastoise,Pokémon Armazón
+9,9,Blastoise,Shellfish Pokémon
 25,7,Pikachu,Pokémon Ratón
 25,9,Pikachu,Mouse Pokémon
 37,7,Vulpix,Pokémon Zorro
@@ -17,9 +23,15 @@ pokemon_species_id,local_language_id,name,genus
 66,9,Machop,Superpower Pokémon
 92,7,Gastly,Pokémon Gas
 92,9,Gastly,Gas Pokémon
+94,7,Gengar,Pokémon Sombra
+94,9,Gengar,Shadow Pokémon
 95,7,Onix,Pokémon Serpiente Roca
 95,9,Onix,Rock Snake Pokémon
 131,7,Lapras,Pokémon Transporte
 131,9,Lapras,Transport Pokémon
 133,7,Eevee,Pokémon Evolución
 133,9,Eevee,Evolution Pokémon
+143,7,Snorlax,Pokémon Dormir
+143,9,Snorlax,Sleeping Pokémon
+149,7,Dragonite,Pokémon Dragón
+149,9,Dragonite,Dragon Pokémon

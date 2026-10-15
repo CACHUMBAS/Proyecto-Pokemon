@@ -37,7 +37,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 - `/catalogo`: las 1.025 especies, búsqueda por nombre o número nacional y filtros combinables por generación, tipo de Pokémon, rareza y expansión. Los filtros se guardan en la URL.
 - `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
 - `/equipo`: constructor de un equipo de prueba de seis especies, selección de ilustraciones, cambio de primer Pokémon y guardado local.
-- `/practica`: combate local de seis contra un bot con 24 cartas habilitadas, ES/EN, variantes, registro, revancha, música seleccionable, gritos y animaciones por tipo.
+- `/practica`: combate local de seis contra un bot con 36 cartas habilitadas, ES/EN, variantes, registro, revancha, música seleccionable, gritos y animaciones por tipo.
 - `/diseno`: tres cartas verificadas de TCGdex y una muestra propia sin imagen; filtros y fichas de procedencia.
 - Cualquier ruta desconocida: pantalla de recuperación con enlace al inicio.
 - Selector ES/EN: guarda solo el idioma; sigue funcionando si el navegador bloquea almacenamiento.
@@ -46,7 +46,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 
 Las ilustraciones de las tres cartas están en inglés y así se identifican en sus fichas. Sus tipos y rarezas son del TCG impreso; todavía no son estadísticas del combate de Lumemon. No existe un inventario, sesión o saldo simulado.
 
-En la práctica, pulsa **Activar audio**. En sus ajustes puedes elegir entre cuatro temas Pokémon, regular música y gritos por separado o desactivar las animaciones. La música requiere conexión; los doce gritos están incluidos localmente. Puedes saltar cada secuencia; el resultado del combate es el mismo. Salir de la ruta detiene el audio.
+En la práctica, pulsa **Activar audio**. En sus ajustes puedes elegir entre cuatro temas Pokémon, regular música y gritos por separado o desactivar las animaciones. La música requiere conexión; los dieciocho gritos están incluidos localmente. Puedes saltar cada secuencia; el resultado del combate es el mismo. Salir de la ruta detiene el audio.
 
 ## Estructura
 
@@ -80,7 +80,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
-- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; primer conjunto de 24 cartas y práctica local disponibles; tutorial opcional disponible y servicio online pendiente.
+- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; primer conjunto de 36 cartas y práctica local disponibles; tutorial opcional disponible y servicio online pendiente.
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
 - [Revisión de la fase 1](docs/revision-fase-1.md).
 - [Plan de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
@@ -121,11 +121,11 @@ Estas dos funciones son puras y se reutilizan desde el motor de turnos descrito 
 
 Ya se pueden resolver partidas completas en código con dos equipos de seis miembros: movimientos, cambios, apoyos, cinco estados, recargas, sustituciones, victorias y empates. Se conserva la versión de estado y se registra el desempate de velocidad para reproducir resultados. Consulta la [API y sus límites](src/battle/README.md).
 
-El motor tiene pruebas sintéticas y ahora también un adaptador con 24 cartas reales seleccionadas, descrito abajo. La selección privada en servidor, los 45 segundos, las cuentas y las recompensas corresponden a siguientes bloques.
+El motor tiene pruebas sintéticas y ahora también un adaptador con 36 cartas reales seleccionadas, descrito abajo. La selección privada en servidor, los 45 segundos, las cuentas y las recompensas corresponden a siguientes bloques.
 
-### Primer conjunto de cartas de combate
+### Cartas de combate habilitadas
 
-Hay 24 cartas habilitadas de 12 especies, con estadísticas propias según rareza/perfil y movimientos reales de PokéAPI adaptados a Lumemon. Las asignaciones están guardadas en una instantánea versionada, con nombres ES/EN, compatibilidad de una sola versión y hashes de fuentes. `createPlayableBattle` conecta seis IDs conocidos por equipo con el motor; rechaza otras cartas y especies repetidas.
+Hay 36 cartas habilitadas de 18 especies (incluidos Venusaur, Charizard, Blastoise, Gengar, Snorlax y Dragonite), con estadísticas propias según rareza/perfil y movimientos reales de PokéAPI adaptados a Lumemon. Las asignaciones están guardadas en una instantánea versionada, con nombres ES/EN, compatibilidad de una sola versión y hashes de fuentes. `createPlayableBattle` conecta seis IDs conocidos por equipo con el motor; rechaza otras cartas y especies repetidas.
 
 Consulta [cartas, fuentes y límites](src/battle/data/README.md). `npm run battle:check` verifica la reproducción sin conexión; `npm run battle:generate` regenera explícitamente tras revisar cambios. Las 1.025 especies del catálogo no quedan automáticamente habilitadas. Estas cartas ya se pueden probar en `/practica`.
 

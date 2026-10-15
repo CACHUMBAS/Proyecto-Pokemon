@@ -11,6 +11,14 @@
       "sha256": "6233bc22546f161d61240c7eef8494a61c42f8ba56833f96313045d1cbbec575"
     },
     {
+      "speciesId": 3,
+      "pokemonId": 3,
+      "path": "/assets/audio/cries/3.ogg",
+      "source": "https://raw.githubusercontent.com/PokeAPI/cries/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest/3.ogg",
+      "bytes": 13965,
+      "sha256": "a1abf616f8f1391c174d4d2c92ecc6e241ec3bbdc8b9020942678d6eec67e8f4"
+    },
+    {
       "speciesId": 4,
       "pokemonId": 4,
       "path": "/assets/audio/cries/4.ogg",
@@ -19,12 +27,28 @@
       "sha256": "bdb41cecd5a948ee4b19e4e13156abcbdb2bd3e9c9f458d65fe2c64a87fd852e"
     },
     {
+      "speciesId": 6,
+      "pokemonId": 6,
+      "path": "/assets/audio/cries/6.ogg",
+      "source": "https://raw.githubusercontent.com/PokeAPI/cries/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest/6.ogg",
+      "bytes": 13071,
+      "sha256": "110f91526342399a6a8d5e5c7d12b76ad85e925bce509d7fd4d2459930df09cf"
+    },
+    {
       "speciesId": 7,
       "pokemonId": 7,
       "path": "/assets/audio/cries/7.ogg",
       "source": "https://raw.githubusercontent.com/PokeAPI/cries/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest/7.ogg",
       "bytes": 12204,
       "sha256": "6c2603df20b277bf2e814a5a3b292bdb404d47ada67ab769ff9bee59d3f38631"
+    },
+    {
+      "speciesId": 9,
+      "pokemonId": 9,
+      "path": "/assets/audio/cries/9.ogg",
+      "source": "https://raw.githubusercontent.com/PokeAPI/cries/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest/9.ogg",
+      "bytes": 14039,
+      "sha256": "66e47fa494ae7217676fceff69bdf59f6399d87143cbde29cc7958e2565325ec"
     },
     {
       "speciesId": 25,
@@ -75,6 +99,14 @@
       "sha256": "3829dd291fc9b08f82981fca3c469f33d07f17af5c07f84f949272d819a6a318"
     },
     {
+      "speciesId": 94,
+      "pokemonId": 94,
+      "path": "/assets/audio/cries/94.ogg",
+      "source": "https://raw.githubusercontent.com/PokeAPI/cries/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest/94.ogg",
+      "bytes": 11760,
+      "sha256": "d44d4a6c9e6e276a20ba7a3be3256f5da0e1caf1ff01b51183dedad3dd8bead8"
+    },
+    {
       "speciesId": 95,
       "pokemonId": 95,
       "path": "/assets/audio/cries/95.ogg",
@@ -97,6 +129,22 @@
       "source": "https://raw.githubusercontent.com/PokeAPI/cries/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest/133.ogg",
       "bytes": 11659,
       "sha256": "b9dd1a040ed6bd4e9025df476180c7cc82c3187ff21f235b26798ba84992489c"
+    },
+    {
+      "speciesId": 143,
+      "pokemonId": 143,
+      "path": "/assets/audio/cries/143.ogg",
+      "source": "https://raw.githubusercontent.com/PokeAPI/cries/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest/143.ogg",
+      "bytes": 8528,
+      "sha256": "2ee3f95fd3102e7cd8a6e0e429170acaf8674032eff9c9ad119f7011260cfc7e"
+    },
+    {
+      "speciesId": 149,
+      "pokemonId": 149,
+      "path": "/assets/audio/cries/149.ogg",
+      "source": "https://raw.githubusercontent.com/PokeAPI/cries/b3a9044bb839b5e3152aaa536c7b463a0fcf0140/cries/pokemon/latest/149.ogg",
+      "bytes": 14076,
+      "sha256": "ec18d152596b92ea1ecdfed88b64a095f5ee5a5242dfa9472079ef8fb11d5e99"
     }
   ]
 }

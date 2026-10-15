@@ -26,10 +26,10 @@ export function PracticeSetup({ team, onTeamChange, onStart, onTutorial }: Props
               06 <small>{t('practice.fighters')}</small>
             </span>
             <span>
-              12 <small>{t('practice.species')}</small>
+              {species.length} <small>{t('practice.species')}</small>
             </span>
             <span>
-              24 <small>{t('practice.artworks')}</small>
+              {cards.length} <small>{t('practice.artworks')}</small>
             </span>
           </div>
         </div>
@@ -78,7 +78,7 @@ export function PracticeSetup({ team, onTeamChange, onStart, onTutorial }: Props
             <p className="eyebrow">{t('practice.rosterEyebrow')}</p>
             <h2 id="practice-roster-title">{t('practice.rosterTitle')}</h2>
           </div>
-          <p>{t('practice.rosterHint')}</p>
+          <p>{t('practice.rosterHint', { count: species.length })}</p>
         </div>
         <div className="practice-roster">
           {species.map((item, index) => {

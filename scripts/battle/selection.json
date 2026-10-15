@@ -257,6 +257,144 @@
           "profile": "basic"
         }
       ]
+    },
+    {
+      "speciesId": 3,
+      "cardIds": [
+        "base1-15",
+        "sv03.5-198"
+      ],
+      "moves": [
+        {
+          "moveId": 22,
+          "profile": "basic"
+        },
+        {
+          "moveId": 75,
+          "profile": "strong"
+        },
+        {
+          "moveId": 79,
+          "profile": "sleep"
+        },
+        {
+          "moveId": 77,
+          "profile": "poison"
+        }
+      ]
+    },
+    {
+      "speciesId": 6,
+      "cardIds": [
+        "base1-4",
+        "sv03.5-199"
+      ],
+      "moves": [
+        {
+          "moveId": 52,
+          "profile": "basic"
+        },
+        {
+          "moveId": 53,
+          "profile": "strong"
+        },
+        {
+          "moveId": 17,
+          "profile": "strong"
+        },
+        {
+          "moveId": 261,
+          "profile": "burn"
+        }
+      ]
+    },
+    {
+      "speciesId": 9,
+      "cardIds": [
+        "base1-2",
+        "sv03.5-200"
+      ],
+      "moves": [
+        {
+          "moveId": 55,
+          "profile": "basic"
+        },
+        {
+          "moveId": 57,
+          "profile": "strong"
+        },
+        {
+          "moveId": 58,
+          "profile": "strong"
+        }
+      ]
+    },
+    {
+      "speciesId": 94,
+      "cardIds": [
+        "base3-5",
+        "sv03.5-094"
+      ],
+      "moves": [
+        {
+          "moveId": 122,
+          "profile": "basic"
+        },
+        {
+          "moveId": 247,
+          "profile": "strong"
+        },
+        {
+          "moveId": 95,
+          "profile": "sleep"
+        }
+      ]
+    },
+    {
+      "speciesId": 143,
+      "cardIds": [
+        "sv03.5-143",
+        "base2-11"
+      ],
+      "moves": [
+        {
+          "moveId": 33,
+          "profile": "basic"
+        },
+        {
+          "moveId": 34,
+          "profile": "strong"
+        },
+        {
+          "moveId": 89,
+          "profile": "strong"
+        }
+      ]
+    },
+    {
+      "speciesId": 149,
+      "cardIds": [
+        "base3-4",
+        "sv03.5-149"
+      ],
+      "moves": [
+        {
+          "moveId": 239,
+          "profile": "basic"
+        },
+        {
+          "moveId": 407,
+          "profile": "strong"
+        },
+        {
+          "moveId": 17,
+          "profile": "strong"
+        },
+        {
+          "moveId": 86,
+          "profile": "paralysis"
+        }
+      ]
     }
   ]
 }
