@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type ReactNode } from 'react'
+import { matchesAction } from '../../battle/tutorial'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/ui/Button'
 import { activeFighter } from '../../battle/battle-state'
@@ -13,6 +14,8 @@ import { fighterMotion } from './fighter-motion'
 import { describe } from './event-description'
 
 interface Props {
+  guide?: ReactNode
+  allowedAction?: BattleAction | null
   motion: boolean
   frame: PlaybackFrame | null
   playing: boolean
@@ -26,6 +29,8 @@ interface Props {
   onRematch: () => void
 }
 export function BattleBoard({
+  guide,
+  allowedAction,
   battle,
   frame,
   motion,
@@ -43,6 +48,15 @@ export function BattleBoard({
   useEffect(() => {
     if (playing) arena.current?.scrollIntoView({ block: 'start', behavior: 'instant' })
   }, [playing])
+  const guided = allowedAction !== undefined
+  const permits = (action: BattleAction) => !guided || matchesAction(allowedAction ?? null, action)
+  useEffect(() => {
+    if (guided && selected?.kind === 'switch') {
+      const confirm = document.querySelector<HTMLButtonElement>('.practice-confirm')
+      confirm?.scrollIntoView({ block: 'center', behavior: 'instant' })
+      confirm?.focus({ preventScroll: true })
+    }
+  }, [guided, selected])
   const locale = i18n.language === 'en' ? 'en' : 'es'
   const player = activeFighter(battle, 0)
   const enemy = activeFighter(battle, 1)
@@ -166,34 +180,41 @@ export function BattleBoard({
             ))}
           </div>
         </section>
-        <section className="practice-console" aria-labelledby="practice-action-title">
-          <p className="eyebrow">
-            {t(
-              finished
-                ? 'practice.complete'
-                : replacement
-                  ? 'practice.replacementEyebrow'
-                  : 'practice.choose',
-            )}
-          </p>
-          <h2 id="practice-action-title">
-            {t(
-              finished
-                ? 'practice.finishedTitle'
-                : replacement
-                  ? 'practice.replaceTitle'
-                  : 'practice.actionTitle',
-            )}
-          </h2>
-          <p className="practice-note">
-            {t(
-              finished
-                ? 'practice.finishedNote'
-                : replacement
-                  ? 'practice.replaceHint'
-                  : 'practice.botLocked',
-            )}
-          </p>
+        <section
+          className={'practice-console' + (guide ? ' is-guided' : '')}
+          aria-labelledby="practice-action-title"
+        >
+          {guide ?? (
+            <>
+              <p className="eyebrow">
+                {t(
+                  finished
+                    ? 'practice.complete'
+                    : replacement
+                      ? 'practice.replacementEyebrow'
+                      : 'practice.choose',
+                )}
+              </p>
+              <h2 id="practice-action-title">
+                {t(
+                  finished
+                    ? 'practice.finishedTitle'
+                    : replacement
+                      ? 'practice.replaceTitle'
+                      : 'practice.actionTitle',
+                )}
+              </h2>
+              <p className="practice-note">
+                {t(
+                  finished
+                    ? 'practice.finishedNote'
+                    : replacement
+                      ? 'practice.replaceHint'
+                      : 'practice.botLocked',
+                )}
+              </p>
+            </>
+          )}
           {playing && (
             <div className="practice-playback-controls">
               <p>{t('practice.motion.resolving')}</p>
@@ -214,7 +235,9 @@ export function BattleBoard({
                       type="button"
                       className="practice-move"
                       key={move.id}
-                      disabled={cooling}
+                      disabled={
+                        cooling || !permits({ kind: 'move', actorId: player.id, moveId: move.id })
+                      }
                       aria-pressed={chosen}
                       onClick={() =>
                         onSelect({ kind: 'move', actorId: player.id, moveId: move.id })
@@ -248,6 +271,7 @@ export function BattleBoard({
               <button
                 type="button"
                 className="practice-pass"
+                disabled={!permits({ kind: 'pass' })}
                 aria-pressed={selected?.kind === 'pass'}
                 onClick={() => onSelect({ kind: 'pass' })}
               >
@@ -262,7 +286,11 @@ export function BattleBoard({
                       ? t('practice.selectedPass')
                       : t('practice.noneSelected')}
               </p>
-              <Button disabled={!selected} onClick={onConfirm}>
+              <Button
+                className="practice-confirm"
+                disabled={!selected || !permits(selected)}
+                onClick={onConfirm}
+              >
                 {t('practice.confirm')} <span aria-hidden="true">→</span>
               </Button>
             </>
@@ -280,7 +308,13 @@ export function BattleBoard({
             <button
               type="button"
               key={f.id}
-              disabled={playing || finished || index === battle.sides[0].active || f.hp === 0}
+              disabled={
+                playing ||
+                finished ||
+                index === battle.sides[0].active ||
+                f.hp === 0 ||
+                (!replacement && !permits({ kind: 'switch', actorId: player.id, targetId: f.id }))
+              }
               className={
                 'practice-reserve' + (index === battle.sides[0].active ? ' is-active' : '')
               }

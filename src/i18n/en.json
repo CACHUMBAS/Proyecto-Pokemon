@@ -413,5 +413,49 @@
       "ready": "Arena ready · choose your next action",
       "immune": "No effect"
     }
+  },
+  "tutorial": {
+    "label": "First steps",
+    "progress": "{{step}} of {{total}}",
+    "entryTitle": "Your first battle?",
+    "entryBody": "Learn by playing with a prepared team: attack, read types, switch Pokémon and apply a status. Your team selection is kept.",
+    "start": "Learn to battle",
+    "begin": "Start lesson",
+    "understood": "Got it, let's switch",
+    "continue": "Keep battling",
+    "dismiss": "Skip guide",
+    "viewReserves": "Go to reserves",
+    "observing": "Watch the turn resolve",
+    "observingHint": "Switches happen first, then moves in speed order. Watch the cards and their health. The next lesson appears when playback ends.",
+    "completeNote": "You finished the guide, not the match. Keep practising with this team. No rewards or account progress.",
+    "steps": {
+      "welcome": {
+        "title": "Six cards. One active Pokémon.",
+        "body": "Your active Pokémon is on the left and your opponent is on the right. HP shows their remaining health; your other five cards wait in reserve. Take your time: this practice has no timer."
+      },
+      "attack": {
+        "title": "Your first attack",
+        "body": "Let's use Thunderbolt with Pikachu. Select an action, then confirm it. The bot has already chosen its action; speed determines who attacks first. Thunderbolt has a one-turn cooldown.",
+        "action": "Select Thunderbolt below and press Confirm turn."
+      },
+      "types": {
+        "title": "Type matters",
+        "body": "Thunderbolt had ×1 effectiveness against Abra: neutral damage. ×2 increases damage, ×0.5 reduces it and ×0 means immunity. The move type is compared with every type the opponent has. Thunderbolt will be available again on turn 3."
+      },
+      "switch": {
+        "title": "Protect your Pokémon",
+        "body": "Pikachu has taken damage. Switch to Jigglypuff to spread it across your team. Switching uses your action and happens before attacks: the incoming Pokémon takes the opponent's hit.",
+        "action": "Choose Jigglypuff in your reserves and confirm the turn."
+      },
+      "status": {
+        "title": "A status is a play, too",
+        "body": "Jigglypuff can use Sing to put Abra to sleep. In Lumemon's rules, sleep blocks the next attempted move, then clears. Your opponent can still act before falling asleep.",
+        "action": "Select Sing and confirm the turn. Check the opponent's status."
+      },
+      "complete": {
+        "title": "You know the essentials",
+        "body": "You attacked, read types, switched Pokémon and applied sleep. Abra is asleep: its next attempted move will be blocked. Keep battling to see it and try your own decisions."
+      }
+    }
   }
 }

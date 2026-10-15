@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-13 (práctica local contra la máquina). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-15 (tutorial guiado opcional). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `b118a54`, rama `feat/battle-data`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `78c01c5`, rama `feat/battle-audio-motion`; entrega en `feat/guided-battle-tutorial`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -50,6 +50,7 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 24 cartas verificadas; sin reloj o servicio de elecciones privadas |
 | Cartas habilitadas para el motor | 24 cartas de 12 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local; sin apoyos mapeados ni propiedad; las demás cartas del catálogo todavía no son jugables |
 | Práctica local | `/practica`: selección de seis, variantes, tablero, bot sencillo, estados, recargas, cambios, KO, registro, resultado y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; selección separada de `/equipo` |
+| Tutorial guiado | Entrada opcional en `/practica`, equipo preparado, cinco pasos, Rayo, tipos/recarga, cambio a Jigglypuff, sueño y continuación libre; ES/EN | Sin guardar progreso; conserva la selección normal y permite omitir la guía entre secuencias |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
 
 La instantánea `523febef1a683029` contiene 1.025 especies, 23.770 registros de cartas (20.132 Pokémon y 3.638 apoyos), 129 asociaciones ambiguas y 1.357 registros sin imagen en la fuente. Los respaldos locales de imágenes no modifican esos contadores originales. Verifica cifras futuras en `public/catalog/manifest.json`; no afirmes cobertura de todas las ediciones históricas o japonesas.
@@ -113,7 +114,7 @@ El usuario autorizó el siguiente bloque con «Continua». `/practica` carga de 
 
 `src/battle/practice.ts` mantiene la sesión en memoria. El bot básico puntúa movimientos legales con el propio motor (daño real o 45 puntos por estado aplicado); no cambia voluntariamente, no recibe la elección pendiente del jugador y deja su acción fijada al abrir el turno. No se afirma que sea una IA avanzada ni equilibrio probado. Las sustituciones solo del bot son automáticas; si cae el jugador, espera su reserva. Los comandos incluyen ID de partida y versión para ignorar dobles clics y acciones antiguas. El bit de desempate se obtiene fuera del reducer.
 
-La práctica no usa el borrador de /equipo, cuentas, cartas poseídas, apoyos, tiempo de 45 segundos ni premios. Recargar o salir de la ruta descarta la partida; volver al selector pide confirmación dentro de la pantalla. Queda pendiente el tutorial guiado, aunque hay instrucciones iniciales desplegables.
+La práctica no usa el borrador de /equipo, cuentas, cartas poseídas, apoyos, tiempo de 45 segundos ni premios. Recargar o salir de la ruta descarta la partida; volver al selector pide confirmación dentro de la pantalla. En esta entrega había instrucciones desplegables; el tutorial guiado se añadió el 15 de octubre (ver abajo).
 
 Verificación: ocho pruebas nuevas fallaron primero con stubs y pasaron después; 110 pruebas totales, lint, build/typecheck y battle:check correctos. Navegador real: ES/EN, 320/390/768/1440 sin desbordamiento observado; cambiar variante/estadísticas, seis plazas, bloqueo de inicio incompleto, promoción, acción con teclado, recarga, sueño/recuperación, parálisis, empate de velocidad, cambio, KO/sustitución, partida completa hasta derrota, revancha limpia, cancelar/salir y recargar. El borrador existente de /equipo siguió accesible. Imágenes iniciales y variantes activas cargaron; no se simuló caída de red ni se verificó manualmente cada una de las 24 imágenes. Revisión final independiente completada sin hallazgos: 8/8 pruebas de práctica correctas y revisión estática de sesión, UI, ES/EN, arte y accesibilidad; el revisor no repitió el navegador compartido.
 
@@ -132,13 +133,21 @@ Verificación: 11 casos de lógica se observaron fallar antes de implementar; 13
 
 Reglas, conjunto de cartas, guardado de equipo y alcance local permanecen como antes. No hay dependencias nuevas, cuentas, premios, publicación ni derechos comerciales inferidos. [Plan](superpowers/plans/2026-10-13-lumemon-battle-audio-motion.md); [fuentes](../public/_sources.md).
 
+## Tutorial guiado opcional — 15 de octubre
+
+El usuario pidió continuar. Rama `feat/guided-battle-tutorial` desde `78c01c5`. En el selector de `/practica`, **Aprender a combatir** funciona incluso con una selección incompleta y prepara seis cartas con Pikachu inicial. No modifica la selección normal ni el borrador de `/equipo`.
+
+La guía recorre tablero, Rayo, efectividad/recarga, cambio a Jigglypuff y Canto. `src/battle/tutorial.ts` limita acciones y avanza a partir de eventos reales; el motor, los datos y la decisión previa del bot se conservan. Los pasos de lectura no consumen turno. Los comandos de guía comprueban partida, versión y paso esperado; la presentación bloquea comandos durante la secuencia. Al terminar la guía se continúa la misma partida; no anuncia victoria, concede premios ni guarda progreso. Puede omitirse entre secuencias.
+
+Verificación: seis casos nuevos, con fallo previo y corrección; 129 pruebas, lint, build/typecheck y battle:check correctos. Navegador: recorrido completo, Rayo y recarga, cambio, sueño, salto de secuencia, continuidad libre y bloqueo real del rival dormido; guía omitida al inicio, selección incompleta preservada al salir y partida normal posterior sin restricciones. Teclado e interfaz ES/EN comprobados; capturas revisadas en 390/1440 px sin desbordamiento observado. En móvil de 390 px se reprodujo y corrigió un foco fuera de pantalla al elegir reserva: ahora el botón Confirmar queda centrado. La revisión independiente de lógica/UI encontró un P2: la revancha fallaba al conservar una selección incompleta. Reproducido en navegador tras una derrota real, corregido usando los IDs de la partida terminada y repetido hasta revancha correcta, con selección de cinco cartas intacta en el menú. Sin otros hallazgos; el revisor no repitió navegador ni revisó documentación en edición. No se amplió esta comprobación a lector de pantalla u otros navegadores. No se añadió persistencia ni se cambiaron las fuentes de audio.
+
 ## Pendiente: no anunciar como disponible
 
-Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, tutorial guiado, rivales avanzados, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
+Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, rivales avanzados, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato, pendiente de una tarea concreta: tutorial guiado dentro de la práctica existente; después ampliación del conjunto. Mantenerlo explícitamente local, sin cuenta ni recompensas reales. Este archivo no autoriza implementar esos bloques automáticamente.
+Siguiente candidato, pendiente de una tarea concreta: ampliación del conjunto de cartas jugables, conservando la compatibilidad del tutorial. Mantenerlo explícitamente local, sin cuenta ni recompensas reales. Este archivo no autoriza implementar esos bloques automáticamente.
 
 ## Mapa de código y comandos
 

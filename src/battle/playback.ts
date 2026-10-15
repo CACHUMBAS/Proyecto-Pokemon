@@ -91,6 +91,7 @@ export function presentationReducer(
   if (state.frames.length && command.kind !== 'start' && command.kind !== 'exit') return state
   const next = practiceReducer(state.session, command)
   if (next === state.session) return state
+  if (command.kind === 'guide') return { ...state, session: next }
   if (!next || command.kind === 'start') return { ...createPresentation(), session: next }
   const previous = state.session!
   const count = previous.rounds.reduce((sum, r) => sum + r.events.length, 0)

@@ -419,5 +419,49 @@
       "ready": "Arena lista · elige tu próxima acción",
       "immune": "Sin efecto"
     }
+  },
+  "tutorial": {
+    "label": "Primeros pasos",
+    "progress": "{{step}} de {{total}}",
+    "entryTitle": "¿Tu primer combate?",
+    "entryBody": "Aprende jugando con un equipo preparado: atacar, leer los tipos, cambiar de Pokémon y aplicar un estado. Tu selección de equipo se conserva.",
+    "start": "Aprender a combatir",
+    "begin": "Empezar lección",
+    "understood": "Entendido, vamos a cambiar",
+    "continue": "Seguir combatiendo",
+    "dismiss": "Omitir guía",
+    "viewReserves": "Ir a las reservas",
+    "observing": "Observa cómo se resuelve",
+    "observingHint": "Los cambios van primero; después, los movimientos por velocidad. Mira las cartas y su vida. La siguiente lección aparece al terminar la secuencia.",
+    "completeNote": "Has terminado la guía, no la partida. Puedes seguir practicando con este equipo. Sin premios ni progreso de cuenta.",
+    "steps": {
+      "welcome": {
+        "title": "Seis cartas. Un Pokémon activo.",
+        "body": "Tu Pokémon activo aparece a la izquierda y el rival a la derecha. Sus PS indican la vida restante; tus otras cinco cartas esperan en reservas. Tienes tiempo para pensar: esta práctica no tiene reloj."
+      },
+      "attack": {
+        "title": "Tu primer ataque",
+        "body": "Vamos a usar Rayo con Pikachu. Primero seleccionas una acción y después la confirmas. La máquina ya ha elegido la suya; la velocidad decide quién ataca antes. Rayo tiene un turno de recarga.",
+        "action": "Selecciona Rayo abajo y pulsa Confirmar turno."
+      },
+      "types": {
+        "title": "El tipo importa",
+        "body": "Rayo ha tenido efectividad ×1 contra Abra: daño neutro. ×2 aumenta el daño, ×0,5 lo reduce y ×0 indica inmunidad. El tipo del movimiento se compara con todos los tipos del rival. Rayo estará disponible de nuevo en el turno 3."
+      },
+      "switch": {
+        "title": "Protege a tu Pokémon",
+        "body": "Pikachu ya ha recibido daño. Cambia a Jigglypuff para repartirlo entre tu equipo. Cambiar consume tu acción y ocurre antes de los ataques: el Pokémon que entra recibe el golpe rival.",
+        "action": "Elige a Jigglypuff en las reservas y confirma el turno."
+      },
+      "status": {
+        "title": "Un estado también es una jugada",
+        "body": "Jigglypuff puede usar Canto para dormir a Abra. En las reglas de Lumemon, el sueño bloquea el siguiente intento de movimiento y después se cura. El rival todavía puede actuar antes de quedarse dormido.",
+        "action": "Selecciona Canto y confirma el turno. Comprueba el estado del rival."
+      },
+      "complete": {
+        "title": "Ya conoces lo esencial",
+        "body": "Has atacado, leído los tipos, cambiado de Pokémon y aplicado sueño. Abra está dormido: su siguiente intento de movimiento quedará bloqueado. Sigue combatiendo para verlo y prueba tus propias decisiones."
+      }
+    }
   }
 }

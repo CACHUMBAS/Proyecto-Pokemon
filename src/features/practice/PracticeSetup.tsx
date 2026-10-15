@@ -8,8 +8,9 @@ interface Props {
   team: string[]
   onTeamChange: (team: string[]) => void
   onStart: () => void
+  onTutorial: () => void
 }
-export function PracticeSetup({ team, onTeamChange, onStart }: Props) {
+export function PracticeSetup({ team, onTeamChange, onStart, onTutorial }: Props) {
   const { t, i18n } = useTranslation()
   const locale = i18n.language === 'en' ? 'en' : 'es'
   const [preferences, setPreferences] = useState<Record<number, string>>({})
@@ -53,6 +54,13 @@ export function PracticeSetup({ team, onTeamChange, onStart }: Props) {
             {t('practice.start')} <span aria-hidden="true">↗</span>
           </Button>
           <p className="practice-note">{t('practice.localNotice')}</p>
+          <div className="tutorial-entry">
+            <p className="eyebrow">{t('tutorial.entryTitle')}</p>
+            <p>{t('tutorial.entryBody')}</p>
+            <Button variant="secondary" onClick={onTutorial}>
+              {t('tutorial.start')}
+            </Button>
+          </div>
         </aside>
       </div>
       <details className="practice-rules">

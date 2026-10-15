@@ -1,3 +1,5 @@
+import { TUTORIAL_PLAYER, tutorialAction, advanceTutorial, matchesAction } from './tutorial.ts'
+import type { TutorialStep } from './tutorial.ts'
 import { activeFighter, requireValid } from './battle-state.ts'
 import { createPlayableBattle } from './playable-roster.ts'
 import { resolveReplacements, resolveTurn } from './turn-engine.ts'
@@ -5,11 +7,19 @@ import type { BattleAction, BattleEvent, BattleState, BattleTransition } from '.
 
 export interface PracticeSession {
   battle: BattleState
+  tutorial: TutorialStep | null
   botAction: BattleAction | null
   rounds: { turn: number; events: BattleEvent[] }[]
 }
 export type PracticeCommand =
-  | { kind: 'start'; battleId: string; playerIds: readonly string[] }
+  | { kind: 'start'; battleId: string; playerIds: readonly string[]; tutorial?: boolean }
+  | {
+      kind: 'guide'
+      battleId: string
+      expectedVersion: number
+      expectedStep: TutorialStep
+      action: 'next' | 'dismiss'
+    }
   | {
       kind: 'turn'
       battleId: string
@@ -66,9 +76,18 @@ export function chooseBotAction(state: BattleState): BattleAction {
 export function createPractice(
   battleId: string,
   playerIds: readonly string[] = DEFAULT_PLAYER,
+  tutorial = false,
 ): PracticeSession {
-  const battle = createPlayableBattle(battleId, [playerIds, DEFAULT_BOT])
-  return { battle, botAction: chooseBotAction(battle), rounds: [] }
+  const battle = createPlayableBattle(battleId, [
+    tutorial ? TUTORIAL_PLAYER : playerIds,
+    DEFAULT_BOT,
+  ])
+  return {
+    battle,
+    botAction: chooseBotAction(battle),
+    rounds: [],
+    tutorial: tutorial ? 'welcome' : null,
+  }
 }
 
 function advance(session: PracticeSession, transition: BattleTransition): PracticeSession {
@@ -86,6 +105,7 @@ function advance(session: PracticeSession, transition: BattleTransition): Practi
   return {
     battle,
     rounds,
+    tutorial: advanceTutorial(session.tutorial, session.battle, events),
     botAction: battle.phase === 'selection' ? chooseBotAction(battle) : null,
   }
 }
@@ -95,7 +115,8 @@ export function practiceReducer(
   session: PracticeSession | null,
   command: PracticeCommand,
 ): PracticeSession | null {
-  if (command.kind === 'start') return createPractice(command.battleId, command.playerIds)
+  if (command.kind === 'start')
+    return createPractice(command.battleId, command.playerIds, command.tutorial)
   if (
     !session ||
     command.battleId !== session.battle.battleId ||
@@ -103,6 +124,19 @@ export function practiceReducer(
   )
     return session
   if (command.kind === 'exit') return null
+  if (command.kind === 'guide') {
+    if (!session.tutorial || command.expectedStep !== session.tutorial) return session
+    if (command.action === 'dismiss') return { ...session, tutorial: null }
+    if (session.tutorial === 'welcome') return { ...session, tutorial: 'attack' }
+    if (session.tutorial === 'types') return { ...session, tutorial: 'switch' }
+    return session
+  }
+  if (
+    session.tutorial &&
+    command.kind === 'turn' &&
+    !matchesAction(tutorialAction(session.battle, session.tutorial), command.action)
+  )
+    return session
   if (command.kind === 'replace') {
     requireValid(activeFighter(session.battle, 0).hp === 0, 'player replacement')
     return advance(

@@ -1,0 +1,149 @@
+.tutorial-entry {
+  margin-top: 22px;
+  padding: 22px 0 0;
+  border-top: 1px solid #3e5660;
+}
+.tutorial-entry .eyebrow {
+  font-size: 10px;
+}
+.tutorial-entry p:not(.eyebrow) {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 10px 0 16px;
+}
+.tutorial-entry .button {
+  width: 100%;
+}
+.tutorial-coach {
+  padding: 20px;
+  border: 1px solid #4c7b74;
+  background: linear-gradient(135deg, #1c373c, #162a35 75%);
+  border-radius: 12px;
+  margin-bottom: 22px;
+}
+.tutorial-coach-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 11px;
+  color: var(--mint);
+}
+.tutorial-coach-top .eyebrow {
+  margin: 0;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+.tutorial-progress {
+  display: flex;
+  gap: 5px;
+  margin: 16px 0 20px;
+}
+.tutorial-progress span {
+  height: 3px;
+  border-radius: 3px;
+  background: #3b5360;
+  flex: 1;
+}
+.tutorial-progress .is-done {
+  background: var(--mint);
+}
+.tutorial-coach h2 {
+  font-size: 24px !important;
+  line-height: 1.2;
+  margin: 0 0 12px !important;
+  scroll-margin-top: 100px;
+}
+.tutorial-coach h2:focus-visible {
+  outline: 2px solid var(--mint);
+  outline-offset: 5px;
+}
+.tutorial-description {
+  color: #d0e0e4;
+  font-size: 12px;
+  line-height: 1.8;
+  margin: 0 0 14px;
+}
+.tutorial-type-table {
+  border: 1px solid #466268;
+  border-radius: 8px;
+  padding: 0 12px;
+  margin: 18px 0;
+  font-size: 12px;
+}
+.tutorial-type-table > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+}
+.tutorial-type-table > div + div {
+  border-top: 1px solid #364e58;
+}
+.tutorial-type-table strong {
+  color: var(--mint);
+}
+.tutorial-instruction {
+  padding: 12px;
+  border-left: 2px solid var(--mint);
+  background: #102630;
+  color: #b7e8da;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.tutorial-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 14px;
+  margin-top: 16px;
+}
+.tutorial-actions .practice-text-button {
+  min-height: 44px;
+  padding: 8px 0;
+  color: #c1d3d9;
+  font-size: 11px;
+}
+.tutorial-actions button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.tutorial-reserves-link {
+  display: inline-block;
+  min-height: 44px;
+  align-content: center;
+  color: var(--mint);
+  font-size: 12px;
+}
+.tutorial-complete-note {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 14px 0 0;
+}
+.practice-console.is-guided {
+  padding: 16px;
+}
+.practice-console.is-guided .practice-moves {
+  margin-top: 14px;
+}
+.practice-bench-title,
+#practice-bench-title {
+  scroll-margin-top: 96px;
+}
+@media (max-width: 600px) {
+  .tutorial-coach {
+    padding: 16px;
+  }
+  .tutorial-coach h2 {
+    font-size: 23px !important;
+  }
+  .tutorial-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .tutorial-actions .button {
+    width: 100%;
+  }
+}

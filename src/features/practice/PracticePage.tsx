@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { tutorialAction } from '../../battle/tutorial'
+import { TutorialCoach } from './TutorialCoach'
 import { DEFAULT_PLAYER } from '../../battle/practice'
 import { activeFighter } from '../../battle/battle-state'
 import { cryPath, frameCue } from '../../audio/cues'
@@ -53,13 +55,26 @@ export function PracticePage() {
     return stopTransient
   }, [frame, play, stopTransient])
   useEffect(() => {
-    if (!playing) heading.current?.focus({ preventScroll: true })
-  }, [battleId, version, playing])
-  function start() {
+    if (!playing && !session?.tutorial) heading.current?.focus({ preventScroll: true })
+  }, [battleId, version, playing, session?.tutorial])
+  function startBattle(tutorial = false, playerIds = team) {
     audio.stop()
     setConfirmExit(false)
-    dispatch({ kind: 'start', battleId: crypto.randomUUID(), playerIds: team })
+    dispatch({ kind: 'start', battleId: crypto.randomUUID(), playerIds, tutorial })
     window.scrollTo({ top: 0, behavior: 'instant' })
+  }
+  function start() {
+    startBattle()
+  }
+  function guide(action: 'next' | 'dismiss') {
+    if (!session?.tutorial) return
+    dispatch({
+      kind: 'guide',
+      battleId: session.battle.battleId,
+      expectedVersion: session.battle.version,
+      expectedStep: session.tutorial,
+      action,
+    })
   }
   const selected =
     choice && choice.battleId === battleId && choice.version === version ? choice.action : null
@@ -73,7 +88,12 @@ export function PracticePage() {
         speciesId={initialSpecies}
       />
       {!session || !battle ? (
-        <PracticeSetup team={team} onTeamChange={setTeam} onStart={start} />
+        <PracticeSetup
+          team={team}
+          onTeamChange={setTeam}
+          onStart={start}
+          onTutorial={() => startBattle(true)}
+        />
       ) : (
         <>
           <header className="practice-battle-heading">
@@ -115,6 +135,19 @@ export function PracticePage() {
             </div>
           )}
           <BattleBoard
+            guide={
+              session.tutorial ? (
+                <TutorialCoach
+                  session={session}
+                  busy={playing}
+                  onNext={() => guide('next')}
+                  onDismiss={() => guide('dismiss')}
+                />
+              ) : undefined
+            }
+            allowedAction={
+              session.tutorial ? tutorialAction(session.battle, session.tutorial) : undefined
+            }
             battle={battle}
             frame={frame}
             motion={playback.animations}
@@ -150,7 +183,12 @@ export function PracticePage() {
                 targetId,
               })
             }
-            onRematch={start}
+            onRematch={() =>
+              startBattle(
+                false,
+                session.battle.sides[0].fighters.map((f) => f.id),
+              )
+            }
           />
           <BattleLog rounds={playing ? presentation.previousRounds : session.rounds} />
         </>
