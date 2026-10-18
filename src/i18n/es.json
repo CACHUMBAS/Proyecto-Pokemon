@@ -279,7 +279,14 @@
     },
     "playableOnly": "Solo cartas jugables",
     "playableHint": "Muestra las especies y las ilustraciones habilitadas en Práctica. Tu equipo guardado se conserva.",
-    "playableEmpty": "No hay cartas jugables que coincidan. Cambia la búsqueda o los filtros, o desactiva «Solo cartas jugables» para explorar el catálogo completo."
+    "playableEmpty": "No hay cartas jugables que coincidan. Cambia la búsqueda o los filtros, o desactiva «Solo cartas jugables» para explorar el catálogo completo.",
+    "battleTitle": "Combate Lumemon",
+    "battleLabel": "Datos de combate de {{name}} · {{id}}",
+    "battleUnavailable": "Esta ilustración todavía no está habilitada para combatir.",
+    "battleMoves": "Movimientos · {{count}}",
+    "battleMovesLabel": "Movimientos de {{name}} · {{id}}",
+    "battlePower": "Potencia {{power}}",
+    "battleHint": "Valores base de Lumemon, distintos a los impresos del TCG. El daño depende del rival, los tipos y los efectos; los movimientos de estado no infligen daño directo."
   },
   "practice": {
     "eyebrow": "LABORATORIO DE COMBATE",

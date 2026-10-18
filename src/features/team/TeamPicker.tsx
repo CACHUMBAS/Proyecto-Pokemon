@@ -5,6 +5,7 @@ import { listTeamSpecies, listTeamVariants } from '../../battle/team-catalog'
 import type { CardRecord, SpeciesRecord } from '../../catalog/types'
 import { selectTeamCard } from '../../battle/team-draft'
 import { Button } from '../../components/ui/Button'
+import { TeamBattleDetails } from './TeamBattleDetails'
 import { PokemonCard } from '../../components/cards/PokemonCard'
 import { orderVariants, toCardPreview } from '../catalog/to-card-preview'
 
@@ -153,6 +154,7 @@ function VariantPicker({
                   <p>
                     {card.set.name} · {t(`rarities.${card.rarity}`, { defaultValue: card.rarity })}
                   </p>
+                  <TeamBattleDetails card={card} name={view.name} />
                   <Button
                     variant={choice === 'unchanged' ? 'secondary' : 'primary'}
                     disabled={disabled}

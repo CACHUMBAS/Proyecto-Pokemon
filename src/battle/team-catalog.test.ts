@@ -1,8 +1,8 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
-import { listTeamSpecies, listTeamVariants } from './team-catalog.ts'
-import { listPlayableCards } from './playable-roster.ts'
+import { listTeamSpecies, listTeamVariants, getTeamBattleDetails } from './team-catalog.ts'
+import { listPlayableCards, listBattleSpecies } from './playable-roster.ts'
 import { validatePracticeTeam } from './practice-team.ts'
 import { DEFAULT_PLAYER } from './practice.ts'
 import type { CardRecord, SpeciesRecord } from '../catalog/types.ts'
@@ -100,4 +100,71 @@ test('every offered variant matches the combat roster and can form the existing 
   assert.deepEqual(offered.map((c) => c.id).sort(), playable.map((c) => c.id).sort())
   const ids = DEFAULT_PLAYER.map((id) => offered.find((c) => c.id === id)!.id)
   assert.deepEqual(validatePracticeTeam(ids), { valid: true, cardIds: ids })
+})
+
+// The preview must show the exact engine profile, never TCG text or raw PokeAPI power.
+test('battle details match every exact engine variant and use localized verified move names', () => {
+  const battleSpecies = listBattleSpecies()
+  for (const fighter of playable) {
+    const card = variants(fighter.speciesId).find((c) => c.id === fighter.id)!
+    const details = getTeamBattleDetails(card)
+    assert.ok(details, fighter.id)
+    assert.equal(details.id, fighter.id)
+    assert.deepEqual(details.types, fighter.types)
+    assert.deepEqual(details.stats, {
+      maxHp: fighter.maxHp,
+      attack: fighter.attack,
+      defense: fighter.defense,
+      speed: fighter.speed,
+    })
+    assert.deepEqual(
+      details.moves,
+      fighter.moves.map((move) => ({
+        ...move,
+        names: battleSpecies
+          .find((s) => s.speciesId === fighter.speciesId)!
+          .moves.find((m) => m.move.id === move.id)!.names,
+      })),
+    )
+  }
+  const bulbasaur = getTeamBattleDetails(variants(1).find((c) => c.id === 'base1-44')!)!
+  const whip = bulbasaur.moves.find((m) => m.id === 'pokeapi-22')!
+  assert.equal(whip.power, 40)
+  assert.deepEqual(whip.names, { es: 'Látigo Cepa', en: 'Vine Whip' })
+  assert.equal(whip.cooldown, 0)
+  assert.ok(bulbasaur.moves.some((m) => m.kind === 'status' && m.power === 0 && m.cooldown === 2))
+})
+
+test('battle details distinguish illustrations and reject unsupported or ambiguous catalogue associations', () => {
+  const cards = variants(1)
+  const common = cards.find((c) => c.id === 'base1-44')!
+  const rare = cards.find((c) => c.id === 'sv03.5-166')!
+  const commonDetails = getTeamBattleDetails(common)
+  const rareDetails = getTeamBattleDetails(rare)
+  assert.ok(commonDetails)
+  assert.ok(rareDetails)
+  assert.notDeepEqual(commonDetails.stats, rareDetails.stats)
+  for (const card of [
+    cards.find((c) => c.id === '2021swsh-1')!,
+    { ...common, id: 'unknown' },
+    { ...common, category: 'Trainer', mapping: 'support' },
+    { ...common, mapping: 'multiple', speciesIds: [1, 25] },
+    { ...common, speciesIds: [25] },
+  ] as CardRecord[]) {
+    assert.equal(getTeamBattleDetails(card), undefined)
+  }
+})
+
+test('reading and changing a preview cannot mutate the catalogue or later battle profiles', () => {
+  const card = variants(1).find((c) => c.id === 'base1-44')!
+  const before = JSON.stringify(card)
+  const details = getTeamBattleDetails(Object.freeze(card))
+  assert.ok(details)
+  const original = structuredClone(details)
+  details.stats.maxHp = 1
+  details.moves[0].names.es = 'changed'
+  details.moves.reverse()
+  assert.equal(JSON.stringify(card), before)
+  assert.deepEqual(getTeamBattleDetails(card), original)
+  assert.deepEqual(listPlayableCards(), playable)
 })

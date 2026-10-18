@@ -273,7 +273,14 @@
     },
     "playableOnly": "Playable cards only",
     "playableHint": "Show species and artwork enabled in Practice. Your saved team stays unchanged.",
-    "playableEmpty": "No playable cards match. Change your search or filters, or turn off “Playable cards only” to explore the full catalogue."
+    "playableEmpty": "No playable cards match. Change your search or filters, or turn off “Playable cards only” to explore the full catalogue.",
+    "battleTitle": "Lumemon battle",
+    "battleLabel": "Battle details for {{name}} · {{id}}",
+    "battleUnavailable": "This artwork is not enabled for battle yet.",
+    "battleMoves": "Moves · {{count}}",
+    "battleMovesLabel": "Moves for {{name}} · {{id}}",
+    "battlePower": "Power {{power}}",
+    "battleHint": "Lumemon base values, separate from the printed TCG values. Damage depends on the opponent, types and effects; status moves deal no direct damage."
   },
   "practice": {
     "eyebrow": "BATTLE LAB",

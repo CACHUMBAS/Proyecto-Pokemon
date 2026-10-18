@@ -113,6 +113,8 @@ Se guarda un único borrador en `pokeprisma.team-draft.v1`, solo con identificad
 
 **Solo cartas jugables** limita el selector a especies e ilustraciones habilitadas en Práctica (actualmente 18 especies y 36 cartas). Funciona junto con la búsqueda y el tipo; se mantiene al entrar en las ilustraciones y volver. No modifica el borrador. Puedes desactivarlo para explorar todo el catálogo; vuelve a estar desactivado al recargar o salir de la ruta.
 
+Cada variante habilitada muestra sus **datos de combate de Lumemon**: PS máximos, ataque, defensa, velocidad y tipos. Abre **Movimientos** para consultar nombres ES/EN, potencia adaptada, recarga y estados. Los valores impresos de las cartas siguen siendo del TCG; el daño final depende del rival y los efectos. Las variantes no habilitadas muestran un aviso, sin estadísticas de combate.
+
 **Probar este equipo** lleva una copia de las seis cartas a la preparación de `/practica`, conservando IDs, ilustraciones y primer Pokémon. Solo se habilita con seis especies distintas y cartas incluidas en el conjunto jugable; los avisos indican las plazas incompatibles. Puedes elegir rival y apoyos antes de combatir. Los ajustes, el tutorial y la partida no escriben sobre el borrador. Si recargas la preparación importada, se recupera la copia enviada en esa entrada del historial, no los cambios posteriores de práctica; la partida en curso sigue sin guardarse.
 
 Comprobaciones originales del constructor: [revisión del constructor](docs/revision-equipo.md).
