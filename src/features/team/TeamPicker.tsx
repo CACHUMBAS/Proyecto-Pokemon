@@ -1,23 +1,52 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useId, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { catalogRepository } from '../../catalog/client'
-import { listSpecies } from '../../catalog/repository'
+import { listTeamSpecies, listTeamVariants } from '../../battle/team-catalog'
 import type { CardRecord, SpeciesRecord } from '../../catalog/types'
 import { selectTeamCard } from '../../battle/team-draft'
 import { Button } from '../../components/ui/Button'
 import { PokemonCard } from '../../components/cards/PokemonCard'
 import { orderVariants, toCardPreview } from '../catalog/to-card-preview'
 
+function PlayableFilter({
+  checked,
+  onChange,
+}: {
+  checked: boolean
+  onChange: (checked: boolean) => void
+}) {
+  const { t } = useTranslation()
+  const hintId = useId()
+  return (
+    <div className="team-playable-filter">
+      <label>
+        <input
+          type="checkbox"
+          checked={checked}
+          onChange={(event) => onChange(event.target.checked)}
+          aria-describedby={hintId}
+        />
+        <span>{t('team.playableOnly')}</span>
+      </label>
+      <p id={hintId}>{t('team.playableHint')}</p>
+    </div>
+  )
+}
+
 function VariantPicker({
   species,
   team,
   knownSpecies,
+  playableOnly,
+  onPlayableOnlyChange,
   onChoose,
   onBack,
 }: {
   species: SpeciesRecord
   team: CardRecord[]
   knownSpecies: ReadonlySet<number>
+  playableOnly: boolean
+  onPlayableOnlyChange: (checked: boolean) => void
   onChoose: (card: CardRecord) => void
   onBack: () => void
 }) {
@@ -48,12 +77,7 @@ function VariantPicker({
     heading.current?.focus({ preventScroll: true })
   }, [])
   const cards = result.attempt === attempt ? result.cards : undefined
-  const filtered =
-    cards?.filter((card) =>
-      `${card.id} ${card.set.name} ${card.rarity}`
-        .toLocaleLowerCase()
-        .includes(filter.trim().toLocaleLowerCase()),
-    ) || []
+  const filtered = listTeamVariants(cards ?? [], filter, playableOnly)
   const pages = Math.max(1, Math.ceil(filtered.length / 12))
   const currentPage = Math.min(page, pages)
   function turn(next: number) {
@@ -70,6 +94,13 @@ function VariantPicker({
         {t('team.variantsTitle', { name: species.names[locale] })}
       </h2>
       <p className="team-hint">{t('team.variantHint')}</p>
+      <PlayableFilter
+        checked={playableOnly}
+        onChange={(checked) => {
+          onPlayableOnlyChange(checked)
+          setPage(1)
+        }}
+      />
       {!cards && !(result.attempt === attempt && result.error) && (
         <p role="status">{t('catalog.loading')}</p>
       )}
@@ -134,7 +165,9 @@ function VariantPicker({
               )
             })}
           </div>
-          {!filtered.length && <p>{t('catalog.emptyBody')}</p>}
+          {!filtered.length && (
+            <p>{t(playableOnly ? 'team.playableEmpty' : 'catalog.emptyBody')}</p>
+          )}
           {pages > 1 && (
             <nav className="catalog-pagination" aria-label={t('catalog.pagination')}>
               <Button
@@ -173,21 +206,23 @@ export function TeamPicker({
   const locale = i18n.resolvedLanguage === 'en' ? 'en' : 'es'
   const [search, setSearch] = useState('')
   const [typeFilter, setTypeFilter] = useState('')
+  const [playableOnly, setPlayableOnly] = useState(false)
   const [page, setPage] = useState(1)
   const [selected, setSelected] = useState<SpeciesRecord | null>(null)
   const input = useRef<HTMLInputElement>(null)
   const heading = useRef<HTMLHeadingElement>(null)
-  const types = useMemo(
-    () => [...new Set(species.flatMap((s) => s.types))].sort(),
-    [species],
+  const types = useMemo(() => [...new Set(species.flatMap((s) => s.types))].sort(), [species])
+  const result = listTeamSpecies(
+    species,
+    {
+      search,
+      type: typeFilter || undefined,
+      page,
+      pageSize: 12,
+      locale,
+    },
+    playableOnly,
   )
-  const result = listSpecies(species, {
-    search,
-    type: typeFilter || undefined,
-    page,
-    pageSize: 12,
-    locale,
-  })
   const knownSpecies = new Set(species.map((entry) => entry.id))
   function turn(next: number) {
     setPage(next)
@@ -202,6 +237,11 @@ export function TeamPicker({
           species={selected}
           team={team}
           knownSpecies={knownSpecies}
+          playableOnly={playableOnly}
+          onPlayableOnlyChange={(checked) => {
+            setPlayableOnly(checked)
+            setPage(1)
+          }}
           onChoose={onChoose}
           onBack={() => {
             setSelected(null)
@@ -251,6 +291,13 @@ export function TeamPicker({
               </select>
             </label>
           </div>
+          <PlayableFilter
+            checked={playableOnly}
+            onChange={(checked) => {
+              setPlayableOnly(checked)
+              setPage(1)
+            }}
+          />
           <p className="team-hint" role="status">
             {t('team.speciesCount', { count: result.total })}
           </p>
@@ -276,7 +323,7 @@ export function TeamPicker({
               </button>
             ))}
           </div>
-          {!result.total && <p>{t('catalog.emptyBody')}</p>}
+          {!result.total && <p>{t(playableOnly ? 'team.playableEmpty' : 'catalog.emptyBody')}</p>}
           {result.pages > 1 && (
             <nav className="catalog-pagination" aria-label={t('catalog.pagination')}>
               <Button

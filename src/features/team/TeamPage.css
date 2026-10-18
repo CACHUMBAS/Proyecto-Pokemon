@@ -380,6 +380,7 @@
   }
   .team-picker-controls {
     flex-direction: column;
+    align-items: stretch;
   }
   .team-type-filter select {
     min-width: 0;
@@ -388,4 +389,37 @@
   .team-variants .button {
     padding-inline: 7px;
   }
+}
+
+.team-playable-filter {
+  margin: 20px 0;
+  padding: 14px 16px;
+  border: 1px solid #455a6b;
+  border-radius: 9px;
+  background: #111f2c;
+}
+.team-playable-filter label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 32px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.team-playable-filter input {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  accent-color: var(--mint);
+}
+.team-playable-filter p {
+  margin: 6px 0 0 32px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+.team-playable-filter:focus-within {
+  outline: 2px solid var(--mint);
+  outline-offset: 3px;
 }

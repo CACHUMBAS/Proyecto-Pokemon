@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-19 (equipo local conectado a la práctica). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-19 (filtro de cartas jugables en Mi equipo). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `bd4392d`, rama `feat/battle-summary`; entrega en `feat/team-to-practice`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `bc2ccf5`, rama `feat/team-to-practice`; entrega en `feat/playable-team-filter`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -45,7 +45,7 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Datos | Instantánea normalizada de PokéAPI y TCGdex, carga de fichas bajo demanda y caché | No se consultan las API para cada interacción ni se necesita reimportar para arrancar |
 | Imágenes McDonald’s | 87 ilustraciones recuperadas localmente, incluidas las 12 de 2011; procedencia y hashes registrados | Algunas ediciones siguen sin imagen fiable; no inventar URLs o correspondencias |
 | Composición | Validador de seis especies distintas; rechaza IDs desconocidos, duplicados, apoyos en plazas Pokémon y asociaciones ambiguas | No comprueba propiedad, estadísticas, movimientos ni aptitud real para combatir |
-| Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI) y enviar seis cartas habilitadas a práctica; ES/EN y móvil | Borrador local sin cuenta ni propiedad; los apoyos se eligen en la práctica |
+| Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI), mostrar solo cartas jugables y enviar seis cartas habilitadas a práctica; ES/EN y móvil | Borrador local sin cuenta ni propiedad; los apoyos se eligen en la práctica |
 | Cálculo de combate | Tipos de datos mínimos, 18 tipos, dobles tipos e inmunidades, afinidad y modificadores de daño con aritmética exacta | Funciones puras sin conectar a la interfaz; no resuelven turnos, estados, duración de mejoras ni propiedad |
 | Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 36 cartas verificadas; sin reloj o servicio de elecciones privadas |
 | Cartas habilitadas para el motor | 36 cartas de 18 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local junto a cuatro apoyos mapeados; sin propiedad; las demás cartas del catálogo todavía no son jugables |
@@ -203,13 +203,19 @@ Estado de navegación versionado: kind lumemon-practice-team, version 1 y cardId
 
 Verificación: cinco pruebas nuevas fallaron primero; 168 pruebas totales correctas, lint y build/typecheck correctos. Cubren IDs/orden/inicial, variantes de la misma especie, apoyos/IDs no habilitados, formato, longitud, listas dispersas, versión de transferencia, copias independientes, restauración del borrador y aislamiento al jugar, editar y abrir el tutorial. Navegador real en localhost:5174, origen separado del habitual 127.0.0.1:5174: equipo vacío bloqueado, carta 2021swsh-1 señalada tanto con equipo parcial como completo, corrección a base1-44, seis cartas transferidas con Pikachu sv03.5-173 primero, recarga de preparación conserva esa variante, enlace a apoyos conserva selección, cambio temporal a base1-58 y un turno real, tutorial omitido y vuelta al equipo guardado con sv03.5-173 intacta incluso al recargar. Entrada directa a práctica mantiene el equipo inicial por defecto. Botón activado con Enter; avisos y copia revisados en ES/EN a 1440/390 px sin desbordamiento observado; capturas inspeccionadas. Sin errores de consola observados; equipo creado solo para prueba retirado por interfaz, idioma ES, viewport restaurado y pestaña temporal cerrada. El origen habitual del usuario no se modificó. No se repitió una partida completa/revancha en navegador ni fallos de almacenamiento/red, cubiertos por pruebas existentes; el payload de navegación inválido se comprobó automáticamente. Revisión independiente sin hallazgos accionables y cinco pruebas dirigidas correctas; no repitió navegador, suite general, lint o build. No se ha desplegado.
 
+## Filtro de cartas jugables — 2026-10-19
+
+Continuación autorizada con «continua». Rama `feat/playable-team-filter` desde `bc2ccf5`. /equipo ofrece «Solo cartas jugables», desactivado por defecto y compartido al pasar de especies a ilustraciones y volver. Limita las especies al conjunto de combate y las variantes a IDs exactos con asociación válida; actualmente 18 especies y 36 cartas. Conserva búsqueda, tipo, orden, idioma real y cartas guardadas. Los filtros se combinan antes de paginar y al cambiarlos se vuelve a la primera página. Si no hay coincidencias, explica cómo ampliar la búsqueda. El filtro es temporal y no introduce claves ni escrituras al borrador.
+
+Verificación: tres pruebas nuevas fallaron antes de implementar el filtro; 171 pruebas totales correctas, lint y build con typecheck correctos. Se verifica el catálogo real contra todo el roster, variantes de la misma especie no habilitadas, asociaciones inválidas, búsqueda por nombre/número/expansión/rareza y paginación. En navegador: ES/EN, teclado, 320/390/1440 px sin desbordamiento, dos páginas de especies, vuelta entre vistas, reinicio de paginación, especie sin variantes jugables, conservación de una carta no habilitada al filtrar y sustitución por una habilitada conservada al recargar. Pruebas en localhost con borrador temporal retirado al acabar, sin tocar el borrador de 127.0.0.1. Sin errores de consola. Revisión independiente de código sin hallazgos accionables. No amplía el roster ni crea colección, cuentas o recompensas.
+
 ## Pendiente: no anunciar como disponible
 
 Ampliar estadísticas/movimientos a más cartas, ampliar el mapeo de apoyos, estrategia avanzada más allá de las heurísticas actuales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato: un filtro de cartas habilitadas para combate en el constructor de /equipo, para encontrar las variantes compatibles sin probar identificadores una a una. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
+Siguiente candidato: mostrar las estadísticas y movimientos de Lumemon de cada variante jugable en /equipo, para comparar ilustraciones antes de elegir sin confundir sus valores con los impresos del TCG. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
 
 ## Mapa de código y comandos
 
@@ -228,6 +234,7 @@ Siguiente candidato: un filtro de cartas habilitadas para combate en el construc
 | `scripts/battle` | Selección explícita, carga verificada y generación/check offline de datos de combate |
 | `src/battle/summary.ts`, `src/features/practice/BattleSummary.tsx` | Métricas de eventos al finalizar, comparación ES/EN de ambos equipos; sin estado ni guardado propio |
 | `src/battle/practice-team.ts`, `src/features/practice/TeamTransfer.tsx` | Aptitud del equipo para práctica, avisos y transferencia versionada de IDs por navegación; no escribe en el borrador |
+| `src/battle/team-catalog.ts` | Filtros de especies y variantes jugables por IDs del roster, combinados con la búsqueda del catálogo antes de paginar |
 | `src/battle/team.ts` | Validación estructural del equipo |
 | `src/battle/team-draft.ts` | Formato, restauración, guardado y selección del borrador |
 | `src/i18n/es.json`, `src/i18n/en.json` | Traducciones de interfaz |

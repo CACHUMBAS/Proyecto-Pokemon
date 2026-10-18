@@ -270,7 +270,10 @@
       "promoted": "Pokémon moved to the lead slot.",
       "removed": "Pokémon removed from the team.",
       "conflict": "The team changed in another tab. The latest version has been loaded; please repeat your change."
-    }
+    },
+    "playableOnly": "Playable cards only",
+    "playableHint": "Show species and artwork enabled in Practice. Your saved team stays unchanged.",
+    "playableEmpty": "No playable cards match. Change your search or filters, or turn off “Playable cards only” to explore the full catalogue."
   },
   "practice": {
     "eyebrow": "BATTLE LAB",

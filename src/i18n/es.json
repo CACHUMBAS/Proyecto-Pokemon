@@ -276,7 +276,10 @@
       "promoted": "Pokémon colocado primero.",
       "removed": "Pokémon retirado del equipo.",
       "conflict": "El equipo cambió en otra pestaña. Se ha cargado la versión más reciente; vuelve a realizar tu cambio."
-    }
+    },
+    "playableOnly": "Solo cartas jugables",
+    "playableHint": "Muestra las especies y las ilustraciones habilitadas en Práctica. Tu equipo guardado se conserva.",
+    "playableEmpty": "No hay cartas jugables que coincidan. Cambia la búsqueda o los filtros, o desactiva «Solo cartas jugables» para explorar el catálogo completo."
   },
   "practice": {
     "eyebrow": "LABORATORIO DE COMBATE",
