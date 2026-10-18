@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-15 (tres rivales de práctica con equipos y niveles visibles). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-18 (cambios tácticos del rival Élite). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `2463953`, rama `feat/expanded-battle-roster`; entrega en `feat/practice-opponents`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `0e5c549`, rama `feat/practice-opponents`; entrega en `feat/tactical-elite-bot`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -159,13 +159,21 @@ La sesión guarda opponentId y lo conserva al resolver turnos/sustituciones. La 
 
 Verificación: 134 pruebas correctas, lint y build con typecheck. Las pruebas nuevas cubren equipos válidos, presupuestos crecientes sin alterar estadísticas, IDs desconocidos, copias independientes, partidas completas, sustituciones, revancha y aislamiento del tutorial. Navegador: selección por flechas con foco visible; Élite real, derrota tras 20 turnos pasivos y revancha en turno 1 con el mismo rival; tutorial fijo al seleccionar Élite con cinco cartas; vuelta conserva esa selección incompleta. Capturas de escritorio 1440 y móvil 390 sin desbordamiento observado, textos ES/EN; Iniciación abre con Eevee en la interfaz móvil EN. Sin errores de consola observados; idioma ES y animaciones restaurados, audio silenciado, tamaño restaurado y pestaña temporal cerrada. Revisión independiente sin hallazgos: confirmó las tres pruebas nuevas, traducciones, política común y sustitución automática del rival en los tres equipos. No repitió el navegador (comprobado por el ejecutor) ni evaluó equilibrio competitivo (fuera de este bloque, dificultad expresamente orientativa). No se han instalado dependencias ni publicado la web.
 
+## Estrategia de Élite — 2026-10-18
+
+Nueva política en src/battle/bot.ts: Élite puede cambiar voluntariamente cuando su activo arriesga al menos la mitad de sus PS actuales o su mejor acción disponible no causa daño ni aplica estado. Evalúa los movimientos disponibles del jugador y pasar con el motor real, ambos desempates y daño residual. Rechaza reservas que caigan en cualquiera de esos escenarios; exige reducir el riesgo al menos 25 puntos porcentuales, o entrar con menos del 50% de riesgo si la acción actual no aporta nada. Compara posible respuesta del siguiente turno y riesgo de entrada. Entre entradas del bot (voluntarias o forzadas) deja dos turnos sin retirada voluntaria; en turno 60 actúa. No abandona un KO seguro de su acción prevista.
+
+Es una heurística limitada: la respuesta futura se estima con el jugador pasivo, no explora sus cambios/apoyos ni garantiza la mejor jugada o mayor tasa de victorias. Su decisión sigue guardada antes de elegir la del jugador. El motor y las estadísticas no cambian. Iniciación y Versátil mantienen la política original; el tutorial fuerza Versátil incluso después de omitir/terminar la guía y en su revancha. Las sustituciones obligatorias mantienen el primer reserva vivo. Historial de entradas solo en la sesión, sin almacenamiento nuevo.
+
+Verificación automatizada: cuatro casos fallaron por la ausencia de cambios tácticos antes de implementarlos; ocho pruebas nuevas, 142 correctas en total, lint y build/typecheck correctos. Incluye peligro eléctrico, inmunidad, recarga, reservas condenadas/dormidas, KO seguro, margen entre cambios, entrada por eventos antes del daño, decisión preconfirmada aunque el jugador pase/ataque/cambie, tutorial y partidas reproducibles hasta resultado con revancha. Se corrigió findLast para respetar la biblioteca TypeScript existente sin cambiar la configuración. Navegador: Pikachu frente a Élite, retirada voluntaria Charizard→Snorlax antes de Rayo, PS iniciales antes del golpe y 78 PS de daño después; Charizard conserva sus PS. En turno 2 Snorlax usa Terremoto y el registro refleja correctamente ambas acciones. Textos ES/EN, selector y tablero a 1440/390 px sin desbordamiento observado; capturas revisadas. Tutorial iniciado con Élite seleccionado entra con Versátil/Abra como antes. Sin errores de consola observados; idioma ES, audio desactivado, tamaño restaurado y pestaña temporal cerrada. Las partidas completas, revancha y todos los pasos del tutorial se verificaron en pruebas automáticas, no se repitieron completos en navegador en este bloque. No se ha evaluado equilibrio competitivo ni escucha de audio. Revisión independiente sin hallazgos: corroboró la política anterior, decisión previa al input, historial de entradas forzadas, margen de retirada, tutorial/revancha y las ocho pruebas nuevas. No repitió la suite general ni el navegador, cubiertos por el ejecutor. Optimalidad, equilibrio, respuestas a cambios/apoyos y búsqueda profunda siguen fuera del alcance, expresamente documentados.
+
 ## Pendiente: no anunciar como disponible
 
-Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, rivales avanzados, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
+Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, estrategia avanzada más allá de la heurística de Élite, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato: mejorar las decisiones del bot (cambios de Pokémon según tipos), con pruebas que eviten anticipar la acción del jugador y conservando la política fija del tutorial. Requiere una nueva tarea; este archivo no autoriza iniciar otro bloque. Autenticación y progreso siguen siendo una fase separada pendiente.
+Siguiente candidato: conectar un primer conjunto verificado de cartas de apoyo al motor y a la práctica, con límites de uso y explicación ES/EN. Antes de implementarlo hay que concretar el mapeo de cartas a efectos. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
 
 ## Mapa de código y comandos
 
@@ -174,7 +182,7 @@ Siguiente candidato: mejorar las decisiones del bot (cambios de Pokémon según 
 | `src/app/router.tsx` | Rutas; catálogo y equipo se cargan de forma diferida |
 | `src/components` | Tarjetas, botones, idioma, layout; reutilizar |
 | `src/features/catalog` | Pantallas, conversión de cartas a vista, orden de variantes |
-| `src/features/practice`, `src/battle/practice.ts`, `src/battle/opponents.ts` | Selector de equipo/rival, tablero, registro y sesión local contra el bot; arte copiado del catálogo |
+| `src/features/practice`, `src/battle/practice.ts`, `src/battle/opponents.ts`, `src/battle/bot.ts` | Selector de equipo/rival y política táctica de Élite, tablero, registro y sesión local contra el bot; arte copiado del catálogo |
 | `src/features/team` | Constructor, selector y hook de borrador |
 | `src/catalog` | Tipos, normalización, repositorio, cliente, fuentes suplementarias y pruebas |
 | `src/battle/types.ts`, `type-chart.ts`, `damage.ts` | Contratos mínimos, efectividad y pérdida de vida puras; sin interfaz ni turnos |

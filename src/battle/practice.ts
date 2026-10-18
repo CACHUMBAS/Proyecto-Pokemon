@@ -1,3 +1,5 @@
+import { chooseBotAction, chooseTacticalBotAction } from './bot.ts'
+export { chooseBotAction } from './bot.ts'
 import { DEFAULT_OPPONENT, getPracticeOpponent } from './opponents.ts'
 import type { PracticeOpponentId } from './opponents.ts'
 export { DEFAULT_BOT } from './opponents.ts'
@@ -49,32 +51,6 @@ export const DEFAULT_PLAYER = [
   'base2-54',
 ] as const
 
-/** Simple, deterministic opponent. It sees the board, never the player's pending choice. */
-export function chooseBotAction(state: BattleState): BattleAction {
-  requireValid(state.phase === 'selection', 'bot selection phase')
-  const actor = activeFighter(state, 1)
-  let best: BattleAction = { kind: 'pass' }
-  let bestScore = -1
-  for (const move of actor.moves) {
-    if ((actor.readyOn[move.id] ?? 1) > state.turn) continue
-    const action: BattleAction = { kind: 'move', actorId: actor.id, moveId: move.id }
-    // Reuse the engine for immunities, statuses and modifiers; no parallel damage rules.
-    const { events } = resolveTurn(state, [{ kind: 'pass' }, action], state.version, 0)
-    const score = events.reduce((total, event) => {
-      if (event.kind === 'damage' && event.side === 0 && event.source === 'move')
-        return total + event.amount
-      if (event.kind === 'status' && event.side === 0 && event.outcome === 'applied')
-        return total + 45
-      return total
-    }, 0)
-    if (score > bestScore) {
-      best = action
-      bestScore = score
-    }
-  }
-  return best
-}
-
 export function createPractice(
   battleId: string,
   playerIds: readonly string[] = DEFAULT_PLAYER,
@@ -89,7 +65,7 @@ export function createPractice(
   return {
     battle,
     opponentId: opponent.id,
-    botAction: chooseBotAction(battle),
+    botAction: opponent.id === 'elite' ? chooseTacticalBotAction(battle) : chooseBotAction(battle),
     rounds: [],
     tutorial: tutorial ? 'welcome' : null,
   }
@@ -107,12 +83,22 @@ function advance(session: PracticeSession, transition: BattleTransition): Practi
   const last = rounds.at(-1)
   if (last?.turn === turn) rounds[rounds.length - 1] = { turn, events: [...last.events, ...events] }
   else rounds.push({ turn, events })
+  const lastSwitchTurn = rounds.reduce<number | null>(
+    (last, round) =>
+      round.events.some((event) => event.kind === 'switch' && event.side === 1) ? round.turn : last,
+    null,
+  )
   return {
     battle,
     opponentId: session.opponentId,
     rounds,
     tutorial: advanceTutorial(session.tutorial, session.battle, events),
-    botAction: battle.phase === 'selection' ? chooseBotAction(battle) : null,
+    botAction:
+      battle.phase === 'selection'
+        ? session.opponentId === 'elite'
+          ? chooseTacticalBotAction(battle, lastSwitchTurn)
+          : chooseBotAction(battle)
+        : null,
   }
 }
 

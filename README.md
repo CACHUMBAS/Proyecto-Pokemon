@@ -46,7 +46,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 
 Las ilustraciones de las tres cartas están en inglés y así se identifican en sus fichas. Sus tipos y rarezas son del TCG impreso; todavía no son estadísticas del combate de Lumemon. No existe un inventario, sesión o saldo simulado.
 
-En /practica puedes elegir **Iniciación**, **Versátil** o **Élite** y ver sus seis cartas antes de entrar. El nivel depende del equipo y su rareza: los tres usan la misma lógica de combate, sin estadísticas aumentadas. La revancha conserva el rival. **Aprender a combatir** usa siempre el equipo fijo del tutorial y conserva tu selección al volver.
+En /practica puedes elegir **Iniciación**, **Versátil** o **Élite** y ver sus seis cartas antes de entrar. El nivel depende de las cartas y la estrategia: Élite puede cambiar a una reserva más segura ante peligro o un enfrentamiento sin efecto, dejando dos turnos entre cambios. Iniciación y Versátil conservan el bot sencillo. Todos deciden antes de tu elección y usan sus estadísticas originales. La revancha conserva el rival. **Aprender a combatir** usa siempre el equipo fijo del tutorial y conserva tu selección al volver.
 
 En la práctica, pulsa **Activar audio**. En sus ajustes puedes elegir entre cuatro temas Pokémon, regular música y gritos por separado o desactivar las animaciones. La música requiere conexión; los dieciocho gritos están incluidos localmente. Puedes saltar cada secuencia; el resultado del combate es el mismo. Salir de la ruta detiene el audio.
 

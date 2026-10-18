@@ -466,8 +466,8 @@
   },
   "opponents": {
     "title": "Elige tu rival",
-    "hint": "Dificultad orientativa por equipo y rareza. Los tres rivales usan la misma lógica de combate; las ventajas de tipo también cuentan.",
-    "team": "Equipo del rival en orden de salida",
+    "hint": "Dificultad orientativa por cartas y estrategia. Élite también busca cambios defensivos. La máquina decide antes de tu elección, sin aumentar sus estadísticas.",
+    "team": "Equipo del rival en su orden inicial",
     "matchup": "Rival: {{name}}",
     "rookie": {
       "name": "Iniciación",
@@ -482,7 +482,7 @@
     "elite": {
       "name": "Élite",
       "level": "Nivel alto",
-      "description": "Tres ilustraciones especiales raras y tres cartas raras. Charizard abre el combate: prepara tus cambios y tus tipos."
+      "description": "Tres ilustraciones especiales raras y tres cartas raras. Charizard empieza; Élite puede buscar una reserva más segura y espera dos turnos antes de volver a retirarse."
     }
   }
 }

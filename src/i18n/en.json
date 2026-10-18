@@ -460,8 +460,8 @@
   },
   "opponents": {
     "title": "Choose your opponent",
-    "hint": "Suggested difficulty based on team and rarity. All three opponents use the same battle logic; type advantages matter too.",
-    "team": "Opponent team in entry order",
+    "hint": "Suggested difficulty based on cards and strategy. Elite also looks for defensive switches. The bot decides before your choice, without boosted stats.",
+    "team": "Opponent team in starting order",
     "matchup": "Opponent: {{name}}",
     "rookie": {
       "name": "Rookie",
@@ -476,7 +476,7 @@
     "elite": {
       "name": "Elite",
       "level": "High level",
-      "description": "Three special illustration rares and three rare cards. Charizard leads: plan your switches and type matchups."
+      "description": "Three special illustration rares and three rare cards. Charizard starts; Elite may find a safer reserve and waits two turns before retreating again."
     }
   }
 }

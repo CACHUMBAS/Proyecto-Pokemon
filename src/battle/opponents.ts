@@ -15,7 +15,7 @@ export const DEFAULT_BOT = [
   'base2-51',
 ] as const
 
-// Difficulty comes from existing card profiles, never hidden stat multipliers.
+// Difficulty uses existing card profiles plus tactical switches for Elite; no stat multipliers.
 // Keep the balanced team stable: the guided tutorial relies on its order.
 const opponents: readonly PracticeOpponent[] = [
   {
