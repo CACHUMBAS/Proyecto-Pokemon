@@ -1,3 +1,6 @@
+import { useLocation } from 'react-router'
+import { readPracticeTeamTransfer } from '../../battle/practice-team'
+import { TeamTransferNotice } from './TeamTransfer'
 import { DEFAULT_OPPONENT } from '../../battle/opponents'
 import type { PracticeOpponentId } from '../../battle/opponents'
 import { useEffect, useRef, useState } from 'react'
@@ -21,7 +24,16 @@ import './BattleEffects.css'
 export function PracticePage() {
   const { t } = useTranslation()
   const [supportIds, setSupportIds] = useState<string[]>([])
-  const [team, setTeam] = useState<string[]>([...DEFAULT_PLAYER])
+  const location = useLocation()
+  // Snapshot on route entry. Edits here never write back to the team draft.
+  const [transfer] = useState(() => readPracticeTeamTransfer(location.state as unknown))
+  const [team, setTeam] = useState<string[]>(() =>
+    transfer.kind === 'ready'
+      ? transfer.cardIds
+      : transfer.kind === 'invalid'
+        ? []
+        : [...DEFAULT_PLAYER],
+  )
   const [opponentId, setOpponentId] = useState<PracticeOpponentId>(DEFAULT_OPPONENT)
   const playback = useBattlePlayback()
   const { presentation, dispatch, frame, playing, skip } = playback
@@ -106,6 +118,7 @@ export function PracticePage() {
         reducedMotion={playback.reducedMotion}
         speciesId={initialSpecies}
       />
+      {!session && <TeamTransferNotice transfer={transfer} />}
       {!session || !battle ? (
         <PracticeSetup
           supportIds={supportIds}

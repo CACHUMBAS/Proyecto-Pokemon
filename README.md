@@ -109,9 +109,11 @@ El validador comprueba la composición: todavía no comprueba propiedad de las c
 
 En `/equipo` puedes buscar las 1.025 especies, filtrarlas por tipo de Pokémon, elegir ilustraciones, completar seis plazas, sustituir una variante en su misma plaza, quitar miembros y elegir quién va primero. Está disponible en ES/EN y se adapta a móvil y escritorio.
 
-Se guarda un único borrador en `pokeprisma.team-draft.v1`, solo con identificadores de cartas y especies. Al recuperarlo se contrasta con el catálogo. Los errores de red conservan el borrador para reintentar; un borrador inválido requiere descartarlo explícitamente. Las pestañas escuchan cambios de almacenamiento y comparan la selección guardada antes de escribir. Si el almacenamiento está bloqueado o lleno, se permite editar en memoria con un aviso de que no se ha guardado. No es un inventario ni concede propiedad de cartas, no sincroniza entre dispositivos y aún no permite combatir.
+Se guarda un único borrador en `pokeprisma.team-draft.v1`, solo con identificadores de cartas y especies. Al recuperarlo se contrasta con el catálogo. Los errores de red conservan el borrador para reintentar; un borrador inválido requiere descartarlo explícitamente. Las pestañas escuchan cambios de almacenamiento y comparan la selección guardada antes de escribir. Si el almacenamiento está bloqueado o lleno, se permite editar en memoria con un aviso de que no se ha guardado. No es un inventario ni concede propiedad de cartas, no sincroniza entre dispositivos.
 
-Comprobaciones de este bloque: [revisión del constructor](docs/revision-equipo.md).
+**Probar este equipo** lleva una copia de las seis cartas a la preparación de `/practica`, conservando IDs, ilustraciones y primer Pokémon. Solo se habilita con seis especies distintas y cartas incluidas en el conjunto jugable; los avisos indican las plazas incompatibles. Puedes elegir rival y apoyos antes de combatir. Los ajustes, el tutorial y la partida no escriben sobre el borrador. Si recargas la preparación importada, se recupera la copia enviada en esa entrada del historial, no los cambios posteriores de práctica; la partida en curso sigue sin guardarse.
+
+Comprobaciones originales del constructor: [revisión del constructor](docs/revision-equipo.md).
 
 ### Primer cálculo de combate
 

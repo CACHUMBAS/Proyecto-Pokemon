@@ -8,6 +8,7 @@ import { PokemonCard } from '../../components/cards/PokemonCard'
 import { useCatalog } from '../catalog/use-catalog'
 import { toCardPreview } from '../catalog/to-card-preview'
 import { TeamPicker } from './TeamPicker'
+import { TeamPracticeLink } from '../practice/TeamTransfer'
 import { useTeamDraft } from './use-team-draft'
 import '../catalog/CatalogPage.css'
 import './TeamPage.css'
@@ -167,6 +168,7 @@ export function TeamPage() {
             count: POKEMON_TEAM_SIZE - draft.cards.length,
           })}
       </div>
+      <TeamPracticeLink cardIds={draft.cards.map((card) => card.id)} />
       <div ref={searchArea} tabIndex={-1}>
         <TeamPicker species={catalog.data.species} team={draft.cards} onChoose={choose} />
       </div>

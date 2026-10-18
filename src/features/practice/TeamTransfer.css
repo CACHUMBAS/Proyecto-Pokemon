@@ -1,0 +1,51 @@
+.team-transfer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 1px solid #365b60;
+  background: linear-gradient(120deg, #142d32, #111d29);
+  border-radius: 18px;
+  margin-block: 26px;
+  padding: clamp(18px, 3vw, 28px);
+}
+.team-transfer > div {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+.team-transfer h2 {
+  font-family: 'Space Grotesk Variable', sans-serif;
+  margin: 0 0 12px;
+}
+.team-transfer p,
+.team-transfer-issues {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.team-transfer p {
+  margin: 8px 0 0;
+}
+.team-transfer-issues {
+  padding-left: 20px;
+  margin-bottom: 0;
+  overflow-wrap: anywhere;
+}
+.team-transfer .team-transfer-ready,
+.team-transfer-back {
+  color: var(--mint);
+}
+.team-transfer-back {
+  padding: 12px 0;
+  font-size: 14px;
+  text-underline-offset: 5px;
+}
+.team-transfer .button {
+  white-space: normal;
+}
+@media (max-width: 520px) {
+  .team-transfer .button {
+    width: 100%;
+  }
+}

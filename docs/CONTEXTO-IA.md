@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-18 (resumen final de combate). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-19 (equipo local conectado a la práctica). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `61ff21a`, rama `feat/opponent-support-strategy`; entrega en `feat/battle-summary`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `bd4392d`, rama `feat/battle-summary`; entrega en `feat/team-to-practice`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -45,11 +45,11 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Datos | Instantánea normalizada de PokéAPI y TCGdex, carga de fichas bajo demanda y caché | No se consultan las API para cada interacción ni se necesita reimportar para arrancar |
 | Imágenes McDonald’s | 87 ilustraciones recuperadas localmente, incluidas las 12 de 2011; procedencia y hashes registrados | Algunas ediciones siguen sin imagen fiable; no inventar URLs o correspondencias |
 | Composición | Validador de seis especies distintas; rechaza IDs desconocidos, duplicados, apoyos en plazas Pokémon y asociaciones ambiguas | No comprueba propiedad, estadísticas, movimientos ni aptitud real para combatir |
-| Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI); ES/EN y móvil | Un borrador local, sin cuenta, apoyos seleccionables ni combate |
+| Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI) y enviar seis cartas habilitadas a práctica; ES/EN y móvil | Borrador local sin cuenta ni propiedad; los apoyos se eligen en la práctica |
 | Cálculo de combate | Tipos de datos mínimos, 18 tipos, dobles tipos e inmunidades, afinidad y modificadores de daño con aritmética exacta | Funciones puras sin conectar a la interfaz; no resuelven turnos, estados, duración de mejoras ni propiedad |
 | Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 36 cartas verificadas; sin reloj o servicio de elecciones privadas |
 | Cartas habilitadas para el motor | 36 cartas de 18 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local junto a cuatro apoyos mapeados; sin propiedad; las demás cartas del catálogo todavía no son jugables |
-| Práctica local | `/practica`: selección de seis, variantes, hasta tres apoyos opcionales, kits de apoyo visibles del rival, tablero, bot, estados, recargas, cambios, KO, registro, resultado, resumen comparativo final y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; selección separada de `/equipo` |
+| Práctica local | `/practica`: selección de seis, variantes, hasta tres apoyos opcionales, kits de apoyo visibles del rival, tablero, bot, estados, recargas, cambios, KO, registro, resultado, resumen comparativo final y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; recibe una copia opcional de `/equipo` sin modificar el borrador |
 | Tutorial guiado | Entrada opcional en `/practica`, equipo preparado, cinco pasos, Rayo, tipos/recarga, cambio a Jigglypuff, sueño y continuación libre; ES/EN | Sin guardar progreso; conserva la selección normal y permite omitir la guía entre secuencias |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
 
@@ -195,13 +195,21 @@ Bloque autorizado con «continua». Rama `feat/battle-summary` desde `61ff21a`. 
 
 Verificación: cuatro pruebas fallaron ante la lógica ausente; cinco pruebas nuevas, 163 correctas en total, lint y build/typecheck correctos. Casos de atribución, inmunidad/acciones bloqueadas, sustituciones, entradas congeladas, independencia de salidas, daño/curación limitados a PS reales, empate pasivo de 60 turnos, partidas completas de los tres rivales con conservación de PS y revancha limpia. Se corrigió el valor esperado de un fixture tras contrastarlo con los porcentajes existentes (veneno 8 %, quemadura 5 %); no se alteraron las reglas. Navegador: derrota contra Élite en 18 turnos, 14 PS de daño causado por el jugador, 1.500 por el rival, 64 PS recuperados, un apoyo usado por cada lado y seis bajas del jugador; totales concordantes con la partida. Resumen ausente durante la animación final, visible después; revancha en turno 1 sin resumen anterior y registro vacío. Capturas inspeccionadas a 1440/390/320 px, ES/EN sin desbordamiento observado. Sin errores de consola observados; audio permaneció apagado, idioma ES y viewport restaurados, pestaña temporal cerrada. Victoria/empate y daño por estados se comprobaron en pruebas automáticas, no mediante partidas adicionales en el navegador; no se probó lector de pantalla. Revisión independiente sin hallazgos concretos, cinco pruebas dirigidas correctas; no repitió suite general, build ni navegador. No se ha desplegado.
 
+## De Mi equipo a la práctica — 2026-10-19
+
+Bloque autorizado tras explicar el siguiente paso y recibir «sigue». Rama `feat/team-to-practice` desde `bd4392d`. Añade «Probar este equipo» después de las seis plazas de /equipo. Comprueba que son seis cartas habilitadas de especies distintas; el botón queda deshabilitado con avisos de tamaño, posición e ID incompatibles. No cambia ilustraciones ni completa huecos automáticamente. Envía los IDs exactos, en el mismo orden, y permite elegir rival/apoyos antes de iniciar.
+
+Estado de navegación versionado: kind lumemon-practice-team, version 1 y cardIds. La práctica vuelve a validar el dato desconocido y toma una copia al entrar en la ruta. Sin estado mantiene DEFAULT_PLAYER; con datos inválidos muestra aviso y un equipo vacío. El historial de esa entrada conserva la copia enviada, no cambios posteriores; recargar la preparación la revalida y restaura. No lee ni escribe el borrador desde práctica, ni sincroniza futuras ediciones en otras pestañas. La selección de variantes, apoyos, tutorial y combate siguen en memoria y no alteran el equipo guardado. No se cambia ninguna clave, contrato de composición, estadística, dependencia o servicio.
+
+Verificación: cinco pruebas nuevas fallaron primero; 168 pruebas totales correctas, lint y build/typecheck correctos. Cubren IDs/orden/inicial, variantes de la misma especie, apoyos/IDs no habilitados, formato, longitud, listas dispersas, versión de transferencia, copias independientes, restauración del borrador y aislamiento al jugar, editar y abrir el tutorial. Navegador real en localhost:5174, origen separado del habitual 127.0.0.1:5174: equipo vacío bloqueado, carta 2021swsh-1 señalada tanto con equipo parcial como completo, corrección a base1-44, seis cartas transferidas con Pikachu sv03.5-173 primero, recarga de preparación conserva esa variante, enlace a apoyos conserva selección, cambio temporal a base1-58 y un turno real, tutorial omitido y vuelta al equipo guardado con sv03.5-173 intacta incluso al recargar. Entrada directa a práctica mantiene el equipo inicial por defecto. Botón activado con Enter; avisos y copia revisados en ES/EN a 1440/390 px sin desbordamiento observado; capturas inspeccionadas. Sin errores de consola observados; equipo creado solo para prueba retirado por interfaz, idioma ES, viewport restaurado y pestaña temporal cerrada. El origen habitual del usuario no se modificó. No se repitió una partida completa/revancha en navegador ni fallos de almacenamiento/red, cubiertos por pruebas existentes; el payload de navegación inválido se comprobó automáticamente. Revisión independiente sin hallazgos accionables y cinco pruebas dirigidas correctas; no repitió navegador, suite general, lint o build. No se ha desplegado.
+
 ## Pendiente: no anunciar como disponible
 
 Ampliar estadísticas/movimientos a más cartas, ampliar el mapeo de apoyos, estrategia avanzada más allá de las heurísticas actuales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato: llevar a la práctica el borrador local de /equipo cuando sus seis cartas estén habilitadas, mostrando incompatibilidades sin sustituirlas automáticamente. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
+Siguiente candidato: un filtro de cartas habilitadas para combate en el constructor de /equipo, para encontrar las variantes compatibles sin probar identificadores una a una. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
 
 ## Mapa de código y comandos
 
@@ -219,6 +227,7 @@ Siguiente candidato: llevar a la práctica el borrador local de /equipo cuando s
 | `src/battle/profiles.ts`, `playable-roster.ts`, `data` | Estadísticas propias, conjunto versionado de 36 cartas y adaptador al motor; procedencia en `data/README.md` |
 | `scripts/battle` | Selección explícita, carga verificada y generación/check offline de datos de combate |
 | `src/battle/summary.ts`, `src/features/practice/BattleSummary.tsx` | Métricas de eventos al finalizar, comparación ES/EN de ambos equipos; sin estado ni guardado propio |
+| `src/battle/practice-team.ts`, `src/features/practice/TeamTransfer.tsx` | Aptitud del equipo para práctica, avisos y transferencia versionada de IDs por navegación; no escribe en el borrador |
 | `src/battle/team.ts` | Validación estructural del equipo |
 | `src/battle/team-draft.ts` | Formato, restauración, guardado y selección del borrador |
 | `src/i18n/es.json`, `src/i18n/en.json` | Traducciones de interfaz |

@@ -222,7 +222,7 @@
     "count": "{{count}} of 6 Pokémon",
     "complete": "Valid composition",
     "inProgress": "Team in progress",
-    "localNotice": "Local catalog draft, without ownership or an account. Battle practice uses its own selection of enabled cards.",
+    "localNotice": "Local catalog draft, without ownership or an account. You can try it in battle when all six cards are enabled.",
     "roster": "Your team",
     "saved": "Autosaved in this browser",
     "memory": "Not saved: changes will be lost when you leave or reload.",
@@ -538,5 +538,22 @@
     "supportsUsed": "Supports used",
     "fainted": "Fainted Pokémon",
     "note": "Only HP actually lost or restored is counted. Poison and burn damage appears under the team receiving it. Fainted Pokémon belong to the team in each column."
+  },
+  "teamPractice": {
+    "title": "Bring your team to the arena",
+    "description": "Try these exact cards, artworks and order. You can then choose an opponent and supports.",
+    "ready": "All six cards are enabled for battle.",
+    "action": "Try this team",
+    "loaded": "Team loaded from My team",
+    "copyNote": "The first card will be your lead Pokémon. Changes made in this practice do not modify your saved draft.",
+    "invalid": "This team could not be loaded",
+    "invalidNote": "Review the original team or prepare a new one below. No cards have been replaced automatically.",
+    "back": "Back to My team",
+    "issues": {
+      "team-size": "You need six cards of distinct species. You currently have {{count}} of 6.",
+      "unplayable-card": "Slot {{slot}} · {{cardId}}: this artwork is not yet enabled for battle.",
+      "duplicate-species": "Slot {{slot}} · {{cardId}}: another card of this species is already in the team.",
+      "invalid-data": "The team data has an invalid format. Send it again from My team."
+    }
   }
 }

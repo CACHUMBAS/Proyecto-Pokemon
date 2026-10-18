@@ -228,7 +228,7 @@
     "count": "{{count}} de 6 Pokémon",
     "complete": "Composición válida",
     "inProgress": "Equipo en construcción",
-    "localNotice": "Borrador local del catálogo, sin propiedad ni cuenta. La práctica de combate usa su propia selección de cartas habilitadas.",
+    "localNotice": "Borrador local del catálogo, sin propiedad ni cuenta. Puedes probarlo en combate cuando las seis cartas estén habilitadas.",
     "roster": "Tu equipo",
     "saved": "Guardado automático en este navegador",
     "memory": "Sin guardado: los cambios se perderán al salir o recargar.",
@@ -544,5 +544,22 @@
     "supportsUsed": "Apoyos utilizados",
     "fainted": "Pokémon debilitados",
     "note": "Se cuentan los PS realmente perdidos o recuperados. El daño por veneno y quemadura se muestra en el equipo que lo recibe. Las bajas pertenecen al equipo de cada columna."
+  },
+  "teamPractice": {
+    "title": "Lleva tu equipo a la arena",
+    "description": "Prueba estas mismas cartas, ilustraciones y orden. Después podrás elegir rival y apoyos.",
+    "ready": "Las seis cartas están habilitadas para combatir.",
+    "action": "Probar este equipo",
+    "loaded": "Equipo cargado desde Mi equipo",
+    "copyNote": "La primera carta será tu Pokémon inicial. Los ajustes que hagas en esta práctica no modifican tu borrador guardado.",
+    "invalid": "No se pudo cargar este equipo",
+    "invalidNote": "Revisa el equipo de origen o prepara uno nuevo abajo. No se ha sustituido ninguna carta automáticamente.",
+    "back": "Volver a Mi equipo",
+    "issues": {
+      "team-size": "Necesitas seis cartas de especies distintas. Ahora tienes {{count}} de 6.",
+      "unplayable-card": "Plaza {{slot}} · {{cardId}}: esta ilustración todavía no está habilitada para combatir.",
+      "duplicate-species": "Plaza {{slot}} · {{cardId}}: ya hay otra carta de esta especie en el equipo.",
+      "invalid-data": "Los datos del equipo no tienen un formato válido. Vuelve a enviarlo desde Mi equipo."
+    }
   }
 }

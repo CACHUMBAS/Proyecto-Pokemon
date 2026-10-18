@@ -27,7 +27,13 @@ En la práctica, el bot fija su acción al abrir el turno. Conserva una retirada
 
 El servicio futuro recogerá las elecciones en secreto, confirmará solo la primera válida, asignará `pass` al vencer los 45 segundos y llamará a la resolución una sola vez en una transacción. La comparación de versión detecta solicitudes obsoletas respecto al snapshot recibido; por sí sola no impide que dos procesos resuelvan el mismo snapshot. Repetir las mismas entradas aquí reproduce el mismo resultado sin guardar ni conceder nada.
 
-`null` en sustituciones no significa que haya vencido un plazo: el llamador decide cuándo solicitar la alternativa automática. No hay relojes, reconexión, cuentas, abandono por red, inventario o recompensas. Tampoco está conectado a `/equipo`; el validador de composición conserva su contrato.
+`null` en sustituciones no significa que haya vencido un plazo: el llamador decide cuándo solicitar la alternativa automática. No hay relojes, reconexión, cuentas, abandono por red, inventario o recompensas. La preparación de práctica puede recibir una copia explícita de `/equipo`; el validador de composición conserva su contrato.
+
+## Transferencia desde el equipo local
+
+`practice-team.ts` separa composición y aptitud para combatir. `validatePracticeTeam(unknown)` exige seis IDs exactos del conjunto jugable y seis especies distintas; rechaza forma incorrecta, listas dispersas, apoyos y variantes no habilitadas, con posiciones de error desde cero. `readPracticeTeamTransfer(unknown)` interpreta el estado de navegación `{ kind: "lumemon-practice-team", version: 1, cardIds }`: entrada directa sin estado → none; copia válida → ready; datos incompatibles → invalid. No importa estadísticas desde el navegador ni modifica almacenamiento.
+
+El botón de `/equipo` envía los IDs de las cartas mostradas. `/practica` toma una copia validada al entrar en la ruta; una entrada inválida muestra aviso y selección vacía, sin sustituir cartas por las iniciales. Entrar directamente mantiene el equipo inicial habitual. Los cambios posteriores de preparación son locales a esa sesión; el historial conserva la copia original, que se vuelve a validar al recargar. No hay sincronización automática con otras pestañas ni guardado de la partida.
 
 ## Resumen de una partida terminada
 
