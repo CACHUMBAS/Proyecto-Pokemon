@@ -29,6 +29,10 @@ El servicio futuro recogerá las elecciones en secreto, confirmará solo la prim
 
 `null` en sustituciones no significa que haya vencido un plazo: el llamador decide cuándo solicitar la alternativa automática. No hay relojes, reconexión, cuentas, abandono por red, inventario o recompensas. Tampoco está conectado a `/equipo`; el validador de composición conserva su contrato.
 
+## Resumen de una partida terminada
+
+`summary.ts` expone `summarizeBattle({ battle, rounds })`. Devuelve `null` si la partida no está terminada o no tiene resultado; en otro caso devuelve turnos resueltos y métricas por lado. Lee el historial interno completo de la sesión: cada evento `order` identifica un turno resuelto y los reemplazos no añaden turnos. El daño de ataques se atribuye al lado contrario al receptor del evento; veneno/quemadura y bajas se anotan en el equipo afectado. Curación y usos proceden de los eventos de apoyo. Se suman cantidades efectivas ya limitadas por el motor, sin recalcular daños ni inferirlos de potencias. No modifica entradas ni concede recompensas. La interfaz espera a que termine el playback antes de mostrarlo; cada nueva sesión y revancha tiene un historial nuevo. No es un lector de registros externos incompletos o arbitrarios.
+
 ## Comprobaciones
 
 `node --test src/battle/turn-engine.test.ts` prueba el ciclo con fichas **sintéticas** de `fixtures/battle-test-data.ts`; esos datos no se importan en el producto ni representan movimientos o estadísticas oficiales de especies reales. Incluye una partida pasiva de 60 turnos, además de casos de combate, invalidación, sustitución y reproducción. El [plan](../../docs/superpowers/plans/2026-10-13-lumemon-battle-turns.md) registra el alcance y la verificación.

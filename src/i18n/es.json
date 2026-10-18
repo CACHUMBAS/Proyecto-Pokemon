@@ -529,5 +529,20 @@
     "opponentTitle": "Apoyos del rival",
     "opponentNone": "Este rival no lleva apoyos en esta partida.",
     "unspent": "Sin gastar"
+  },
+  "battleSummary": {
+    "eyebrow": "Balance de la partida",
+    "title": "Resumen del combate",
+    "turns_one": "{{count}} turno resuelto",
+    "turns_other": "{{count}} turnos resueltos",
+    "comparison": "Comparación de los equipos al terminar el combate",
+    "metric": "Estadística",
+    "you": "Tu equipo",
+    "attackDamage": "Daño causado por ataques (PS)",
+    "statusDamageTaken": "Daño recibido por estados (PS)",
+    "healed": "PS recuperados",
+    "supportsUsed": "Apoyos utilizados",
+    "fainted": "Pokémon debilitados",
+    "note": "Se cuentan los PS realmente perdidos o recuperados. El daño por veneno y quemadura se muestra en el equipo que lo recibe. Las bajas pertenecen al equipo de cada columna."
   }
 }

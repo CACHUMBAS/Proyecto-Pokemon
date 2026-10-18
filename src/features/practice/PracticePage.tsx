@@ -11,6 +11,7 @@ import type { BattleAction } from '../../battle/engine-types'
 import { PracticeSetup } from './PracticeSetup'
 import { BattleBoard } from './BattleBoard'
 import { BattleLog } from './BattleLog'
+import { BattleSummary } from './BattleSummary'
 import { AudioControls } from './AudioControls'
 import { useBattlePlayback } from './use-battle-playback'
 import { useBattleAudio } from './use-battle-audio'
@@ -160,6 +161,7 @@ export function PracticePage() {
               </Button>
             </div>
           )}
+          {!playing && battle.phase === 'finished' && <BattleSummary session={session} />}
           <BattleBoard
             guide={
               session.tutorial ? (

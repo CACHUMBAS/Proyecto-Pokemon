@@ -133,7 +133,7 @@ Consulta [cartas, fuentes y límites](src/battle/data/README.md). `npm run battl
 
 ### Práctica local
 
-En `/practica` empieza con seis cartas o personaliza especies, ilustraciones e inicial. Selecciona un movimiento o una reserva y confirma el turno. El bot elige antes de tu confirmación; el motor resuelve tipos, velocidad, estados, recargas y KO. Tras una baja elige un relevo; al terminar puedes jugar de nuevo. El registro explica cada turno.
+En `/practica` empieza con seis cartas o personaliza especies, ilustraciones e inicial. Selecciona un movimiento o una reserva y confirma el turno. El bot elige antes de tu confirmación; el motor resuelve tipos, velocidad, estados, recargas y KO. Tras una baja elige un relevo; al terminar puedes jugar de nuevo. El registro explica cada turno. Al terminar la última animación aparece un resumen que compara los dos equipos: turnos resueltos, daño causado por ataques, daño recibido por estados, PS recuperados, apoyos usados y Pokémon debilitados. Usa los eventos reales de la partida; la revancha empieza con el registro vacío.
 
 Puedes elegir hasta tres de cuatro apoyos verificados: Superpoción (recuperación del 30 % de PS máximos), Cura Total (limpieza), Defensor (barrera) y Doble Energía Incolora (impulso). Son adaptaciones de Lumemon y cada apoyo consume un turno y un uso por combate. Los rivales también usan apoyos con los mismos efectos y límites: Iniciación lleva Superpoción; Versátil añade Cura Total; Élite lleva Superpoción, Defensor y Doble Energía Incolora. Puedes consultar sus cartas antes del combate y ver cuáles ha gastado en la arena. El tutorial empieza sin apoyos en ambos equipos y la revancha restaura los usos de las cartas de esa partida.
 

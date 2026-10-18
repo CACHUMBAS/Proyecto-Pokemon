@@ -1,0 +1,78 @@
+.battle-summary {
+  margin-block: 28px;
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid #37575c;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #152e35, #111c2b 75%);
+}
+.battle-summary header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-bottom: 20px;
+}
+.battle-summary h2 {
+  margin: 8px 0 0;
+}
+.battle-summary-turns {
+  color: var(--mint);
+  border: 1px solid #456d68;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 13px;
+  margin: 0;
+}
+.battle-summary table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 14px;
+}
+.battle-summary th,
+.battle-summary td {
+  padding: 14px 10px;
+  border-bottom: 1px solid #334951;
+  overflow-wrap: anywhere;
+  line-height: 1.5;
+}
+.battle-summary th:first-child {
+  width: 50%;
+  text-align: left;
+  padding-left: 0;
+}
+.battle-summary thead th {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+.battle-summary tbody th {
+  font-weight: 500;
+}
+.battle-summary td {
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+.battle-summary td:nth-child(2) {
+  color: var(--mint);
+}
+.battle-summary-note {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  margin: 18px 0 0;
+}
+@media (max-width: 520px) {
+  .battle-summary table {
+    font-size: 12px;
+  }
+  .battle-summary th,
+  .battle-summary td {
+    padding: 12px 4px;
+  }
+  .battle-summary th:first-child {
+    width: 48%;
+  }
+}

@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-18 (apoyos del rival y política de uso). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-18 (resumen final de combate). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `26b8bfa`, rama `feat/practice-support-cards`; entrega en `feat/opponent-support-strategy`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `61ff21a`, rama `feat/opponent-support-strategy`; entrega en `feat/battle-summary`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -49,7 +49,7 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Cálculo de combate | Tipos de datos mínimos, 18 tipos, dobles tipos e inmunidades, afinidad y modificadores de daño con aritmética exacta | Funciones puras sin conectar a la interfaz; no resuelven turnos, estados, duración de mejoras ni propiedad |
 | Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 36 cartas verificadas; sin reloj o servicio de elecciones privadas |
 | Cartas habilitadas para el motor | 36 cartas de 18 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local junto a cuatro apoyos mapeados; sin propiedad; las demás cartas del catálogo todavía no son jugables |
-| Práctica local | `/practica`: selección de seis, variantes, hasta tres apoyos opcionales, kits de apoyo visibles del rival, tablero, bot, estados, recargas, cambios, KO, registro, resultado y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; selección separada de `/equipo` |
+| Práctica local | `/practica`: selección de seis, variantes, hasta tres apoyos opcionales, kits de apoyo visibles del rival, tablero, bot, estados, recargas, cambios, KO, registro, resultado, resumen comparativo final y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; selección separada de `/equipo` |
 | Tutorial guiado | Entrada opcional en `/practica`, equipo preparado, cinco pasos, Rayo, tipos/recarga, cambio a Jigglypuff, sueño y continuación libre; ES/EN | Sin guardar progreso; conserva la selección normal y permite omitir la guía entre secuencias |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
 
@@ -187,13 +187,21 @@ El tutorial fuerza ambos kits vacíos incluso al omitir/terminar la guía. La re
 
 Verificación: cuatro de los cinco primeros casos fallaron antes de implementar la política; siete pruebas nuevas y 158 pruebas totales correctas, lint y build/typecheck correctos. Cubren kits, estados, umbrales, usos ilegales/gastados, supervivencia, KO seguro previsto, retirada de Élite, límite de turnos, decisión previa al input, proyección de eventos, entradas congeladas, partidas completas de los tres rivales y revancha. Navegador real: Versátil usa Cura Total para despertar a Abra y Superpoción para recuperar 61 PS; ambas consumen su acción, aparecen en el registro y se marcan gastadas. Kits 1/2/3 visibles, tutorial sin apoyos tras omitir la guía, selección Élite conservada al volver. Escritorio 1440 y móvil 390, ES/EN, sin desbordamiento observado; capturas inspeccionadas, sin errores de consola observados. Idioma ES y tamaño restaurados; audio apagado; pestaña temporal cerrada. Las partidas completas y revancha se probaron automáticamente; no se repitieron completas en navegador ni se ejecutaron visualmente los apoyos de Élite. Revisión independiente sin hallazgos funcionales, con las siete pruebas dirigidas correctas; no repitió suite general ni navegador. No se afirma equilibrio competitivo ni se despliega la web.
 
+## Resumen final de combate — 2026-10-18
+
+Bloque autorizado con «continua». Rama `feat/battle-summary` desde `61ff21a`. Añade un panel comparativo de ambos equipos al terminar la última animación: turnos resueltos, PS causados por ataques, daño recibido por veneno/quemadura, PS recuperados, apoyos utilizados y Pokémon debilitados del equipo de cada columna. Traducciones ES/EN, tabla semántica y diseño móvil/escritorio.
+
+`summarizeBattle` lee únicamente el historial completo de eventos de la sesión terminada. No calcula daño teórico ni suma pérdidas y curación a partir de la vida final: conserva las cantidades efectivas del motor. Los eventos de daño señalan al receptor; solo el daño por ataque se atribuye al lado contrario. Los eventos order marcan los turnos resueltos; las sustituciones no cuentan como turnos nuevos. Devuelve objetos independientes y no modifica la sesión. La integración exige partida terminada y playback finalizado, de modo que no revela estadísticas del último turno mientras se anima. La revancha limpia el historial como antes. No cambia reglas, cuentas, economía, almacenamiento ni dependencias.
+
+Verificación: cuatro pruebas fallaron ante la lógica ausente; cinco pruebas nuevas, 163 correctas en total, lint y build/typecheck correctos. Casos de atribución, inmunidad/acciones bloqueadas, sustituciones, entradas congeladas, independencia de salidas, daño/curación limitados a PS reales, empate pasivo de 60 turnos, partidas completas de los tres rivales con conservación de PS y revancha limpia. Se corrigió el valor esperado de un fixture tras contrastarlo con los porcentajes existentes (veneno 8 %, quemadura 5 %); no se alteraron las reglas. Navegador: derrota contra Élite en 18 turnos, 14 PS de daño causado por el jugador, 1.500 por el rival, 64 PS recuperados, un apoyo usado por cada lado y seis bajas del jugador; totales concordantes con la partida. Resumen ausente durante la animación final, visible después; revancha en turno 1 sin resumen anterior y registro vacío. Capturas inspeccionadas a 1440/390/320 px, ES/EN sin desbordamiento observado. Sin errores de consola observados; audio permaneció apagado, idioma ES y viewport restaurados, pestaña temporal cerrada. Victoria/empate y daño por estados se comprobaron en pruebas automáticas, no mediante partidas adicionales en el navegador; no se probó lector de pantalla. Revisión independiente sin hallazgos concretos, cinco pruebas dirigidas correctas; no repitió suite general, build ni navegador. No se ha desplegado.
+
 ## Pendiente: no anunciar como disponible
 
 Ampliar estadísticas/movimientos a más cartas, ampliar el mapeo de apoyos, estrategia avanzada más allá de las heurísticas actuales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato: un resumen de combate con métricas derivadas de los eventos (daño, apoyos y bajas), sin simular recompensas ni guardar progreso. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
+Siguiente candidato: llevar a la práctica el borrador local de /equipo cuando sus seis cartas estén habilitadas, mostrando incompatibilidades sin sustituirlas automáticamente. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
 
 ## Mapa de código y comandos
 
@@ -210,6 +218,7 @@ Siguiente candidato: un resumen de combate con métricas derivadas de los evento
 | `src/battle/supports.ts`, `src/features/practice/SupportPicker.tsx`, `SupportActions.tsx`, `OpponentSupports.tsx`, `support-artwork.json` | Mapeo explícito, selección opcional y uso de cuatro apoyos reales en la práctica; reglas existentes y arte del catálogo |
 | `src/battle/profiles.ts`, `playable-roster.ts`, `data` | Estadísticas propias, conjunto versionado de 36 cartas y adaptador al motor; procedencia en `data/README.md` |
 | `scripts/battle` | Selección explícita, carga verificada y generación/check offline de datos de combate |
+| `src/battle/summary.ts`, `src/features/practice/BattleSummary.tsx` | Métricas de eventos al finalizar, comparación ES/EN de ambos equipos; sin estado ni guardado propio |
 | `src/battle/team.ts` | Validación estructural del equipo |
 | `src/battle/team-draft.ts` | Formato, restauración, guardado y selección del borrador |
 | `src/i18n/es.json`, `src/i18n/en.json` | Traducciones de interfaz |

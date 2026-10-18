@@ -523,5 +523,20 @@
     "opponentTitle": "Opponent supports",
     "opponentNone": "This opponent has no supports in this match.",
     "unspent": "Unspent"
+  },
+  "battleSummary": {
+    "eyebrow": "Match breakdown",
+    "title": "Battle summary",
+    "turns_one": "{{count}} resolved turn",
+    "turns_other": "{{count}} resolved turns",
+    "comparison": "Team comparison at the end of the battle",
+    "metric": "Statistic",
+    "you": "Your team",
+    "attackDamage": "Attack damage dealt (HP)",
+    "statusDamageTaken": "Status damage received (HP)",
+    "healed": "HP restored",
+    "supportsUsed": "Supports used",
+    "fainted": "Fainted Pokémon",
+    "note": "Only HP actually lost or restored is counted. Poison and burn damage appears under the team receiving it. Fainted Pokémon belong to the team in each column."
   }
 }
