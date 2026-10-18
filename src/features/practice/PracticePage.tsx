@@ -19,6 +19,7 @@ import './PracticePage.css'
 import './BattleEffects.css'
 export function PracticePage() {
   const { t } = useTranslation()
+  const [supportIds, setSupportIds] = useState<string[]>([])
   const [team, setTeam] = useState<string[]>([...DEFAULT_PLAYER])
   const [opponentId, setOpponentId] = useState<PracticeOpponentId>(DEFAULT_OPPONENT)
   const playback = useBattlePlayback()
@@ -60,7 +61,12 @@ export function PracticePage() {
   useEffect(() => {
     if (!playing && !session?.tutorial) heading.current?.focus({ preventScroll: true })
   }, [battleId, version, playing, session?.tutorial])
-  function startBattle(tutorial = false, playerIds = team, matchOpponentId = opponentId) {
+  function startBattle(
+    tutorial = false,
+    playerIds = team,
+    matchOpponentId = opponentId,
+    matchSupports = supportIds,
+  ) {
     audio.stop()
     setConfirmExit(false)
     dispatch({
@@ -69,6 +75,7 @@ export function PracticePage() {
       playerIds,
       tutorial,
       opponentId: matchOpponentId,
+      supportIds: matchSupports,
     })
     window.scrollTo({ top: 0, behavior: 'instant' })
   }
@@ -98,6 +105,8 @@ export function PracticePage() {
       />
       {!session || !battle ? (
         <PracticeSetup
+          supportIds={supportIds}
+          onSupportsChange={setSupportIds}
           opponentId={opponentId}
           onOpponentChange={setOpponentId}
           team={team}
@@ -203,6 +212,7 @@ export function PracticePage() {
                 false,
                 session.battle.sides[0].fighters.map((f) => f.id),
                 session.opponentId,
+                session.battle.sides[0].supports.map((s) => s.id),
               )
             }
           />

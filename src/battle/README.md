@@ -21,7 +21,7 @@ Las salidas incluyen versiones `lumemon-turns-v1` y `lumemon-damage-v1`, identid
 
 El estado debe ser una salida válida de este motor. Este bloque no ofrece un decodificador de snapshots externos ni garantiza que unas estadísticas o un identificador sean oficiales. `dataVersion` identifica la revisión suministrada; el futuro adaptador de datos deberá comprobar también procedencia, hashes, compatibilidades y propiedad.
 
-El adaptador `createPlayableBattle` verifica que los IDs estén en el conjunto y crea equipos sin apoyos. No sustituye la comprobación de propiedad.
+El adaptador `createPlayableBattle(battleId, teams, supportIds = [[], []])` verifica los IDs de Pokémon y apoyos habilitados. Admite de cero a tres apoyos distintos por lado; IDs y efectos explícitos en `supports.ts`. Añade `:lumemon-supports-v1` a dataVersion cuando se equipa algún apoyo y conserva la versión anterior cuando no los hay. No sustituye la comprobación de propiedad. La práctica expone la selección solo para el jugador; los bots y el tutorial siguen sin apoyos.
 
 El servicio futuro recogerá las elecciones en secreto, confirmará solo la primera válida, asignará `pass` al vencer los 45 segundos y llamará a la resolución una sola vez en una transacción. La comparación de versión detecta solicitudes obsoletas respecto al snapshot recibido; por sí sola no impide que dos procesos resuelvan el mismo snapshot. Repetir las mismas entradas aquí reproduce el mismo resultado sin guardar ni conceder nada.
 

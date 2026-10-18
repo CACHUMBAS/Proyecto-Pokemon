@@ -1,4 +1,5 @@
 import type { PracticeOpponentId } from '../../battle/opponents'
+import { SupportPicker } from './SupportPicker'
 import { OpponentPicker } from './OpponentPicker'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -9,12 +10,16 @@ import { cards, cardsById, species, fighterName } from './practice-data'
 interface Props {
   opponentId: PracticeOpponentId
   onOpponentChange: (id: PracticeOpponentId) => void
+  supportIds: string[]
+  onSupportsChange: (ids: string[]) => void
   team: string[]
   onTeamChange: (team: string[]) => void
   onStart: () => void
   onTutorial: () => void
 }
 export function PracticeSetup({
+  supportIds,
+  onSupportsChange,
   team,
   onTeamChange,
   onStart,
@@ -62,6 +67,11 @@ export function PracticeSetup({
           {team.length < 6 && (
             <p role="status">{t('practice.missing', { count: 6 - team.length })}</p>
           )}
+          <p className="support-summary">
+            <a href="#support-title">{t('supports.count', { count: supportIds.length })}</a>
+            {supportIds.length > 0 &&
+              ' · ' + supportIds.map((id) => t('supports.names.' + id)).join(' · ')}
+          </p>
           <p className="practice-matchup">
             {t('opponents.matchup', { name: t('opponents.' + opponentId + '.name') })}
           </p>
@@ -87,6 +97,7 @@ export function PracticeSetup({
         </ol>
         <p>{t('practice.adapted')}</p>
       </details>
+      <SupportPicker selected={supportIds} onChange={onSupportsChange} />
       <section aria-labelledby="practice-roster-title">
         <div className="practice-section-heading">
           <div>

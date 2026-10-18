@@ -37,7 +37,14 @@ export function buildPlaybackFrames(
       const actor = view.sides[event.side].fighters.find((f) => f.id === event.actorId)!
       type = actor.moves.find((m) => m.id === event.moveId)!.type
       actor.readyOn[event.moveId] = event.readyOn
+      if (actor.boost && actor.moves.find((m) => m.id === event.moveId)!.kind === 'damage') {
+        actor.boost.charges -= 1
+        if (actor.boost.charges === 0) actor.boost = null
+      }
     } else if (event.kind === 'switch') {
+      const outgoing = view.sides[event.side].fighters.find((f) => f.id === event.from)!
+      outgoing.boost = null
+      outgoing.barrierUntil = null
       view.sides[event.side].active = view.sides[event.side].fighters.findIndex(
         (f) => f.id === event.to,
       )
@@ -49,10 +56,20 @@ export function buildPlaybackFrames(
       if (event.outcome === 'applied') target.status = event.status
       if (event.outcome === 'cleared') target.status = null
     } else if (event.kind === 'faint') {
-      view.sides[event.side].fighters.find((f) => f.id === event.targetId)!.hp = 0
+      const target = view.sides[event.side].fighters.find((f) => f.id === event.targetId)!
+      target.hp = 0
+      target.boost = null
+      target.barrierUntil = null
     } else if (event.kind === 'support') {
       const target = view.sides[event.side].fighters.find((f) => f.id === event.actorId)!
       target.hp = Math.min(target.maxHp, target.hp + event.healed)
+      view.sides[event.side].supports.find((s) => s.id === event.supportId)!.used = true
+      if (event.effect === 'barrier') target.barrierUntil = before.turn + 1
+      if (event.effect === 'boost') target.boost = { charges: 2, expiresAfter: before.turn + 2 }
+    } else if (event.kind === 'expired') {
+      const target = view.sides[event.side].fighters.find((f) => f.id === event.targetId)!
+      if (event.effect === 'barrier') target.barrierUntil = null
+      else target.boost = null
     }
     frames.push({
       battle: structuredClone(view),

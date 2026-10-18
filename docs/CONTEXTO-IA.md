@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-18 (cambios tácticos del rival Élite). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-18 (cartas de apoyo en la práctica). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `0e5c549`, rama `feat/practice-opponents`; entrega en `feat/tactical-elite-bot`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `d4732d4`, rama `feat/tactical-elite-bot`; entrega en `feat/practice-support-cards`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -48,8 +48,8 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI); ES/EN y móvil | Un borrador local, sin cuenta, apoyos seleccionables ni combate |
 | Cálculo de combate | Tipos de datos mínimos, 18 tipos, dobles tipos e inmunidades, afinidad y modificadores de daño con aritmética exacta | Funciones puras sin conectar a la interfaz; no resuelven turnos, estados, duración de mejoras ni propiedad |
 | Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 36 cartas verificadas; sin reloj o servicio de elecciones privadas |
-| Cartas habilitadas para el motor | 36 cartas de 18 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local; sin apoyos mapeados ni propiedad; las demás cartas del catálogo todavía no son jugables |
-| Práctica local | `/practica`: selección de seis, variantes, tablero, bot sencillo, estados, recargas, cambios, KO, registro, resultado y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; selección separada de `/equipo` |
+| Cartas habilitadas para el motor | 36 cartas de 18 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local junto a cuatro apoyos mapeados; sin propiedad; las demás cartas del catálogo todavía no son jugables |
+| Práctica local | `/practica`: selección de seis, variantes, hasta tres apoyos opcionales, tablero, bot, estados, recargas, cambios, KO, registro, resultado y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; selección separada de `/equipo` |
 | Tutorial guiado | Entrada opcional en `/practica`, equipo preparado, cinco pasos, Rayo, tipos/recarga, cambio a Jigglypuff, sueño y continuación libre; ES/EN | Sin guardar progreso; conserva la selección normal y permite omitir la guía entre secuencias |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
 
@@ -167,13 +167,23 @@ Es una heurística limitada: la respuesta futura se estima con el jugador pasivo
 
 Verificación automatizada: cuatro casos fallaron por la ausencia de cambios tácticos antes de implementarlos; ocho pruebas nuevas, 142 correctas en total, lint y build/typecheck correctos. Incluye peligro eléctrico, inmunidad, recarga, reservas condenadas/dormidas, KO seguro, margen entre cambios, entrada por eventos antes del daño, decisión preconfirmada aunque el jugador pase/ataque/cambie, tutorial y partidas reproducibles hasta resultado con revancha. Se corrigió findLast para respetar la biblioteca TypeScript existente sin cambiar la configuración. Navegador: Pikachu frente a Élite, retirada voluntaria Charizard→Snorlax antes de Rayo, PS iniciales antes del golpe y 78 PS de daño después; Charizard conserva sus PS. En turno 2 Snorlax usa Terremoto y el registro refleja correctamente ambas acciones. Textos ES/EN, selector y tablero a 1440/390 px sin desbordamiento observado; capturas revisadas. Tutorial iniciado con Élite seleccionado entra con Versátil/Abra como antes. Sin errores de consola observados; idioma ES, audio desactivado, tamaño restaurado y pestaña temporal cerrada. Las partidas completas, revancha y todos los pasos del tutorial se verificaron en pruebas automáticas, no se repitieron completos en navegador en este bloque. No se ha evaluado equilibrio competitivo ni escucha de audio. Revisión independiente sin hallazgos: corroboró la política anterior, decisión previa al input, historial de entradas forzadas, margen de retirada, tutorial/revancha y las ocho pruebas nuevas. No repitió la suite general ni el navegador, cubiertos por el ejecutor. Optimalidad, equilibrio, respuestas a cambios/apoyos y búsqueda profunda siguen fuera del alcance, expresamente documentados.
 
+## Cartas de apoyo en práctica — 2026-10-18
+
+Bloque autorizado al continuar. Rama `feat/practice-support-cards` desde `d4732d4`. Selección opcional de cero a tres apoyos entre cuatro IDs del catálogo fijado: base1-90 Superpoción→heal, base1-82 Cura Total→cleanse, base1-80 Defensor→barrier y base1-96 Doble Energía Incolora→boost. Mapeo explícito y versionado; no se infieren efectos a partir de categoría, nombre o texto TCG. El arte es una copia exacta de los cuatro registros de support.json, mantiene idioma EN y enlaces TCGdex; etiquetas de la interfaz ES/EN.
+
+Se reutilizan los cuatro efectos del motor sin cambiar sus cifras: curar el 30 % del máximo, eliminar estado, reducir daño de ataques al 70 % durante t/t+1, y potenciar dos ataques de daño ×1,5 como máximo hasta cierre de t+2. Cada carta ocupa toda la acción y tiene un uso por partida; usos inválidos no la gastan. El panel explica disponibilidad, consumo y motivos de bloqueo; el activo muestra cargas/turno de fin. La proyección de eventos actualiza curación, uso, mejoras, cargas, expiración, cambio y KO. No modifica el estado del motor ni añade sonidos.
+
+Apoyos solo para el jugador en esta práctica. Los rivales conservan sus políticas y no equipan apoyos; Élite sigue sin explorar apoyos pendientes del jugador. Tutorial sin apoyos, incluso tras omitirlo; la selección libre se conserva al volver. Revancha con el equipo, rival y apoyos de la partida terminada, usos restaurados. No se guardan apoyos ni partidas, no se toca /equipo, propiedad o economía. Con apoyos el adaptador añade :lumemon-supports-v1 a dataVersion; sin apoyos conserva la versión anterior.
+
+Verificación: cinco casos de integración fallaron antes de conectar las cartas; 151 pruebas correctas, lint y compilación/typecheck correctos; nueve pruebas nuevas cubren límites/IDs, rechazo atómico, cura bajo sueño, consumo de turno y comando repetido, tutorial/revancha, arte exacto, disponibilidad conforme al motor, proyección de cargas/expiración/cambio/KO y partidas completas contra Versátil y Élite. Navegador: límite de tres, cuatro ilustraciones cargadas, Defensor antes del golpe, Superpoción recupera 67 PS, barrera expira en turno 2, energía aplicada a Jigglypuff y ataque potenciado con una carga restante. Abra recibió parálisis por Onda Trueno; Cura Total se habilitó, eliminó el estado y quedó gastada. Tutorial con Pikachu/Versátil sin apoyos y selección libre conservada. ES/EN, teclado, selector/tablero en 1440/390 px sin desbordamiento observado; capturas revisadas. Audio permaneció apagado. No se comprobó lector de pantalla ni todos los navegadores; las partidas completas/revancha se comprobaron automáticamente, no se repitieron completas en la web. Revisión independiente sin hallazgos funcionales; no repitió navegador, suite general ni documentación. No se afirma equilibrio competitivo.
+
 ## Pendiente: no anunciar como disponible
 
-Ampliar estadísticas/movimientos a más cartas, mapeo real de apoyos, estrategia avanzada más allá de la heurística de Élite, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
+Ampliar estadísticas/movimientos a más cartas, ampliar el mapeo de apoyos y habilitar su uso por el bot, estrategia avanzada más allá de la heurística de Élite, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato: conectar un primer conjunto verificado de cartas de apoyo al motor y a la práctica, con límites de uso y explicación ES/EN. Antes de implementarlo hay que concretar el mapeo de cartas a efectos. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
+Siguiente candidato: enseñar al rival de práctica a usar los cuatro apoyos ya mapeados, con selección previa, política determinista, límites y explicación visibles, preservando el tutorial. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
 
 ## Mapa de código y comandos
 
@@ -187,6 +197,7 @@ Siguiente candidato: conectar un primer conjunto verificado de cartas de apoyo a
 | `src/catalog` | Tipos, normalización, repositorio, cliente, fuentes suplementarias y pruebas |
 | `src/battle/types.ts`, `type-chart.ts`, `damage.ts` | Contratos mínimos, efectividad y pérdida de vida puras; sin interfaz ni turnos |
 | `src/battle/engine-types.ts`, `battle-state.ts`, `battle-effects.ts`, `turn-engine.ts` | Contratos, creación/validación, efectos y resolución de turnos/sustituciones; API y límites en `src/battle/README.md` |
+| `src/battle/supports.ts`, `src/features/practice/SupportPicker.tsx`, `SupportActions.tsx`, `support-artwork.json` | Mapeo explícito, selección opcional y uso de cuatro apoyos reales en la práctica; reglas existentes y arte del catálogo |
 | `src/battle/profiles.ts`, `playable-roster.ts`, `data` | Estadísticas propias, conjunto versionado de 36 cartas y adaptador al motor; procedencia en `data/README.md` |
 | `scripts/battle` | Selección explícita, carga verificada y generación/check offline de datos de combate |
 | `src/battle/team.ts` | Validación estructural del equipo |

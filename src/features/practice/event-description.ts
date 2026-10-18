@@ -37,8 +37,16 @@ export function describe(event: BattleEvent, t: TFunction, locale: Locale): stri
     case 'result':
       return t('practice.' + resultKey(event.result))
     case 'support':
-      return t('practice.log.support', { name: who(event.side, event.actorId) })
+      return t(event.effect === 'heal' ? 'supports.logHeal' : 'supports.log', {
+        name: who(event.side, event.actorId),
+        card: t('supports.names.' + event.supportId, { defaultValue: event.supportId }),
+        effect: t('supports.effects.' + event.effect),
+        amount: event.healed,
+      })
     case 'expired':
-      return t('practice.log.expired', { name: who(event.side, event.targetId) })
+      return t('supports.expired', {
+        name: who(event.side, event.targetId),
+        effect: t('supports.effects.' + event.effect),
+      })
   }
 }

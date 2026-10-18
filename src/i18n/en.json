@@ -331,7 +331,7 @@
     "selectedMove": "Move: {{name}}",
     "selectedSwitch": "Switch: send out {{name}}",
     "selectedPass": "You will pass without acting.",
-    "noneSelected": "Choose a move or a reserve.",
+    "noneSelected": "Choose your next action.",
     "confirm": "Confirm turn",
     "switchHint": "Switching uses your action. The incoming card receives the rival attack. Sleep or freeze blocks the next move attempt, then clears.",
     "benchHint": "Select a reserve to switch Pokémon.",
@@ -478,5 +478,47 @@
       "level": "High level",
       "description": "Three special illustration rares and three rare cards. Charizard starts; Elite may find a safer reserve and waits two turns before retreating again."
     }
+  },
+  "supports": {
+    "eyebrow": "TACTICAL RESOURCES",
+    "title": "Support cards",
+    "count": "Supports: {{count}}/3",
+    "rules": "Choose zero to three. Each card works once per battle on your active Pokémon and takes your entire turn. Barrier and Boost are removed when switching out or fainting.",
+    "scope": "Practice supports for your team; these opponents do not use them yet. Lumemon effects are adaptations, not the printed TCG rules. The tutorial starts without supports.",
+    "add": "Add {{name}}",
+    "remove": "Remove {{name}}",
+    "selected": "Selected support: {{name}}",
+    "turnCost": "One use only. Replaces your attack this turn.",
+    "names": {
+      "base1-90": "Super Potion",
+      "base1-82": "Full Heal",
+      "base1-80": "Defender",
+      "base1-96": "Double Colorless Energy"
+    },
+    "effects": {
+      "heal": "Recovery",
+      "cleanse": "Cleanse",
+      "barrier": "Barrier",
+      "boost": "Boost"
+    },
+    "descriptions": {
+      "heal": "Restores 30% of maximum HP without exceeding the maximum.",
+      "cleanse": "Removes the current status. Usable while asleep or frozen too.",
+      "barrier": "Reduces attack damage by 30% this turn and next. Does not reduce poison or burn damage.",
+      "boost": "Two damaging attacks at ×1.5. Expires at the end of the second turn after use."
+    },
+    "availability": {
+      "ready": "Available · 1 use",
+      "used": "Already used",
+      "fullHp": "Full HP",
+      "noStatus": "No status to cure",
+      "alreadyActive": "Buff already active",
+      "unavailable": "Unavailable in this phase"
+    },
+    "barrierActive": "Barrier · −30% through turn {{turn}}",
+    "boostActive": "Boost ×1.5 · charges: {{count}} · through turn {{turn}}",
+    "log": "{{name}} gains {{effect}} from {{card}}.",
+    "logHeal": "{{name}} restores {{amount}} HP with {{card}}.",
+    "expired": "{{effect}} on {{name}} has ended."
   }
 }

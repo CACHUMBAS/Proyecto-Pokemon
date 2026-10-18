@@ -52,3 +52,16 @@ Los 13 CSV incluidos conservan cabecera y filas originales, normalizando CRLF a 
 Las pruebas incluyen un combate completo y reproducible con estas cartas. La pantalla `/practica` utiliza este adaptador con un bot básico, tutorial opcional, audio y animaciones. Sigue pendiente el mapeo de cartas de apoyo: el adaptador crea equipos sin apoyos. La [API del motor](../README.md) conserva los límites de confianza, tiempo y propiedad.
 
 La ampliación conserva exactamente las 24 cartas y las 12 especies del conjunto anterior (estadísticas, perfiles, tipos, movimientos y aprendizaje). Añade cuatro IDs de movimiento: 17 (Ataque Ala), 34 (Golpe Cuerpo), 239 (Ciclón) y 407 (Carga Dragón), con compatibilidad USUM verificada. La nueva versión del conjunto es `lumemon-roster-65c806dfd1ce7612`; no cambia la versión de las reglas. Las evoluciones se seleccionan directamente como especies; no hay evolución durante la partida.
+
+## Apoyos de práctica (18 de octubre de 2026)
+
+Mapeo explícito de Lumemon en `src/battle/supports.ts`, versión `lumemon-supports-v1`. No se interpreta el texto TCG como reglas del motor.
+
+| ID TCGdex | Nombre original | Efecto existente de Lumemon |
+| --- | --- | --- |
+| base1-90 | Super Potion | heal: recuperar 30 % de PS máximos, limitado por vida faltante |
+| base1-82 | Full Heal | cleanse: eliminar el estado |
+| base1-80 | Defender | barrier: daño de movimientos ×0,7 en t y t+1 |
+| base1-96 | Double Colorless Energy | boost: dos movimientos de daño ×1,5 hasta cierre de t+2 |
+
+El arte y sus metadatos se copian sin cambios desde `public/catalog/snapshots/523febef1a683029/support.json` a `src/features/practice/support-artwork.json`. Las pruebas contrastan cada registro y mantienen su localización EN; los nombres visibles ES son etiquetas traducidas de la interfaz, no una ilustración española. Se conservan los enlaces de procedencia TCGdex. No se descargan nuevas imágenes ni se atribuyen licencias comerciales. Hasta tres cartas sin repetir efecto, un uso y acción completa por carta, solo sobre el activo. El motor original valida los estados y rechaza usos sin efecto; cambiar o caer elimina las mejoras.

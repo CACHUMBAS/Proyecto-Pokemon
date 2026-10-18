@@ -338,7 +338,7 @@
     "selectedMove": "Movimiento: {{name}}",
     "selectedSwitch": "Cambio: entra {{name}}",
     "selectedPass": "Pasarás sin actuar.",
-    "noneSelected": "Elige un movimiento o una reserva.",
+    "noneSelected": "Elige tu próxima acción.",
     "confirm": "Confirmar turno",
     "switchHint": "Cambiar consume tu acción. La nueva carta recibe el ataque rival. Dormir o congelarse bloquea el siguiente intento de movimiento; después se cura.",
     "benchHint": "Selecciona una reserva para cambiar de Pokémon.",
@@ -484,5 +484,47 @@
       "level": "Nivel alto",
       "description": "Tres ilustraciones especiales raras y tres cartas raras. Charizard empieza; Élite puede buscar una reserva más segura y espera dos turnos antes de volver a retirarse."
     }
+  },
+  "supports": {
+    "eyebrow": "RECURSOS TÁCTICOS",
+    "title": "Cartas de apoyo",
+    "count": "Apoyos: {{count}}/3",
+    "rules": "Elige de cero a tres. Cada carta sirve una vez por combate, sobre tu Pokémon activo, y ocupa todo el turno. Barrera e Impulso desaparecen al cambiar o caer debilitado.",
+    "scope": "Apoyos de prueba para tu equipo; estos rivales todavía no los usan. Los efectos de Lumemon son adaptaciones: no siguen el texto impreso del TCG. El tutorial empieza sin apoyos.",
+    "add": "Añadir {{name}}",
+    "remove": "Quitar {{name}}",
+    "selected": "Apoyo elegido: {{name}}",
+    "turnCost": "Un solo uso. Sustituye tu ataque de este turno.",
+    "names": {
+      "base1-90": "Superpoción",
+      "base1-82": "Cura Total",
+      "base1-80": "Defensor",
+      "base1-96": "Doble Energía Incolora"
+    },
+    "effects": {
+      "heal": "Recuperación",
+      "cleanse": "Limpieza",
+      "barrier": "Barrera",
+      "boost": "Impulso"
+    },
+    "descriptions": {
+      "heal": "Recupera el 30 % de los PS máximos, sin superar el máximo.",
+      "cleanse": "Elimina el estado actual. También se puede usar bajo sueño o congelación.",
+      "barrier": "Reduce un 30 % el daño de ataques este turno y el siguiente. No reduce veneno ni quemadura.",
+      "boost": "Dos ataques de daño a ×1,5. Caduca al terminar el segundo turno posterior a su uso."
+    },
+    "availability": {
+      "ready": "Disponible · 1 uso",
+      "used": "Ya utilizado",
+      "fullHp": "PS completos",
+      "noStatus": "Sin estado que curar",
+      "alreadyActive": "Mejora ya activa",
+      "unavailable": "No disponible en esta fase"
+    },
+    "barrierActive": "Barrera · −30 % hasta fin del turno {{turn}}",
+    "boostActive": "Impulso ×1,5 · cargas: {{count}} · hasta fin del turno {{turn}}",
+    "log": "{{name}} recibe {{effect}} con {{card}}.",
+    "logHeal": "{{name}} recupera {{amount}} PS con {{card}}.",
+    "expired": "{{effect}} de {{name}} ha terminado."
   }
 }

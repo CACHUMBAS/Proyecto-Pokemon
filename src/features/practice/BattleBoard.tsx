@@ -6,6 +6,7 @@ import { activeFighter } from '../../battle/battle-state'
 import { getTypeEffectiveness } from '../../battle/type-chart'
 import type { BattleAction, BattleState } from '../../battle/engine-types'
 import { fighterName, moveName, resultKey } from './practice-data'
+import { SupportActions } from './SupportActions'
 import { PracticeCard } from './PracticeCard'
 
 import type { PlaybackFrame } from '../../battle/playback'
@@ -142,6 +143,19 @@ export function BattleBoard({
                       {t('practice.statusHint.' + fighter.status)}
                     </p>
                   )}
+                  <div className="support-modifiers">
+                    {fighter.barrierUntil !== null && (
+                      <span>{t('supports.barrierActive', { turn: fighter.barrierUntil })}</span>
+                    )}
+                    {fighter.boost && (
+                      <span>
+                        {t('supports.boostActive', {
+                          count: fighter.boost.charges,
+                          turn: fighter.boost.expiresAfter,
+                        })}
+                      </span>
+                    )}
+                  </div>
                   <p className="practice-combat-stats">
                     {t('practice.attack')} {fighter.attack} · {t('practice.defense')}{' '}
                     {fighter.defense} · {t('practice.speed')}{' '}
@@ -268,6 +282,12 @@ export function BattleBoard({
                   )
                 })}
               </div>
+              <SupportActions
+                battle={battle}
+                selected={selected}
+                onSelect={onSelect}
+                permits={permits}
+              />
               <button
                 type="button"
                 className="practice-pass"
@@ -282,9 +302,11 @@ export function BattleBoard({
                   ? t('practice.selectedMove', { name: moveName(selected.moveId, locale) })
                   : selected?.kind === 'switch'
                     ? t('practice.selectedSwitch', { name: fighterName(selected.targetId, locale) })
-                    : selected?.kind === 'pass'
-                      ? t('practice.selectedPass')
-                      : t('practice.noneSelected')}
+                    : selected?.kind === 'support'
+                      ? t('supports.selected', { name: t('supports.names.' + selected.supportId) })
+                      : selected?.kind === 'pass'
+                        ? t('practice.selectedPass')
+                        : t('practice.noneSelected')}
               </p>
               <Button
                 className="practice-confirm"

@@ -1,0 +1,95 @@
+.support-picker {
+  margin-block: 34px 46px;
+}
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 22px;
+}
+.support-card {
+  display: flex;
+  flex-direction: column;
+  padding: 18px;
+  border: 1px solid #314651;
+  border-radius: 16px;
+  background: #121e2b;
+  min-width: 0;
+}
+.support-card.is-selected {
+  border-color: var(--mint);
+  background: #152d31;
+}
+.support-card .practice-art {
+  max-width: 180px;
+  width: 100%;
+  margin: 0 auto 18px;
+}
+.support-card .practice-art figcaption {
+  flex-wrap: wrap;
+  gap: 4px;
+}
+.support-card .practice-move {
+  margin-top: auto;
+}
+.support-card .practice-note {
+  margin-bottom: 20px;
+}
+.support-effect {
+  color: var(--mint);
+  margin-block: 8px 0;
+  font-size: 12px;
+}
+.support-summary {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.support-summary a {
+  color: var(--mint);
+}
+.support-actions {
+  margin-top: 22px;
+  border-top: 1px solid #314651;
+  padding-top: 18px;
+}
+.support-actions .practice-move {
+  width: 100%;
+  margin-top: 8px;
+  gap: 6px;
+}
+.support-actions .practice-move:disabled {
+  opacity: 0.65;
+}
+.support-availability {
+  color: var(--mint);
+  font-size: 11px;
+}
+.support-modifiers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-block: 8px;
+}
+.support-modifiers span {
+  padding: 5px 8px;
+  border: 1px solid #506963;
+  border-radius: 6px;
+  color: var(--mint);
+  background: #18332f;
+  font-size: 11px;
+  line-height: 1.6;
+}
+@media (max-width: 1000px) {
+  .support-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+  .support-card {
+    padding: 20px;
+  }
+}

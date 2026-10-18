@@ -1,0 +1,82 @@
+[
+  {
+    "id": "base1-90",
+    "origin": "tcgdex",
+    "category": "Trainer",
+    "localizations": {
+      "en": {
+        "name": "Super Potion",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/90"
+      }
+    },
+    "speciesIds": [],
+    "mapping": "support",
+    "rarity": "Uncommon",
+    "tcgTypes": [],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Keiji Kinebuchi"
+  },
+  {
+    "id": "base1-82",
+    "origin": "tcgdex",
+    "category": "Trainer",
+    "localizations": {
+      "en": {
+        "name": "Full Heal",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/82"
+      }
+    },
+    "speciesIds": [],
+    "mapping": "support",
+    "rarity": "Uncommon",
+    "tcgTypes": [],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Keiji Kinebuchi"
+  },
+  {
+    "id": "base1-80",
+    "origin": "tcgdex",
+    "category": "Trainer",
+    "localizations": {
+      "en": {
+        "name": "Defender",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/80"
+      }
+    },
+    "speciesIds": [],
+    "mapping": "support",
+    "rarity": "Uncommon",
+    "tcgTypes": [],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Keiji Kinebuchi"
+  },
+  {
+    "id": "base1-96",
+    "origin": "tcgdex",
+    "category": "Energy",
+    "localizations": {
+      "en": {
+        "name": "Double Colorless Energy",
+        "imageUrl": "https://assets.tcgdex.net/en/base/base1/96"
+      }
+    },
+    "speciesIds": [],
+    "mapping": "support",
+    "rarity": "Uncommon",
+    "tcgTypes": [],
+    "set": {
+      "id": "base1",
+      "name": "Base Set"
+    },
+    "illustrator": "Keiji Kinebuchi"
+  }
+]

@@ -135,6 +135,8 @@ Consulta [cartas, fuentes y límites](src/battle/data/README.md). `npm run battl
 
 En `/practica` empieza con seis cartas o personaliza especies, ilustraciones e inicial. Selecciona un movimiento o una reserva y confirma el turno. El bot elige antes de tu confirmación; el motor resuelve tipos, velocidad, estados, recargas y KO. Tras una baja elige un relevo; al terminar puedes jugar de nuevo. El registro explica cada turno.
 
-Es una práctica sin reloj, apoyos, cuenta ni recompensas. Al salir de la ruta o recargar se pierde la partida. Su selección no modifica el borrador guardado en `/equipo`; tampoco convierte las cartas en una colección propia. Los valores del combate son los de Lumemon, no los impresos del TCG. El balance más amplio sigue pendiente.
+Puedes elegir hasta tres de cuatro apoyos verificados: Superpoción (recuperación del 30 % de PS máximos), Cura Total (limpieza), Defensor (barrera) y Doble Energía Incolora (impulso). Son adaptaciones de Lumemon y cada apoyo consume un turno y un uso por combate. El rival no usa apoyos todavía; el tutorial empieza sin ellos y la revancha restaura los usos de las cartas de esa partida.
+
+Es una práctica sin reloj, cuenta ni recompensas. Al salir de la ruta o recargar se pierde la partida. Su selección no modifica el borrador guardado en `/equipo`; tampoco convierte las cartas en una colección propia. Los valores del combate son los de Lumemon, no los impresos del TCG. El balance más amplio sigue pendiente.
 
 Desde el selector, **Aprender a combatir** abre una guía opcional en cinco pasos: tablero, Rayo con Pikachu, tipos y recarga, cambio a Jigglypuff y Canto para aplicar sueño. Usa el motor y el bot reales. Puedes omitirla entre secuencias o seguir el mismo combate al terminar; no guarda progreso ni sustituye tu selección de equipo. Disponible en español e inglés.
