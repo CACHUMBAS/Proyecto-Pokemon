@@ -6,22 +6,22 @@
     "pokemon": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/pokemon.csv",
       "sourceSha256": "16c81c33188b0eac403aa2f759fcbe9e42c611f722d263f5b5a6a5bff9f8ce6b",
-      "sha256": "eb93687744f24c753b21a88cbdc155c88987d5805d3fc766fac29b422264a204",
-      "rows": 18,
+      "sha256": "5ddc36b426f2232285b238a931ab2a677a2b02a1e52fd0b9f7f94afa2b967057",
+      "rows": 24,
       "header": "id,identifier,species_id,height,weight,base_experience,order,is_default"
     },
     "pokemon_types": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/pokemon_types.csv",
       "sourceSha256": "f1fc4bfd657a034ea3bf6972423b10276424aa068577b304a78a08996425ba05",
-      "sha256": "cbf23c12b7adee16d76fde4c3304f38d42e1caee0c462ac9802b2593365c1e50",
-      "rows": 27,
+      "sha256": "7942b5dba18b2e2da4494deb6fd64413d46bdea4ed34a271202eafefb02fc63a",
+      "rows": 34,
       "header": "pokemon_id,type_id,slot"
     },
     "pokemon_species_names": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/pokemon_species_names.csv",
       "sourceSha256": "820cde17074cdb1c2b0595c997fb8f998e773bd5da3bb525dec85703c86c5fd9",
-      "sha256": "c07c1e4c34789a20b77246c1290849ca5850b288d7c092aae3835778ed317ac9",
-      "rows": 36,
+      "sha256": "8b483d1cd0b1042fdf801f6ca90b822237ae33b9e5729fcd3bc82c57bc69ce96",
+      "rows": 48,
       "header": "pokemon_species_id,local_language_id,name,genus"
     },
     "types": {
@@ -34,8 +34,8 @@
     "pokemon_stats": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/pokemon_stats.csv",
       "sourceSha256": "fa2c44263a3706468682fefc3e0b3c4f5487fe9febed7d4ebcd6939c34b16aa8",
-      "sha256": "e18590af7643cd51b4fc2d71ded93ec5c868e6aa6ad25680010e12b6e7078992",
-      "rows": 108,
+      "sha256": "6b2b87d8633e146ca85f23f4974be375067d985076596a6569bc50b0311920a2",
+      "rows": 144,
       "header": "pokemon_id,stat_id,base_stat,effort"
     },
     "stats": {
@@ -48,22 +48,22 @@
     "moves": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/moves.csv",
       "sourceSha256": "8aafd37bf78f19471495c05b201545180f50f0a08a2a2a844d69f9837dd39ac9",
-      "sha256": "a92b9e30b14757ac70bc2b2f8df8ff129c73fef88588dc48f7ccf1b82c935479",
-      "rows": 33,
+      "sha256": "be2b56295304b6e091a4648768eb139132186daa7fca9a4a582df4926c802dd9",
+      "rows": 43,
       "header": "id,identifier,generation_id,type_id,power,pp,accuracy,priority,target_id,damage_class_id,effect_id,effect_chance,contest_type_id,contest_effect_id,super_contest_effect_id"
     },
     "move_names": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/move_names.csv",
       "sourceSha256": "99e23ee38ea53d1473474d463b87651deac3cd4928750f8186feae66da45c147",
-      "sha256": "cdf5562780afe5c1c17f9af9afbf3d8665af00debd28867c5b8241090cb10a3f",
-      "rows": 66,
+      "sha256": "5d16d1fd306930d98475c6a66a5e00d71ebfee9178859afeaa0673b9681f7c53",
+      "rows": 86,
       "header": "move_id,local_language_id,name"
     },
     "pokemon_moves": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/pokemon_moves.csv",
       "sourceSha256": "22a807cef26891eeac0d0c900bd363e66baf421f7ee795bc7bc3e718f23b939e",
-      "sha256": "0382e65761ab2cf0c4ae1e43ad3bdbbdb4b796f8de4ec5b77b751d62164fea8d",
-      "rows": 139,
+      "sha256": "65c266e9bbc21eee9d03ba5fead24f1d69c0b6447b7d5b422f665104e6b8c91b",
+      "rows": 171,
       "header": "pokemon_id,version_group_id,move_id,pokemon_move_method_id,level,order,mastery"
     },
     "version_groups": {
@@ -83,15 +83,15 @@
     "move_meta": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/move_meta.csv",
       "sourceSha256": "93b92d5bddf4fc1536ca0a647c20453bf92e6389010f33ca6fc4c5e9c54363be",
-      "sha256": "7d854003db3cf213bf433683e78737124b1aab320d52655790cb2f5e4ae9c712",
-      "rows": 33,
+      "sha256": "13da6e98d0ae0617fbd2c454a82477a0f0dfd8be3716a90d190779da5b808be6",
+      "rows": 43,
       "header": "move_id,meta_category_id,meta_ailment_id,min_hits,max_hits,min_turns,max_turns,drain,healing,crit_rate,ailment_chance,flinch_chance,stat_chance"
     },
     "move_meta_ailments": {
       "url": "https://raw.githubusercontent.com/PokeAPI/pokeapi/2ee1c422ad9f3831245dab0ac2a5cd1aae61cd72/data/v2/csv/move_meta_ailments.csv",
       "sourceSha256": "4c6e3ce3afe276478a45730de3d15f65496f646ce927c3e374b32295fbe24ed4",
-      "sha256": "55649a547d061f71e8700f7d42a2c2482208cd77eedcc2598453b8b9adb8591d",
-      "rows": 6,
+      "sha256": "d5a723184a2ae0cd24300e61db31b1dac4582ea26caf362a077d2eb501de7295",
+      "rows": 7,
       "header": "id,identifier"
     }
   }

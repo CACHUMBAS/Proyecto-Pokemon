@@ -37,7 +37,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 - `/catalogo`: las 1.025 especies, búsqueda por nombre o número nacional y filtros combinables por generación, tipo de Pokémon, rareza y expansión. Los filtros se guardan en la URL.
 - `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
 - `/equipo`: constructor de un equipo de prueba de seis especies, selección de ilustraciones, cambio de primer Pokémon y guardado local.
-- `/practica`: combate local de seis contra un bot con tres equipos rivales seleccionables y 36 cartas habilitadas, ES/EN, variantes, registro, revancha, música seleccionable, gritos y animaciones por tipo.
+- `/practica`: combate local de seis contra un bot con tres equipos rivales seleccionables y 48 cartas habilitadas, ES/EN, variantes, registro, revancha, música seleccionable, gritos y animaciones por tipo.
 - `/diseno`: tres cartas verificadas de TCGdex y una muestra propia sin imagen; filtros y fichas de procedencia.
 - Cualquier ruta desconocida: pantalla de recuperación con enlace al inicio.
 - Selector ES/EN: guarda solo el idioma; sigue funcionando si el navegador bloquea almacenamiento.
@@ -82,7 +82,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
-- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; primer conjunto de 36 cartas y práctica local disponibles; tutorial opcional disponible y servicio online pendiente.
+- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; conjunto de 48 cartas y práctica local disponibles; tutorial opcional disponible y servicio online pendiente.
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
 - [Revisión de la fase 1](docs/revision-fase-1.md).
 - [Plan de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
@@ -111,7 +111,7 @@ En `/equipo` puedes buscar las 1.025 especies, filtrarlas por tipo de Pokémon, 
 
 Se guarda un único borrador en `pokeprisma.team-draft.v1`, solo con identificadores de cartas y especies. Al recuperarlo se contrasta con el catálogo. Los errores de red conservan el borrador para reintentar; un borrador inválido requiere descartarlo explícitamente. Las pestañas escuchan cambios de almacenamiento y comparan la selección guardada antes de escribir. Si el almacenamiento está bloqueado o lleno, se permite editar en memoria con un aviso de que no se ha guardado. No es un inventario ni concede propiedad de cartas, no sincroniza entre dispositivos.
 
-**Solo cartas jugables** limita el selector a especies e ilustraciones habilitadas en Práctica (actualmente 18 especies y 36 cartas). Funciona junto con la búsqueda y el tipo; se mantiene al entrar en las ilustraciones y volver. No modifica el borrador. Puedes desactivarlo para explorar todo el catálogo; vuelve a estar desactivado al recargar o salir de la ruta.
+**Solo cartas jugables** limita el selector a especies e ilustraciones habilitadas en Práctica (actualmente 24 especies y 48 cartas). Funciona junto con la búsqueda y el tipo; se mantiene al entrar en las ilustraciones y volver. No modifica el borrador. Puedes desactivarlo para explorar todo el catálogo; vuelve a estar desactivado al recargar o salir de la ruta.
 
 Cada variante habilitada muestra sus **datos de combate de Lumemon**: PS máximos, ataque, defensa, velocidad y tipos. Abre **Movimientos** para consultar nombres ES/EN, potencia adaptada, recarga y estados. Los valores impresos de las cartas siguen siendo del TCG; el daño final depende del rival y los efectos. Las variantes no habilitadas muestran un aviso, sin estadísticas de combate.
 
@@ -129,11 +129,11 @@ Estas dos funciones son puras y se reutilizan desde el motor de turnos descrito 
 
 Ya se pueden resolver partidas completas en código con dos equipos de seis miembros: movimientos, cambios, apoyos, cinco estados, recargas, sustituciones, victorias y empates. Se conserva la versión de estado y se registra el desempate de velocidad para reproducir resultados. Consulta la [API y sus límites](src/battle/README.md).
 
-El motor tiene pruebas sintéticas y ahora también un adaptador con 36 cartas reales seleccionadas, descrito abajo. La selección privada en servidor, los 45 segundos, las cuentas y las recompensas corresponden a siguientes bloques.
+El motor tiene pruebas sintéticas y ahora también un adaptador con 48 cartas reales seleccionadas, descrito abajo. La selección privada en servidor, los 45 segundos, las cuentas y las recompensas corresponden a siguientes bloques.
 
 ### Cartas de combate habilitadas
 
-Hay 36 cartas habilitadas de 18 especies (incluidos Venusaur, Charizard, Blastoise, Gengar, Snorlax y Dragonite), con estadísticas propias según rareza/perfil y movimientos reales de PokéAPI adaptados a Lumemon. Las asignaciones están guardadas en una instantánea versionada, con nombres ES/EN, compatibilidad de una sola versión y hashes de fuentes. `createPlayableBattle` conecta seis IDs conocidos por equipo con el motor; rechaza otras cartas y especies repetidas.
+Hay 48 cartas habilitadas de 24 especies (incluidos Chikorita, Cyndaquil, Totodile, Espeon, Umbreon y Scizor), con estadísticas propias según rareza/perfil y movimientos reales de PokéAPI adaptados a Lumemon. Las asignaciones están guardadas en una instantánea versionada, con nombres ES/EN, compatibilidad de una sola versión y hashes de fuentes. `createPlayableBattle` conecta seis IDs conocidos por equipo con el motor; rechaza otras cartas y especies repetidas.
 
 Consulta [cartas, fuentes y límites](src/battle/data/README.md). `npm run battle:check` verifica la reproducción sin conexión; `npm run battle:generate` regenera explícitamente tras revisar cambios. Las 1.025 especies del catálogo no quedan automáticamente habilitadas. Estas cartas ya se pueden probar en `/practica`.
 

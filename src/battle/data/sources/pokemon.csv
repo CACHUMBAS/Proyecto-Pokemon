@@ -17,3 +17,9 @@ id,identifier,species_id,height,weight,base_experience,order,is_default
 133,eevee,133,3,65,65,215,1
 143,snorlax,143,21,4600,189,235,1
 149,dragonite,149,22,2100,270,244,1
+152,chikorita,152,9,64,64,249,1
+155,cyndaquil,155,5,79,62,252,1
+158,totodile,158,6,95,63,255,1
+196,espeon,196,9,265,184,220,1
+197,umbreon,197,10,270,184,221,1
+212,scizor,212,18,1180,175,197,1

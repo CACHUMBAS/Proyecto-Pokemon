@@ -395,6 +395,156 @@
           "profile": "paralysis"
         }
       ]
+    },
+    {
+      "speciesId": 152,
+      "cardIds": [
+        "xy9-1",
+        "A4-162"
+      ],
+      "moves": [
+        {
+          "moveId": 75,
+          "profile": "basic"
+        },
+        {
+          "moveId": 76,
+          "profile": "strong"
+        },
+        {
+          "moveId": 77,
+          "profile": "poison"
+        },
+        {
+          "moveId": 34,
+          "profile": "strong"
+        }
+      ]
+    },
+    {
+      "speciesId": 155,
+      "cardIds": [
+        "swsh10-023",
+        "A4-165"
+      ],
+      "moves": [
+        {
+          "moveId": 52,
+          "profile": "basic"
+        },
+        {
+          "moveId": 53,
+          "profile": "strong"
+        },
+        {
+          "moveId": 261,
+          "profile": "burn"
+        },
+        {
+          "moveId": 98,
+          "profile": "basic"
+        }
+      ]
+    },
+    {
+      "speciesId": 158,
+      "cardIds": [
+        "sv05-039",
+        "A4-167"
+      ],
+      "moves": [
+        {
+          "moveId": 55,
+          "profile": "basic"
+        },
+        {
+          "moveId": 57,
+          "profile": "strong"
+        },
+        {
+          "moveId": 58,
+          "profile": "strong"
+        },
+        {
+          "moveId": 44,
+          "profile": "basic"
+        }
+      ]
+    },
+    {
+      "speciesId": 196,
+      "cardIds": [
+        "sv03-086",
+        "sv08.5-155"
+      ],
+      "moves": [
+        {
+          "moveId": 93,
+          "profile": "basic"
+        },
+        {
+          "moveId": 94,
+          "profile": "strong"
+        },
+        {
+          "moveId": 129,
+          "profile": "strong"
+        },
+        {
+          "moveId": 92,
+          "profile": "poison"
+        }
+      ]
+    },
+    {
+      "speciesId": 197,
+      "cardIds": [
+        "sv03-130",
+        "sv08.5-161"
+      ],
+      "moves": [
+        {
+          "moveId": 555,
+          "profile": "basic"
+        },
+        {
+          "moveId": 399,
+          "profile": "strong"
+        },
+        {
+          "moveId": 92,
+          "profile": "poison"
+        },
+        {
+          "moveId": 98,
+          "profile": "basic"
+        }
+      ]
+    },
+    {
+      "speciesId": 212,
+      "cardIds": [
+        "sv03-141",
+        "sv03-205"
+      ],
+      "moves": [
+        {
+          "moveId": 210,
+          "profile": "basic"
+        },
+        {
+          "moveId": 404,
+          "profile": "strong"
+        },
+        {
+          "moveId": 418,
+          "profile": "basic"
+        },
+        {
+          "moveId": 442,
+          "profile": "strong"
+        }
+      ]
     }
   ]
 }

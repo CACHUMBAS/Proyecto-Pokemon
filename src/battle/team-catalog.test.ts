@@ -30,7 +30,7 @@ test('filters supported species before pagination and combines name, type and de
     .map((s) => s.id)
   const first = listTeamSpecies(species, { pageSize: 12 }, true)
   const second = listTeamSpecies(species, { pageSize: 12, page: 2 }, true)
-  assert.equal(first.total, 18)
+  assert.equal(first.total, 24)
   assert.equal(first.pages, 2)
   assert.deepEqual(
     [...first.items, ...second.items].map((s) => s.id),

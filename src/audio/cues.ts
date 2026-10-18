@@ -1,6 +1,12 @@
 import type { PlaybackFrame } from '../battle/playback.ts'
 import type { SoundCue } from './controller.ts'
 const cries: Record<number, string> = {
+  152: '152.ogg',
+  155: '155.ogg',
+  158: '158.ogg',
+  196: '196.ogg',
+  197: '197.ogg',
+  212: '212.ogg',
   1: '1.ogg',
   3: '3.ogg',
   6: '6.ogg',

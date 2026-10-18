@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-19 (estadísticas y movimientos en Mi equipo). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-19 (seis especies de Johto y doce variantes jugables). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `4598d82`, rama `feat/playable-team-filter`; entrega en `feat/team-battle-details`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `346c8bf`, rama `feat/team-battle-details`; entrega en `feat/johto-playable-roster`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -47,8 +47,8 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Composición | Validador de seis especies distintas; rechaza IDs desconocidos, duplicados, apoyos en plazas Pokémon y asociaciones ambiguas | No comprueba propiedad, estadísticas, movimientos ni aptitud real para combatir |
 | Equipo de prueba | `/equipo`: elegir variantes, sustituir ilustración en la misma plaza, quitar, poner primero, filtrar especies por tipo de Pokémon (PokéAPI), mostrar solo cartas jugables, consultar sus estadísticas/movimientos de Lumemon y enviar seis cartas habilitadas a práctica; ES/EN y móvil | Borrador local sin cuenta ni propiedad; los apoyos se eligen en la práctica |
 | Cálculo de combate | Tipos de datos mínimos, 18 tipos, dobles tipos e inmunidades, afinidad y modificadores de daño con aritmética exacta | Funciones puras sin conectar a la interfaz; no resuelven turnos, estados, duración de mejoras ni propiedad |
-| Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 36 cartas verificadas; sin reloj o servicio de elecciones privadas |
-| Cartas habilitadas para el motor | 36 cartas de 18 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local junto a cuatro apoyos mapeados; sin propiedad; las demás cartas del catálogo todavía no son jugables |
+| Turnos locales | Creación de estado, acciones validadas, prioridad, velocidad/desempate, cinco estados, cuatro apoyos, recargas, KO, sustituciones y final | Núcleo puro conectado a la práctica con 48 cartas verificadas; sin reloj o servicio de elecciones privadas |
+| Cartas habilitadas para el motor | 48 cartas de 24 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local junto a cuatro apoyos mapeados; sin propiedad; las demás cartas del catálogo todavía no son jugables |
 | Práctica local | `/practica`: selección de seis, variantes, hasta tres apoyos opcionales, kits de apoyo visibles del rival, tablero, bot, estados, recargas, cambios, KO, registro, resultado, resumen comparativo final y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; recibe una copia opcional de `/equipo` sin modificar el borrador |
 | Tutorial guiado | Entrada opcional en `/practica`, equipo preparado, cinco pasos, Rayo, tipos/recarga, cambio a Jigglypuff, sueño y continuación libre; ES/EN | Sin guardar progreso; conserva la selección normal y permite omitir la guía entre secuencias |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
@@ -217,13 +217,25 @@ El usuario autorizó el siguiente bloque con «siguente». Rama `feat/team-battl
 
 Verificación: tres pruebas nuevas RED → GREEN; 174 pruebas totales, lint, typecheck y build correctos. Se contrastan las 36 cartas con sus perfiles, ambas variantes de Bulbasaur con valores distintos, potencia adaptada 40 de Látigo Cepa, traducciones y movimientos de estado, rechazos por ID/asociación y copias independientes. Navegador: ES/EN, desplegables con Espacio/Intro, estadísticas y movimientos, carta no habilitada sin cifras, filtrado y selección de una variante; 320/390/1100/1440 px sin desbordamiento observado. La carta temporal se retiró en localhost; el borrador de 127.0.0.1 se conserva. Sin errores de consola. Revisión independiente de código sin hallazgos accionables. Sin instalaciones ni despliegue.
 
+## Johto jugable — 2026-10-19
+
+Continuación autorizada con «sigue». Rama `feat/johto-playable-roster` desde `346c8bf`. Añade Chikorita, Cyndaquil, Totodile, Espeon, Umbreon y Scizor, cada uno con dos IDs concretos del catálogo: 24 especies y 48 cartas en total. Los nuevos IDs, movimientos y límites están en `src/battle/data/README.md`. Se conservan exactamente las 18 especies y 36 cartas anteriores; las raras usan mayor presupuesto mediante la fórmula ya existente. No se cambia la versión de reglas ni se afirma equilibrio competitivo.
+
+Snapshot `lumemon-roster-6eadbb59b4547ed1`, mismas fuentes fijadas y compatibilidad USUM18. Se verificaron los 13 CSV completos de la caché y se ampliaron sus subconjuntos preservando todas las filas anteriores. Los doce artes coinciden con el catálogo; las tres variantes Pocket solo tienen EN, sin inventar traducciones de imágenes. Se verificaron 21 URLs de imágenes con HTTP 200/image-webp. Se incorporaron seis gritos OGG desde la revisión de PokéAPI/cries ya usada, con longitud y hash documentados. Sin dependencias nuevas.
+
+Movimientos propios de Lumemon, sin trasladar efectos del texto TCG: Tóxico usa el veneno fijo existente; Rayo Solar no carga antes; Corte Furia no acumula potencia; Puño Bala no tiene prioridad; Confusión no aplica confusión. Umbreon y Scizor reutilizan las inmunidades existentes. El tutorial, equipos iniciales, tres rivales, apoyos y política del bot no cambian.
+
+Verificación: tres casos nuevos fallaron por la falta de datos antes de ampliar; después, 178 pruebas correctas, battle:check, lint y build/typecheck. Cuatro pruebas nuevas cubren los IDs exactos, presupuesto por rareza, compatibilidad anterior por hash, inmunidad psíquica de Umbreon, inmunidad a veneno de Scizor y combates completos reproducibles de ambas variantes contra los tres rivales. Revisión independiente sin hallazgos: 13 fuentes completas verificadas, 637 filas reducidas auténticas incluidas las 503 anteriores, 48 registros de arte iguales al catálogo y seis gritos con bytes/hash/formato coherentes.
+
+Navegador en localhost:5174, separado del origen habitual 127.0.0.1: filtro con 24 especies, ambas ilustraciones de cada especie nueva, equipo de seis transferido a práctica, cambio de las seis variantes a raras manteniendo plazas y un turno real de Chikorita con Rayo Solar (daño y recarga). Se comprobó la reproducción del grito 152.ogg en el elemento de audio; no se afirma escucha humana. Interfaz ES/EN, detalle de movimientos de Espeon y capturas en 390/1440 px, sin desbordamiento observado. Al volver, el borrador conservaba las variantes originales; se retiró solo ese equipo temporal, se dejó ES, audio silenciado, tamaño restaurado y pestaña cerrada. Sin errores de consola; se observó un aviso de React Router sobre HydrateFallback durante la carga inicial. No se repitieron todas las partidas en navegador ni se probaron todos los movimientos visualmente. Sin despliegue.
+
 ## Pendiente: no anunciar como disponible
 
 Ampliar estadísticas/movimientos a más cartas, ampliar el mapeo de apoyos, estrategia avanzada más allá de las heurísticas actuales, campaña, autenticación, inventario, sobres, monedas, fragmentos, recompensas, salas, reconexión y publicación de Lumemon.
 
 React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres/Realtime y Vercel figuran como arquitectura propuesta para fases posteriores; no están configurados en este proyecto. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato: ampliar el conjunto jugable con nuevas especies y dos variantes verificadas por especie, para dar más opciones al equipo; concretar la selección y reutilizar la generación de datos y sus pruebas. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
+Siguiente candidato: añadir un rival de práctica temático de Johto con estas seis especies, mostrando su equipo, variantes y apoyos antes de entrar, sin modificar los rivales existentes ni el tutorial. Concretar su composición y nivel orientativo en el siguiente bloque. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. Autenticación y progreso siguen siendo una fase separada pendiente.
 
 ## Mapa de código y comandos
 
@@ -238,7 +250,7 @@ Siguiente candidato: ampliar el conjunto jugable con nuevas especies y dos varia
 | `src/battle/types.ts`, `type-chart.ts`, `damage.ts` | Contratos mínimos, efectividad y pérdida de vida puras; sin interfaz ni turnos |
 | `src/battle/engine-types.ts`, `battle-state.ts`, `battle-effects.ts`, `turn-engine.ts` | Contratos, creación/validación, efectos y resolución de turnos/sustituciones; API y límites en `src/battle/README.md` |
 | `src/battle/supports.ts`, `src/features/practice/SupportPicker.tsx`, `SupportActions.tsx`, `OpponentSupports.tsx`, `support-artwork.json` | Mapeo explícito, selección opcional y uso de cuatro apoyos reales en la práctica; reglas existentes y arte del catálogo |
-| `src/battle/profiles.ts`, `playable-roster.ts`, `data` | Estadísticas propias, conjunto versionado de 36 cartas y adaptador al motor; procedencia en `data/README.md` |
+| `src/battle/profiles.ts`, `playable-roster.ts`, `data` | Estadísticas propias, conjunto versionado de 48 cartas y adaptador al motor; procedencia en `data/README.md` |
 | `scripts/battle` | Selección explícita, carga verificada y generación/check offline de datos de combate |
 | `src/battle/summary.ts`, `src/features/practice/BattleSummary.tsx` | Métricas de eventos al finalizar, comparación ES/EN de ambos equipos; sin estado ni guardado propio |
 | `src/battle/practice-team.ts`, `src/features/practice/TeamTransfer.tsx` | Aptitud del equipo para práctica, avisos y transferencia versionada de IDs por navegación; no escribe en el borrador |

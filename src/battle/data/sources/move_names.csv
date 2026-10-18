@@ -11,6 +11,8 @@ move_id,local_language_id,name
 33,9,Tackle
 34,7,Golpe Cuerpo
 34,9,Body Slam
+44,7,Mordisco
+44,9,Bite
 47,7,Canto
 47,9,Sing
 52,7,Ascuas
@@ -25,6 +27,8 @@ move_id,local_language_id,name
 58,9,Ice Beam
 75,7,Hoja Afilada
 75,9,Razor Leaf
+76,7,Rayo Solar
+76,9,Solar Beam
 77,7,Polvo Veneno
 77,9,Poison Powder
 79,7,Somnífero
@@ -39,6 +43,10 @@ move_id,local_language_id,name
 88,9,Rock Throw
 89,7,Terremoto
 89,9,Earthquake
+92,7,Tóxico
+92,9,Toxic
+93,7,Confusión
+93,9,Confusion
 94,7,Psíquico
 94,9,Psychic
 95,7,Hipnosis
@@ -51,6 +59,8 @@ move_id,local_language_id,name
 129,9,Swift
 157,7,Avalancha
 157,9,Rock Slide
+210,7,Corte Furia
+210,9,Fury Cutter
 239,7,Ciclón
 239,9,Twister
 247,7,Bola Sombra
@@ -59,9 +69,19 @@ move_id,local_language_id,name
 261,9,Will-O-Wisp
 280,7,Demolición
 280,9,Brick Break
+399,7,Pulso Umbrío
+399,9,Dark Pulse
+404,7,Tijera X
+404,9,X-Scissor
 407,7,Carga Dragón
 407,9,Dragon Rush
+418,7,Puño Bala
+418,9,Bullet Punch
+442,7,Cabeza de Hierro
+442,9,Iron Head
 473,7,Psicocarga
 473,9,Psyshock
+555,7,Alarido
+555,9,Snarl
 605,7,Brillo Mágico
 605,9,Dazzling Gleam

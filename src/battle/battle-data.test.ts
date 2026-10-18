@@ -35,11 +35,11 @@ test('source integrity rejects altered bytes, headers or pinned revision', () =>
   altered.files.moves.header = 'wrong'
   assert.throws(() => parseSources(altered, raw), /Invalid/)
 })
-test('roster is deterministic, exactly 36 known cards, 18 default species, and one move version', () => {
+test('roster is deterministic, exactly 48 known cards, 24 default species, and one move version', () => {
   const roster = build()
   assert.deepEqual(build(), roster)
-  assert.equal(roster.cards.length, 36)
-  assert.equal(roster.species.length, 18)
+  assert.equal(roster.cards.length, 48)
+  assert.equal(roster.species.length, 24)
   assert.equal(roster.source.versionGroup.id, 18)
   assert.equal(roster.source.versionGroup.slug, 'ultra-sun-ultra-moon')
   for (const s of roster.species) {
