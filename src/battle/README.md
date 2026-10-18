@@ -1,6 +1,6 @@
 # Motor local de Lumemon
 
-Este módulo resuelve reglas de combate con datos explícitos y sin interfaz. El adaptador de [datos jugables](data/README.md) conecta ahora una selección de 36 cartas del catálogo con estadísticas propias y movimientos verificables. El mapeo real de apoyos permanece pendiente.
+Este módulo resuelve reglas de combate con datos explícitos y sin interfaz. El adaptador de [datos jugables](data/README.md) conecta ahora una selección de 36 cartas del catálogo con estadísticas propias y movimientos verificables. También conecta cuatro apoyos del catálogo mediante un mapeo explícito de efectos propios de Lumemon.
 
 ## API pública
 
@@ -21,7 +21,9 @@ Las salidas incluyen versiones `lumemon-turns-v1` y `lumemon-damage-v1`, identid
 
 El estado debe ser una salida válida de este motor. Este bloque no ofrece un decodificador de snapshots externos ni garantiza que unas estadísticas o un identificador sean oficiales. `dataVersion` identifica la revisión suministrada; el futuro adaptador de datos deberá comprobar también procedencia, hashes, compatibilidades y propiedad.
 
-El adaptador `createPlayableBattle(battleId, teams, supportIds = [[], []])` verifica los IDs de Pokémon y apoyos habilitados. Admite de cero a tres apoyos distintos por lado; IDs y efectos explícitos en `supports.ts`. Añade `:lumemon-supports-v1` a dataVersion cuando se equipa algún apoyo y conserva la versión anterior cuando no los hay. No sustituye la comprobación de propiedad. La práctica expone la selección solo para el jugador; los bots y el tutorial siguen sin apoyos.
+El adaptador `createPlayableBattle(battleId, teams, supportIds = [[], []])` verifica los IDs de Pokémon y apoyos habilitados. Admite de cero a tres apoyos distintos por lado; IDs y efectos explícitos en `supports.ts`. Añade `:lumemon-supports-v1` a dataVersion cuando se equipa algún apoyo y conserva la versión anterior cuando no los hay. No sustituye la comprobación de propiedad. La práctica permite al jugador elegir hasta tres y equipa kits fijos de uno, dos o tres en los rivales. El tutorial excluye apoyos en ambos lados. createPractice admite opponentSupportIds opcional para reconstruir la revancha con el kit real de la partida anterior, incluido el vacío del tutorial; si se omite, usa el kit del rival.
+
+En la práctica, el bot fija su acción al abrir el turno. Conserva una retirada táctica o un KO seguro de su acción prevista; después valora curación, limpieza, barrera e impulso, en ese orden. Simula movimientos disponibles y pasar con el motor real y ambos desempates; no examina la elección pendiente ni los cambios o apoyos que podría escoger el jugador. Los umbrales son una heurística local, no una garantía de juego óptimo o equilibrio competitivo.
 
 El servicio futuro recogerá las elecciones en secreto, confirmará solo la primera válida, asignará `pass` al vencer los 45 segundos y llamará a la resolución una sola vez en una transacción. La comparación de versión detecta solicitudes obsoletas respecto al snapshot recibido; por sí sola no impide que dos procesos resuelvan el mismo snapshot. Repetir las mismas entradas aquí reproduce el mismo resultado sin guardar ni conceder nada.
 

@@ -466,7 +466,7 @@
   },
   "opponents": {
     "title": "Elige tu rival",
-    "hint": "Dificultad orientativa por cartas y estrategia. Élite también busca cambios defensivos. La máquina decide antes de tu elección, sin aumentar sus estadísticas.",
+    "hint": "Dificultad orientativa por cartas, apoyos y estrategia. Élite también busca cambios defensivos. La máquina decide antes de tu elección y respeta los mismos efectos y usos.",
     "team": "Equipo del rival en su orden inicial",
     "matchup": "Rival: {{name}}",
     "rookie": {
@@ -490,7 +490,7 @@
     "title": "Cartas de apoyo",
     "count": "Apoyos: {{count}}/3",
     "rules": "Elige de cero a tres. Cada carta sirve una vez por combate, sobre tu Pokémon activo, y ocupa todo el turno. Barrera e Impulso desaparecen al cambiar o caer debilitado.",
-    "scope": "Apoyos de prueba para tu equipo; estos rivales todavía no los usan. Los efectos de Lumemon son adaptaciones: no siguen el texto impreso del TCG. El tutorial empieza sin apoyos.",
+    "scope": "Los rivales también usan apoyos: puedes ver sus cartas antes de entrar y seguir sus usos en la arena. Los efectos de Lumemon son adaptaciones del TCG. El tutorial empieza sin apoyos en ambos equipos.",
     "add": "Añadir {{name}}",
     "remove": "Quitar {{name}}",
     "selected": "Apoyo elegido: {{name}}",
@@ -525,6 +525,9 @@
     "boostActive": "Impulso ×1,5 · cargas: {{count}} · hasta fin del turno {{turn}}",
     "log": "{{name}} recibe {{effect}} con {{card}}.",
     "logHeal": "{{name}} recupera {{amount}} PS con {{card}}.",
-    "expired": "{{effect}} de {{name}} ha terminado."
+    "expired": "{{effect}} de {{name}} ha terminado.",
+    "opponentTitle": "Apoyos del rival",
+    "opponentNone": "Este rival no lleva apoyos en esta partida.",
+    "unspent": "Sin gastar"
   }
 }

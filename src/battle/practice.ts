@@ -25,6 +25,7 @@ export type PracticeCommand =
       tutorial?: boolean
       opponentId?: PracticeOpponentId
       supportIds?: readonly string[]
+      opponentSupportIds?: readonly string[]
     }
   | {
       kind: 'guide'
@@ -58,12 +59,13 @@ export function createPractice(
   tutorial = false,
   opponentId: string = DEFAULT_OPPONENT,
   supportIds: readonly string[] = [],
+  opponentSupportIds?: readonly string[],
 ): PracticeSession {
   const opponent = getPracticeOpponent(tutorial ? DEFAULT_OPPONENT : opponentId)
   const battle = createPlayableBattle(
     battleId,
     [tutorial ? TUTORIAL_PLAYER : playerIds, opponent.cardIds],
-    [tutorial ? [] : supportIds, []],
+    [tutorial ? [] : supportIds, tutorial ? [] : (opponentSupportIds ?? opponent.supportIds)],
   )
   return {
     battle,
@@ -117,6 +119,7 @@ export function practiceReducer(
       command.tutorial,
       command.opponentId,
       command.supportIds,
+      command.opponentSupportIds,
     )
   if (
     !session ||

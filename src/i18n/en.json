@@ -460,7 +460,7 @@
   },
   "opponents": {
     "title": "Choose your opponent",
-    "hint": "Suggested difficulty based on cards and strategy. Elite also looks for defensive switches. The bot decides before your choice, without boosted stats.",
+    "hint": "Difficulty varies with cards, supports and strategy. Elite also looks for defensive switches. The bot decides before your choice and follows the same effects and usage limits.",
     "team": "Opponent team in starting order",
     "matchup": "Opponent: {{name}}",
     "rookie": {
@@ -484,7 +484,7 @@
     "title": "Support cards",
     "count": "Supports: {{count}}/3",
     "rules": "Choose zero to three. Each card works once per battle on your active Pokémon and takes your entire turn. Barrier and Boost are removed when switching out or fainting.",
-    "scope": "Practice supports for your team; these opponents do not use them yet. Lumemon effects are adaptations, not the printed TCG rules. The tutorial starts without supports.",
+    "scope": "Opponents use supports too: inspect their cards before entering and track their uses in the arena. Lumemon effects are adaptations of the TCG. Both teams start the tutorial without supports.",
     "add": "Add {{name}}",
     "remove": "Remove {{name}}",
     "selected": "Selected support: {{name}}",
@@ -519,6 +519,9 @@
     "boostActive": "Boost ×1.5 · charges: {{count}} · through turn {{turn}}",
     "log": "{{name}} gains {{effect}} from {{card}}.",
     "logHeal": "{{name}} restores {{amount}} HP with {{card}}.",
-    "expired": "{{effect}} on {{name}} has ended."
+    "expired": "{{effect}} on {{name}} has ended.",
+    "opponentTitle": "Opponent supports",
+    "opponentNone": "This opponent has no supports in this match.",
+    "unspent": "Unspent"
   }
 }

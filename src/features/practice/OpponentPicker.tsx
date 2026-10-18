@@ -2,6 +2,8 @@ import { useTranslation } from 'react-i18next'
 import { getPracticeOpponent, listPracticeOpponents } from '../../battle/opponents'
 import type { PracticeOpponentId } from '../../battle/opponents'
 import { cardsById, fighterName, speciesById } from './practice-data'
+import { getPlayableSupport } from '../../battle/supports'
+import { OpponentSupports } from './OpponentSupports'
 import './OpponentPicker.css'
 
 const opponents = listPracticeOpponents()
@@ -73,6 +75,7 @@ export function OpponentPicker({ value, onChange }: Props) {
             )
           })}
         </ol>
+        <OpponentSupports supports={selected.supportIds.map((id) => getPlayableSupport(id)!)} />
       </div>
     </fieldset>
   )

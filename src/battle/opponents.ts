@@ -4,6 +4,7 @@ export type PracticeOpponentId = 'rookie' | 'balanced' | 'elite'
 export interface PracticeOpponent {
   id: PracticeOpponentId
   cardIds: string[]
+  supportIds: string[]
 }
 export const DEFAULT_OPPONENT: PracticeOpponentId = 'balanced'
 export const DEFAULT_BOT = [
@@ -20,11 +21,13 @@ export const DEFAULT_BOT = [
 const opponents: readonly PracticeOpponent[] = [
   {
     id: 'rookie',
+    supportIds: ['base1-90'],
     cardIds: ['base2-51', 'base1-44', 'base1-46', 'base1-63', 'base1-58', 'base1-68'],
   },
-  { id: 'balanced', cardIds: [...DEFAULT_BOT] },
+  { id: 'balanced', cardIds: [...DEFAULT_BOT], supportIds: ['base1-90', 'base1-82'] },
   {
     id: 'elite',
+    supportIds: ['base1-90', 'base1-80', 'base1-96'],
     cardIds: ['sv03.5-199', 'sv03.5-198', 'sv03.5-200', 'base3-5', 'base2-11', 'base3-4'],
   },
 ]

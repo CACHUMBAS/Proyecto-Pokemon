@@ -6,6 +6,7 @@ import { activeFighter } from '../../battle/battle-state'
 import { getTypeEffectiveness } from '../../battle/type-chart'
 import type { BattleAction, BattleState } from '../../battle/engine-types'
 import { fighterName, moveName, resultKey } from './practice-data'
+import { OpponentSupports } from './OpponentSupports'
 import { SupportActions } from './SupportActions'
 import { PracticeCard } from './PracticeCard'
 
@@ -193,6 +194,7 @@ export function BattleBoard({
               </span>
             ))}
           </div>
+          <OpponentSupports supports={battle.sides[1].supports} />
         </section>
         <section
           className={'practice-console' + (guide ? ' is-guided' : '')}

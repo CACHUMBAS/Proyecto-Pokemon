@@ -8,7 +8,7 @@ import type { BattleAction } from './engine-types.ts'
 
 const ids = ['base1-90', 'base1-82', 'base1-80']
 function setup(supports: readonly string[] = ids) {
-  return createPractice('supports', DEFAULT_PLAYER, false, 'balanced', supports)
+  return createPractice('supports', DEFAULT_PLAYER, false, 'balanced', supports, [])
 }
 function supportAction(id: string, actorId: string = DEFAULT_PLAYER[0]): BattleAction {
   return { kind: 'support', actorId, supportId: id }

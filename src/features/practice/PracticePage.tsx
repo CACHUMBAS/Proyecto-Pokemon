@@ -66,6 +66,7 @@ export function PracticePage() {
     playerIds = team,
     matchOpponentId = opponentId,
     matchSupports = supportIds,
+    matchOpponentSupports?: string[],
   ) {
     audio.stop()
     setConfirmExit(false)
@@ -76,6 +77,7 @@ export function PracticePage() {
       tutorial,
       opponentId: matchOpponentId,
       supportIds: matchSupports,
+      opponentSupportIds: matchOpponentSupports,
     })
     window.scrollTo({ top: 0, behavior: 'instant' })
   }
@@ -213,6 +215,7 @@ export function PracticePage() {
                 session.battle.sides[0].fighters.map((f) => f.id),
                 session.opponentId,
                 session.battle.sides[0].supports.map((s) => s.id),
+                session.battle.sides[1].supports.map((s) => s.id),
               )
             }
           />
