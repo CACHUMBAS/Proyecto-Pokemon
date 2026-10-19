@@ -29,7 +29,7 @@ Files: src/features/account/*, src/app/router.tsx, src/components/layout/AppShel
 - [x] Suite, lint, build y revisión independiente.
 - [x] Documentar qué se comprobó realmente y pasos pendientes de proyecto/SMTP.
 - [x] Contexto Antigravity actualizado.
-- [ ] Commit/push y sincronización.
+- [x] Commit/push a1c35e9 y sincronización 0/0 comprobada en feat/online-accounts.
 
 ## Ledger
 - Usuario seleccionó online y autorizó instalar SDK. Instalado 2.118.0; npm informó cero vulnerabilidades.

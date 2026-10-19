@@ -84,6 +84,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Contexto para agentes](docs/CONTEXTO-IA.md).
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 - [Configurar y comprobar cuentas online](docs/CUENTAS-ONLINE.md).
+- [Despliegue conectado a GitHub en Vercel](docs/DESPLIEGUE-VERCEL.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
 - [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; conjunto de 48 cartas y práctica local disponibles; tutorial opcional disponible y servicio online pendiente.
