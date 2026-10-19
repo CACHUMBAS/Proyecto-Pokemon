@@ -100,7 +100,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 
 Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon. Cada fase se desarrolla en su rama con comprobaciones y commits. La base visual está en `feat/base-pokeprisma`, a partir de `docs/plan-inicial`. El catálogo se desarrolla en `feat/catalogo-pokeprisma`, desde `d216ebc`.
 
-El catálogo y la práctica funcionan sin servicios. Las cuentas requieren un proyecto Supabase y las variables públicas de .env.example en .env.local, excluido de Git. El usuario ya creó el proyecto Free; la guía distingue conexión, permisos, URLs y correo. El envío público necesita SMTP configurado: no se afirma que el registro público esté listo por compilar. La web está en Vercel Hobby y el presupuesto sigue siendo cero. URLs de retorno guardadas por el usuario; falta comprobar el correo/cuenta real; véase la guía de cuentas.
+El catálogo y la práctica funcionan sin servicios. Las cuentas requieren un proyecto Supabase y las variables públicas de .env.example en .env.local, excluido de Git. El usuario ya creó el proyecto Free; la guía distingue conexión, permisos, URLs y correo. El envío público necesita SMTP configurado: no se afirma que el registro público esté listo por compilar. La web está en Vercel Hobby y el presupuesto sigue siendo cero. URLs de retorno guardadas. El 2026-10-20 el usuario confirmó registro, confirmación de correo, alias conservado al recargar y recuperación de contraseña con nuevo acceso y el mismo alias en la web pública; véase la guía de cuentas.
 
 ### Corrección de ilustraciones de McDonald’s
 

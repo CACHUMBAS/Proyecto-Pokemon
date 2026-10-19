@@ -23,7 +23,7 @@ Files: src/features/account/*, src/app/router.tsx, src/components/layout/AppShel
 - [x] Formularios de sesión/registro/reset y perfil editable, estados de carga/error/configuración.
 - [x] Mantener confirmación, callback local seguro y aislamiento al salir.
 - [x] Navegador ES/EN, 320/390/1440, teclado y validación sin enviar correos.
-- [ ] Cuenta real, confirmación, guardado de alias y recuperación (requiere acción del usuario y URLs/correo).
+- [x] Cuenta real, confirmación, guardado de alias y recuperación: el usuario confirmó ambos flujos en https://lumemon.vercel.app el 2026-10-20, con el alias conservado tras recargar y volver a entrar.
 
 ## Task 3 — Verificación y entrega
 - [x] Suite, lint, build y revisión independiente.
@@ -37,6 +37,6 @@ Files: src/features/account/*, src/app/router.tsx, src/components/layout/AppShel
 - Ruling: desarrollar lo autorizado sin nuevas rondas de aprobación de documentos; las decisiones externas y los permisos de instalación sí se consultan.
 
 - Verificado: 192 pruebas, lint y build/typecheck correctos. Revisión independiente con tres P2 corregidos y regresiones RED → GREEN.
-- Usuario confirmó migración y prueba SQL con rollback correctas. Comprobaciones directas: Auth HTTP 200, confirmación activa y lectura anónima de perfiles rechazada HTTP 401/42501. SMTP público y prueba de cuenta real pendientes.
+- Usuario confirmó migración y prueba SQL con rollback correctas. Comprobaciones directas: Auth HTTP 200, confirmación activa y lectura anónima de perfiles rechazada HTTP 401/42501. SMTP público pendiente; cuenta real verificada por el usuario el 2026-10-20.
 
-- El usuario dirigió el siguiente paso hacia Vercel conectado a GitHub. Configurar URLs definitivas después del despliegue; prueba de cuenta real pendiente.
+- El usuario dirigió el siguiente paso hacia Vercel conectado a GitHub y autorizó mantener https://lumemon.vercel.app pública. Confirmó las URLs definitivas de Supabase, registro, confirmación de correo, persistencia del alias y recuperación con nuevo acceso. Estas pruebas fueron realizadas por el usuario; no se automatizaron credenciales. No implican correo a destinatarios externos ni progreso del juego online.

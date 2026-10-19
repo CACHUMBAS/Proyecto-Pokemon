@@ -6,6 +6,14 @@ Registro, acceso, cierre de sesión local, recuperación de contraseña y perfil
 
 El cliente oficial de Supabase se carga con la ruta de cuenta. Verifica la identidad con Auth antes de leer el perfil y descarta respuestas de sesiones anteriores. La recuperación necesita un evento PASSWORD_RECOVERY del SDK para el usuario verificado; visitar la ruta por sí solo no habilita cambiar la contraseña. Volver a enfocar la pestaña o renovar el token de la misma cuenta conserva el formulario.
 
+## Estado verificado — 2026-10-20
+
+El usuario confirmó que guardó las URLs de producción en Supabase y comprobó personalmente en https://lumemon.vercel.app el registro, la confirmación de correo, el acceso y el alias conservado al recargar. También completó la recuperación de contraseña, volvió a entrar y confirmó que conservaba el alias. No se compartieron contraseñas ni enlaces privados con el agente.
+
+Site URL actual: https://lumemon.vercel.app/cuenta. Redirect URLs confirmadas: esa misma dirección y https://lumemon.vercel.app/cuenta/recuperar. Las URLs locales del apartado siguiente son opcionales para desarrollo; no sustituir la Site URL pública al añadirlas.
+
+El usuario también confirmó éxito en la migración y la prueba SQL de aislamiento/permisos con rollback. La verificación local de la entrega anterior terminó con 192 pruebas, lint y build/typecheck correctos. Quedan pendientes SMTP para destinatarios externos al equipo y las comprobaciones manuales con otro dispositivo y dos cuentas reales simultáneas.
+
 ## Conexión local
 
 1. Copiar .env.example a .env.local sin sobrescribir una configuración existente.
