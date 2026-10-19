@@ -2,6 +2,8 @@
 
 Un universo web de cartas Pokémon y combates por turnos, para móvil y ordenador.
 
+**Web:** [lumemon.vercel.app](https://lumemon.vercel.app). Los push a chore/vercel-lumemon actualizan producción; las demás ramas generan vistas previas.
+
 Desde el 12 de octubre de 2026, el proyecto se llama **Lumemon** (antes PokePrisma). El repositorio sigue siendo `CACHUMBAS/Proyecto-Pokemon` y la carpeta local conserva su nombre. Las claves `pokeprisma.locale.v1` y `pokeprisma.team-draft.v1`, los IDs y el origen interno `pokeprisma` se mantienen para conservar los datos existentes. Las rutas, ramas y documentos históricos pueden contener el nombre anterior.
 
 **Estado: catálogo, constructor de prueba, práctica local y cuentas con perfil online.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Registro, acceso, recuperación y alias privado usan Supabase; requieren la [configuración online](docs/CUENTAS-ONLINE.md). Colección, sobres, economía y combates online siguen pendientes.
@@ -98,7 +100,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 
 Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon. Cada fase se desarrolla en su rama con comprobaciones y commits. La base visual está en `feat/base-pokeprisma`, a partir de `docs/plan-inicial`. El catálogo se desarrolla en `feat/catalogo-pokeprisma`, desde `d216ebc`.
 
-El catálogo y la práctica funcionan sin servicios. Las cuentas requieren un proyecto Supabase y las variables públicas de .env.example en .env.local, excluido de Git. El usuario ya creó el proyecto Free; la guía distingue conexión, permisos, URLs y correo. El envío público necesita SMTP configurado: no se afirma que el registro público esté listo por compilar. La web no se ha desplegado y el presupuesto sigue siendo cero.
+El catálogo y la práctica funcionan sin servicios. Las cuentas requieren un proyecto Supabase y las variables públicas de .env.example en .env.local, excluido de Git. El usuario ya creó el proyecto Free; la guía distingue conexión, permisos, URLs y correo. El envío público necesita SMTP configurado: no se afirma que el registro público esté listo por compilar. La web está en Vercel Hobby y el presupuesto sigue siendo cero. URLs de retorno guardadas por el usuario; falta comprobar el correo/cuenta real; véase la guía de cuentas.
 
 ### Corrección de ilustraciones de McDonald’s
 

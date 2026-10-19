@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-19 (cuentas y perfil online; entrega reducida a dos días). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-20 (cuentas, perfil online y Vercel público conectado a GitHub). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `64b3cee`, rama `feat/johto-playable-roster`; entrega en `feat/online-accounts`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Cuentas entregadas en `a1c35e9` (`feat/online-accounts`); rama actual de publicación `chore/vercel-lumemon`, con configuración Vercel en `f5fe452`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -304,4 +304,6 @@ Siguiente bloque propuesto: colección online, sobres y recompensas validados en
 
 ## Preparación de Vercel — 2026-10-19
 
-El usuario pidió acceder mediante Vercel y recibir cambios desde GitHub antes de configurar los retornos de Supabase. Rama chore/vercel-lumemon desde a1c35e9; cuentas subidas y sincronizadas en feat/online-accounts. Se reutilizó CLI oficial 63.1.0 ya instalada y la sesión existente. Proyecto nuevo cachumbas1/lumemon en Hobby, repositorio GitHub conectado y variables públicas de Supabase añadidas a Preview/Production sin exponer sus valores. vercel.json configura Vite y rutas SPA. Primer push de esta rama debe disparar Preview; comprobar estado y alias antes de dar URL o configurar Auth. No se ha fusionado main, promovido producción ni desactivado protección. Guía: docs/DESPLIEGUE-VERCEL.md.
+El usuario pidió acceder mediante Vercel y recibir cambios desde GitHub antes de configurar los retornos de Supabase. Rama chore/vercel-lumemon desde a1c35e9; cuentas subidas y sincronizadas en feat/online-accounts. Se reutilizó CLI oficial 63.1.0 ya instalada y la sesión existente. Proyecto nuevo cachumbas1/lumemon en Hobby, repositorio GitHub conectado y variables públicas de Supabase añadidas a Preview/Production sin exponer sus valores. vercel.json configura Vite y rutas SPA. El primer push f5fe452 creó automáticamente Production (no Preview). Se informó al usuario, que confirmó mantener https://lumemon.vercel.app como web pública. Vercel devolvió READY; /cuenta abrió sin barrera de Vercel en navegador y con campos de cuenta activos. No se fusionó main ni se desactivó protección. Guía: docs/DESPLIEGUE-VERCEL.md.
+
+Vercel, 2026-10-20: Branch Tracking cambió de docs/plan-inicial a chore/vercel-lumemon, con confirmación visual del valor guardado. Los push a esta rama actualizan el dominio público; nuevas ramas deben seguir como Preview hasta integrar deliberadamente la entrega. Node remoto 24.x; el primer build de Git terminó correctamente. Variables de Supabase en Preview/Production; .env.local y .vercel ignorados. Pendiente: el usuario confirmó que guardó Site URL y Redirect URLs con https://lumemon.vercel.app; falta probar su cuenta/correo real. No afirmar registro público listo sin SMTP.
