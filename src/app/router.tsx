@@ -32,6 +32,18 @@ export const router = createBrowserRouter([
           Component: (await import('../features/practice/PracticePage')).PracticePage,
         }),
       },
+      {
+        path: '/cuenta',
+        lazy: async () => ({
+          Component: (await import('../features/account/AccountPage')).AccountPage,
+        }),
+      },
+      {
+        path: '/cuenta/recuperar',
+        lazy: async () => ({
+          Component: (await import('../features/account/AccountPage')).AccountPage,
+        }),
+      },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

@@ -13,7 +13,7 @@
     "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "test": "node --test src/catalog/*.test.ts src/battle/*.test.ts scripts/catalog/*.test.ts src/audio/*.test.ts",
+    "test": "node --test src/catalog/*.test.ts src/battle/*.test.ts scripts/catalog/*.test.ts src/audio/*.test.ts src/account/*.test.ts",
     "catalog:import": "node scripts/catalog/import.ts",
     "battle:check": "node scripts/battle/generate.ts --check",
     "battle:generate": "node scripts/battle/generate.ts --write"
@@ -21,6 +21,7 @@
   "dependencies": {
     "@fontsource-variable/manrope": "5.3.0",
     "@fontsource-variable/space-grotesk": "5.3.0",
+    "@supabase/supabase-js": "2.118.0",
     "i18next": "26.4.2",
     "react": "19.3.0",
     "react-dom": "19.3.0",

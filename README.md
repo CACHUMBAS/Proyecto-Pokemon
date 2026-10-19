@@ -4,7 +4,7 @@ Un universo web de cartas Pokémon y combates por turnos, para móvil y ordenado
 
 Desde el 12 de octubre de 2026, el proyecto se llama **Lumemon** (antes PokePrisma). El repositorio sigue siendo `CACHUMBAS/Proyecto-Pokemon` y la carpeta local conserva su nombre. Las claves `pokeprisma.locale.v1` y `pokeprisma.team-draft.v1`, los IDs y el origen interno `pokeprisma` se mantienen para conservar los datos existentes. Las rutas, ramas y documentos históricos pueden contener el nombre anterior.
 
-**Estado: catálogo, constructor de equipo de prueba y práctica local contra la máquina.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Las cuentas, la colección personal, los sobres, la economía y los combates online pertenecen a las siguientes fases.
+**Estado: catálogo, constructor de prueba, práctica local y cuentas con perfil online.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Registro, acceso, recuperación y alias privado usan Supabase; requieren la [configuración online](docs/CUENTAS-ONLINE.md). Colección, sobres, economía y combates online siguen pendientes.
 
 ## Abrir en VS Code
 
@@ -38,6 +38,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 - `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
 - `/equipo`: constructor de un equipo de prueba de seis especies, selección de ilustraciones, cambio de primer Pokémon y guardado local.
 - `/practica`: combate local de seis contra un bot con tres equipos rivales seleccionables y 48 cartas habilitadas, ES/EN, variantes, registro, revancha, música seleccionable, gritos y animaciones por tipo.
+- `/cuenta`: acceso/registro por correo y contraseña, recuperación y alias privado; requiere Supabase configurado. `/cuenta/recuperar` procesa la recuperación autorizada por el SDK.
 - `/diseno`: tres cartas verificadas de TCGdex y una muestra propia sin imagen; filtros y fichas de procedencia.
 - Cualquier ruta desconocida: pantalla de recuperación con enlace al inicio.
 - Selector ES/EN: guarda solo el idioma; sigue funcionando si el navegador bloquea almacenamiento.
@@ -56,6 +57,8 @@ En la práctica, pulsa **Activar audio**. En sus ajustes puedes elegir entre cua
 - `src/components`: tarjetas, idioma, botones y estructura compartida.
 - `src/features`: portada, catálogo, fichas de especie, muestras y ruta no encontrada.
 - `src/catalog`: contratos, normalización, consulta y pruebas del catálogo.
+- `src/account`: configuración, validación, sesión y adaptador Supabase.
+- `supabase`: migración de perfil privado y prueba SQL de permisos.
 - `src/battle`: composición de equipos, cálculo de daño y motor local de turnos con sus pruebas.
 - `scripts/catalog`: importación, caché y validación de cobertura.
 - `public/catalog`: manifiesto e instantáneas versionadas; índice y un archivo de variantes por especie.
@@ -80,6 +83,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 
 - [Contexto para agentes](docs/CONTEXTO-IA.md).
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
+- [Configurar y comprobar cuentas online](docs/CUENTAS-ONLINE.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
 - [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; conjunto de 48 cartas y práctica local disponibles; tutorial opcional disponible y servicio online pendiente.
@@ -93,7 +97,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 
 Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon. Cada fase se desarrolla en su rama con comprobaciones y commits. La base visual está en `feat/base-pokeprisma`, a partir de `docs/plan-inicial`. El catálogo se desarrolla en `feat/catalogo-pokeprisma`, desde `d216ebc`.
 
-No requiere claves ni cuentas de servicios para ejecutarse. No se han creado recursos de Supabase ni publicado esta web. Las funciones persistentes y multijugador se construirán en sus fases, manteniendo presupuesto inicial de cero euros. Las credenciales locales están excluidas de Git.
+El catálogo y la práctica funcionan sin servicios. Las cuentas requieren un proyecto Supabase y las variables públicas de .env.example en .env.local, excluido de Git. El usuario ya creó el proyecto Free; la guía distingue conexión, permisos, URLs y correo. El envío público necesita SMTP configurado: no se afirma que el registro público esté listo por compilar. La web no se ha desplegado y el presupuesto sigue siendo cero.
 
 ### Corrección de ilustraciones de McDonald’s
 

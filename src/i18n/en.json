@@ -13,7 +13,8 @@
     "skip": "Skip to content",
     "catalog": "Catalogue",
     "team": "My team",
-    "practice": "Practice"
+    "practice": "Practice",
+    "account": "Account"
   },
   "common": {
     "development": "In development",
@@ -564,6 +565,80 @@
       "unplayable-card": "Slot {{slot}} · {{cardId}}: this artwork is not yet enabled for battle.",
       "duplicate-species": "Slot {{slot}} · {{cardId}}: another card of this species is already in the team.",
       "invalid-data": "The team data has an invalid format. Send it again from My team."
+    }
+  },
+  "account": {
+    "eyebrow": "LUMEMON PASSPORT",
+    "title": "Your adventure.\nYour identity.",
+    "description": "Create your account and give your next story a name. Your profile will be ready when collection and progress arrive.",
+    "stepIdentity": "An account of your own",
+    "stepIdentityText": "Sign in with your email and password.",
+    "stepProfile": "Your trainer name",
+    "stepProfileText": "A private profile saved online.",
+    "stepCollection": "Next stop: collection",
+    "stepCollectionText": "Packs and rewards will connect in the next step.",
+    "practiceLink": "Keep practising",
+    "chooseAction": "Account options",
+    "signin": "Sign in",
+    "signup": "Create account",
+    "email": "Email address",
+    "password": "Password",
+    "newPassword": "New password",
+    "confirmPassword": "Repeat password",
+    "passwordHint": "Between 10 and 128 characters. Spaces and long passphrases are welcome.",
+    "busy": "One moment…",
+    "forgot": "I forgot my password",
+    "profile": "Trainer profile",
+    "connected": "ACCOUNT CONNECTED",
+    "welcome": "Hello, {{name}}.",
+    "displayName": "Trainer name",
+    "nameHint": "Between 3 and 24 characters. It does not have to be your real name.",
+    "saveName": "Save name",
+    "profileScope": "This profile is saved online. Your team and Practice battles are still local; they do not award collection cards or rewards yet.",
+    "loading": "Checking your session…",
+    "loadErrorTitle": "We could not load your profile",
+    "loadError": "Check your connection and try again. Your data has not been replaced with an empty profile.",
+    "retry": "Try again",
+    "signout": "Sign out on this device",
+    "unavailableTitle": "Accounts are being prepared",
+    "unavailable": "Online access is not connected yet. You can still explore the catalogue and practise.",
+    "invalidConfig": "Online access is unavailable in this installation. You can still use the catalogue and practice.",
+    "forms": {
+      "signin": "Return to your adventure",
+      "signup": "Start with your identity",
+      "reset": "Recover your access",
+      "updatePassword": "Choose your new password"
+    },
+    "hints": {
+      "signin": "Sign in to your trainer profile.",
+      "signup": "We will email a confirmation link. Open it in this same browser.",
+      "reset": "If this email belongs to an account, you will receive a link. Open it in this same browser.",
+      "updatePassword": "The recovery link has been verified for this account."
+    },
+    "submit": {
+      "signin": "Sign in",
+      "signup": "Create my account",
+      "reset": "Send recovery link",
+      "updatePassword": "Save password"
+    },
+    "errors": {
+      "email": "Enter a valid email address.",
+      "passwordRequired": "Enter your password.",
+      "passwordLength": "The new password must have between 10 and 128 characters.",
+      "passwordMatch": "The passwords do not match.",
+      "displayName": "Use 3 to 24 characters without line breaks or control characters.",
+      "credentials": "The email or password is incorrect.",
+      "unconfirmed": "Confirm your email before signing in. Check your spam folder too.",
+      "rateLimit": "Too many attempts. Wait a little before trying again.",
+      "emailDelivery": "The email could not be sent to this address. Email delivery must be configured to admit new players.",
+      "samePassword": "Choose a password different from your previous one.",
+      "expiredLink": "This link could not be verified or has expired. Request a new one and open it in the same browser.",
+      "request": "The operation could not be completed. Check your connection and try again."
+    },
+    "notices": {
+      "checkEmail": "If registration can proceed with this email, you will receive a confirmation link. Check spam too; if you already have an account, sign in or recover access.",
+      "resetSent": "If an account exists for this email, you will receive a recovery link. Check spam too.",
+      "passwordUpdated": "Password updated. You can now use it to sign in."
     }
   }
 }

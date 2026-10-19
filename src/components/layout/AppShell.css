@@ -135,3 +135,17 @@
     flex: 1;
   }
 }
+
+@media (min-width: 701px) and (max-width: 1050px) {
+  .site-header {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 18px;
+  }
+  .main-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+  }
+}

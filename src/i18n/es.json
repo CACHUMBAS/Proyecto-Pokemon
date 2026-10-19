@@ -13,7 +13,8 @@
     "skip": "Saltar al contenido",
     "catalog": "Catálogo",
     "team": "Mi equipo",
-    "practice": "Práctica"
+    "practice": "Práctica",
+    "account": "Cuenta"
   },
   "common": {
     "development": "En desarrollo",
@@ -570,6 +571,80 @@
       "unplayable-card": "Plaza {{slot}} · {{cardId}}: esta ilustración todavía no está habilitada para combatir.",
       "duplicate-species": "Plaza {{slot}} · {{cardId}}: ya hay otra carta de esta especie en el equipo.",
       "invalid-data": "Los datos del equipo no tienen un formato válido. Vuelve a enviarlo desde Mi equipo."
+    }
+  },
+  "account": {
+    "eyebrow": "PASAPORTE LUMEMON",
+    "title": "Tu aventura.\nTu identidad.",
+    "description": "Crea tu cuenta y dale un nombre a tu próxima historia. Tu perfil te acompañará cuando conectemos la colección y el progreso.",
+    "stepIdentity": "Una cuenta propia",
+    "stepIdentityText": "Accede con tu correo y contraseña.",
+    "stepProfile": "Tu nombre de entrenador",
+    "stepProfileText": "Un perfil privado guardado online.",
+    "stepCollection": "Próxima parada: colección",
+    "stepCollectionText": "Sobres y recompensas se conectarán en el siguiente paso.",
+    "practiceLink": "Seguir practicando",
+    "chooseAction": "Opciones de cuenta",
+    "signin": "Iniciar sesión",
+    "signup": "Crear cuenta",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "newPassword": "Nueva contraseña",
+    "confirmPassword": "Repite la contraseña",
+    "passwordHint": "Entre 10 y 128 caracteres. Puedes usar espacios y una frase larga.",
+    "busy": "Un momento…",
+    "forgot": "He olvidado mi contraseña",
+    "profile": "Perfil de entrenador",
+    "connected": "CUENTA CONECTADA",
+    "welcome": "Hola, {{name}}.",
+    "displayName": "Nombre de entrenador",
+    "nameHint": "Entre 3 y 24 caracteres. No tiene que ser tu nombre real.",
+    "saveName": "Guardar nombre",
+    "profileScope": "Este perfil se guarda online. El equipo y los combates de Práctica siguen siendo locales; todavía no generan colección ni recompensas.",
+    "loading": "Comprobando tu sesión…",
+    "loadErrorTitle": "No hemos podido cargar tu perfil",
+    "loadError": "Comprueba tu conexión e inténtalo de nuevo. Tus datos no se han sustituido por un perfil vacío.",
+    "retry": "Reintentar",
+    "signout": "Cerrar sesión en este dispositivo",
+    "unavailableTitle": "Estamos preparando las cuentas",
+    "unavailable": "El acceso online aún no está conectado. Puedes seguir explorando el catálogo y practicando mientras tanto.",
+    "invalidConfig": "El acceso online no está disponible en esta instalación. Puedes seguir usando el catálogo y la práctica.",
+    "forms": {
+      "signin": "Vuelve a tu aventura",
+      "signup": "Empieza con tu identidad",
+      "reset": "Recupera el acceso",
+      "updatePassword": "Elige tu nueva contraseña"
+    },
+    "hints": {
+      "signin": "Accede a tu perfil de entrenador.",
+      "signup": "Te enviaremos un enlace para confirmar tu correo. Ábrelo en este mismo navegador.",
+      "reset": "Si el correo corresponde a una cuenta, recibirás un enlace. Ábrelo en este mismo navegador.",
+      "updatePassword": "El enlace de recuperación se ha verificado para esta cuenta."
+    },
+    "submit": {
+      "signin": "Entrar",
+      "signup": "Crear mi cuenta",
+      "reset": "Enviar enlace de recuperación",
+      "updatePassword": "Guardar contraseña"
+    },
+    "errors": {
+      "email": "Escribe un correo electrónico válido.",
+      "passwordRequired": "Escribe tu contraseña.",
+      "passwordLength": "La nueva contraseña debe tener entre 10 y 128 caracteres.",
+      "passwordMatch": "Las contraseñas no coinciden.",
+      "displayName": "Usa entre 3 y 24 caracteres, sin saltos de línea ni caracteres de control.",
+      "credentials": "El correo o la contraseña no son correctos.",
+      "unconfirmed": "Confirma tu correo antes de entrar. Revisa también la carpeta de spam.",
+      "rateLimit": "Has hecho demasiados intentos. Espera un poco antes de repetir.",
+      "emailDelivery": "No se ha podido enviar el correo a esa dirección. El envío de emails debe estar configurado para admitir nuevos jugadores.",
+      "samePassword": "Elige una contraseña diferente a la anterior.",
+      "expiredLink": "Este enlace no se ha podido verificar o ya ha caducado. Solicita uno nuevo y ábrelo en el mismo navegador.",
+      "request": "No se ha podido completar la operación. Comprueba tu conexión e inténtalo de nuevo."
+    },
+    "notices": {
+      "checkEmail": "Si el registro puede completarse con ese correo, recibirás un enlace de confirmación. Revisa también spam; si ya tienes cuenta, inicia sesión o recupera el acceso.",
+      "resetSent": "Si existe una cuenta con ese correo, recibirás un enlace de recuperación. Revisa también spam.",
+      "passwordUpdated": "Contraseña actualizada. Ya puedes usarla para acceder."
     }
   }
 }

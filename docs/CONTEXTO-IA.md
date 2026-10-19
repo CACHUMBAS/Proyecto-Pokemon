@@ -1,12 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-19 (seis especies de Johto y doce variantes jugables). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-19 (cuentas y perfil online; entrega reducida a dos días). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Base que debe conservarse
 
 - Repositorio: https://github.com/CACHUMBAS/Proyecto-Pokemon.git
 - Carpeta usada en este ordenador: `C:\Users\ffran\OneDrive\Datos adjuntos\Desktop\PokePrisma`. En otro equipo, utiliza la raíz real del checkout.
-- Base del bloque actual: `346c8bf`, rama `feat/team-battle-details`; entrega en `feat/johto-playable-roster`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
+- Base del bloque actual: `64b3cee`, rama `feat/johto-playable-roster`; entrega en `feat/online-accounts`. Incluye Lumemon (`bc5be88`), el filtro de tipos de Antigravity (`3f78710`) y el constructor de equipos (`ac75b2f`).
 - Cambio de nombre a Lumemon en `chore/rename-lumemon`, creada desde `3f78710`. Incluye el paquete de continuidad original de `9128d2f` (`docs/contexto-antigravity`). Un agente nuevo debe conservar el cambio de nombre y el filtro de tipos; no cambiar a `main` ni a ramas antiguas sin comprobar la ascendencia.
 - Propuesta de reglas en `docs/reglas-combate-lumemon`, desde `bc5be88`; este bloque solo modifica documentación.
 - Primer módulo de efectividad y daño en `feat/battle-damage`, desde `afc4b10`. Conserva la documentación de reglas y todas las entregas anteriores.
@@ -32,7 +32,7 @@ Verificado el 2026-10-12: 59 pruebas correctas (`npm test`), lint y build con ty
 
 ## Usuario y forma de trabajar
 
-Proyecto personal con posible lanzamiento posterior, sin enunciado académico, fecha límite ni presupuesto para servicios de pago. El usuario quiere una web cuidada, funcional y profesional; prefiere ver el código en VS Code, cambios paso a paso y ramas por bloque. Le preocupa el consumo compartido de sus herramientas de IA: prioriza lecturas selectivas, entregas concretas y explicaciones concisas. No prometas porcentajes de ahorro ni equivalencias entre tokens y cuota.
+Proyecto personal con posible lanzamiento posterior, sin enunciado académico y sin presupuesto para servicios de pago. El 2026-10-19 el usuario fijó una entrega en dos días y eligió cuentas y progreso online. Priorizar colección, sobres y recompensas verificadas en servidor sobre PvP, más especies o campaña. El usuario quiere una web cuidada, funcional y profesional; prefiere ver el código en VS Code, cambios paso a paso y ramas por bloque. Le preocupa el consumo compartido de sus herramientas de IA: prioriza lecturas selectivas, entregas concretas y explicaciones concisas. No prometas porcentajes de ahorro ni equivalencias entre tokens y cuota.
 
 El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices decisiones visuales, archivos, repositorio ni despliegue de esa web.
 
@@ -51,6 +51,7 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Cartas habilitadas para el motor | 48 cartas de 24 especies; perfiles propios persistidos, rarezas explícitas, nombres ES/EN y movimientos con compatibilidad USUM verificada; adaptador por IDs | Disponible en la práctica local junto a cuatro apoyos mapeados; sin propiedad; las demás cartas del catálogo todavía no son jugables |
 | Práctica local | `/practica`: selección de seis, variantes, hasta tres apoyos opcionales, kits de apoyo visibles del rival, tablero, bot, estados, recargas, cambios, KO, registro, resultado, resumen comparativo final y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; recibe una copia opcional de `/equipo` sin modificar el borrador |
 | Tutorial guiado | Entrada opcional en `/practica`, equipo preparado, cinco pasos, Rayo, tipos/recarga, cambio a Jigglypuff, sueño y continuación libre; ES/EN | Sin guardar progreso; conserva la selección normal y permite omitir la guía entre secuencias |
+| Cuenta online | /cuenta: registro, acceso, salida, recuperación y alias privado con Supabase; ES/EN | Configuración y prueba de correo real por completar; todavía no guarda inventario, equipo ni recompensas |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
 
 La instantánea `523febef1a683029` contiene 1.025 especies, 23.770 registros de cartas (20.132 Pokémon y 3.638 apoyos), 129 asociaciones ambiguas y 1.357 registros sin imagen en la fuente. Los respaldos locales de imágenes no modifican esos contadores originales. Verifica cifras futuras en `public/catalog/manifest.json`; no afirmes cobertura de todas las ediciones históricas o japonesas.
@@ -288,3 +289,15 @@ La clave local del equipo es `pokeprisma.team-draft.v1`. Un error de red no debe
 6. [README](../README.md), [revisión de catálogo](revision-fase-2.md) y [revisión de equipos](revision-equipo.md): uso y evidencia.
 
 Al cerrar una tarea, modifica solo las secciones que cambian: fecha, entrega realizada, evidencia y pendientes. No borres requisitos futuros ni marques una fase completa por terminar uno de sus componentes. Si documentación y código discrepan, señala la diferencia y corrige el estado tras comprobarlo.
+
+## Cuentas y perfil online — 2026-10-19
+
+Rama feat/online-accounts desde 64b3cee. Usuario eligió cuentas/progreso online y autorizó @supabase/supabase-js; instalada versión exacta 2.118.0 (npm informó cero vulnerabilidades). Creó el proyecto Free y rellenó personalmente .env.local; no registrar esos valores. La ruta diferida /cuenta permite registro/acceso por correo y contraseña, solicitud de recuperación, actualización desde /cuenta/recuperar y alias. Auth usa PKCE, getUser para comprobar identidad y sesión persistida por el SDK. La recuperación requiere PASSWORD_RECOVERY para esa identidad. La práctica y el equipo siguen locales, sin propiedad o recompensas.
+
+SQL versionado: player_profiles con RLS, lectura de fila propia y UPDATE solo de display_name; ensure_player_profile inicializa solo auth.uid(), sin argumentos de identidad. No hay saldos ni inventario. El usuario informó éxito al aplicar la migración y al ejecutar la prueba SQL de dos identidades, permisos y rollback. Se observó directamente Auth settings HTTP 200, correo habilitado y confirmación activa; la tabla pasó de inexistente a rechazar lectura anónima HTTP 401/42501. No se usaron credenciales de administración.
+
+Verificación local: 14 pruebas nuevas RED → GREEN, 192 totales correctas, lint y build/typecheck correctos. Revisión independiente detectó tres casos: recuperación invalidada por SIGNED_IN del mismo usuario, perfil previo conservado al desmontar y formularios desmontados en renovaciones normales. Corregidos con tres pruebas de regresión: se conserva recuperación con la misma identidad, se vacía el snapshot al detener y se revalida sin desmontar para eventos ordinarios de la misma cuenta. Cambios de identidad siguen invalidando inmediatamente y las respuestas tardías se descartan.
+
+Navegador real en localhost:5174: acceso/registro/solicitud de recuperación ES/EN, cambio de idioma conserva modo, validación de correo por teclado y ruta de recuperación sin autorización rechazada; capturas a 1440, 390 y 320 px revisadas sin desbordamiento horizontal. Sin errores de consola observados. No se introdujeron contraseñas ni se enviaron correos desde la automatización. Configuración de URLs y prueba de cuenta real pendientes: el usuario pidió usar Vercel y GitHub antes de seguir con las URLs locales. El siguiente bloque preparará el despliegue y sus URLs reales. SMTP propio pendiente para registros públicos: el correo predeterminado solo admite destinatarios del equipo y límites de prueba. Guía exacta en docs/CUENTAS-ONLINE.md. No desactivar confirmación.
+
+Siguiente bloque propuesto: colección online, sobres y recompensas validados en servidor; mantener la separación entre práctica libre y progreso real. No ampliar roster o PvP para la entrega de dos días. No se ha desplegado ni fusionado main.
