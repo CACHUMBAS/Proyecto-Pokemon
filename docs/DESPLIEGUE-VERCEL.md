@@ -28,6 +28,15 @@ Dominio estable confirmado: https://lumemon.vercel.app.
 
 No usar la URL de la API de Supabase como Site URL. El proyecto de base de datos se mantiene al actualizar el frontend: un push no debe ejecutar migraciones ni reiniciar datos automáticamente.
 
-## Colección preparada en rama — 2026-10-20
+## Bloque activo: combates online y recompensas — 2026-10-20
 
-feat/online-collection-packs incorpora colección y sobres, con migración independiente. La web pública no se ha actualizado con este bloque. La prueba SQL de colección fue confirmada por el usuario. El [inicial, la bienvenida y la persistencia](COLECCION-ONLINE.md) se comprobaron en local con una cuenta real. Falta obtener autorización para integrar en chore/vercel-lumemon. Un push a la rama de funcionalidad puede generar Preview, pero no aplica SQL ni autoriza cambiar producción.
+Rama feat/online-battles-rewards desde 462b5c9. Usuario autoriza continuar y fija 50 monedas por victoria; derrota/empate/abandono cero. /combate usa seis cartas poseídas, rival Iniciación sin apoyos para ambos, servidor Vercel con motor existente, persistencia en Supabase y UUID/revisiones. La práctica sigue libre y sin premios. No añade dependencias. PvP, reloj y campaña quedan pendientes.
+
+Código y pruebas locales preparados; activación SQL, clave privada de servidor, recorrido real con premios y publicación PENDIENTES. No presentar este modo como activo en lumemon.vercel.app hasta verificarlos. Guía: [Combates online](COMBATES-ONLINE.md). El siguiente paso es activar la migración nueva con el usuario y configurar SUPABASE_SECRET_KEY solo en servidor; nunca pedirla en el chat ni poner prefijo VITE_.
+
+## Colección publicada — evidencia del bloque anterior
+
+El usuario autorizó integrar feat/online-collection-packs en chore/vercel-lumemon. Ambas ramas llegaron a 462b5c9. Vercel confirmó Production READY, dpl_C7Ve8QPSidi9mzqhoiiQVkYR5f3b, alias https://lumemon.vercel.app, SHA exacto 462b5c9ffd7f3d0b2398b4d6129fdeb247d013c1. /coleccion pública comprobada como invitado. La prueba SQL real y el inicial/bienvenida (nueve copias tras recarga) se habían comprobado con la cuenta real en local. No repetir migraciones antiguas ni reclamar otra bienvenida.
+
+
+La nueva reescritura SPA excluye /api para conservar la función Node /api/battle. Su ejecución real en Vercel se verifica tras activar el bloque.

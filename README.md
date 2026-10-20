@@ -156,3 +156,7 @@ Puedes elegir hasta tres de cuatro apoyos verificados: Superpoción (recuperaci�
 Es una práctica sin reloj, cuenta ni recompensas. Al salir de la ruta o recargar se pierde la partida. Su selección no modifica el borrador guardado en `/equipo`; tampoco convierte las cartas en una colección propia. Los valores del combate son los de Lumemon, no los impresos del TCG. El balance más amplio sigue pendiente.
 
 Desde el selector, **Aprender a combatir** abre una guía opcional en cinco pasos: tablero, Rayo con Pikachu, tipos y recarga, cambio a Jigglypuff y Canto para aplicar sueño. Usa el motor y el bot reales. Puedes omitirla entre secuencias o seguir el mismo combate al terminar; no guarda progreso ni sustituye tu selección de equipo. Disponible en español e inglés.
+
+### Combates online en preparación
+
+/combate añade partidas de seis cartas poseídas contra la máquina, guardado y 50 monedas por victoria. Implementado en feat/online-battles-rewards; falta activar SQL, clave privada de servidor y despliegue. Ver [activación y pruebas](docs/COMBATES-ONLINE.md). Colección y sobres ya publicados en 462b5c9. /practica sigue sin premios.

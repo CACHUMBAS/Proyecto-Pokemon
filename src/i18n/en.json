@@ -15,7 +15,8 @@
     "team": "My team",
     "practice": "Practice",
     "account": "Account",
-    "collection": "Collection"
+    "collection": "Collection",
+    "battle": "Battle"
   },
   "common": {
     "development": "In development",
@@ -763,5 +764,54 @@
       "last_copy": "There are no spare copies to convert. Your last copy is protected.",
       "request_conflict": "This attempt does not match the saved operation. Refresh your collection and check the history."
     }
+  },
+  "online": {
+    "eyebrow": "YOUR COLLECTION · YOUR TEAM",
+    "title": "Battle for your next pack.",
+    "intro": "Choose six cards from your collection and face the computer. Every win adds 50 coins to your account: two wins buy one pack.",
+    "ruleTeam": "6 different species",
+    "ruleReward": "+50 coins per win",
+    "ruleResume": "Saved match · no timer",
+    "practice": "Learn in free practice",
+    "loginTitle": "Your team starts with your account",
+    "loginHelp": "Sign in to battle with your cards, save your match and collect coins from your wins.",
+    "teamTitle": "Prepare your team",
+    "teamHelp": "The first Pokémon enters the arena. Choose another artwork for the same species or change your lead. Neither side uses support cards in this first mode.",
+    "lead": "Make lead",
+    "leadNamed": "Make {{name}} the lead",
+    "removeNamed": "Remove {{name}}, card {{id}}",
+    "selectNamed": "Select {{name}}, card {{id}}",
+    "selected": "On your team",
+    "select": "Choose card",
+    "start": "Enter battle",
+    "packs": "Open packs",
+    "saving": "Checking your match…",
+    "retry": "Recover pending move",
+    "saved": "Online match saved",
+    "opponent": "Opponent: Rookie · no supports",
+    "abandon": "Abandon match",
+    "abandonTitle": "Abandon this match?",
+    "abandonHelp": "It will be saved as abandoned and will not award coins. You can resume on any device if you would rather play later.",
+    "reward": "Win confirmed · 50 coins added to your account.",
+    "noReward": "Match saved. Only wins award coins.",
+    "abandoned": "Match abandoned. No coins were added.",
+    "needStarter": "Choose your free starter team in Collection first.",
+    "errors": {
+      "invalid_request": "We could not read that move. Refresh the match and try again.",
+      "invalid_team": "Your team must contain six cards you own, all from different species.",
+      "invalid_action": "That action is not available this turn. Choose another move.",
+      "starter_required": "Choose your starter team in Collection first.",
+      "active_battle": "You already have an active match. Refresh to resume it.",
+      "battle_conflict": "The match changed on another tab or device. We checked its current state; refresh to continue.",
+      "request_conflict": "We could not confirm that move. Refresh the match before continuing.",
+      "version_mismatch": "This match uses an older rules version. You can abandon it and start a new one.",
+      "balance_limit": "Your wallet has reached its limit. Spend coins on packs, then retry the move.",
+      "identity": "Your session has changed or expired. Sign in again.",
+      "unavailable": "Online battles are currently unavailable. Your collection is safe. You can still use free practice.",
+      "uncertain": "The connection was lost. Recover your pending move to check whether it was saved.",
+      "storage": "We could not save the pending move in this browser. Enable storage and reload.",
+      "invalid_data": "We could not verify the server response. Recover your move or refresh the match."
+    },
+    "refresh": "Refresh match"
   }
 }

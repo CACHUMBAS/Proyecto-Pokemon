@@ -15,7 +15,8 @@
     "team": "Mi equipo",
     "practice": "Práctica",
     "account": "Cuenta",
-    "collection": "Colección"
+    "collection": "Colección",
+    "battle": "Combate"
   },
   "common": {
     "development": "En desarrollo",
@@ -769,5 +770,54 @@
       "last_copy": "No quedan copias sobrantes para convertir. Tu última copia se conserva.",
       "request_conflict": "Este intento no coincide con la operación guardada. Actualiza la colección y revisa el historial."
     }
+  },
+  "online": {
+    "eyebrow": "TU COLECCIÓN · TU EQUIPO",
+    "title": "Combate por tu próximo sobre.",
+    "intro": "Elige seis cartas de tu colección y enfréntate a la máquina. Cada victoria suma 50 monedas a tu cuenta: con dos victorias puedes abrir un sobre.",
+    "ruleTeam": "6 especies distintas",
+    "ruleReward": "+50 monedas por victoria",
+    "ruleResume": "Partida guardada · sin reloj",
+    "practice": "Aprender en la práctica libre",
+    "loginTitle": "Tu equipo empieza en tu cuenta",
+    "loginHelp": "Inicia sesión para combatir con tus cartas, guardar la partida y recibir las monedas de tus victorias.",
+    "teamTitle": "Prepara tu equipo",
+    "teamHelp": "El primer Pokémon sale al campo. Puedes elegir otra ilustración de una misma especie o cambiar quién empieza. Este modo inicial se juega sin cartas de apoyo, tanto tú como el rival.",
+    "lead": "Poner primero",
+    "leadNamed": "Poner a {{name}} primero",
+    "removeNamed": "Retirar {{name}}, carta {{id}}",
+    "selectNamed": "Seleccionar {{name}}, carta {{id}}",
+    "selected": "En el equipo",
+    "select": "Elegir carta",
+    "start": "Entrar al combate",
+    "packs": "Abrir sobres",
+    "saving": "Consultando la partida…",
+    "retry": "Recuperar jugada pendiente",
+    "saved": "Partida online guardada",
+    "opponent": "Rival: Iniciación · sin apoyos",
+    "abandon": "Abandonar partida",
+    "abandonTitle": "¿Abandonar este combate?",
+    "abandonHelp": "Se guardará como abandonado y no dará monedas. Puedes continuar desde cualquier dispositivo si prefieres dejarlo para después.",
+    "reward": "Victoria confirmada · 50 monedas añadidas a tu cuenta.",
+    "noReward": "Partida guardada. Solo las victorias otorgan monedas.",
+    "abandoned": "Partida abandonada. No se han añadido monedas.",
+    "needStarter": "Elige primero tu equipo inicial gratuito en Colección.",
+    "errors": {
+      "invalid_request": "No se pudo interpretar la jugada. Actualiza la partida e inténtalo de nuevo.",
+      "invalid_team": "El equipo debe contener seis cartas tuyas, todas de especies distintas.",
+      "invalid_action": "Esa acción no está disponible en este turno. Elige otra jugada.",
+      "starter_required": "Primero debes elegir tu equipo inicial en Colección.",
+      "active_battle": "Ya tienes una partida activa. Actualiza para retomarla.",
+      "battle_conflict": "La partida cambió en otra pestaña o dispositivo. Hemos consultado el estado actual; actualiza para continuar.",
+      "request_conflict": "No se pudo confirmar esa jugada. Actualiza el estado antes de continuar.",
+      "version_mismatch": "Esta partida usa una versión anterior de las reglas. Puedes abandonarla y empezar una nueva.",
+      "balance_limit": "Tu cartera ha alcanzado su límite. Usa monedas en sobres y vuelve a intentar la jugada.",
+      "identity": "Tu sesión ha cambiado o caducado. Vuelve a entrar en tu cuenta.",
+      "unavailable": "El combate online no está disponible ahora. Tu colección se conserva. Puedes seguir usando la práctica libre.",
+      "uncertain": "Se perdió la conexión. Recupera la jugada pendiente para comprobar si se guardó.",
+      "storage": "No se ha podido guardar la jugada pendiente en este navegador. Habilita el almacenamiento y recarga.",
+      "invalid_data": "No se pudo comprobar la respuesta del servidor. Recupera la jugada o actualiza la partida."
+    },
+    "refresh": "Actualizar partida"
   }
 }

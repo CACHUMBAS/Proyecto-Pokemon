@@ -56,6 +56,12 @@ export const router = createBrowserRouter([
           Component: (await import('../features/collection/CollectionPage')).CollectionPage,
         }),
       },
+      {
+        path: '/combate',
+        lazy: async () => ({
+          Component: (await import('../features/online-battle/OnlineBattlePage')).OnlineBattlePage,
+        }),
+      },
       { path: '*', element: <NotFoundPage /> },
     ],
   },

@@ -53,3 +53,5 @@ Files: src/features/collection/*, router, navegación, perfil, ES/EN.
 - Runtime, 2026-10-20: tras el error de tabla ya existente y la indicación de ROLLBACK, el usuario confirmó «collection: isolation, atomicity and idempotency passed» en Supabase. No repetir la migración. Se abrió la ruta local /coleccion para elegir inicial, abrir bienvenida y verificar nueve copias tras recarga; pendiente de respuesta.
 
 - Runtime UI, 2026-10-20: cuenta real con nueve copias tras recarga; bienvenida consumida y resultado recuperado desde historial sin aumentar inventario. Duplicados, última copia protegida, cancelación con Escape, ES/EN y 320/390/1440 comprobados. No se fragmentaron cartas del usuario ni se concedieron monedas. Tipos de Pokémon y plural de copias corregidos; lint, build/typecheck e i18next ES/EN correctos. Publicación pendiente de autorización; ningún cambio en rama de producción.
+
+- Cierre 2026-10-20: usuario autorizó publicación; fast-forward a chore/vercel-lumemon y push en 462b5c9. Vercel Production READY y alias lumemon.vercel.app verificados. /coleccion pública como invitado comprobada. Publicación ya completada.

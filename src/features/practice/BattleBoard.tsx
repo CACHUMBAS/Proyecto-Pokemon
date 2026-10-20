@@ -16,6 +16,8 @@ import { fighterMotion } from './fighter-motion'
 import { describe } from './event-description'
 
 interface Props {
+  modeLabel?: string
+  finishedNote?: string
   guide?: ReactNode
   allowedAction?: BattleAction | null
   motion: boolean
@@ -31,6 +33,8 @@ interface Props {
   onRematch: () => void
 }
 export function BattleBoard({
+  modeLabel,
+  finishedNote,
   guide,
   allowedAction,
   battle,
@@ -72,11 +76,12 @@ export function BattleBoard({
           <div>
             <h2>{t('practice.' + resultKey(battle.result))}</h2>
             <p>
-              {t(
-                battle.result.kind === 'draw' && battle.result.reason === 'turn-limit'
-                  ? 'practice.turnLimit'
-                  : 'practice.finishedNote',
-              )}
+              {finishedNote ??
+                t(
+                  battle.result.kind === 'draw' && battle.result.reason === 'turn-limit'
+                    ? 'practice.turnLimit'
+                    : 'practice.finishedNote',
+                )}
             </p>
           </div>
           <Button disabled={playing} onClick={onRematch}>
@@ -93,7 +98,7 @@ export function BattleBoard({
         >
           <div className="practice-arena-top">
             <span className="micro-label">LUMEMON / ARENA 01</span>
-            <span>{t('practice.local')}</span>
+            <span>{modeLabel ?? t('practice.local')}</span>
           </div>
           <div className="practice-duel">
             {([0, 1] as const).map((side) => {

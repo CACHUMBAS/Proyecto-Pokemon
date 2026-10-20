@@ -13,7 +13,7 @@
     "preview": "vite preview --host 127.0.0.1 --port 4174 --strictPort",
     "lint": "eslint . --max-warnings 0",
     "typecheck": "tsc --noEmit",
-    "test": "node --test src/catalog/*.test.ts src/battle/*.test.ts scripts/catalog/*.test.ts src/audio/*.test.ts src/account/*.test.ts src/collection/*.test.ts scripts/database/*.test.ts",
+    "test": "node --test src/catalog/*.test.ts src/battle/*.test.ts scripts/catalog/*.test.ts src/audio/*.test.ts src/account/*.test.ts src/collection/*.test.ts scripts/database/*.test.ts src/online-battle/*.test.ts server/*.test.ts",
     "catalog:import": "node scripts/catalog/import.ts",
     "battle:check": "node scripts/battle/generate.ts --check",
     "battle:generate": "node scripts/battle/generate.ts --write",
