@@ -127,12 +127,14 @@
 
 @media (max-width: 700px) {
   .main-nav {
-    gap: 4px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px 6px;
   }
   .main-nav a {
     min-width: 0;
-    font-size: 11px;
-    flex: 1;
+    min-height: 44px;
+    font-size: 12px;
   }
 }
 

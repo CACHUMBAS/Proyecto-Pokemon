@@ -27,3 +27,7 @@ Dominio estable confirmado: https://lumemon.vercel.app.
 5. Comprobar registro, confirmación, alias persistido, cierre de sesión y recuperación. SMTP propio sigue siendo necesario para correo a personas ajenas al equipo.
 
 No usar la URL de la API de Supabase como Site URL. El proyecto de base de datos se mantiene al actualizar el frontend: un push no debe ejecutar migraciones ni reiniciar datos automáticamente.
+
+## Colección preparada en rama — 2026-10-20
+
+feat/online-collection-packs incorpora colección y sobres, con migración independiente. La web pública no se ha actualizado con este bloque. Primero completar la [activación y prueba de colección](COLECCION-ONLINE.md), revisar la vista previa y obtener autorización para integrar en chore/vercel-lumemon. Un push a la rama de funcionalidad puede generar Preview, pero no aplica SQL ni autoriza cambiar producción.

@@ -34,7 +34,7 @@ function unique(items: string[]) {
 export function parseReceipt(input: unknown, userId: string): CollectionReceipt {
   const r = record(input)
   check(r.user_id === userId && uuid(r.request_id) && id(r.reference))
-  check(['starter', 'pack', 'fragment'].includes(String(r.kind)))
+  check(typeof r.kind === 'string' && ['starter', 'pack', 'fragment'].includes(r.kind))
   const cards = list(r.card_ids, 6)
   check(cards.every(id))
   check(
@@ -56,7 +56,8 @@ export function parseReceipt(input: unknown, userId: string): CollectionReceipt 
     check(
       cards.length === 3 &&
         r.quantity === 3 &&
-        ['welcome', 'coins', 'fragments'].includes(String(r.currency)),
+        typeof r.currency === 'string' &&
+        ['welcome', 'coins', 'fragments'].includes(r.currency),
     )
     if (r.currency === 'welcome') check(r.coins_delta === 0 && r.fragments_delta === 0)
     if (r.currency === 'coins') check(r.coins_delta < 0 && r.fragments_delta === 0)
@@ -89,7 +90,8 @@ export function parseCollection(input: unknown, userId: string): CollectionSnaps
     check(
       id(c.card_id) &&
         integer(c.species_id, 1) &&
-        budgets.includes(Number(c.budget)) &&
+        typeof c.budget === 'number' &&
+        budgets.includes(c.budget) &&
         integer(c.fragment_value, 1, 1000000),
     ),
   )
@@ -114,7 +116,8 @@ export function parseCollection(input: unknown, userId: string): CollectionSnaps
   unique(odds.map((o) => String(o.budget)))
   odds.forEach((o) =>
     check(
-      budgets.includes(Number(o.budget)) &&
+      typeof o.budget === 'number' &&
+        budgets.includes(o.budget) &&
         integer(o.weight, 1, 10000) &&
         integer(o.card_count, 1) &&
         o.card_count === cards.filter((c) => c.budget === o.budget).length,
@@ -132,7 +135,11 @@ export function parsePending(input: unknown): PendingOperation {
   check(uuid(p.requestId))
   if (c.kind === 'starter') check(id(c.starterId))
   else if (c.kind === 'pack')
-    check(id(c.packId) && ['welcome', 'coins', 'fragments'].includes(String(c.currency)))
+    check(
+      id(c.packId) &&
+        typeof c.currency === 'string' &&
+        ['welcome', 'coins', 'fragments'].includes(c.currency),
+    )
   else if (c.kind === 'fragment') check(id(c.cardId) && integer(c.quantity, 1, 1000000))
   else check(false)
   return structuredClone(p) as unknown as PendingOperation

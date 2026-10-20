@@ -6,7 +6,7 @@ Un universo web de cartas Pokémon y combates por turnos, para móvil y ordenado
 
 Desde el 12 de octubre de 2026, el proyecto se llama **Lumemon** (antes PokePrisma). El repositorio sigue siendo `CACHUMBAS/Proyecto-Pokemon` y la carpeta local conserva su nombre. Las claves `pokeprisma.locale.v1` y `pokeprisma.team-draft.v1`, los IDs y el origen interno `pokeprisma` se mantienen para conservar los datos existentes. Las rutas, ramas y documentos históricos pueden contener el nombre anterior.
 
-**Estado: catálogo, constructor de prueba, práctica local y cuentas con perfil online.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Registro, acceso, recuperación y alias privado usan Supabase; requieren la [configuración online](docs/CUENTAS-ONLINE.md). Colección, sobres, economía y combates online siguen pendientes.
+**Estado: catálogo, constructor de prueba, práctica local y cuentas con perfil online.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Registro, acceso, recuperación y alias privado usan Supabase; requieren la [configuración online](docs/CUENTAS-ONLINE.md). La rama feat/online-collection-packs añade colección, sobres y economía transaccional; requiere activar la [migración de colección](docs/COLECCION-ONLINE.md). Su validación real y publicación siguen pendientes, al igual que recompensas y combates online.
 
 ## Abrir en VS Code
 
@@ -36,6 +36,7 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 ## Qué se puede probar
 
 - `/`: portada, carrusel manual de tres cartas, presentación y recorrido del proyecto.
+- `/coleccion` y `/sobres`: inventario por cuenta, inicial único, bienvenida gratuita, aperturas y fragmentos. Requieren activar y comprobar el SQL de colección.
 - `/catalogo`: las 1.025 especies, búsqueda por nombre o número nacional y filtros combinables por generación, tipo de Pokémon, rareza y expansión. Los filtros se guardan en la URL.
 - `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
 - `/equipo`: constructor de un equipo de prueba de seis especies, selección de ilustraciones, cambio de primer Pokémon y guardado local.
@@ -60,7 +61,8 @@ En la práctica, pulsa **Activar audio**. En sus ajustes puedes elegir entre cua
 - `src/features`: portada, catálogo, fichas de especie, muestras y ruta no encontrada.
 - `src/catalog`: contratos, normalización, consulta y pruebas del catálogo.
 - `src/account`: configuración, validación, sesión y adaptador Supabase.
-- `supabase`: migración de perfil privado y prueba SQL de permisos.
+- `src/collection`: contratos, validación, cliente y controlador de inventario.
+- `supabase`: migraciones de perfil y colección con pruebas SQL de permisos y transacciones.
 - `src/battle`: composición de equipos, cálculo de daño y motor local de turnos con sus pruebas.
 - `scripts/catalog`: importación, caché y validación de cobertura.
 - `public/catalog`: manifiesto e instantáneas versionadas; índice y un archivo de variantes por especie.
@@ -86,6 +88,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Contexto para agentes](docs/CONTEXTO-IA.md).
 - [Empezar con Antigravity](docs/GUIA-ANTIGRAVITY.md).
 - [Configurar y comprobar cuentas online](docs/CUENTAS-ONLINE.md).
+- [Activar y comprobar colección y sobres](docs/COLECCION-ONLINE.md).
 - [Despliegue conectado a GitHub en Vercel](docs/DESPLIEGUE-VERCEL.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).

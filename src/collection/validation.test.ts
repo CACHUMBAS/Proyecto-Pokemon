@@ -48,3 +48,63 @@ test('pending commands survive reload but invalid persisted commands are rejecte
   ])
     assert.throws(() => parsePending(bad))
 })
+
+test('rejects coerced receipt enums before validating economic deltas', () => {
+  const pack = {
+    ...receiptFixture(),
+    kind: 'pack',
+    reference: 'prisma-v1',
+    quantity: 3,
+    card_ids: ['base1-44', 'base1-46', 'base1-63'],
+    currency: 'coins',
+    coins_delta: -100,
+  }
+  const malformed = [
+    { ...pack, currency: ['coins'], coins_delta: 999 },
+    { ...pack, currency: new String('coins') },
+    { ...receiptFixture(), kind: ['starter'], quantity: 1, card_ids: ['alba'], fragments_delta: 5 },
+  ]
+  for (const bad of malformed) {
+    assert.throws(() => parseReceipt(bad, TEST_USER), { code: 'invalidData' })
+    assert.throws(() => parseCollection({ ...collectionFixture(), events: [bad] }, TEST_USER), {
+      code: 'invalidData',
+    })
+  }
+})
+
+test('rejects coerced budgets in definitions and rarity probabilities', () => {
+  const base = collectionFixture()
+  const stringifyBudgets = {
+    ...base,
+    cards: base.cards.map((card) => ({ ...card, budget: String(card.budget) })),
+    pack: {
+      ...base.pack,
+      odds: base.pack.odds.map((odd) => ({ ...odd, budget: String(odd.budget) })),
+    },
+  }
+  assert.throws(() => parseCollection(stringifyBudgets, TEST_USER), { code: 'invalidData' })
+  assert.throws(
+    () =>
+      parseCollection(
+        {
+          ...base,
+          cards: base.cards.map((card) => ({ ...card, budget: [card.budget] })),
+        },
+        TEST_USER,
+      ),
+    { code: 'invalidData' },
+  )
+})
+
+test('rejects coerced currencies in persisted pending operations', () => {
+  for (const currency of [['coins'], new String('welcome')]) {
+    assert.throws(
+      () =>
+        parsePending({
+          requestId: TEST_REQUEST,
+          command: { kind: 'pack', packId: 'prisma-v1', currency },
+        }),
+      { code: 'invalidData' },
+    )
+  }
+})

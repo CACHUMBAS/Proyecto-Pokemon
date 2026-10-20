@@ -2,7 +2,7 @@
 
 ## Alcance de esta entrega
 
-Registro, acceso, cierre de sesión local, recuperación de contraseña y perfil privado con alias en /cuenta. La práctica y el borrador de equipo siguen siendo locales y públicos. Colección, monedas, fragmentos, sobres, recompensas y PvP todavía no están conectados.
+Registro, acceso, cierre de sesión local, recuperación de contraseña y perfil privado con alias en /cuenta. La práctica y el borrador de equipo siguen siendo locales y públicos. La rama feat/online-collection-packs implementa colección, saldos, fragmentos y sobres; su activación real se detalla en [Colección online](COLECCION-ONLINE.md). Recompensas y PvP siguen pendientes. El borrador local y la práctica no prueban propiedad.
 
 El cliente oficial de Supabase se carga con la ruta de cuenta. Verifica la identidad con Auth antes de leer el perfil y descarta respuestas de sesiones anteriores. La recuperación necesita un evento PASSWORD_RECOVERY del SDK para el usuario verificado; visitar la ruta por sí solo no habilita cambiar la contraseña. Volver a enfocar la pestaña o renovar el token de la misma cuenta conserva el formulario.
 
