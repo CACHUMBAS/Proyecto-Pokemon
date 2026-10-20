@@ -35,7 +35,8 @@ Files: src/features/collection/*, router, navegación, perfil, ES/EN.
 - [x] Una revisión independiente del diff, de permisos y de límites de validación.
 - [x] Corregir hallazgos importantes con regresiones.
 - [x] Actualizar contexto/guías, commit/push y sincronización.
-- [ ] Guiar al usuario para ejecutar SQL y prueba en Supabase; publicar solo conforme autorización.
+- [x] Guiar al usuario para ejecutar SQL y prueba en Supabase.
+- [ ] Comprobar recorrido autenticado y publicar solo conforme autorización.
 ## Ledger
 - Ruling: continuar con el alcance solicitado y las decisiones explícitas del usuario sin nuevas rondas de permiso para documentos; conservar una carpeta/una rama, como en los bloques anteriores, para que VS Code muestre el trabajo. No implementadores paralelos.
 - Ruling: separar recompensas de combate porque la práctica local acepta estado del navegador; conceder monedas ahí permitiría falsificar victorias. Este bloque habilita la colección y el sobre de bienvenida, y deja clara esa limitación.
@@ -47,3 +48,5 @@ Files: src/features/collection/*, router, navegación, perfil, ES/EN.
 
 - Delivery: 10f1f32 y 231d7c6 subidos a origin/feat/online-collection-packs; árbol limpio y divergencia 0/0 verificados. Se conserva producción sin integrar; pendiente la respuesta del usuario al reintento de SQL.
 - Ruling: seguir el permiso ya existente para commit/push sin repetir menú de integración. No fusionar ni publicar el bloque sin su autorización.
+
+- Runtime, 2026-10-20: tras el error de tabla ya existente y la indicación de ROLLBACK, el usuario confirmó «collection: isolation, atomicity and idempotency passed» en Supabase. No repetir la migración. Se abrió la ruta local /coleccion para elegir inicial, abrir bienvenida y verificar nueve copias tras recarga; pendiente de respuesta.

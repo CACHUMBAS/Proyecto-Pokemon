@@ -2,13 +2,13 @@
 
 ## Estado — 2026-10-20
 
-Implementados en la rama `feat/online-collection-packs`, desde `969d8b4`; implementación inicial `10f1f32`. Activación en Supabase y comprobación autenticada pendientes. El primer intento comunicado por el usuario devolvió «query: Too small: expected string to have >=1 characters», que indica consulta vacía; no confirma ejecución del SQL. Producción sigue en `chore/vercel-lumemon` y no incorpora este bloque.
+Implementados en la rama `feat/online-collection-packs`, desde `969d8b4`; implementación inicial `10f1f32`. El usuario confirmó el 2026-10-20 «collection: isolation, atomicity and idempotency passed» en el proyecto Supabase real. Antes informó consulta vacía y después collection_cards ya existente; se le indicó ROLLBACK y la prueba transaccional. No se borraron tablas ni se cambió la migración para omitir errores. Falta comprobar el recorrido autenticado en la web. Producción sigue en `chore/vercel-lumemon` y no incorpora este bloque.
 
 La colección es independiente del catálogo público y del equipo local de prueba. No concede monedas por victorias de práctica, no importa el borrador local ni habilita PvP.
 
 ## Activación en el proyecto existente
 
-El perfil y las cuentas ya funcionan. Conservar sus datos, variables públicas y URLs de retorno.
+El perfil y las cuentas ya funcionan. Conservar sus datos, variables públicas y URLs de retorno. En este proyecto los pasos SQL 1–4 ya están completados según la prueba confirmada: no repetir la migración. Continuar por el paso 5. Los pasos iniciales se conservan como referencia para un proyecto nuevo.
 
 1. Abrir [la migración de colección](../supabase/migrations/202610200001_collection.sql) en VS Code. Copiar todo el contenido, no el nombre ni la ruta.
 2. En Supabase → SQL Editor → nueva consulta, pegarlo. Debe empezar por `-- Lumemon economy v1` y terminar en `commit;`. Ejecutar una sola vez. Resultado esperado: Success, sin errores.
@@ -52,6 +52,7 @@ El cliente valida tipos exactos, identidad, versiones, cantidades, rarezas, prob
 - Catorce pruebas del cliente: datos corruptos, doble envío, respuesta incierta, recuperación de recibos, respuestas tardías y fallo de almacenamiento.
 - Revisión independiente completada: ningún hallazgo crítico/importante; un hallazgo menor de coerción de tipos corregido con tres regresiones RED → GREEN.
 - Navegador local, sesión invitada: /coleccion y /sobres, ES/EN, navegación con teclado, 320/390/1440 px sin desbordamiento horizontal. Menú móvil ajustado a dos filas. Se observó una advertencia de React Router sobre HydrateFallback; no se observó error JavaScript.
-- Pendientes: migración y prueba en Supabase real, pantallas autenticadas, elección/apertura reales, dos cuentas/dispositivos y conexiones independientes concurrentes. PGlite usa ejecución serial y no demuestra esta última propiedad.
+- Supabase real: el usuario confirmó la prueba transaccional de aislamiento, atomicidad e idempotencia.
+- Pendientes: pantallas autenticadas, elección/apertura reales, dos cuentas/dispositivos y conexiones independientes concurrentes. PGlite usa ejecución serial y no demuestra esta última propiedad.
 
 No considerar la publicación, el SMTP público ni las recompensas de combate completados por estas pruebas.

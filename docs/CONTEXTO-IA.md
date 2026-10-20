@@ -1,6 +1,6 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-20 (colección implementada en rama; activación real pendiente). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-20 (colección en rama; prueba SQL real confirmada, UI autenticada pendiente). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Bloque activo: colección y sobres — 2026-10-20
 
@@ -8,11 +8,11 @@ Rama `feat/online-collection-packs` desde `969d8b4`; implementación inicial `10
 
 La base de datos decide identidad, saldo, azar y propiedad. Cuatro RPC, RLS, bloqueo de cartera y recibos por UUID evitan dobles concesiones/cobros; el cliente conserva el UUID ante incertidumbre y descarta respuestas de sesiones anteriores. Bienvenida de tres cartas; precio normal 100 monedas o 60 fragmentos. Monedas iniciales cero. No conectar victorias de práctica a premios: el cliente todavía controla esas partidas.
 
-Estado externo: migración real, prueba de permisos y UI autenticada pendientes. El primer intento del usuario informó consulta vacía; se le indicó copiar el contenido completo del archivo. La rama pública sigue en `chore/vercel-lumemon`; no integrar ni cambiar Branch Tracking sin autorización. /equipo sigue siendo borrador local; las cartas poseídas todavía no limitan la práctica.
+Estado externo: el usuario confirmó el 2026-10-20 el resultado «collection: isolation, atomicity and idempotency passed» al ejecutar supabase/tests/collection.sql en su proyecto real. Antes informó consulta vacía y después tabla collection_cards ya existente; se indicó ROLLBACK y la prueba, sin borrar ni recrear tablas. Esta evidencia procede del usuario. Falta comprobar la UI autenticada. La rama pública sigue en `chore/vercel-lumemon`; no integrar ni cambiar Branch Tracking sin autorización. /equipo sigue siendo borrador local; las cartas poseídas todavía no limitan la práctica.
 
-Evidencia local: 215 pruebas, lint y build/typecheck correctos. Revisión independiente sin hallazgos críticos/importantes; se corrigió coerción de tipos con tres regresiones. Navegador invitado ES/EN, 320/390/1440, rutas y teclado sin desbordamiento observado; menú móvil corregido. Advertencia de React Router HydrateFallback observada, sin error JavaScript. Falta comprobar pantallas autenticadas y Supabase real; PGlite no prueba concurrencia de conexiones independientes.
+Evidencia local: 215 pruebas, lint y build/typecheck correctos. Revisión independiente sin hallazgos críticos/importantes; se corrigió coerción de tipos con tres regresiones. Navegador invitado ES/EN, 320/390/1440, rutas y teclado sin desbordamiento observado; menú móvil corregido. Advertencia de React Router HydrateFallback observada, sin error JavaScript. Falta comprobar pantallas autenticadas; la prueba SQL en Supabase fue confirmada por el usuario. PGlite no prueba concurrencia de conexiones independientes.
 
-Instrucciones exactas y límites: [Colección online](COLECCION-ONLINE.md). Siguiente paso dentro de este bloque: completar SQL y prueba transaccional, probar inicial/bienvenida con el usuario y preparar integración pública revisable. Las recompensas de combate en servidor son otro bloque.
+Instrucciones exactas y límites: [Colección online](COLECCION-ONLINE.md). Siguiente paso dentro de este bloque: probar inicial/bienvenida con el usuario y preparar integración pública revisable. Las recompensas de combate en servidor son otro bloque.
 
 ## Base que debe conservarse
 
@@ -64,7 +64,7 @@ El proyecto anterior de Procurador Tomás está fuera de alcance. No reutilices 
 | Práctica local | `/practica`: selección de seis, variantes, hasta tres apoyos opcionales, kits de apoyo visibles del rival, tablero, bot, estados, recargas, cambios, KO, registro, resultado, resumen comparativo final y revancha; ES/EN y móvil | Sin reloj, cuenta, recompensas ni guardado de partida; recibe una copia opcional de `/equipo` sin modificar el borrador |
 | Tutorial guiado | Entrada opcional en `/practica`, equipo preparado, cinco pasos, Rayo, tipos/recarga, cambio a Jigglypuff, sueño y continuación libre; ES/EN | Sin guardar progreso; conserva la selección normal y permite omitir la guía entre secuencias |
 | Cuenta online | /cuenta: registro, acceso, salida, recuperación y alias privado con Supabase; ES/EN | Registro, confirmación, alias y recuperación comprobados por el usuario en producción; SMTP para destinatarios externos pendiente; todavía no guarda inventario, equipo ni recompensas |
-| Colección y sobres | /coleccion y /sobres: inicial único, bienvenida, inventario, probabilidades, historial y fragmentación; economía transaccional en SQL | Implementado en rama; activación y UI autenticada pendientes; sin recompensas de combate |
+| Colección y sobres | /coleccion y /sobres: inicial único, bienvenida, inventario, probabilidades, historial y fragmentación; economía transaccional en SQL | Implementado en rama; prueba SQL real confirmada; UI autenticada pendiente; sin recompensas de combate |
 | Guardado local | IDs versionados, recuperación contra catálogo, avisos de almacenamiento, reintento de red, detección de escrituras obsoletas y escucha de cambios entre pestañas | No sincroniza dispositivos ni sustituye un servidor transaccional |
 
 La instantánea `523febef1a683029` contiene 1.025 especies, 23.770 registros de cartas (20.132 Pokémon y 3.638 apoyos), 129 asociaciones ambiguas y 1.357 registros sin imagen en la fuente. Los respaldos locales de imágenes no modifican esos contadores originales. Verifica cifras futuras en `public/catalog/manifest.json`; no afirmes cobertura de todas las ediciones históricas o japonesas.
