@@ -34,7 +34,7 @@ function AccountFrame({ children }: { children: ReactNode }) {
               <p>{t('account.stepProfileText')}</p>
             </div>
           </li>
-          <li className="account-step-pending">
+          <li>
             <span>03</span>
             <div>
               <strong>{t('account.stepCollection')}</strong>

@@ -1,6 +1,7 @@
 import { useRef, useState, type FormEvent } from 'react'
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router'
 import { Button } from '../../components/ui/Button'
 import { saveDisplayName, accountErrorCode } from '../../account/gateway'
 import { normalizeDisplayName, type PlayerProfile as Profile } from '../../account/validation'
@@ -73,6 +74,9 @@ export function PlayerProfile({
           </p>
         )}
       </form>
+      <Link className="button button-secondary" to="/coleccion">
+        {t('collection.tabCollection')} ↗
+      </Link>
       <p className="account-scope">{t('account.profileScope')}</p>
     </section>
   )

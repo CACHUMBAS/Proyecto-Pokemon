@@ -14,7 +14,8 @@
     "catalog": "Catálogo",
     "team": "Mi equipo",
     "practice": "Práctica",
-    "account": "Cuenta"
+    "account": "Cuenta",
+    "collection": "Colección"
   },
   "common": {
     "development": "En desarrollo",
@@ -576,13 +577,13 @@
   "account": {
     "eyebrow": "PASAPORTE LUMEMON",
     "title": "Tu aventura.\nTu identidad.",
-    "description": "Crea tu cuenta y dale un nombre a tu próxima historia. Tu perfil te acompañará cuando conectemos la colección y el progreso.",
+    "description": "Crea tu cuenta y dale un nombre a tu próxima historia. Tu perfil y tu colección se guardan online.",
     "stepIdentity": "Una cuenta propia",
     "stepIdentityText": "Accede con tu correo y contraseña.",
     "stepProfile": "Tu nombre de entrenador",
     "stepProfileText": "Un perfil privado guardado online.",
-    "stepCollection": "Próxima parada: colección",
-    "stepCollectionText": "Sobres y recompensas se conectarán en el siguiente paso.",
+    "stepCollection": "Tu propia colección",
+    "stepCollectionText": "Un equipo inicial, sobres y cartas guardadas en tu cuenta.",
     "practiceLink": "Seguir practicando",
     "chooseAction": "Opciones de cuenta",
     "signin": "Iniciar sesión",
@@ -600,7 +601,7 @@
     "displayName": "Nombre de entrenador",
     "nameHint": "Entre 3 y 24 caracteres. No tiene que ser tu nombre real.",
     "saveName": "Guardar nombre",
-    "profileScope": "Este perfil se guarda online. El equipo y los combates de Práctica siguen siendo locales; todavía no generan colección ni recompensas.",
+    "profileScope": "Tu perfil y colección se guardan online. Mi equipo y los combates de Práctica siguen siendo locales y no dan recompensas.",
     "loading": "Comprobando tu sesión…",
     "loadErrorTitle": "No hemos podido cargar tu perfil",
     "loadError": "Comprueba tu conexión e inténtalo de nuevo. Tus datos no se han sustituido por un perfil vacío.",
@@ -645,6 +646,127 @@
       "checkEmail": "Si el registro puede completarse con ese correo, recibirás un enlace de confirmación. Revisa también spam; si ya tienes cuenta, inicia sesión o recupera el acceso.",
       "resetSent": "Si existe una cuenta con ese correo, recibirás un enlace de recuperación. Revisa también spam.",
       "passwordUpdated": "Contraseña actualizada. Ya puedes usarla para acceder."
+    }
+  },
+  "collection": {
+    "eyebrow": "TU ARCHIVO DE CARTAS",
+    "heading": "Cada carta, una historia.",
+    "intro": "Tu colección vive en tu cuenta. Elige tu primer equipo y descubre lo que guarda tu sobre de bienvenida.",
+    "packHeading": "El próximo destello.",
+    "packIntro": "Tres cartas por descubrir. Un resultado guardado para volver a él cuando quieras.",
+    "sections": "Colección y sobres",
+    "tabCollection": "Mi colección",
+    "tabPacks": "Sobres",
+    "loading": "Cargando tu colección…",
+    "busy": "Guardando la operación…",
+    "retryOperation": "Comprobar y reintentar la operación",
+    "refresh": "Actualizar colección",
+    "guest": {
+      "eyebrow": "UNA COLECCIÓN PROPIA",
+      "title": "Empieza con tu cuenta.",
+      "description": "Accede para escoger tus seis primeras cartas, recibir tu sobre de bienvenida y guardar la colección online.",
+      "login": "Entrar o crear cuenta"
+    },
+    "wallet": {
+      "title": "Saldos y colección",
+      "coins": "Monedas",
+      "fragments": "Fragmentos",
+      "cards": "Cartas",
+      "saved": "GUARDADO ONLINE"
+    },
+    "starter": {
+      "eyebrow": "EL PRIMER EQUIPO",
+      "title": "¿Con quién empieza tu aventura?",
+      "description": "Escoge seis compañeros. Recibirás estas variantes una sola vez por cuenta y un sobre gratuito para estrenar tu colección.",
+      "names": {
+        "alba": "Alba",
+        "brasa": "Brasa",
+        "niebla": "Niebla"
+      },
+      "gift": "+ Un sobre de bienvenida",
+      "choose": "Elegir este equipo",
+      "balance": "Los tres equipos suman 1.440 puntos de presupuesto: seis variantes comunes de 240. El equilibrio entre equipos seguirá ajustándose con partidas de prueba."
+    },
+    "tiers": {
+      "240": "Común",
+      "252": "Poco común",
+      "264": "Rara",
+      "276": "Ilustración rara",
+      "288": "Ilustración especial"
+    },
+    "inventory": {
+      "eyebrow": "CARTAS QUE TE PERTENECEN",
+      "title": "Tu colección",
+      "toPacks": "Descubrir sobres",
+      "search": "Buscar",
+      "placeholder": "Nombre, carta o expansión",
+      "tier": "Rareza de Lumemon",
+      "type": "Tipo",
+      "all": "Todas",
+      "duplicates": "Solo duplicados",
+      "count": "{{count}} de {{total}} variantes",
+      "spare": "{{count}} copias sobrantes",
+      "lastCopy": "Tu última copia se conserva.",
+      "fragment": "Cambiar una copia · +{{count}} ◇",
+      "empty": "No hay cartas que coincidan con estos filtros.",
+      "localTeam": "Mi equipo y Práctica siguen siendo modos locales de prueba. Las recompensas por combate todavía no están conectadas."
+    },
+    "packs": {
+      "eyebrow": "SOBRE LUMEMON · VOLUMEN 01",
+      "title": "Prisma",
+      "description": "Tres cartas entre {{count}} variantes ya preparadas para combatir. Cada elección es independiente: también pueden aparecer duplicados.",
+      "welcome": "Tu primera apertura corre de nuestra cuenta.",
+      "welcomeText": "Un sobre gratuito por cuenta, disponible después de elegir el equipo inicial.",
+      "openWelcome": "Abrir bienvenida · Gratis",
+      "coins": "{{count}} monedas",
+      "fragments": "{{count}} fragmentos",
+      "noRewards": "Las monedas se obtendrán en combates validados por el servidor. Por ahora puedes usar la bienvenida y los fragmentos de tus duplicados; la práctica local no da recompensas.",
+      "oddsTitle": "Conoce tus posibilidades.",
+      "oddsText": "Probabilidades por cada una de las tres cartas. Dentro de cada grupo, todas las variantes tienen la misma probabilidad. No se garantiza una rareza por sobre. Son reglas propias de Lumemon, no probabilidades de los sobres comerciales.",
+      "variants": "{{count}} variantes",
+      "pool": "Ver todas las variantes y su probabilidad por carta",
+      "history": "Tus últimas aperturas",
+      "historyText": "Mostramos las aperturas incluidas en tus últimas 20 operaciones. Verlas de nuevo no consume saldo.",
+      "view": "Ver cartas",
+      "noHistory": "Todavía no has abierto ningún sobre.",
+      "paid": {
+        "welcome": "Bienvenida gratuita",
+        "coins": "Pagado con monedas",
+        "fragments": "Pagado con fragmentos"
+      }
+    },
+    "result": {
+      "saved": "RESULTADO GUARDADO",
+      "title": "Ya forman parte de tu colección.",
+      "description": "Puedes revelar las cartas ahora o consultarlas después en el historial. La animación no cambia el resultado.",
+      "reveal": "Revelar mis cartas",
+      "skip": "Mostrar todas sin animación",
+      "starter": "Tu equipo inicial ya está guardado. Puedes abrir tu sobre de bienvenida en Sobres.",
+      "fragment": "Duplicado convertido: +{{count}} fragmentos. Conservas la última copia."
+    },
+    "confirm": {
+      "eyebrow": "CONFIRMA TU ELECCIÓN",
+      "starter": "Recibirás estas seis cartas y un sobre de bienvenida. Solo puedes elegir un equipo inicial por cuenta; después no podrás cambiar esta elección.",
+      "welcome": "Abrirás tu único sobre gratuito de bienvenida. Las tres cartas quedarán guardadas en tu colección.",
+      "coins": "Se descontarán {{count}} monedas y recibirás tres cartas. Esta apertura no se puede deshacer.",
+      "fragments": "Se descontarán {{count}} fragmentos y recibirás tres cartas. Esta apertura no se puede deshacer.",
+      "fragment": "Convertirás una copia sobrante en {{count}} fragmentos. Conservarás al menos una copia de esta variante. Esta conversión no se puede deshacer.",
+      "cancel": "Volver",
+      "accept": "Confirmar"
+    },
+    "errors": {
+      "request": "No se ha podido actualizar la colección. Comprueba la conexión y vuelve a intentarlo.",
+      "unavailable": "La colección aún no está habilitada en esta instalación. Falta aplicar su actualización de base de datos.",
+      "identity": "La sesión ha cambiado. Vuelve a entrar en tu cuenta antes de continuar.",
+      "invalidData": "No se ha podido verificar la respuesta de la colección. Actualiza la página antes de continuar.",
+      "storage": "El navegador no permite guardar el identificador de la operación. Habilita el almacenamiento de esta web para poder reintentarla con seguridad.",
+      "uncertain": "Estamos comprobando si la operación se guardó. Usa el mismo reintento; no se cobrará dos veces.",
+      "insufficient_balance": "No tienes saldo suficiente. Hemos vuelto a consultar tu cartera.",
+      "starter_claimed": "Esta cuenta ya tiene un equipo inicial. Hemos actualizado tu colección.",
+      "starter_required": "Primero elige tu equipo inicial en Mi colección.",
+      "welcome_used": "El sobre de bienvenida ya se utilizó. Revisa tus últimas aperturas.",
+      "last_copy": "No quedan copias sobrantes para convertir. Tu última copia se conserva.",
+      "request_conflict": "Este intento no coincide con la operación guardada. Actualiza la colección y revisa el historial."
     }
   }
 }

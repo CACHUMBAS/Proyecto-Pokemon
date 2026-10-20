@@ -25,6 +25,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             {t('nav.home')}
           </NavLink>
           <NavLink to="/catalogo">{t('nav.catalog')}</NavLink>
+          <NavLink to="/coleccion">{t('nav.collection')}</NavLink>
           <NavLink to="/equipo">{t('nav.team')}</NavLink>
           <NavLink to="/practica">{t('nav.practice')}</NavLink>
           <NavLink to="/cuenta">{t('nav.account')}</NavLink>

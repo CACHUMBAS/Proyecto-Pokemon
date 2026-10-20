@@ -14,7 +14,8 @@
     "catalog": "Catalogue",
     "team": "My team",
     "practice": "Practice",
-    "account": "Account"
+    "account": "Account",
+    "collection": "Collection"
   },
   "common": {
     "development": "In development",
@@ -570,13 +571,13 @@
   "account": {
     "eyebrow": "LUMEMON PASSPORT",
     "title": "Your adventure.\nYour identity.",
-    "description": "Create your account and give your next story a name. Your profile will be ready when collection and progress arrive.",
+    "description": "Create your account and name your next story. Your profile and collection are saved online.",
     "stepIdentity": "An account of your own",
     "stepIdentityText": "Sign in with your email and password.",
     "stepProfile": "Your trainer name",
     "stepProfileText": "A private profile saved online.",
-    "stepCollection": "Next stop: collection",
-    "stepCollectionText": "Packs and rewards will connect in the next step.",
+    "stepCollection": "Your own collection",
+    "stepCollectionText": "A starter team, packs and cards saved to your account.",
     "practiceLink": "Keep practising",
     "chooseAction": "Account options",
     "signin": "Sign in",
@@ -594,7 +595,7 @@
     "displayName": "Trainer name",
     "nameHint": "Between 3 and 24 characters. It does not have to be your real name.",
     "saveName": "Save name",
-    "profileScope": "This profile is saved online. Your team and Practice battles are still local; they do not award collection cards or rewards yet.",
+    "profileScope": "Your profile and collection are saved online. My team and Practice battles remain local and do not grant rewards.",
     "loading": "Checking your session…",
     "loadErrorTitle": "We could not load your profile",
     "loadError": "Check your connection and try again. Your data has not been replaced with an empty profile.",
@@ -639,6 +640,127 @@
       "checkEmail": "If registration can proceed with this email, you will receive a confirmation link. Check spam too; if you already have an account, sign in or recover access.",
       "resetSent": "If an account exists for this email, you will receive a recovery link. Check spam too.",
       "passwordUpdated": "Password updated. You can now use it to sign in."
+    }
+  },
+  "collection": {
+    "eyebrow": "YOUR CARD ARCHIVE",
+    "heading": "Every card, a story.",
+    "intro": "Your collection belongs to your account. Choose your first team and discover your welcome pack.",
+    "packHeading": "The next glimmer.",
+    "packIntro": "Three cards to discover. A saved result you can return to whenever you like.",
+    "sections": "Collection and packs",
+    "tabCollection": "My collection",
+    "tabPacks": "Packs",
+    "loading": "Loading your collection…",
+    "busy": "Saving the operation…",
+    "retryOperation": "Check and retry the operation",
+    "refresh": "Refresh collection",
+    "guest": {
+      "eyebrow": "A COLLECTION OF YOUR OWN",
+      "title": "Start with your account.",
+      "description": "Sign in to choose your first six cards, receive a welcome pack and save your collection online.",
+      "login": "Sign in or create account"
+    },
+    "wallet": {
+      "title": "Balances and collection",
+      "coins": "Coins",
+      "fragments": "Shards",
+      "cards": "Cards",
+      "saved": "SAVED ONLINE"
+    },
+    "starter": {
+      "eyebrow": "YOUR FIRST TEAM",
+      "title": "Who starts your adventure?",
+      "description": "Choose six companions. These variants and a free welcome pack are granted once per account.",
+      "names": {
+        "alba": "Dawn",
+        "brasa": "Ember",
+        "niebla": "Mist"
+      },
+      "gift": "+ One welcome pack",
+      "choose": "Choose this team",
+      "balance": "Each team has a 1,440-point budget: six common variants at 240 points each. Team balance will continue to be refined through playtesting."
+    },
+    "tiers": {
+      "240": "Common",
+      "252": "Uncommon",
+      "264": "Rare",
+      "276": "Illustration rare",
+      "288": "Special illustration"
+    },
+    "inventory": {
+      "eyebrow": "CARDS YOU OWN",
+      "title": "Your collection",
+      "toPacks": "Explore packs",
+      "search": "Search",
+      "placeholder": "Name, card or expansion",
+      "tier": "Lumemon rarity",
+      "type": "Type",
+      "all": "All",
+      "duplicates": "Duplicates only",
+      "count": "{{count}} of {{total}} variants",
+      "spare": "{{count}} spare copies",
+      "lastCopy": "Your last copy is protected.",
+      "fragment": "Convert one copy · +{{count}} ◇",
+      "empty": "No cards match these filters.",
+      "localTeam": "My team and Practice remain local testing modes. Battle rewards are not connected yet."
+    },
+    "packs": {
+      "eyebrow": "LUMEMON PACK · VOLUME 01",
+      "title": "Prisma",
+      "description": "Three cards drawn from {{count}} variants already prepared for battle. Each draw is independent, so duplicates can appear.",
+      "welcome": "Your first opening is on us.",
+      "welcomeText": "One free pack per account, available after choosing a starter team.",
+      "openWelcome": "Open welcome pack · Free",
+      "coins": "{{count}} coins",
+      "fragments": "{{count}} shards",
+      "noRewards": "Coins will come from server-verified battles. For now, use your welcome pack and shards from duplicates; local practice does not grant rewards.",
+      "oddsTitle": "Know your chances.",
+      "oddsText": "Probabilities apply to each of the three cards. Every variant within a tier is equally likely. No rarity is guaranteed per pack. These are Lumemon rules, not commercial booster-pack odds.",
+      "variants": "{{count}} variants",
+      "pool": "View every variant and its probability per draw",
+      "history": "Your latest openings",
+      "historyText": "Showing pack openings within your latest 20 operations. Viewing them again does not spend currency.",
+      "view": "View cards",
+      "noHistory": "You have not opened a pack yet.",
+      "paid": {
+        "welcome": "Free welcome pack",
+        "coins": "Paid with coins",
+        "fragments": "Paid with shards"
+      }
+    },
+    "result": {
+      "saved": "RESULT SAVED",
+      "title": "Already in your collection.",
+      "description": "Reveal your cards now or find them later in the history. The animation does not change the result.",
+      "reveal": "Reveal my cards",
+      "skip": "Show all without animation",
+      "starter": "Your starter team is saved. Open your welcome pack in Packs.",
+      "fragment": "Duplicate converted: +{{count}} shards. Your last copy is safe."
+    },
+    "confirm": {
+      "eyebrow": "CONFIRM YOUR CHOICE",
+      "starter": "You will receive these six cards and one welcome pack. You can choose a starter team only once per account; this choice cannot be changed.",
+      "welcome": "You will open your only free welcome pack. All three cards will be saved to your collection.",
+      "coins": "You will spend {{count}} coins and receive three cards. This opening cannot be undone.",
+      "fragments": "You will spend {{count}} shards and receive three cards. This opening cannot be undone.",
+      "fragment": "You will convert one spare copy into {{count}} shards. At least one copy of this variant will remain. This conversion cannot be undone.",
+      "cancel": "Go back",
+      "accept": "Confirm"
+    },
+    "errors": {
+      "request": "Could not refresh your collection. Check your connection and try again.",
+      "unavailable": "Collection is not enabled on this installation yet. Its database update still needs to be applied.",
+      "identity": "Your session has changed. Sign in again before continuing.",
+      "invalidData": "The collection response could not be verified. Refresh the page before continuing.",
+      "storage": "The browser cannot save the operation ID. Allow storage for this website to retry safely.",
+      "uncertain": "We are checking whether the operation was saved. Use the same retry; you will not be charged twice.",
+      "insufficient_balance": "Your balance is insufficient. Your wallet has been refreshed.",
+      "starter_claimed": "This account already has a starter team. Your collection has been refreshed.",
+      "starter_required": "Choose your starter team in My collection first.",
+      "welcome_used": "Your welcome pack has already been used. Check your recent openings.",
+      "last_copy": "There are no spare copies to convert. Your last copy is protected.",
+      "request_conflict": "This attempt does not match the saved operation. Refresh your collection and check the history."
     }
   }
 }

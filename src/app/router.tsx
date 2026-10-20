@@ -44,6 +44,18 @@ export const router = createBrowserRouter([
           Component: (await import('../features/account/AccountPage')).AccountPage,
         }),
       },
+      {
+        path: '/coleccion',
+        lazy: async () => ({
+          Component: (await import('../features/collection/CollectionPage')).CollectionPage,
+        }),
+      },
+      {
+        path: '/sobres',
+        lazy: async () => ({
+          Component: (await import('../features/collection/CollectionPage')).CollectionPage,
+        }),
+      },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
