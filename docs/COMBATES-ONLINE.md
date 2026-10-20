@@ -1,5 +1,5 @@
 # Combates online y monedas
-Estado: implementación en feat/online-battles-rewards, base 462b5c9. Migración y prueba SQL real confirmadas por el usuario; clave local, inicio y guardado de un turno con cuenta real verificados. Clave en Vercel, victoria real con premio y publicación pendientes. No instalar dependencias nuevas.
+Estado: implementación en feat/online-battles-rewards, base 462b5c9. Migración y prueba SQL real confirmadas por el usuario; clave local, inicio y guardado de un turno con cuenta real verificados. Clave configurada en Vercel Preview para esta rama; API desplegada, victoria real con premio y publicación pendientes. No instalar dependencias nuevas.
 
 ## Qué cambia
 /combate permite seis cartas poseídas de especies diferentes contra Iniciación. Ambos equipos sin apoyos en este primer modo. Partida guardada en cuenta, sin reloj; una activa por jugador. La práctica /practica continúa siendo libre y no concede monedas.
@@ -19,7 +19,7 @@ El servidor requiere que las versiones del motor/datos coincidan para avanzar pa
 4. Añadirla al entorno Preview para comprobar esta rama; Production al publicar. Las variables nuevas necesitan un nuevo despliegue. La rama de producción sigue chore/vercel-lumemon y requiere autorización para integrar este bloque.
 5. Verificar la ruta /api/battle en Vercel, inicio real con cuenta, un turno, recarga y reanudación; después una victoria y saldo en /sobres. Confirmar que reintentar/recargar no suma 50 otra vez. Una cuenta diferente no ve esa partida. Compras adicionales son decisiones del usuario, no pruebas automáticas sobre su colección.
 
-El usuario ejecutó la migración y confirmó el mensaje de éxito de la prueba SQL real el 2026-10-20. No repetir pasos 1–2. El usuario introdujo SUPABASE_SECRET_KEY personalmente en .env.local, ignorado por Git. La API local configurada devuelve 401 sin identidad y carga correctamente la partida con sesión. Se ha pedido autorización para copiar la clave a Vercel como secreto exclusivo de Preview en feat/online-battles-rewards y generar la vista previa. No se ha configurado ni publicado producción.
+El usuario ejecutó la migración y confirmó el mensaje de éxito de la prueba SQL real el 2026-10-20. No repetir pasos 1–2. El usuario introdujo SUPABASE_SECRET_KEY personalmente en .env.local, ignorado por Git. La API local configurada devuelve 401 sin identidad y carga correctamente la partida con sesión. El usuario autorizó copiar la clave a Vercel como secreto exclusivo de Preview en feat/online-battles-rewards y generar la vista previa. CLI oficial confirmó tipo Secret, entorno Preview y rama exacta. La transferencia utilizó stdin y el valor no se mostró. No se ha configurado ni publicado producción.
 
 ## Verificación local
 Tests de protocolo, acciones falsas, reintentos, cierre de sesión, cuerpos HTTP, identidad, SQL y motor completo. Integración PGlite: dos victorias con jugadas calculadas por el motor → 100 monedas → sobre de tres cartas. Dos comandos finales simultáneos dejan un éxito y un conflicto. PGlite serializa en una instancia: no sustituye un ensayo de conexiones PostgreSQL independientes.
