@@ -1,5 +1,5 @@
 # Combates online y monedas
-Estado: implementación en feat/online-battles-rewards, base 462b5c9. Migración y prueba SQL real confirmadas por el usuario; clave local, inicio y guardado de un turno con cuenta real verificados. Clave configurada en Vercel Preview para esta rama; API desplegada, victoria real con premio y publicación pendientes. No instalar dependencias nuevas.
+Estado: implementación en feat/online-battles-rewards, base 462b5c9. Migración y prueba SQL real confirmadas por el usuario; clave local, inicio y guardado de un turno con cuenta real verificados. Clave configurada en Vercel Preview para esta rama; API desplegada arranca correctamente; recorrido autenticado en Vercel, victoria real con premio y publicación pendientes. No instalar dependencias nuevas.
 
 ## Qué cambia
 /combate permite seis cartas poseídas de especies diferentes contra Iniciación. Ambos equipos sin apoyos en este primer modo. Partida guardada en cuenta, sin reloj; una activa por jugador. La práctica /practica continúa siendo libre y no concede monedas.
@@ -26,4 +26,8 @@ Tests de protocolo, acciones falsas, reintentos, cierre de sesión, cuerpos HTTP
 Interfaz con scripts/qa/online-battle.html (solo desarrollo, excluida de dist): equipo, primer Pokémon, jugada animada, recarga con mismos PS/turno, diálogo de abandono/Escape, ES/EN y 320/390/1440. Esta fixture simula el progreso y lo rotula; no accede a cuentas ni monedas reales. No prueba autenticación ni la API desplegada.
 Cuenta real local: /combate carga las cartas poseídas, crea partida y guarda el primer ataque. Tras recargar mantiene turno 2, Bulbasaur 153/226 PS, Eevee 156/242 PS, Hoja Afilada disponible en turno 3 y registro íntegro. Se deja la partida activa y saldo cero. No se ha completado una victoria real ni otorgado premios a esta cuenta.
 
-Fuentes de contrato: [Vercel Web Handlers](https://vercel.com/docs/functions/functions-api-reference), [rewrites](https://vercel.com/docs/routing/rewrites), [claves de Supabase](https://supabase.com/docs/guides/getting-started/api-keys).
+Vista previa comprobada: Vista previa bece304 READY en https://lumemon-2no0xftrz-cachumbas1.vercel.app, alias de rama https://lumemon-git-feat-online-battles-rewards-cachumbas1.vercel.app. API desplegada comprobada: POST sin sesión 401 identity y GET 405 invalid_request; interfaz /combate carga y pide iniciar sesión. Se pidió al usuario recuperar la partida, jugar y recargar en ese alias. Recorrido autenticado en Vercel y victoria real con recompensa pendientes.
+
+Regresión de despliegue corregida: Vercel emitía archivos .js manteniendo importaciones .ts. tsconfig activa rewriteRelativeImportExtensions. server/compiled-api.test.ts compila el grafo real de la API y lo ejecuta sin fuentes TypeScript; exige 401 sin sesión y 405 para GET. RED→GREEN observado con el mismo ERR_MODULE_NOT_FOUND del servidor. Tras corregirlo: 237/237 pruebas, lint y build correctos.
+
+Fuentes de contrato: [reescritura de extensiones TypeScript](https://www.typescriptlang.org/tsconfig/rewriteRelativeImportExtensions.html), [Vercel Web Handlers](https://vercel.com/docs/functions/functions-api-reference), [rewrites](https://vercel.com/docs/routing/rewrites), [claves de Supabase](https://supabase.com/docs/guides/getting-started/api-keys).
