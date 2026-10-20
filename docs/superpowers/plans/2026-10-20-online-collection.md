@@ -34,7 +34,7 @@ Files: src/features/collection/*, router, navegación, perfil, ES/EN.
 ## Task 4 — Revisión y entrega
 - [x] Una revisión independiente del diff, de permisos y de límites de validación.
 - [x] Corregir hallazgos importantes con regresiones.
-- [ ] Actualizar contexto/guías, commit/push y sincronización.
+- [x] Actualizar contexto/guías, commit/push y sincronización.
 - [ ] Guiar al usuario para ejecutar SQL y prueba en Supabase; publicar solo conforme autorización.
 ## Ledger
 - Ruling: continuar con el alcance solicitado y las decisiones explícitas del usuario sin nuevas rondas de permiso para documentos; conservar una carpeta/una rama, como en los bloques anteriores, para que VS Code muestre el trabajo. No implementadores paralelos.
@@ -44,3 +44,6 @@ Files: src/features/collection/*, router, navegación, perfil, ES/EN.
 - Evidence: implementación 10f1f32; SQL 9 RED→GREEN, cliente 11 RED→GREEN. Revisión única: sin hallazgos Critical/Important, uno Minor reproducido y corregido con 3 nuevas regresiones. Suite final 215/215, lint y build/typecheck correctos.
 - UI: invitado ES/EN, 320/390/1440 y teclado comprobados; navegación móvil corregida tras inspección. Flujos autenticados pendientes de activación por el usuario.
 - Runtime: primer intento de SQL comunicado como consulta vacía, sin evidencia de ejecución. Instrucciones de copiado completas enviadas.
+
+- Delivery: 10f1f32 y 231d7c6 subidos a origin/feat/online-collection-packs; árbol limpio y divergencia 0/0 verificados. Se conserva producción sin integrar; pendiente la respuesta del usuario al reintento de SQL.
+- Ruling: seguir el permiso ya existente para commit/push sin repetir menú de integración. No fusionar ni publicar el bloque sin su autorización.
