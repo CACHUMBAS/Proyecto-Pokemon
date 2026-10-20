@@ -709,7 +709,7 @@
       "lastCopy": "Tu última copia se conserva.",
       "fragment": "Cambiar una copia · +{{count}} ◇",
       "empty": "No hay cartas que coincidan con estos filtros.",
-      "localTeam": "Mi equipo y Práctica siguen siendo modos locales de prueba. Las recompensas por combate todavía no están conectadas.",
+      "localTeam": "Mi equipo y Práctica siguen siendo modos locales de prueba, sin recompensas. En Combate, cada victoria con tus cartas de la colección otorga 50 monedas.",
       "spare_one": "{{count}} copia sobrante",
       "spare_other": "{{count}} copias sobrantes"
     },

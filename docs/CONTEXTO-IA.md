@@ -1,12 +1,20 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-20 (colección, combates y recompensas publicados en producción). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-20 (ciclo de victoria, monedas y sobre verificado en producción). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
-## Bloque activo: combates online y recompensas — 2026-10-20
+## Bloque cerrado: ciclo de monedas y sobres — 2026-10-20
+
+Rama `fix/production-economy-verification`, desde `8f4c735`. Cuenta real en https://lumemon.vercel.app: victoria en 21 turnos, saldo 50 → 100, un único sobre por 100 monedas y colección 9 → 12 copias (9 variantes). Resultado: Machop `sv03.5-066` ×2 y Onix `sv03.5-095` ×1. Recargas y consulta del historial conservaron saldo y cartas sin nuevos premios ni cargos. No se convirtieron duplicados ni se gastaron fragmentos. Detalle y límites en [Colección y sobres](COLECCION-ONLINE.md#ciclo-verificado-en-producción--2026-10-20).
+
+Se corrige únicamente el aviso desactualizado de Colección en ES/EN que decía que las recompensas no estaban conectadas. La web pública sigue en `d2eec67`; esta corrección de texto necesita autorización de publicación. Los diseños nuevos de sobres son una propuesta pendiente: no se han implementado. No iniciar otro bloque por leer este contexto.
+
+Comprobación de la corrección de texto: `npm run lint` y `npm run build` (incluye TypeScript) correctos. No se repitió la suite completa de reglas/SQL: este cambio solo afecta a dos traducciones y documentación; su evidencia anterior se conserva.
+
+## Bloque anterior: combates online y recompensas — 2026-10-20
 
 Rama feat/online-battles-rewards desde 462b5c9. Usuario autoriza continuar y fija 50 monedas por victoria; derrota/empate/abandono cero. /combate usa seis cartas poseídas, rival Iniciación sin apoyos para ambos, servidor Vercel con motor existente, persistencia en Supabase y UUID/revisiones. La práctica sigue libre y sin premios. No añade dependencias. PvP, reloj y campaña quedan pendientes.
 
-Migración SQL y prueba de permisos confirmadas por el usuario; cuenta real validada en Vercel Preview hasta una victoria en 24 turnos. El saldo pasó de 0 a 50 y se mantuvo al recargar y actualizar; Sobres conserva 50 monedas y 9 cartas. Secreto de servidor configurado en Preview y Production con autorización explícita. Los combates ya están publicados en https://lumemon.vercel.app desde d2eec67. Guía: [Combates online](COMBATES-ONLINE.md). No repetir migraciones ni reiniciar el inventario.
+Migración SQL y prueba de permisos confirmadas por el usuario; cuenta real validada en Vercel Preview hasta una victoria en 24 turnos. El saldo pasó de 0 a 50 y se mantuvo al recargar y actualizar. En aquella prueba, Sobres mostró 50 monedas y 9 cartas; el ciclo posterior en Production dejó 0 monedas y 12 cartas. Secreto de servidor configurado en Preview y Production con autorización explícita. Los combates ya están publicados en https://lumemon.vercel.app desde d2eec67. Guía: [Combates online](COMBATES-ONLINE.md). No repetir migraciones ni reiniciar el inventario.
 
 
 Verificación del bloque: 237 pruebas correctas; lint y build/typecheck correctos. Revisión independiente sin defectos críticos/importantes; corregidos dos mensajes heredados de práctica. UI aislada ES/EN 320/390/1440, ataque animado, recarga, diálogo/Escape y abandono con cero monedas; sin errores JavaScript observados. /api/battle sin clave devuelve 503 y métodos no admitidos 405, sin caché. El bundle del navegador no contiene SUPABASE_SECRET_KEY ni la RPC privilegiada. Vista previa bece304 READY en https://lumemon-2no0xftrz-cachumbas1.vercel.app, alias de rama https://lumemon-git-feat-online-battles-rewards-cachumbas1.vercel.app. API desplegada comprobada: POST sin sesión 401 identity y GET 405 invalid_request; interfaz /combate carga y pide iniciar sesión. Se pidió al usuario recuperar la partida, jugar y recargar en ese alias. Ese recorrido autenticado y la victoria real se completaron después; véase la evidencia actual a continuación. La primera activación de Preview detectó ERR_MODULE_NOT_FOUND por referencias .ts en la salida .js; corregido con rewriteRelativeImportExtensions y prueba de arranque real de la API compilada (falló antes y pasó después). Suite completa, lint y build repetidos tras la corrección.
@@ -17,7 +25,7 @@ Se detectaron y corrigieron dos textos heredados en ES/EN: el título compartido
 
 Publicación autorizada y completada el 2026-10-20: SUPABASE_SECRET_KEY copiada desde .env.local por stdin de la CLI oficial como Secret (sensitive), solo servidor, en Production de cachumbas1/lumemon. Se verificaron los metadatos sin mostrar el valor. Integración fast-forward de feat/online-battles-rewards en chore/vercel-lumemon y push del SHA d2eec67071da036b1db7b9404f42e07bb4f1afb3. Vercel confirmó Production READY, despliegue dpl_6G6o4TVYYnWYqbbMiZnDU6tV8wpx, URL https://lumemon-frnyramk4-cachumbas1.vercel.app y alias https://lumemon.vercel.app.
 
-Comprobación pública: /combate carga el modo con premio de 50 monedas y solicita cuenta al visitante; /api/battle responde a GET con invalid_request. No se observaron errores JavaScript en la página de combate. La sesión de Preview no se comparte con el dominio público: la victoria, el guardado y el premio único se verificaron autenticados en Preview con el mismo código y Supabase; no se repitió una partida autenticada en Production. SMTP para destinatarios externos, PvP y reloj siguen fuera de esta publicación.
+Comprobación pública: /combate carga el modo con premio de 50 monedas y solicita cuenta al visitante; /api/battle responde a GET con invalid_request. No se observaron errores JavaScript en la página de combate. La sesión de Preview no se comparte con el dominio público. Tras iniciar sesión también en Production se verificaron una victoria de 21 turnos, el premio único de 50 monedas y la compra de un sobre con persistencia tras recarga; recorrido completo en [Colección y sobres](COLECCION-ONLINE.md#ciclo-verificado-en-producción--2026-10-20). SMTP para destinatarios externos, PvP y reloj siguen fuera de esta publicación.
 
 ## Colección publicada — evidencia del bloque anterior
 
@@ -254,11 +262,11 @@ Navegador en localhost:5174, separado del origen habitual 127.0.0.1: filtro con 
 
 ## Pendiente: no anunciar como disponible
 
-Ampliar estadísticas/movimientos a más cartas, ampliar el mapeo de apoyos, estrategia avanzada más allá de las heurísticas actuales, campaña, inventario, sobres, monedas, fragmentos, recompensas, salas y reconexión. La cuenta y la publicación en Vercel ya están disponibles; falta configurar SMTP y comprobar registros con correos externos al equipo.
+Ampliar estadísticas/movimientos a más cartas, ampliar el mapeo de apoyos, estrategia avanzada más allá de las heurísticas actuales, campaña, salas privadas PvP, reloj y margen de reconexión. Cuentas, inventario, sobres, monedas, fragmentos y recompensas contra la máquina ya están implementados y publicados. Falta configurar SMTP y comprobar registros con correos externos al equipo; conversión y gasto real de fragmentos aún no ensayados en la cuenta del usuario.
 
-React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres están configurados para cuentas y perfiles, y Vercel publica la web con integración GitHub. Realtime, inventario y economía siguen pendientes. No crear recursos, sustituir tecnología ni instalar SDKs por leer esta propuesta. Para el motor, se prevé TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Las futuras monedas, aperturas, recompensas y propiedad deben validarse en servidor; nunca confiar en `localStorage` para ellas.
+React/Vite/TypeScript ya están elegidos. Supabase Auth/Postgres guarda cuentas, perfiles, colección, economía y partidas; Vercel publica la web con integración GitHub y ejecuta el motor de combate. Realtime para PvP sigue pendiente. No crear recursos, sustituir tecnología ni instalar SDKs por leer este contexto. Conservar el motor TypeScript separado de React, reglas versionadas y azar inyectado/reproducible. Monedas, aperturas, recompensas y propiedad se validan en servidor; nunca confiar en `localStorage` para ellas.
 
-Siguiente candidato actualizado para la entrega de dos días: colección online, sobres y recompensas validados en servidor. El rival temático de Johto queda pospuesto junto a nuevas especies y PvP. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto. La cuenta y el alias ya funcionan; el progreso del juego online sigue pendiente.
+La prioridad de colección online, sobres y recompensas para la entrega de dos días ya está implementada y su ciclo se ha verificado con una cuenta real. El usuario ha preguntado por el diseño de sobres; la propuesta de envoltorio propio Lumemon sigue pendiente de aprobar. El rival temático de Johto, nuevas especies y PvP permanecen pospuestos. Requiere una nueva tarea; no iniciar otro bloque por leer este contexto.
 
 ## Mapa de código y comandos
 

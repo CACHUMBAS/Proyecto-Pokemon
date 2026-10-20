@@ -28,7 +28,7 @@ No se necesitan nuevas claves ni un servicio adicional. PGlite es solo una depen
 - Tres equipos iniciales de seis especies distintas, una elección por cuenta. Cada carta tiene presupuesto 240; esto no demuestra igualdad de victorias.
 - Un sobre de bienvenida gratuito por cuenta, además del equipo inicial.
 - Sobre `prisma-v1`: tres cartas con reemplazo de las 48 variantes jugables actuales.
-- Precio: 100 monedas o 60 fragmentos. Las monedas comienzan en cero; las recompensas verificadas de combate pertenecen al siguiente bloque.
+- Precio: 100 monedas o 60 fragmentos. Las monedas comienzan en cero; cada victoria del modo Combate concede 50 monedas. Dos victorias permiten comprar un sobre. La práctica libre no da premios.
 - Probabilidad por carta: presupuesto 240 → 60%; 252 → 25%; 264 → 10%; 276 → 4%; 288 → 1%. Dentro de cada grupo, las variantes tienen igual probabilidad. No hay rareza garantizada por sobre.
 - Fragmentar una copia sobrante concede respectivamente 5/10/20/40/80 fragmentos. Siempre se conserva una copia; nunca se fragmenta automáticamente.
 - La interfaz muestra los últimos veinte eventos y filtra sus aperturas en el historial. El servidor conserva todos los recibos.
@@ -54,6 +54,20 @@ El cliente valida tipos exactos, identidad, versiones, cantidades, rarezas, prob
 - Navegador local, sesión invitada: /coleccion y /sobres, ES/EN, navegación con teclado, 320/390/1440 px sin desbordamiento horizontal. Menú móvil ajustado a dos filas. Se observó una advertencia de React Router sobre HydrateFallback; no se observó error JavaScript.
 - Supabase real: el usuario confirmó la prueba transaccional de aislamiento, atomicidad e idempotencia.
 - Navegador autenticado: nueve copias persistidas, historial recuperado, filtro de duplicados, última copia protegida y confirmación cancelada con Escape. ES/EN y 320/390/1440 sin desbordamiento observado. Se corrigieron tipos sin traducir y plural de copias; lint, build/typecheck y comprobación directa i18next correctos.
-- Pendientes: dos cuentas/dispositivos, conexiones independientes concurrentes y gasto real de fragmentos/monedas; la prueba visual no convirtió cartas del usuario. PGlite usa ejecución serial y no demuestra esta última propiedad.
+- Pendientes: dos cuentas/dispositivos, conexiones PostgreSQL independientes concurrentes y conversión/gasto real de fragmentos. La compra con monedas ya se verificó en Production, según el recorrido siguiente. No se convirtieron cartas del usuario. PGlite usa ejecución serial y no demuestra concurrencia entre conexiones independientes.
 
-No considerar la publicación, el SMTP público ni las recompensas de combate completados por estas pruebas.
+Las pruebas originales de colección no comprobaban el SMTP público ni las recompensas. La publicación y el ciclo de recompensa/compra se verificaron después; el SMTP público sigue pendiente.
+
+## Ciclo verificado en producción — 2026-10-20
+
+Recorrido autorizado con una cuenta real en https://lumemon.vercel.app, versión pública `d2eec67`. Se usó la interfaz normal; no se añadieron monedas ni cartas mediante herramientas de administración.
+
+1. Estado inicial: 50 monedas, 0 fragmentos y 9 copias. La victoria anterior de Preview se recuperó en Production al iniciar sesión.
+2. Nueva partida contra Iniciación, con Machop primero. Recarga en el turno 9: Squirtle conservó 179/226 PS, quemadura y Surf disponible en el turno 10; Charmander rival conservó 70/214 PS.
+3. Victoria en 21 turnos, sin bajas propias: saldo 50 → 100. Recargar conservó resultado y 100 monedas, sin conceder otro premio.
+4. Una única compra confirmada de `prisma-v1` por 100 monedas: saldo 100 → 0, colección 9 → 12 copias, fragmentos 0. Se revelaron Machop `sv03.5-066`, Onix `sv03.5-095` y Machop `sv03.5-066`, todas en español.
+5. Recarga de Sobres y consulta de la apertura pagada en el historial: mismas tres cartas, 0 monedas y 12 copias. La colección mostró 9 variantes, con dos copias del nuevo Machop y una de Onix; no se duplicó el contenido por volver a verlo. La compra volvió a estar deshabilitada por saldo insuficiente.
+
+No se observaron errores JavaScript en la consola de la pestaña. Esta prueba cubre una cuenta y una compra, no conexiones simultáneas ni dos cuentas/dispositivos. No se fragmentaron cartas ni se compró con fragmentos. Se detectó un aviso heredado al pie de Colección que negaba las recompensas; se corrige en ES/EN en `fix/production-economy-verification`, pendiente de autorización de publicación.
+
+Comprobación de la corrección de texto: `npm run lint` y `npm run build` (incluye TypeScript) correctos. No se repitió la suite completa de reglas/SQL: este cambio solo afecta a dos traducciones y documentación; su evidencia anterior se conserva.
