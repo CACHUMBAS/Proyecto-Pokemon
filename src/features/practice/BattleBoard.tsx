@@ -180,15 +180,11 @@ export function BattleBoard({
           <p className="practice-event" role="status">
             {frame?.event
               ? describe(frame.event, t, locale)
-              : t(
-                  playing
-                    ? 'practice.motion.resolving'
-                    : finished
-                      ? 'practice.finishedNote'
-                      : replacement
-                        ? 'practice.replaceHint'
-                        : 'practice.motion.ready',
-                )}
+              : playing
+                ? t('practice.motion.resolving')
+                : finished
+                  ? (finishedNote ?? t('practice.finishedNote'))
+                  : t(replacement ? 'practice.replaceHint' : 'practice.motion.ready')}
           </p>
           <div className="practice-enemy-reserves">
             <span>{t('practice.rivalTeam')}</span>
@@ -226,13 +222,9 @@ export function BattleBoard({
                 )}
               </h2>
               <p className="practice-note">
-                {t(
-                  finished
-                    ? 'practice.finishedNote'
-                    : replacement
-                      ? 'practice.replaceHint'
-                      : 'practice.botLocked',
-                )}
+                {finished
+                  ? (finishedNote ?? t('practice.finishedNote'))
+                  : t(replacement ? 'practice.replaceHint' : 'practice.botLocked')}
               </p>
             </>
           )}
