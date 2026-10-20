@@ -1,5 +1,5 @@
 # Combates online y monedas
-Estado: implementación en feat/online-battles-rewards, base 462b5c9. Activación real y publicación pendientes. No instalar dependencias nuevas.
+Estado: implementación en feat/online-battles-rewards, base 462b5c9. Migración y prueba SQL real confirmadas por el usuario; clave local, inicio y guardado de un turno con cuenta real verificados. Clave en Vercel, victoria real con premio y publicación pendientes. No instalar dependencias nuevas.
 
 ## Qué cambia
 /combate permite seis cartas poseídas de especies diferentes contra Iniciación. Ambos equipos sin apoyos en este primer modo. Partida guardada en cuenta, sin reloj; una activa por jugador. La práctica /practica continúa siendo libre y no concede monedas.
@@ -19,11 +19,11 @@ El servidor requiere que las versiones del motor/datos coincidan para avanzar pa
 4. Añadirla al entorno Preview para comprobar esta rama; Production al publicar. Las variables nuevas necesitan un nuevo despliegue. La rama de producción sigue chore/vercel-lumemon y requiere autorización para integrar este bloque.
 5. Verificar la ruta /api/battle en Vercel, inicio real con cuenta, un turno, recarga y reanudación; después una victoria y saldo en /sobres. Confirmar que reintentar/recargar no suma 50 otra vez. Una cuenta diferente no ve esa partida. Compras adicionales son decisiones del usuario, no pruebas automáticas sobre su colección.
 
-No se ha almacenado ninguna clave secreta de Supabase en esta entrega ni se ha modificado la base real. La pantalla muestra indisponibilidad si falta la configuración.
+El usuario ejecutó la migración y confirmó el mensaje de éxito de la prueba SQL real el 2026-10-20. No repetir pasos 1–2. El usuario introdujo SUPABASE_SECRET_KEY personalmente en .env.local, ignorado por Git. La API local configurada devuelve 401 sin identidad y carga correctamente la partida con sesión. Se ha pedido autorización para copiar la clave a Vercel como secreto exclusivo de Preview en feat/online-battles-rewards y generar la vista previa. No se ha configurado ni publicado producción.
 
 ## Verificación local
 Tests de protocolo, acciones falsas, reintentos, cierre de sesión, cuerpos HTTP, identidad, SQL y motor completo. Integración PGlite: dos victorias con jugadas calculadas por el motor → 100 monedas → sobre de tres cartas. Dos comandos finales simultáneos dejan un éxito y un conflicto. PGlite serializa en una instancia: no sustituye un ensayo de conexiones PostgreSQL independientes.
 Interfaz con scripts/qa/online-battle.html (solo desarrollo, excluida de dist): equipo, primer Pokémon, jugada animada, recarga con mismos PS/turno, diálogo de abandono/Escape, ES/EN y 320/390/1440. Esta fixture simula el progreso y lo rotula; no accede a cuentas ni monedas reales. No prueba autenticación ni la API desplegada.
-Cuenta real local: /combate muestra correctamente que el servicio no está disponible sin clave. No se han ejecutado combates con premios reales.
+Cuenta real local: /combate carga las cartas poseídas, crea partida y guarda el primer ataque. Tras recargar mantiene turno 2, Bulbasaur 153/226 PS, Eevee 156/242 PS, Hoja Afilada disponible en turno 3 y registro íntegro. Se deja la partida activa y saldo cero. No se ha completado una victoria real ni otorgado premios a esta cuenta.
 
 Fuentes de contrato: [Vercel Web Handlers](https://vercel.com/docs/functions/functions-api-reference), [rewrites](https://vercel.com/docs/routing/rewrites), [claves de Supabase](https://supabase.com/docs/guides/getting-started/api-keys).

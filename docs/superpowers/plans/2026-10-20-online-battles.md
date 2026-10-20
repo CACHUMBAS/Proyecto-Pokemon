@@ -21,3 +21,7 @@ Revisión única gpt-6-astra: sin Critical/Important; un Minor de mensajes de pr
 Final: Ruling: Vercel real, Supabase real y concurrencia de conexiones independientes requieren activación externa; quedan explícitamente pendientes, sin afirmar pruebas que no existen. Balance, reloj y PvP conservan su alcance aplazado.
 
 Cierre local: corrección de textos verificada con lint y build/typecheck; punto de entrada Node real devuelve 503 sin configurar y 405 para GET. No se repite la suite tras ajustes exclusivos de texto. Flujo Git ya autorizado: commit/push de rama de funcionalidad; no merge ni promoción a producción.
+
+Entrega: rama subida y limpia, sincronización 0/0 en 5df789e. Vista previa automática READY para ese SHA, sin promover producción. Usuario confirmó migración aplicada y prueba SQL real pasada; pendiente su respuesta sobre clave local.
+
+Activación local confirmada: usuario guardó la clave privada personalmente. .env.local sigue ignorado. API sin bearer 401; cuenta real carga colección, inicia partida y resuelve Hoja Afilada. Recarga conserva turno 2, PS 153/226 frente a 156/242, recarga del movimiento y registro. Partida activa para continuar, saldo cero. Pendientes victoria real y entorno Vercel. Solicitado permiso para configurar clave solo en Preview para esta rama y generar una vista previa; producción no autorizada en este bloque.
