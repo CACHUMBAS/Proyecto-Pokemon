@@ -33,7 +33,7 @@ export function StarterPicker({
                   ),
                 ),
               ).map((type) => (
-                <span key={type}>{t('types.' + type, { defaultValue: type })}</span>
+                <span key={type}>{t('pokemonTypes.' + type)}</span>
               ))}
             </div>
             <ul>

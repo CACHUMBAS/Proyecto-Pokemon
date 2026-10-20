@@ -76,7 +76,7 @@ export function Inventory({
               .sort()
               .map((type) => (
                 <option key={type} value={type}>
-                  {t('types.' + type, { defaultValue: type })}
+                  {t('pokemonTypes.' + type)}
                 </option>
               ))}
           </select>

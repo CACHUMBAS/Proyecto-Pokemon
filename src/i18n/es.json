@@ -705,11 +705,12 @@
       "all": "Todas",
       "duplicates": "Solo duplicados",
       "count": "{{count}} de {{total}} variantes",
-      "spare": "{{count}} copias sobrantes",
       "lastCopy": "Tu última copia se conserva.",
       "fragment": "Cambiar una copia · +{{count}} ◇",
       "empty": "No hay cartas que coincidan con estos filtros.",
-      "localTeam": "Mi equipo y Práctica siguen siendo modos locales de prueba. Las recompensas por combate todavía no están conectadas."
+      "localTeam": "Mi equipo y Práctica siguen siendo modos locales de prueba. Las recompensas por combate todavía no están conectadas.",
+      "spare_one": "{{count}} copia sobrante",
+      "spare_other": "{{count}} copias sobrantes"
     },
     "packs": {
       "eyebrow": "SOBRE LUMEMON · VOLUMEN 01",

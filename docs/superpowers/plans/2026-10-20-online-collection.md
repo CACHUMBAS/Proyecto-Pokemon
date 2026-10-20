@@ -30,13 +30,14 @@ Files: src/features/collection/*, router, navegación, perfil, ES/EN.
 - [x] Implementar inicio autenticado, tres kits, colección filtrable, saldos, confirmaciones y resultados recuperables.
 - [x] Integrar sobres con coste/odds/listado de variantes, animación omisible y fragmentación voluntaria.
 - [x] npm test, npm run lint, npm run build; esperado todo correcto.
-- [ ] Navegador móvil/escritorio y ES/EN; verificar estados disponibles sin introducir credenciales del usuario.
+- [x] Navegador móvil/escritorio y ES/EN; verificar estados disponibles sin introducir credenciales del usuario.
 ## Task 4 — Revisión y entrega
 - [x] Una revisión independiente del diff, de permisos y de límites de validación.
 - [x] Corregir hallazgos importantes con regresiones.
 - [x] Actualizar contexto/guías, commit/push y sincronización.
 - [x] Guiar al usuario para ejecutar SQL y prueba en Supabase.
-- [ ] Comprobar recorrido autenticado y publicar solo conforme autorización.
+- [x] Comprobar recorrido autenticado.
+- [ ] Publicar solo conforme autorización.
 ## Ledger
 - Ruling: continuar con el alcance solicitado y las decisiones explícitas del usuario sin nuevas rondas de permiso para documentos; conservar una carpeta/una rama, como en los bloques anteriores, para que VS Code muestre el trabajo. No implementadores paralelos.
 - Ruling: separar recompensas de combate porque la práctica local acepta estado del navegador; conceder monedas ahí permitiría falsificar victorias. Este bloque habilita la colección y el sobre de bienvenida, y deja clara esa limitación.
@@ -50,3 +51,5 @@ Files: src/features/collection/*, router, navegación, perfil, ES/EN.
 - Ruling: seguir el permiso ya existente para commit/push sin repetir menú de integración. No fusionar ni publicar el bloque sin su autorización.
 
 - Runtime, 2026-10-20: tras el error de tabla ya existente y la indicación de ROLLBACK, el usuario confirmó «collection: isolation, atomicity and idempotency passed» en Supabase. No repetir la migración. Se abrió la ruta local /coleccion para elegir inicial, abrir bienvenida y verificar nueve copias tras recarga; pendiente de respuesta.
+
+- Runtime UI, 2026-10-20: cuenta real con nueve copias tras recarga; bienvenida consumida y resultado recuperado desde historial sin aumentar inventario. Duplicados, última copia protegida, cancelación con Escape, ES/EN y 320/390/1440 comprobados. No se fragmentaron cartas del usuario ni se concedieron monedas. Tipos de Pokémon y plural de copias corregidos; lint, build/typecheck e i18next ES/EN correctos. Publicación pendiente de autorización; ningún cambio en rama de producción.

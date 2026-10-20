@@ -30,4 +30,4 @@ No usar la URL de la API de Supabase como Site URL. El proyecto de base de datos
 
 ## Colección preparada en rama — 2026-10-20
 
-feat/online-collection-packs incorpora colección y sobres, con migración independiente. La web pública no se ha actualizado con este bloque. La prueba SQL de colección fue confirmada por el usuario. Falta [comprobar inicial y bienvenida en la web](COLECCION-ONLINE.md), revisar la vista previa y obtener autorización para integrar en chore/vercel-lumemon. Un push a la rama de funcionalidad puede generar Preview, pero no aplica SQL ni autoriza cambiar producción.
+feat/online-collection-packs incorpora colección y sobres, con migración independiente. La web pública no se ha actualizado con este bloque. La prueba SQL de colección fue confirmada por el usuario. El [inicial, la bienvenida y la persistencia](COLECCION-ONLINE.md) se comprobaron en local con una cuenta real. Falta obtener autorización para integrar en chore/vercel-lumemon. Un push a la rama de funcionalidad puede generar Preview, pero no aplica SQL ni autoriza cambiar producción.

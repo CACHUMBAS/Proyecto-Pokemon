@@ -699,11 +699,12 @@
       "all": "All",
       "duplicates": "Duplicates only",
       "count": "{{count}} of {{total}} variants",
-      "spare": "{{count}} spare copies",
       "lastCopy": "Your last copy is protected.",
       "fragment": "Convert one copy · +{{count}} ◇",
       "empty": "No cards match these filters.",
-      "localTeam": "My team and Practice remain local testing modes. Battle rewards are not connected yet."
+      "localTeam": "My team and Practice remain local testing modes. Battle rewards are not connected yet.",
+      "spare_one": "{{count}} spare copy",
+      "spare_other": "{{count}} spare copies"
     },
     "packs": {
       "eyebrow": "LUMEMON PACK · VOLUME 01",
