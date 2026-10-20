@@ -6,6 +6,9 @@ Rama feat/online-battles-rewards desde 462b5c9. Usuario autoriza continuar y fij
 
 Código y pruebas locales preparados; activación SQL, clave privada de servidor, recorrido real con premios y publicación PENDIENTES. No presentar este modo como activo en lumemon.vercel.app hasta verificarlos. Guía: [Combates online](COMBATES-ONLINE.md). El siguiente paso es activar la migración nueva con el usuario y configurar SUPABASE_SECRET_KEY solo en servidor; nunca pedirla en el chat ni poner prefijo VITE_.
 
+
+Verificación del bloque: 236 pruebas correctas; lint y build/typecheck correctos. Revisión independiente sin defectos críticos/importantes; corregidos dos mensajes heredados de práctica. UI aislada ES/EN 320/390/1440, ataque animado, recarga, diálogo/Escape y abandono con cero monedas; sin errores JavaScript observados. /api/battle sin clave devuelve 503 y métodos no admitidos 405, sin caché. El bundle del navegador no contiene SUPABASE_SECRET_KEY ni la RPC privilegiada. La ejecución desplegada y el recorrido con premios reales siguen pendientes.
+
 ## Colección publicada — evidencia del bloque anterior
 
 El usuario autorizó integrar feat/online-collection-packs en chore/vercel-lumemon. Ambas ramas llegaron a 462b5c9. Vercel confirmó Production READY, dpl_C7Ve8QPSidi9mzqhoiiQVkYR5f3b, alias https://lumemon.vercel.app, SHA exacto 462b5c9ffd7f3d0b2398b4d6129fdeb247d013c1. /coleccion pública comprobada como invitado. La prueba SQL real y el inicial/bienvenida (nueve copias tras recarga) se habían comprobado con la cuenta real en local. No repetir migraciones antiguas ni reclamar otra bienvenida.

@@ -16,3 +16,8 @@ Ruling: PvE sin reloj — retomar al recargar es útil en la entrega; reloj de 4
 Pendiente: tareas 1–4. Publicación de colección confirmada READY en 462b5c9, alias lumemon.vercel.app; prueba pública como invitado.
 
 Tareas 1–3 completas. SQL 7 pruebas, servicio/HTTP 7, cliente/presentación 7: RED→GREEN observado. Integración real motor+PGlite: dos victorias, 100 monedas, sobre de tres cartas; órdenes finales competidoras dan un éxito y un conflicto. Suite 236/236, lint, typecheck/build correctos. UI con fixture identificada: equipo/primer Pokémon, turno animado, recarga PS/turno, diálogo/Escape, ES/EN 320/390/1440 sin desbordamiento observado. Cuenta real muestra indisponibilidad esperada sin clave. Pendiente revisión única, activación SQL/clave y Vercel real.
+
+Revisión única gpt-6-astra: sin Critical/Important; un Minor de mensajes de práctica que negaban premios online. Corregidos ambos usos con la prop finishedNote existente; cambio de texto reversible sin test que replique implementación, según instrucciones del desarrollador. Sin otras observaciones pendientes.
+Final: Ruling: Vercel real, Supabase real y concurrencia de conexiones independientes requieren activación externa; quedan explícitamente pendientes, sin afirmar pruebas que no existen. Balance, reloj y PvP conservan su alcance aplazado.
+
+Cierre local: corrección de textos verificada con lint y build/typecheck; punto de entrada Node real devuelve 503 sin configurar y 405 para GET. No se repite la suite tras ajustes exclusivos de texto. Flujo Git ya autorizado: commit/push de rama de funcionalidad; no merge ni promoción a producción.
