@@ -32,11 +32,15 @@ No usar la URL de la API de Supabase como Site URL. El proyecto de base de datos
 
 Rama feat/online-battles-rewards desde 462b5c9. Usuario autoriza continuar y fija 50 monedas por victoria; derrota/empate/abandono cero. /combate usa seis cartas poseídas, rival Iniciación sin apoyos para ambos, servidor Vercel con motor existente, persistencia en Supabase y UUID/revisiones. La práctica sigue libre y sin premios. No añade dependencias. PvP, reloj y campaña quedan pendientes.
 
-Código y pruebas locales preparados; activación SQL, clave privada de servidor, recorrido real con premios y publicación PENDIENTES. No presentar este modo como activo en lumemon.vercel.app hasta verificarlos. Guía: [Combates online](COMBATES-ONLINE.md). El siguiente paso es activar la migración nueva con el usuario y configurar SUPABASE_SECRET_KEY solo en servidor; nunca pedirla en el chat ni poner prefijo VITE_.
+Migración SQL y prueba de permisos confirmadas por el usuario; cuenta real validada en Vercel Preview hasta una victoria en 24 turnos. El saldo pasó de 0 a 50 y se mantuvo al recargar y actualizar; Sobres conserva 50 monedas y 9 cartas. Secreto de servidor configurado en Preview y Production con autorización explícita. Los combates ya están publicados en https://lumemon.vercel.app desde d2eec67. Guía: [Combates online](COMBATES-ONLINE.md). No repetir migraciones ni reiniciar el inventario.
+
+Publicación autorizada y completada el 2026-10-20: SUPABASE_SECRET_KEY copiada desde .env.local por stdin de la CLI oficial como Secret (sensitive), solo servidor, en Production de cachumbas1/lumemon. Se verificaron los metadatos sin mostrar el valor. Integración fast-forward de feat/online-battles-rewards en chore/vercel-lumemon y push del SHA d2eec67071da036b1db7b9404f42e07bb4f1afb3. Vercel confirmó Production READY, despliegue dpl_6G6o4TVYYnWYqbbMiZnDU6tV8wpx, URL https://lumemon-frnyramk4-cachumbas1.vercel.app y alias https://lumemon.vercel.app.
+
+Comprobación pública: /combate carga el modo con premio de 50 monedas y solicita cuenta al visitante; /api/battle responde a GET con invalid_request. No se observaron errores JavaScript en la página de combate. La sesión de Preview no se comparte con el dominio público: la victoria, el guardado y el premio único se verificaron autenticados en Preview con el mismo código y Supabase; no se repitió una partida autenticada en Production. SMTP para destinatarios externos, PvP y reloj siguen fuera de esta publicación.
 
 ## Colección publicada — evidencia del bloque anterior
 
 El usuario autorizó integrar feat/online-collection-packs en chore/vercel-lumemon. Ambas ramas llegaron a 462b5c9. Vercel confirmó Production READY, dpl_C7Ve8QPSidi9mzqhoiiQVkYR5f3b, alias https://lumemon.vercel.app, SHA exacto 462b5c9ffd7f3d0b2398b4d6129fdeb247d013c1. /coleccion pública comprobada como invitado. La prueba SQL real y el inicial/bienvenida (nueve copias tras recarga) se habían comprobado con la cuenta real en local. No repetir migraciones antiguas ni reclamar otra bienvenida.
 
 
-La nueva reescritura SPA excluye /api para conservar la función Node /api/battle. Su ejecución real en Vercel se verifica tras activar el bloque.
+La reescritura SPA excluye /api para conservar la función Node /api/battle. Su ejecución real quedó comprobada en Preview; en Production se observó invalid_request al abrirla por GET.

@@ -35,3 +35,9 @@ Verificación real en Vercel, 2026-10-20: el usuario inició sesión en el alias
 Se detectaron y corrigieron dos textos heredados en ES/EN: el título compartido pasa a «Combate terminado» / «Battle complete», válido también para práctica, y Sobres explica las 50 monedas por victoria del modo Combate. Solo cambian traducciones; reglas, saldos y API no se modifican. Lint y build/typecheck correctos tras la corrección. No se repitió la suite de 237 pruebas del motor/SQL por cambios exclusivos de texto; su resultado anterior permanece como evidencia histórica.
 
 Publicación pendiente de autorización explícita: secreto del servidor en Production e integración en chore/vercel-lumemon. Se continúa en la misma rama de este bloque; no se modifica producción.
+
+Publicación autorizada y completada el 2026-10-20: SUPABASE_SECRET_KEY copiada desde .env.local por stdin de la CLI oficial como Secret (sensitive), solo servidor, en Production de cachumbas1/lumemon. Se verificaron los metadatos sin mostrar el valor. Integración fast-forward de feat/online-battles-rewards en chore/vercel-lumemon y push del SHA d2eec67071da036b1db7b9404f42e07bb4f1afb3. Vercel confirmó Production READY, despliegue dpl_6G6o4TVYYnWYqbbMiZnDU6tV8wpx, URL https://lumemon-frnyramk4-cachumbas1.vercel.app y alias https://lumemon.vercel.app.
+
+Comprobación pública: /combate carga el modo con premio de 50 monedas y solicita cuenta al visitante; /api/battle responde a GET con invalid_request. No se observaron errores JavaScript en la página de combate. La sesión de Preview no se comparte con el dominio público: la victoria, el guardado y el premio único se verificaron autenticados en Preview con el mismo código y Supabase; no se repitió una partida autenticada en Production. SMTP para destinatarios externos, PvP y reloj siguen fuera de esta publicación.
+
+El cierre documental se guarda en feat/online-battles-rewards; producción conserva el commit de aplicación aprobado d2eec67.

@@ -6,7 +6,7 @@ Un universo web de cartas Pokémon y combates por turnos, para móvil y ordenado
 
 Desde el 12 de octubre de 2026, el proyecto se llama **Lumemon** (antes PokePrisma). El repositorio sigue siendo `CACHUMBAS/Proyecto-Pokemon` y la carpeta local conserva su nombre. Las claves `pokeprisma.locale.v1` y `pokeprisma.team-draft.v1`, los IDs y el origen interno `pokeprisma` se mantienen para conservar los datos existentes. Las rutas, ramas y documentos históricos pueden contener el nombre anterior.
 
-**Estado: catálogo, constructor de prueba, práctica local y cuentas con perfil online.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Registro, acceso, recuperación y alias privado usan Supabase; requieren la [configuración online](docs/CUENTAS-ONLINE.md). La rama feat/online-collection-packs añade colección, sobres y economía transaccional; la [prueba SQL de colección](docs/COLECCION-ONLINE.md) fue confirmada por el usuario en Supabase. El inventario y la bienvenida se comprobaron con una cuenta real en local; la publicación sigue pendiente, al igual que recompensas y combates online.
+**Estado: catálogo, práctica local, cuentas, colección, sobres y combates guardados con recompensas.** Incluye 1.025 especies de PokéAPI y 20.132 cartas Pokémon de TCGdex, con búsqueda, filtros, variantes y fichas en español e inglés. Registro, acceso, recuperación y alias privado usan Supabase; requieren la [configuración online](docs/CUENTAS-ONLINE.md). La rama feat/online-collection-packs añade colección, sobres y economía transaccional; la [prueba SQL de colección](docs/COLECCION-ONLINE.md) fue confirmada por el usuario en Supabase. El inventario y la bienvenida se comprobaron con una cuenta real. Colección y sobres están publicados desde 462b5c9; los combates guardados y las 50 monedas por victoria, desde d2eec67. Guardado, victoria y premio único verificados con cuenta real en Vercel Preview antes de publicar.
 
 ## Abrir en VS Code
 
@@ -36,7 +36,8 @@ Para formatear archivos editados: `npx prettier --write src`. Las versiones est�
 ## Qué se puede probar
 
 - `/`: portada, carrusel manual de tres cartas, presentación y recorrido del proyecto.
-- `/coleccion` y `/sobres`: inventario por cuenta, inicial único, bienvenida gratuita, aperturas y fragmentos. SQL de colección probado en Supabase y recorrido autenticado comprobado en local; publicación pendiente.
+- `/coleccion` y `/sobres`: inventario por cuenta, inicial único, bienvenida gratuita, aperturas y fragmentos. SQL de colección probado en Supabase y recorrido autenticado comprobado; publicado desde 462b5c9.
+- `/combate`: seis cartas de tu colección contra Iniciación, partida guardada en cuenta y 50 monedas por victoria; sin apoyos ni reloj en este primer modo.
 - `/catalogo`: las 1.025 especies, búsqueda por nombre o número nacional y filtros combinables por generación, tipo de Pokémon, rareza y expansión. Los filtros se guardan en la URL.
 - `/catalogo/25`: ejemplo de ficha de especie con todas sus variantes, paginación e idioma real de cada ilustración. Enter abre una carta y Escape cierra su ficha.
 - `/equipo`: constructor de un equipo de prueba de seis especies, selección de ilustraciones, cambio de primer Pokémon y guardado local.
@@ -92,7 +93,7 @@ El índice EN y las traducciones ES se concilian por identificador, nunca por no
 - [Despliegue conectado a GitHub en Vercel](docs/DESPLIEGUE-VERCEL.md).
 
 - [Diseño del juego](docs/superpowers/specs/2026-10-08-pokeprisma-design.md).
-- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; conjunto de 48 cartas y práctica local disponibles; tutorial opcional disponible y servicio online pendiente.
+- [Reglas propuestas de combate v0.1](docs/superpowers/specs/2026-10-12-lumemon-battle-rules-design.md): cifras, turnos, estados, apoyos y ejemplos; cálculo de tipos/daño y turnos locales implementados; conjunto de 48 cartas y práctica local disponibles; tutorial opcional y servicio de combate online disponibles.
 - [Plan y progreso de la fase 1](docs/superpowers/plans/2026-10-08-pokeprisma-fase-1.md).
 - [Revisión de la fase 1](docs/revision-fase-1.md).
 - [Plan de catálogo, fase 2](docs/superpowers/plans/2026-10-08-pokeprisma-fase-2.md).
@@ -157,6 +158,6 @@ Es una práctica sin reloj, cuenta ni recompensas. Al salir de la ruta o recarga
 
 Desde el selector, **Aprender a combatir** abre una guía opcional en cinco pasos: tablero, Rayo con Pikachu, tipos y recarga, cambio a Jigglypuff y Canto para aplicar sueño. Usa el motor y el bot reales. Puedes omitirla entre secuencias o seguir el mismo combate al terminar; no guarda progreso ni sustituye tu selección de equipo. Disponible en español e inglés.
 
-### Combates online en preparación
+### Combates online publicados
 
-/combate añade partidas de seis cartas poseídas contra la máquina, guardado y 50 monedas por victoria. Implementado en feat/online-battles-rewards; falta activar SQL, clave privada de servidor y despliegue. Ver [activación y pruebas](docs/COMBATES-ONLINE.md). Colección y sobres ya publicados en 462b5c9. /practica sigue sin premios.
+/combate permite partidas de seis cartas poseídas contra la máquina, guardado y 50 monedas por victoria. Publicado con autorización en d2eec67 mediante chore/vercel-lumemon. SQL y clave privada de servidor activados; Vercel confirmó Production READY y el alias https://lumemon.vercel.app. Ver [activación y pruebas](docs/COMBATES-ONLINE.md) para la evidencia y sus límites. /practica sigue sin premios.
