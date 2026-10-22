@@ -2,9 +2,13 @@
 
 ## Estado — 2026-10-22
 
-Implementado en la rama `feat/google-signin`, desde `8bc85ba`. Proveedor configurado por el usuario; acceso local con su cuenta existente confirmado por él el 2026-10-22, tras pedirle comprobar alias y colección. No está publicado: producción continúa en `d2eec67`. El usuario eligió mantener coste cero y no dispone de dominio propio. No se instalaron dependencias ni se modificaron tablas, cuentas, saldos o colecciones.
+Implementado en la rama `feat/google-signin`, desde `8bc85ba`. Proveedor configurado por el usuario; acceso local con su cuenta existente confirmado por él el 2026-10-22, tras pedirle comprobar alias y colección. Publicado con autorización: producción está en `35aecc3`. El usuario eligió mantener coste cero y no dispone de dominio propio. No se instalaron dependencias ni se modificaron tablas, cuentas, saldos o colecciones.
 
 El botón «Continuar con Google» aparece en inicio de sesión y registro cuando `VITE_GOOGLE_AUTH_ENABLED=true`. La variable es pública, no es una credencial, y está desactivada por defecto en `.env.example`. El acceso por correo y contraseña y la recuperación se conservan. Habilitar Google no soluciona el envío SMTP para nuevos destinatarios externos; esa limitación del registro por correo sigue pendiente.
+
+## Publicación y comprobación pública
+
+Publicación autorizada y completada el 2026-10-22: variable pública VITE_GOOGLE_AUTH_ENABLED=true en Production de cachumbas1/lumemon, integración fast-forward y push de 35aecc3ccb3c379b85be01128152a544248d2df1 en chore/vercel-lumemon. Vercel confirmó Production READY, despliegue dpl_3VE3qvJ8VdLtkmd12WAvUNyjKaLR, URL https://lumemon-gh97f5382-cachumbas1.vercel.app y alias https://lumemon.vercel.app. El agente comprobó la carga del perfil con la sesión anterior y, tras cerrar solo esa sesión local del navegador, el botón «Continuar con Google» junto al acceso por contraseña. No se copiaron secretos. Falta que el usuario complete el recorrido Google desde producción y confirme alias y colección tras recargar; tampoco se ha verificado una cuenta nueva ni la audiencia pública de Google.
 
 ## Configuración guiada, sin facturación
 
@@ -15,8 +19,8 @@ El botón «Continuar con Google» aparece en inicio de sesión y registro cuand
 5. En Supabase → Authentication → Sign In / Providers → Google, copiar la URL de callback que muestra el proyecto. Esa dirección `https://<project-ref>.supabase.co/auth/v1/callback` es la URI de redirección autorizada que se registra en Google. No sustituirla por /cuenta de Vercel.
 6. El titular copia el Client ID y Client Secret de Google únicamente al proveedor Google de Supabase y guarda su configuración. El secreto nunca va en variables VITE_, Git, documentación ni capturas.
 7. En Supabase → Authentication → URL Configuration, conservar la Site URL `https://lumemon.vercel.app/cuenta` y la recuperación ya configurada. Añadir, cuando se pruebe en local, los retornos exactos `http://localhost:5174/cuenta` y/o `http://127.0.0.1:5174/cuenta`. Una vista previa necesita su propio retorno autorizado.
-8. Tras configurar el proveedor, activar el indicador público en el entorno que se vaya a probar y reiniciar Vite o recompilar. Para la comprobación visual se activó solo en el proceso local; no se cambió .env.local ni Vercel.
-9. Probar el recorrido real antes de publicar. La audiencia pública de Google y la publicación en Vercel son pasos separados, pendientes de autorización. No prometer que modo de prueba permite acceder a todo el mundo. La configuración básica no necesita comprar un dominio; Google puede mostrar el dominio del proyecto Supabase y solicitar requisitos adicionales para una marca personalizada o verificación.
+8. Tras configurar el proveedor, activar el indicador público en el entorno que se vaya a probar y reiniciar Vite o recompilar. Para la comprobación visual se activó solo en el proceso local; no se cambió .env.local; Vercel se activó después con autorización, como se recoge arriba.
+9. Probar el recorrido real antes de publicar. La publicación en Vercel ya se autorizó y completó. La audiencia pública de Google es un paso separado que sigue sin verificar. No prometer que modo de prueba permite acceder a todo el mundo. La configuración básica no necesita comprar un dominio; Google puede mostrar el dominio del proyecto Supabase y solicitar requisitos adicionales para una marca personalizada o verificación.
 
 ## Prueba real comunicada por el titular — 2026-10-22
 
@@ -28,7 +32,7 @@ El usuario confirmó guardar las credenciales en Supabase. Después de indicarle
 - Cuenta existente: comprobar con su correo verificado que se recupera el mismo perfil y colección. No asumir que el emparejamiento funciona hasta comprobarlo; no crear ni fusionar usuarios manualmente para disimular un fallo.
 - Cancelar en Google, volver desde el navegador, cerrar sesión y repetir el acceso. Comprobar también móvil.
 - Verificar que una segunda cuenta no ve el progreso de la primera y que no recibe premios de bienvenida duplicados.
-- Autorizar después la publicación y la configuración de la variable en Vercel. No fusionar por leer esta guía.
+- Comprobar el recorrido Google desde la web pública después de la publicación autorizada. No fusionar cambios futuros por leer esta guía.
 
 ## Implementación y evidencia local
 

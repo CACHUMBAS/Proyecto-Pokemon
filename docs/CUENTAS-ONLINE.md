@@ -2,7 +2,7 @@
 
 ## Acceso con Google — 2026-10-22
 
-Implementado en `feat/google-signin`; el usuario confirmó configurar el proveedor y acceder en local conservando alias y cartas. Queda pendiente comprobar producción y cuentas nuevas. Oculto salvo `VITE_GOOGLE_AUTH_ENABLED=true`; no publicado. Conserva cuentas por contraseña y no elimina la limitación SMTP externa. Véase [la guía de Google](ACCESO-GOOGLE.md).
+Implementado en `feat/google-signin`; el usuario confirmó configurar el proveedor y acceder en local conservando alias y cartas. Queda pendiente comprobar producción y cuentas nuevas. Publicado en `35aecc3`, con `VITE_GOOGLE_AUTH_ENABLED=true` en Production. Conserva cuentas por contraseña y no elimina la limitación SMTP externa. Véase [la guía de Google](ACCESO-GOOGLE.md).
 
 ## Alcance de esta entrega
 
