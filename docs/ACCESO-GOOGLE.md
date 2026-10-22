@@ -8,7 +8,7 @@ El botón «Continuar con Google» aparece en inicio de sesión y registro cuand
 
 ## Publicación y comprobación pública
 
-Publicación autorizada y completada el 2026-10-22: variable pública VITE_GOOGLE_AUTH_ENABLED=true en Production de cachumbas1/lumemon, integración fast-forward y push de 35aecc3ccb3c379b85be01128152a544248d2df1 en chore/vercel-lumemon. Vercel confirmó Production READY, despliegue dpl_3VE3qvJ8VdLtkmd12WAvUNyjKaLR, URL https://lumemon-gh97f5382-cachumbas1.vercel.app y alias https://lumemon.vercel.app. El agente comprobó la carga del perfil con la sesión anterior y, tras cerrar solo esa sesión local del navegador, el botón «Continuar con Google» junto al acceso por contraseña. No se copiaron secretos. Falta que el usuario complete el recorrido Google desde producción y confirme alias y colección tras recargar; tampoco se ha verificado una cuenta nueva ni la audiencia pública de Google.
+Publicación autorizada y completada el 2026-10-22: variable pública VITE_GOOGLE_AUTH_ENABLED=true en Production de cachumbas1/lumemon, integración fast-forward y push de 35aecc3ccb3c379b85be01128152a544248d2df1 en chore/vercel-lumemon. Vercel confirmó Production READY, despliegue dpl_3VE3qvJ8VdLtkmd12WAvUNyjKaLR, URL https://lumemon-gh97f5382-cachumbas1.vercel.app y alias https://lumemon.vercel.app. El agente comprobó la carga del perfil con la sesión anterior y, tras cerrar solo esa sesión local del navegador, el botón «Continuar con Google» junto al acceso por contraseña. No se copiaron secretos. El usuario confirmó el 2026-10-22 el acceso con Google desde https://lumemon.vercel.app/cuenta y la conservación del alias y las cartas después de abrir Colección y recargar. Esta evidencia procede de su confirmación explícita; el agente no completó el recorrido autenticado por él. Siguen pendientes una cuenta nueva, el aislamiento entre cuentas reales y verificar la audiencia pública de Google.
 
 ## Configuración guiada, sin facturación
 
@@ -24,15 +24,14 @@ Publicación autorizada y completada el 2026-10-22: variable pública VITE_GOOGL
 
 ## Prueba real comunicada por el titular — 2026-10-22
 
-El usuario confirmó guardar las credenciales en Supabase. Después de indicarle añadir el retorno local, abrir /cuenta, elegir Google con el correo de su cuenta existente y comprobar alias y cartas, respondió «sí, funciona». El agente no inspeccionó su sesión autenticada ni recibió claves. No se ha probado todavía el recorrido desde producción, una cuenta nueva, la recarga del progreso después de OAuth ni el aislamiento entre dos cuentas reales. La audiencia pública de Google sigue sin verificar; no afirmar que el acceso esté habilitado para cualquier usuario.
+El usuario confirmó guardar las credenciales en Supabase. Después de indicarle añadir el retorno local, abrir /cuenta, elegir Google con el correo de su cuenta existente y comprobar alias y cartas, respondió «sí, funciona». El agente no inspeccionó su sesión autenticada ni recibió claves. Posteriormente, el usuario confirmó el recorrido desde producción y la conservación del alias y las cartas después de recargar. Quedan sin probar una cuenta nueva y el aislamiento entre dos cuentas reales. La audiencia pública de Google sigue sin verificar; no afirmar que el acceso esté habilitado para cualquier usuario.
 
 ## Comprobaciones pendientes con el titular
 
 - Cuenta nueva: Google → /cuenta → alias → colección inicial; recargar y volver a entrar conserva el perfil y el progreso.
-- Cuenta existente: comprobar con su correo verificado que se recupera el mismo perfil y colección. No asumir que el emparejamiento funciona hasta comprobarlo; no crear ni fusionar usuarios manualmente para disimular un fallo.
 - Cancelar en Google, volver desde el navegador, cerrar sesión y repetir el acceso. Comprobar también móvil.
 - Verificar que una segunda cuenta no ve el progreso de la primera y que no recibe premios de bienvenida duplicados.
-- Comprobar el recorrido Google desde la web pública después de la publicación autorizada. No fusionar cambios futuros por leer esta guía.
+- No fusionar cambios futuros por leer esta guía; la autorización de publicación correspondía al bloque ya entregado.
 
 ## Implementación y evidencia local
 
