@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/ui/Button'
 import type { CollectionCommand, CollectionSnapshot } from '../../collection/types'
@@ -16,7 +16,8 @@ export function ConfirmOperation({
 }) {
   const { t, i18n } = useTranslation()
   const ref = useRef<HTMLDialogElement>(null)
-  useEffect(() => {
+  // Close before DOM removal so native focus restoration still has an opener.
+  useLayoutEffect(() => {
     const dialog = ref.current!
     dialog.showModal()
     return () => dialog.close()

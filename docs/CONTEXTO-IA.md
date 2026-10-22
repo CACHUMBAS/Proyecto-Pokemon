@@ -1,8 +1,16 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-22 (sobres Perla / Noche implementados en local; publicación pendiente). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-22 (álbum visual y visor de cartas implementados; publicación pendiente). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
-## Bloque actual: sobres Perla / Noche — 2026-10-22
+## Bloque actual: álbum de colección — 2026-10-22
+
+Rama `feat/collection-album`, desde `3d8d6e1` (sobres Perla/Noche ya subidos a GitHub). Continuación autorizada del diseño: álbum con más espacio para las ilustraciones, progreso de variantes Prisma, total de copias y sobrantes; conserva búsqueda por nombre/ID/expansión y filtros por rareza, tipo y duplicados, con restablecimiento. Ficha ampliada con imagen de alta resolución, navegación por las cartas filtradas, datos del catálogo, idioma real, procedencia y cantidad poseída. Perla/Noche, ES/EN, teclado y adaptación móvil. La conversión de duplicados se abre desde la ficha y mantiene la confirmación existente. La ficha se cierra antes de confirmar para mostrar los estados de guardado/error del servidor; se corrige la restauración del foco en ConfirmOperation con useLayoutEffect.
+
+Comprobado: 19 pruebas de colección/presentación correctas; lint y build/typecheck correctos. Demo local en /scripts/qa/collection-album.html (inventario simulado, sin escrituras): escritorio 1440 px, móvil 390/320 px, filtros, restablecimiento, resultado vacío, navegación y límites, Escape, foco al cancelar, imagen de 600 px y bloqueo de la última copia. No se convierten duplicados reales ni se repiten cuentas, combates o migraciones. Movimiento reducido conserva la alternativa CSS; no se emuló el ajuste del sistema.
+
+Sin dependencias nuevas ni cambios de economía/API/base de datos. Publicación de álbum y sobres pendiente de autorización; producción sigue en `35aecc3`. Guía: [Diseño del álbum](ALBUM-DISENO.md). No ampliar el rediseño ni desplegar por leer este contexto.
+
+## Bloque anterior: sobres Perla / Noche — 2026-10-22
 
 Rama `feat/pearl-violet-packs`, desde `f3c6c6b`. El usuario aprobó dos versiones intercambiables: clara/perlada y oscura azul/violeta, empezando por Sobres. Implementadas en Colección y Sobres con preferencia local `lumemon.collection-theme.v1`; la cabecera y el pie adoptan la paleta mientras se visitan esas rutas. El resto de pantallas conserva su diseño y queda para otra fase. Envoltorio Prisma original en CSS/SVG, galería con ilustraciones reales del catálogo, apertura modal con gesto o botón, revelado por carta, color según rareza de Lumemon, resumen y salto. El recibo ya guardado sigue siendo la única fuente; no cambian saldos, probabilidades, sorteo, RPC ni identidad.
 

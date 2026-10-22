@@ -2,8 +2,9 @@ import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import type { CollectionSnapshot, CollectionCommand } from '../../collection/types'
-import { Button } from '../../components/ui/Button'
 import { CollectionCard } from './CollectionCard'
+import { CardInspector } from './CardInspector'
+import './CollectionAlbum.css'
 import { cardLabel, collectionArtwork, collectionSpecies } from './card-data'
 export function Inventory({
   data,
@@ -20,6 +21,7 @@ export function Inventory({
     [budget, setBudget] = useState(''),
     [duplicates, setDuplicates] = useState(false),
     [type, setType] = useState('')
+  const [selectedId, setSelectedId] = useState<string | null>(null)
   const query = search.trim().toLocaleLowerCase(locale)
   const cards = data.inventory.filter((item) => {
     const def = data.cards.find((c) => c.card_id === item.card_id)!
@@ -34,16 +36,51 @@ export function Inventory({
           .includes(query))
     )
   })
+  const selectedIndex = cards.findIndex((item) => item.card_id === selectedId)
+  const hasFilters = Boolean(search || budget || type || duplicates)
+  const clearFilters = () => {
+    setSearch('')
+    setBudget('')
+    setType('')
+    setDuplicates(false)
+  }
+  const copies = data.inventory.reduce((total, item) => total + item.quantity, 0)
   return (
-    <section aria-labelledby="inventory-title">
+    <section className="collection-album" aria-labelledby="inventory-title">
       <div className="collection-section-heading">
         <div>
           <span className="eyebrow">{t('collection.inventory.eyebrow')}</span>
-          <h2 id="inventory-title">{t('collection.inventory.title')}</h2>
+          <h2 id="inventory-title">{t('collection.album.title')}</h2>
         </div>
         <Link className="collection-text-link" to="/sobres">
           {t('collection.inventory.toPacks')} ↗
         </Link>
+      </div>
+      <div className="album-overview">
+        <div className="album-progress">
+          <div>
+            <span>{t('collection.album.progress')}</span>
+            <strong>
+              {data.inventory.length}
+              <small> / {data.cards.length}</small>
+            </strong>
+          </div>
+          <meter
+            min={0}
+            max={data.cards.length || 1}
+            value={data.inventory.length}
+            aria-label={t('collection.album.progress')}
+          />
+          <p>{t('collection.album.progressNote')}</p>
+        </div>
+        <div className="album-number">
+          <strong>{copies}</strong>
+          <span>{t('collection.album.copies')}</span>
+        </div>
+        <div className="album-number">
+          <strong>{copies - data.inventory.length}</strong>
+          <span>{t('collection.album.spares')}</span>
+        </div>
       </div>
       <div className="collection-filters">
         <label>
@@ -90,40 +127,66 @@ export function Inventory({
           {t('collection.inventory.duplicates')}
         </label>
       </div>
-      <p className="collection-footnote" role="status">
-        {t('collection.inventory.count', { count: cards.length, total: data.inventory.length })}
-      </p>
+      <div className="album-results">
+        <p role="status">
+          {t('collection.inventory.count', { count: cards.length, total: data.inventory.length })}
+        </p>
+        {hasFilters ? (
+          <button type="button" onClick={clearFilters}>
+            {t('collection.album.clear')} <span aria-hidden="true">×</span>
+          </button>
+        ) : (
+          <span>{t('collection.album.hint')}</span>
+        )}
+      </div>
       {cards.length ? (
-        <div className="collection-inventory-grid">
+        <div className="album-grid">
           {cards.map((item) => {
             const def = data.cards.find((c) => c.card_id === item.card_id)!
             return (
-              <article className={'collection-owned tier-' + def.budget} key={item.card_id}>
-                <div className="collection-owned-top">
+              <article className={'album-card tier-' + def.budget} key={item.card_id}>
+                <div className="album-card-top">
                   <span>{t('collection.tiers.' + def.budget)}</span>
-                  <strong>×{item.quantity}</strong>
+                  <strong aria-label={t('collection.album.owned', { count: item.quantity })}>
+                    ×{item.quantity}
+                  </strong>
                 </div>
-                <CollectionCard id={item.card_id} />
-                <p className="collection-owned-note">
-                  {item.quantity > 1
-                    ? t('collection.inventory.spare', { count: item.quantity - 1 })
-                    : t('collection.inventory.lastCopy')}
-                </p>
-                <Button
-                  variant="secondary"
-                  disabled={disabled || item.quantity < 2}
-                  onClick={() => choose({ kind: 'fragment', cardId: item.card_id, quantity: 1 })}
-                >
-                  {t('collection.inventory.fragment', { count: def.fragment_value })}
-                </Button>
+                <CollectionCard id={item.card_id} onSelect={setSelectedId} />
+                <div className="album-card-bottom">
+                  <span>
+                    {item.quantity > 1
+                      ? t('collection.inventory.spare', { count: item.quantity - 1 })
+                      : t('collection.album.inAlbum')}
+                  </span>
+                  <span aria-hidden="true">↗</span>
+                </div>
               </article>
             )
           })}
         </div>
       ) : (
-        <p className="collection-notice">{t('collection.inventory.empty')}</p>
+        <div className="album-empty">
+          <span aria-hidden="true">◇</span>
+          <h3>{t('collection.inventory.empty')}</h3>
+          <p>{t('collection.album.emptyHint')}</p>
+          <button type="button" onClick={clearFilters}>
+            {t('collection.album.clear')}
+          </button>
+        </div>
       )}
       <p className="collection-footnote">{t('collection.inventory.localTeam')}</p>
+      {selectedIndex >= 0 && (
+        <CardInspector
+          item={cards[selectedIndex]}
+          definition={data.cards.find((card) => card.card_id === selectedId)!}
+          index={selectedIndex}
+          total={cards.length}
+          disabled={disabled}
+          navigate={(direction) => setSelectedId(cards[selectedIndex + direction].card_id)}
+          close={() => setSelectedId(null)}
+          choose={choose}
+        />
+      )}
     </section>
   )
 }

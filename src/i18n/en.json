@@ -795,6 +795,22 @@
       "done": "Keep collecting",
       "alreadySaved": "Saved to your account · close whenever you like",
       "showAll": "Show all without animation"
+    },
+    "album": {
+      "title": "Your Prisma album",
+      "progress": "Prisma collection",
+      "progressNote": "Different artworks you have discovered.",
+      "copies": "Total cards",
+      "spares": "Spare copies",
+      "hint": "Tap a card for a closer look.",
+      "clear": "Clear filters",
+      "inAlbum": "In your collection",
+      "owned_one": "{{count}} copy",
+      "owned_other": "{{count}} copies",
+      "emptyHint": "Try another name or reset the filters to return to your album.",
+      "viewer": "YOUR COLLECTION · UP CLOSE",
+      "navigation": "Browse filtered cards",
+      "expansion": "Expansion"
     }
   },
   "online": {

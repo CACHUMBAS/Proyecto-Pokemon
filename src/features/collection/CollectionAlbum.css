@@ -1,0 +1,472 @@
+/* Album and inspector share the CollectionLayout palette. */
+.album-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) 1fr 1fr;
+  align-items: center;
+  margin: 0 0 28px;
+  padding: 26px 30px;
+  gap: 35px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: linear-gradient(120deg, var(--gallery-active), var(--surface));
+}
+.album-progress > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+}
+.album-progress strong {
+  font: 500 27px var(--font-display);
+}
+.album-progress strong small {
+  font-size: 15px;
+  color: var(--muted);
+}
+.album-progress meter {
+  display: block;
+  width: 100%;
+  height: 7px;
+  margin: 12px 0;
+  border: 0;
+  border-radius: 20px;
+  background: var(--border);
+}
+.album-progress meter::-webkit-meter-bar {
+  height: 7px;
+  border: 0;
+  background: var(--border);
+}
+.album-progress meter::-webkit-meter-optimum-value {
+  background: linear-gradient(90deg, var(--mint), var(--cyan));
+  border-radius: 20px;
+}
+.album-progress meter::-moz-meter-bar {
+  background: var(--mint);
+}
+.album-progress p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+.album-number {
+  border-left: 1px solid var(--border);
+  padding-left: 30px;
+}
+.album-number strong {
+  display: block;
+  font: 500 37px/1.2 var(--font-display);
+}
+.album-number span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 7px;
+}
+.collection-album .collection-filters {
+  border-radius: 16px;
+}
+.album-results {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 64px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.album-results p {
+  margin: 0;
+}
+.album-results button,
+.album-empty button {
+  border: 0;
+  color: var(--mint);
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 8px 0;
+}
+.album-results button span {
+  margin-left: 10px;
+  font-size: 22px;
+  vertical-align: middle;
+}
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 26px;
+  row-gap: 32px;
+  padding: 6px 0 26px;
+}
+.album-card {
+  min-width: 0;
+  padding: 14px 14px 0;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: linear-gradient(150deg, var(--surface), var(--gallery-active));
+}
+.album-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  color: var(--tier);
+  font-size: 10px;
+  margin-bottom: 13px;
+  min-height: 24px;
+}
+.album-card-top > span::before {
+  content: '✦';
+  margin-right: 5px;
+}
+.album-card-top strong {
+  color: var(--text);
+  padding: 4px 7px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 11px;
+  background: var(--surface);
+  white-space: nowrap;
+}
+.album-card .pokemon-card {
+  box-shadow: 0 8px 20px var(--gallery-shadow);
+  border-color: var(--border);
+  border-radius: 9px;
+}
+.album-card .collection-card-art > strong {
+  font: 600 18px var(--font-display);
+  margin-top: 18px;
+}
+.album-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  margin-top: 14px;
+  padding: 10px 0;
+  border-top: 1px solid var(--border);
+  font-size: 10px;
+  color: var(--muted);
+}
+.album-card-bottom > span:last-child {
+  font-size: 18px;
+  color: var(--mint);
+}
+.album-empty {
+  padding: 50px 24px;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 20px;
+  background: var(--surface);
+}
+.album-empty > span {
+  display: block;
+  font-size: 48px;
+  color: var(--mint);
+}
+.album-empty h3 {
+  font: 500 21px var(--font-display);
+}
+.album-empty p {
+  color: var(--muted);
+  font-size: 13px;
+}
+.card-inspector {
+  width: min(940px, calc(100vw - 40px));
+  max-width: none;
+  max-height: calc(100dvh - 40px);
+  margin: auto;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: 0 30px 120px #07091966;
+  overscroll-behavior: contain;
+}
+.card-inspector::backdrop {
+  background: #080b23b8;
+  backdrop-filter: blur(12px);
+}
+body:has(.card-inspector[open]) {
+  overflow: hidden;
+}
+.inspector-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 22px;
+  border-bottom: 1px solid var(--border);
+  gap: 16px;
+}
+.inspector-header .eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  margin: 0;
+}
+.inspector-close,
+.inspector-navigation button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--text);
+  background: var(--surface);
+  cursor: pointer;
+  font-size: 24px;
+}
+.inspector-body {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+}
+.inspector-exhibit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px 35px;
+  gap: 24px;
+  background: radial-gradient(ellipse at 50% 40%, var(--gallery-glow), transparent 68%), var(--bg);
+}
+.inspector-art {
+  width: min(100%, 330px);
+  animation: album-arrive 240ms ease-out both;
+}
+.inspector-art .pokemon-card {
+  box-shadow: 0 20px 40px var(--gallery-shadow);
+}
+.inspector-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  width: min(100%, 330px);
+}
+.inspector-navigation > span {
+  font: 500 18px var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+.inspector-navigation small {
+  color: var(--muted);
+  font-size: 13px;
+}
+.inspector-navigation button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+.inspector-details {
+  padding: 35px;
+  min-width: 0;
+}
+.inspector-tier {
+  display: block;
+  color: var(--tier);
+  font-size: 11px;
+}
+.inspector-tier::before {
+  content: '✦';
+  margin-right: 7px;
+}
+.inspector-details h2 {
+  margin: 12px 0 7px;
+  font: 500 clamp(28px, 3vw, 42px)/1.1 var(--font-display);
+  letter-spacing: -0.035em;
+  overflow-wrap: anywhere;
+}
+.inspector-id {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 0 0 16px;
+  overflow-wrap: anywhere;
+}
+.inspector-types {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.inspector-types span {
+  color: var(--mint);
+  background: var(--gallery-active);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 6px 12px;
+  font-size: 11px;
+}
+.inspector-facts {
+  margin: 25px 0 15px;
+}
+.inspector-facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.inspector-facts dt {
+  color: var(--muted);
+}
+.inspector-facts dd {
+  margin: 0;
+  text-align: right;
+  max-width: 65%;
+  overflow-wrap: anywhere;
+}
+.inspector-source {
+  display: inline-block;
+  padding: 10px 0;
+}
+.inspector-ownership {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px;
+  margin-top: 16px;
+}
+.inspector-ownership > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 12px;
+}
+.inspector-ownership strong {
+  color: var(--mint);
+  white-space: nowrap;
+}
+.inspector-ownership p {
+  color: var(--muted);
+  font-size: 11px;
+  margin: 10px 0 14px;
+  line-height: 1.6;
+}
+.inspector-ownership .button {
+  width: 100%;
+  font-size: 11px;
+  padding: 12px 8px;
+}
+:is(.collection-album, .card-inspector) :is(button, a, input, select):focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 4px;
+}
+html[data-collection-theme] :is(.album-card, .card-inspector) .card-fallback {
+  background: radial-gradient(ellipse at 50% 20%, var(--surface-high), var(--surface));
+  color: var(--text);
+}
+@keyframes album-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(9px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@media (max-width: 1000px) {
+  .album-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .inspector-details {
+    padding: 24px;
+  }
+  .inspector-exhibit {
+    padding: 24px;
+  }
+}
+@media (max-width: 700px) {
+  .album-overview {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    padding: 22px;
+  }
+  .album-progress {
+    grid-column: 1/-1;
+  }
+  .album-number {
+    padding: 0;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+  }
+  .album-number strong {
+    font-size: 27px;
+  }
+  .album-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 12px;
+  }
+  .album-card {
+    padding: 9px 9px 0;
+    border-radius: 13px;
+  }
+  .album-card-top {
+    font-size: 9px;
+    align-items: start;
+    min-height: 30px;
+  }
+  .album-card-top > span::before {
+    display: none;
+  }
+  .album-card-top strong {
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+  .album-card .collection-card-art > strong {
+    font-size: 15px;
+  }
+  .album-results {
+    font-size: 11px;
+  }
+  .album-results > span {
+    max-width: 50%;
+    text-align: right;
+  }
+  .album-card-bottom {
+    font-size: 9px;
+  }
+  .card-inspector {
+    width: calc(100vw - 20px);
+    max-height: calc(100dvh - 20px);
+    border-radius: 20px;
+  }
+  .inspector-header {
+    padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: var(--surface);
+  }
+  .inspector-body {
+    grid-template-columns: 1fr;
+  }
+  .inspector-exhibit {
+    padding: 20px;
+    gap: 20px;
+  }
+  .inspector-art {
+    width: min(255px, 100%);
+  }
+  .inspector-details {
+    padding: 24px;
+  }
+  .inspector-facts {
+    margin-top: 20px;
+  }
+  .inspector-details h2 {
+    font-size: 32px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inspector-art {
+    animation: none;
+  }
+}

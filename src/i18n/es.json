@@ -801,6 +801,22 @@
       "done": "Continuar coleccionando",
       "alreadySaved": "Guardado en tu cuenta · puedes cerrar cuando quieras",
       "showAll": "Ver todas sin animación"
+    },
+    "album": {
+      "title": "Tu álbum Prisma",
+      "progress": "Colección Prisma",
+      "progressNote": "Ilustraciones diferentes que has descubierto.",
+      "copies": "Cartas en total",
+      "spares": "Copias sobrantes",
+      "hint": "Toca una carta para descubrirla de cerca.",
+      "clear": "Limpiar filtros",
+      "inAlbum": "En tu colección",
+      "owned_one": "{{count}} copia",
+      "owned_other": "{{count}} copias",
+      "emptyHint": "Prueba otro nombre o restablece los filtros para volver a tu álbum.",
+      "viewer": "TU COLECCIÓN · AL DETALLE",
+      "navigation": "Navegar por las cartas filtradas",
+      "expansion": "Expansión"
     }
   },
   "online": {
