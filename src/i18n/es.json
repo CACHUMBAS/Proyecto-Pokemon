@@ -641,13 +641,21 @@
       "emailDelivery": "No se ha podido enviar el correo a esa dirección. El envío de emails debe estar configurado para admitir nuevos jugadores.",
       "samePassword": "Elige una contraseña diferente a la anterior.",
       "expiredLink": "Este enlace no se ha podido verificar o ya ha caducado. Solicita uno nuevo y ábrelo en el mismo navegador.",
-      "request": "No se ha podido completar la operación. Comprueba tu conexión e inténtalo de nuevo."
+      "request": "No se ha podido completar la operación. Comprueba tu conexión e inténtalo de nuevo.",
+      "googleStart": "No se ha podido abrir Google. Comprueba tu conexión y vuelve a intentarlo.",
+      "oauthCancelled": "Google no ha autorizado el acceso. Puedes volver a intentarlo o usar otro método.",
+      "authReturn": "No se ha podido verificar este acceso. Vuelve a iniciar sesión desde esta página."
     },
     "notices": {
       "checkEmail": "Si el registro puede completarse con ese correo, recibirás un enlace de confirmación. Revisa también spam; si ya tienes cuenta, inicia sesión o recupera el acceso.",
       "resetSent": "Si existe una cuenta con ese correo, recibirás un enlace de recuperación. Revisa también spam.",
       "passwordUpdated": "Contraseña actualizada. Ya puedes usarla para acceder."
-    }
+    },
+    "google": "Continuar con Google",
+    "googleRedirecting": "Abriendo Google…",
+    "googleHint": "Usa tu cuenta de Google para entrar o crear tu cuenta de Lumemon.",
+    "orEmail": "O con correo y contraseña",
+    "googleSignupHint": "Con Google, autoriza el acceso en su pantalla. El registro por correo requiere un enlace de confirmación."
   },
   "collection": {
     "eyebrow": "TU ARCHIVO DE CARTAS",

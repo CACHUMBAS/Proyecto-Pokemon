@@ -635,13 +635,21 @@
       "emailDelivery": "The email could not be sent to this address. Email delivery must be configured to admit new players.",
       "samePassword": "Choose a password different from your previous one.",
       "expiredLink": "This link could not be verified or has expired. Request a new one and open it in the same browser.",
-      "request": "The operation could not be completed. Check your connection and try again."
+      "request": "The operation could not be completed. Check your connection and try again.",
+      "googleStart": "Google could not be opened. Check your connection and try again.",
+      "oauthCancelled": "Google did not authorize access. You can try again or use another method.",
+      "authReturn": "This sign-in could not be verified. Start signing in again from this page."
     },
     "notices": {
       "checkEmail": "If registration can proceed with this email, you will receive a confirmation link. Check spam too; if you already have an account, sign in or recover access.",
       "resetSent": "If an account exists for this email, you will receive a recovery link. Check spam too.",
       "passwordUpdated": "Password updated. You can now use it to sign in."
-    }
+    },
+    "google": "Continue with Google",
+    "googleRedirecting": "Opening Google…",
+    "googleHint": "Use your Google account to sign in or create your Lumemon account.",
+    "orEmail": "Or with email and password",
+    "googleSignupHint": "With Google, authorize access on its screen. Email registration requires a confirmation link."
   },
   "collection": {
     "eyebrow": "YOUR CARD ARCHIVE",

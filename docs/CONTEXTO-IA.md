@@ -1,6 +1,12 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-20 (ciclo de victoria, monedas y sobre verificado en producción). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-22 (acceso con Google preparado; configuración y prueba real pendientes). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+
+## Bloque actual: acceso con Google — 2026-10-22
+
+Rama `feat/google-signin`, desde `8bc85ba`. El usuario aprobó preparar acceso con Google manteniendo coste cero y el registro por correo. Código local implementado, 247 pruebas correctas (10 de OAuth), lint y build/typecheck correctos; interfaz ES/EN comprobada en escritorio y móvil. La prueba visual usa `VITE_GOOGLE_AUTH_ENABLED=true` solo en el proceso local. Por defecto está desactivado. Sin nuevas dependencias, migraciones ni cambios de progreso.
+
+Pendiente: el usuario debe confirmar que creó el proyecto de Google Cloud, configurar OAuth de identidad básica en Google y Supabase, y probar el acceso con cuentas reales. No confundir simulaciones con autenticación real ni prometer registro público por correo: SMTP externo sigue pendiente. Producción permanece en `d2eec67`; no hay autorización para publicar este bloque. Detalles y pasos en [Acceso con Google](ACCESO-GOOGLE.md). Conservar perfiles y colección; nunca exponer Client Secret ni claves de servidor.
 
 ## Bloque cerrado: ciclo de monedas y sobres — 2026-10-20
 

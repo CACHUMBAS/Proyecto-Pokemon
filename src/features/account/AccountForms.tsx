@@ -1,19 +1,25 @@
-import { useRef, useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/ui/Button'
 import { accountErrorCode } from '../../account/gateway'
+import { googleSignInRequest } from '../../account/google'
+import googleMark from '../../assets/auth/google-g.png'
 import { validateCredentials, type AccountMode } from '../../account/validation'
 
 type Props = {
   client: SupabaseClient | null
   initialMode?: AccountMode
+  googleEnabled?: boolean
+  onAuthAttempt?: () => void
   allowPasswordUpdate?: () => boolean
   onPasswordUpdated?: () => void
 }
 export function AccountForms({
   client,
   initialMode = 'signin',
+  googleEnabled = false,
+  onAuthAttempt,
   allowPasswordUpdate,
   onPasswordUpdated,
 }: Props) {
@@ -24,9 +30,42 @@ export function AccountForms({
   const [confirm, setConfirm] = useState('')
   const [busy, setBusy] = useState(false)
   const pending = useRef(false)
+  const [googleRedirecting, setGoogleRedirecting] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [notice, setNotice] = useState<string | null>(null)
   const isNewPassword = mode === 'signup' || mode === 'updatePassword'
+  useEffect(() => {
+    const restore = (event: PageTransitionEvent) => {
+      if (!event.persisted) return
+      pending.current = false
+      setBusy(false)
+      setGoogleRedirecting(false)
+    }
+    window.addEventListener('pageshow', restore)
+    return () => window.removeEventListener('pageshow', restore)
+  }, [])
+  async function signInWithGoogle() {
+    if (!client || !googleEnabled || pending.current) return
+    pending.current = true
+    setBusy(true)
+    setGoogleRedirecting(true)
+    setError(null)
+    setNotice(null)
+    onAuthAttempt?.()
+    try {
+      const { data, error } = await client.auth.signInWithOAuth(
+        googleSignInRequest(window.location.origin),
+      )
+      if (error) throw error
+      if (!data.url) throw new Error('Missing authorization URL')
+      // The SDK navigates away. Keep both sign-in methods locked until then.
+    } catch {
+      setError('googleStart')
+      pending.current = false
+      setBusy(false)
+      setGoogleRedirecting(false)
+    }
+  }
   function changeMode(next: AccountMode) {
     setMode(next)
     setError(null)
@@ -37,6 +76,7 @@ export function AccountForms({
   async function submit(event: FormEvent) {
     event.preventDefault()
     if (!client || pending.current) return
+    onAuthAttempt?.()
     const invalid = validateCredentials(mode, email, password, confirm)
     if (invalid) {
       setError(invalid)
@@ -101,7 +141,26 @@ export function AccountForms({
         </div>
       )}
       <h2>{t('account.forms.' + mode)}</h2>
-      <p className="account-muted">{t('account.hints.' + mode)}</p>
+      <p className="account-muted">
+        {t(
+          googleEnabled && mode === 'signup' ? 'account.googleSignupHint' : 'account.hints.' + mode,
+        )}
+      </p>
+      {googleEnabled && (mode === 'signin' || mode === 'signup') && (
+        <div className="account-google-access">
+          <button
+            type="button"
+            className="account-google-button"
+            disabled={!client || busy}
+            onClick={() => void signInWithGoogle()}
+          >
+            <img src={googleMark} width="20" height="20" alt="" aria-hidden="true" />
+            <span>{t(googleRedirecting ? 'account.googleRedirecting' : 'account.google')}</span>
+          </button>
+          <p className="account-input-hint">{t('account.googleHint')}</p>
+          <p className="account-auth-divider">{t('account.orEmail')}</p>
+        </div>
+      )}
       <form onSubmit={submit} noValidate aria-busy={busy}>
         <fieldset disabled={!client || busy}>
           <legend className="sr-only">{t('account.forms.' + mode)}</legend>

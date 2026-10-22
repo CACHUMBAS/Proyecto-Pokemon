@@ -264,3 +264,57 @@ form > .account-message {
     font-size: 26px;
   }
 }
+
+.account-google-access {
+  margin-top: 22px;
+}
+.account-google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 1px solid #747775;
+  border-radius: 8px;
+  background: #fff;
+  color: #1f1f1f;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.account-google-button:hover:not(:disabled) {
+  background: #eef3f8;
+}
+.account-google-button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+.account-google-button:focus-visible {
+  outline: 3px solid var(--mint);
+  outline-offset: 4px;
+}
+.account-auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 22px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+.account-auth-divider::before,
+.account-auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.account-google-button img {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

@@ -6,6 +6,7 @@ import { Button } from '../../components/ui/Button'
 import { PrismMark } from '../../components/ui/PrismMark'
 import { AccountForms } from './AccountForms'
 import { PlayerProfile } from './PlayerProfile'
+import { completeAccountAuthReturn, type AuthReturnError } from '../../account/google'
 import './AccountPage.css'
 
 function AccountFrame({ children }: { children: ReactNode }) {
@@ -57,6 +58,20 @@ function ConnectedAccount() {
   const client = accountClient!
   const store = accountStore!
   const snapshot = useSyncExternalStore(store.subscribe, store.getSnapshot)
+  const [returnUrl] = useState(() => window.location.href)
+  const [returnError, setReturnError] = useState<AuthReturnError | null>(null)
+  const googleEnabled = import.meta.env.VITE_GOOGLE_AUTH_ENABLED === 'true'
+  useEffect(() => {
+    let active = true
+    void completeAccountAuthReturn(client.auth, returnUrl).then((result) => {
+      if (!active || !result) return
+      setReturnError(result.error)
+      void navigate(result.path, { replace: true })
+    })
+    return () => {
+      active = false
+    }
+  }, [client, navigate, returnUrl])
   const [signingOut, setSigningOut] = useState(false)
   const [logoutError, setLogoutError] = useState(false)
   const [passwordUpdated, setPasswordUpdated] = useState(false)
@@ -79,6 +94,11 @@ function ConnectedAccount() {
   }
   return (
     <AccountFrame>
+      {returnError && (
+        <p className="account-message account-error" role="alert">
+          {t('account.errors.' + returnError)}
+        </p>
+      )}
       {passwordUpdated && (
         <p role="status" className="account-message">
           {t('account.notices.passwordUpdated')}
@@ -107,6 +127,8 @@ function ConnectedAccount() {
             key={location.pathname}
             client={client}
             initialMode={recovering ? 'reset' : 'signin'}
+            googleEnabled={googleEnabled}
+            onAuthAttempt={() => setReturnError(null)}
           />
         </>
       )}
