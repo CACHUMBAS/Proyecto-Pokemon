@@ -1,6 +1,14 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-22 (acceso con Google publicado y confirmado por el usuario en producción). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-22 (sobres Perla / Noche implementados en local; publicación pendiente). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+
+## Bloque actual: sobres Perla / Noche — 2026-10-22
+
+Rama `feat/pearl-violet-packs`, desde `f3c6c6b`. El usuario aprobó dos versiones intercambiables: clara/perlada y oscura azul/violeta, empezando por Sobres. Implementadas en Colección y Sobres con preferencia local `lumemon.collection-theme.v1`; la cabecera y el pie adoptan la paleta mientras se visitan esas rutas. El resto de pantallas conserva su diseño y queda para otra fase. Envoltorio Prisma original en CSS/SVG, galería con ilustraciones reales del catálogo, apertura modal con gesto o botón, revelado por carta, color según rareza de Lumemon, resumen y salto. El recibo ya guardado sigue siendo la única fuente; no cambian saldos, probabilidades, sorteo, RPC ni identidad.
+
+Comprobado: 252 pruebas correctas (5 nuevas de presentación), lint y build/typecheck correctos; interfaz ES/EN a 1440/390/320 px, persistencia del tema, gesto de rasgado, avance, salto, duplicados, Escape y restauración del foco. Demo de desarrollo sin compras reales en /scripts/qa/pack-gallery.html. Con la sesión existente en /sobres local se consultó una apertura histórica (Machop, Onix, Machop); se mantuvieron 0 monedas, 0 fragmentos y 12 copias. No se compraron sobres. Se comprobó que al salir hacia Catálogo se retira la paleta de colección. Movimiento reducido implementado mediante CSS; no se hizo emulación del ajuste del sistema ni prueba en dispositivo táctil físico.
+
+Sin dependencias nuevas. Código y documentación preparados para GitHub; publicación de este bloque pendiente de autorización. Producción sigue en `35aecc3`. Guía y límites: [Diseño de sobres](SOBRES-DISENO.md). No volver a probar todo el motor ni pedir al usuario repetir el acceso Google por este cambio visual.
 
 ## Bloque cerrado: acceso con Google — 2026-10-22
 

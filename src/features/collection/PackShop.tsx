@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next'
 import { Button } from '../../components/ui/Button'
-import { PrismMark } from '../../components/ui/PrismMark'
+import { PrismaPack } from './PrismaPack'
+import { CollectionCard } from './CollectionCard'
 import type {
   CollectionSnapshot,
   CollectionCommand,
@@ -21,22 +22,38 @@ export function PackShop({
   const { t, i18n } = useTranslation(),
     locale = i18n.language === 'en' ? 'en' : 'es'
   const pack = data.pack
+  const featured = [
+    ...new Map(data.cards.filter((c) => c.budget >= 276).map((c) => [c.species_id, c])).values(),
+  ].slice(0, 2)
   const history = data.events.filter((r) => r.kind === 'pack')
   return (
     <section>
       <div className="collection-pack-shop">
-        <div className="collection-pack-display" aria-hidden="true">
-          <div className="collection-sealed-pack">
-            <span>LUMEMON</span>
-            <PrismMark />
-            <strong>PRISMA</strong>
-            <small>VOL. 01 · 3 CARDS</small>
+        <div className="pack-showcase">
+          <span className="pack-showcase-orbit" aria-hidden="true" />
+          <span className="pack-showcase-word" aria-hidden="true">
+            PRISMA
+          </span>
+          <div className="pack-showcase-cards" aria-hidden="true">
+            {featured.map((c) => (
+              <CollectionCard key={c.card_id} id={c.card_id} />
+            ))}
           </div>
-          <div className="collection-pack-halo" />
+          <PrismaPack size={pack.size} />
+          <span className="pack-showcase-caption">{t('collection.design.showcaseNote')}</span>
         </div>
         <div className="collection-pack-description">
           <span className="eyebrow">{t('collection.packs.eyebrow')}</span>
-          <h2>{t('collection.packs.title')}</h2>
+          <h2>
+            {t('collection.packs.title')}
+            <span className="pack-title-star" aria-hidden="true">
+              ✦
+            </span>
+          </h2>
+          <div className="pack-facts">
+            <span>{t('collection.design.cardCount', { count: pack.size })}</span>
+            <span>{t('collection.packs.variants', { count: data.cards.length })}</span>
+          </div>
           <p className="collection-lead">
             {t('collection.packs.description', { count: data.cards.length })}
           </p>
@@ -70,8 +87,10 @@ export function PackShop({
           <p className="collection-footnote">{t('collection.packs.noRewards')}</p>
         </div>
       </div>
-      <div className="collection-odds">
-        <h3>{t('collection.packs.oddsTitle')}</h3>
+      <details className="collection-odds pack-odds-details">
+        <summary>
+          {t('collection.packs.oddsTitle')} <span>↗</span>
+        </summary>
         <p>{t('collection.packs.oddsText')}</p>
         <div className="collection-odds-grid">
           {pack.odds.map((o) => (
@@ -103,7 +122,7 @@ export function PackShop({
             })}
           </ul>
         </details>
-      </div>
+      </details>
       <section className="collection-history">
         <h3>{t('collection.packs.history')}</h3>
         <p className="collection-footnote">{t('collection.packs.historyText')}</p>

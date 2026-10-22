@@ -1,5 +1,5 @@
 import { useEffect, useState, useSyncExternalStore } from 'react'
-import { Link, NavLink, useLocation } from 'react-router'
+import { Link, useLocation } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import { accountClient, accountStore } from '../../account/client'
 import { createCollectionGateway, pendingStorage } from '../../collection/gateway'
@@ -11,7 +11,7 @@ import { Inventory } from './Inventory'
 import { PackShop } from './PackShop'
 import { ReceiptView } from './ReceiptView'
 import { ConfirmOperation } from './ConfirmOperation'
-import './CollectionPage.css'
+import { CollectionLayout } from './CollectionLayout'
 function PlayerCollection({ userId, packs }: { userId: string; packs: boolean }) {
   const { t } = useTranslation()
   const [store] = useState(() =>
@@ -134,25 +134,10 @@ function ConnectedCollection({ packs }: { packs: boolean }) {
   return <PlayerCollection key={account.user.id} userId={account.user.id} packs={packs} />
 }
 export function CollectionPage() {
-  const { t } = useTranslation(),
-    packs = useLocation().pathname === '/sobres'
+  const { t } = useTranslation()
+  const packs = useLocation().pathname === '/sobres'
   return (
-    <div className="collection-page page-width">
-      <header className="collection-hero">
-        <div>
-          <span className="eyebrow">{t('collection.eyebrow')}</span>
-          <h1>{t(packs ? 'collection.packHeading' : 'collection.heading')}</h1>
-          <p>{t(packs ? 'collection.packIntro' : 'collection.intro')}</p>
-        </div>
-        <div className="collection-hero-mark" aria-hidden="true">
-          ◇
-        </div>
-      </header>
-      <nav className="collection-tabs" aria-label={t('collection.sections')}>
-        <NavLink to="/coleccion">{t('collection.tabCollection')}</NavLink>
-        <NavLink to="/sobres">{t('collection.tabPacks')}</NavLink>
-        <Link to="/cuenta">{t('nav.account')} ↗</Link>
-      </nav>
+    <CollectionLayout packs={packs}>
       {accountClient && accountStore ? (
         <ConnectedCollection packs={packs} />
       ) : (
@@ -160,6 +145,6 @@ export function CollectionPage() {
           {t('account.unavailable')}
         </p>
       )}
-    </div>
+    </CollectionLayout>
   )
 }
