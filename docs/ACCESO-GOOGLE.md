@@ -2,13 +2,13 @@
 
 ## Estado — 2026-10-22
 
-Implementado en la rama `feat/google-signin`, desde `8bc85ba`. Pendiente de configurar el proveedor y probar una cuenta real. No está publicado: producción continúa en `d2eec67`. El usuario eligió mantener coste cero y no dispone de dominio propio. No se instalaron dependencias ni se modificaron tablas, cuentas, saldos o colecciones.
+Implementado en la rama `feat/google-signin`, desde `8bc85ba`. Proveedor configurado por el usuario; acceso local con su cuenta existente confirmado por él el 2026-10-22, tras pedirle comprobar alias y colección. No está publicado: producción continúa en `d2eec67`. El usuario eligió mantener coste cero y no dispone de dominio propio. No se instalaron dependencias ni se modificaron tablas, cuentas, saldos o colecciones.
 
 El botón «Continuar con Google» aparece en inicio de sesión y registro cuando `VITE_GOOGLE_AUTH_ENABLED=true`. La variable es pública, no es una credencial, y está desactivada por defecto en `.env.example`. El acceso por correo y contraseña y la recuperación se conservan. Habilitar Google no soluciona el envío SMTP para nuevos destinatarios externos; esa limitación del registro por correo sigue pendiente.
 
 ## Configuración guiada, sin facturación
 
-1. En [Google Cloud Console](https://console.cloud.google.com/), crear o seleccionar el proyecto Lumemon. No activar facturación ni servicios de pago. Se pidió al usuario avisar cuando estuviera creado; aún falta su respuesta.
+1. En [Google Cloud Console](https://console.cloud.google.com/), crear o seleccionar el proyecto Lumemon. No activar facturación ni servicios de pago. El usuario ya confirmó su creación.
 2. Abrir Google Auth Platform. Completar la información de la aplicación y el contacto con los datos del titular. Elegir audiencia externa; empezar en modo de prueba con las cuentas que vayan a probar el acceso. El titular completa cualquier aceptación o creación de credenciales. No compartir contraseñas ni secretos por el chat.
 3. Solicitar únicamente identidad básica: openid, correo (userinfo.email) y perfil (userinfo.profile). No pedir acceso a Gmail, Drive ni otros datos.
 4. Crear un cliente OAuth de tipo «Aplicación web». Origen de producción: `https://lumemon.vercel.app`. Para pruebas locales, añadir solo los orígenes usados: `http://localhost:5174` y/o `http://127.0.0.1:5174`.
@@ -17,6 +17,10 @@ El botón «Continuar con Google» aparece en inicio de sesión y registro cuand
 7. En Supabase → Authentication → URL Configuration, conservar la Site URL `https://lumemon.vercel.app/cuenta` y la recuperación ya configurada. Añadir, cuando se pruebe en local, los retornos exactos `http://localhost:5174/cuenta` y/o `http://127.0.0.1:5174/cuenta`. Una vista previa necesita su propio retorno autorizado.
 8. Tras configurar el proveedor, activar el indicador público en el entorno que se vaya a probar y reiniciar Vite o recompilar. Para la comprobación visual se activó solo en el proceso local; no se cambió .env.local ni Vercel.
 9. Probar el recorrido real antes de publicar. La audiencia pública de Google y la publicación en Vercel son pasos separados, pendientes de autorización. No prometer que modo de prueba permite acceder a todo el mundo. La configuración básica no necesita comprar un dominio; Google puede mostrar el dominio del proyecto Supabase y solicitar requisitos adicionales para una marca personalizada o verificación.
+
+## Prueba real comunicada por el titular — 2026-10-22
+
+El usuario confirmó guardar las credenciales en Supabase. Después de indicarle añadir el retorno local, abrir /cuenta, elegir Google con el correo de su cuenta existente y comprobar alias y cartas, respondió «sí, funciona». El agente no inspeccionó su sesión autenticada ni recibió claves. No se ha probado todavía el recorrido desde producción, una cuenta nueva, la recarga del progreso después de OAuth ni el aislamiento entre dos cuentas reales. La audiencia pública de Google sigue sin verificar; no afirmar que el acceso esté habilitado para cualquier usuario.
 
 ## Comprobaciones pendientes con el titular
 
@@ -32,7 +36,7 @@ Se usa signInWithOAuth de la librería existente de Supabase y su flujo PKCE. La
 
 La suite completa pasó con 247 pruebas, incluidas 10 nuevas de OAuth. Cubren retorno correcto, cancelación, sesión ausente, errores de intercambio y red, limpieza del identificador PKCE y construcción real del enlace con la librería instalada. Lint y build con TypeScript pasaron tras los últimos ajustes de interfaz.
 
-En el navegador local se comprobó la pantalla real de cuenta en ES/EN, escritorio de 1440 px y móvil de 390/320 px sin desbordamiento horizontal. El teclado pasa del botón Google al correo. Cancelación y código inválido de prueba mostraron avisos y limpiaron la URL. No se inició sesión con Google.
+En el navegador local se comprobó la pantalla real de cuenta en ES/EN, escritorio de 1440 px y móvil de 390/320 px sin desbordamiento horizontal. El teclado pasa del botón Google al correo. Cancelación y código inválido de prueba mostraron avisos y limpiaron la URL. En esa comprobación visual no se inició sesión con Google; la confirmación posterior del titular se recoge arriba.
 
 La página de desarrollo `/scripts/qa/google-auth.html` monta el formulario real con respuestas simuladas: doble pulsación produce un intento, ambos accesos se bloquean durante la espera, un fallo permite reintentar, un evento pageshow persistido restaura controles, la bandera oculta Google y recuperación no muestra el botón. Estas simulaciones no demuestran un recorrido OAuth real. La página no se incluye en el build de producción.
 
