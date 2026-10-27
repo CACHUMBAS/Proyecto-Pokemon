@@ -1,12 +1,14 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-27 (publicación de la experiencia de colección autorizada y preparada). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-27 (álbum, sobres y nueva portada publicados en producción). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
 ## Bloque actual: publicación de colección y portada — 2026-10-27
 
 El usuario pide realizar y publicar las mejoras propuestas tras la revisión. Rama `feat/publish-collection-experience`, desde `d3bed79`: integra el álbum, visor y sobres Perla/Noche ya terminados y actualiza Inicio en ES/EN para describir funciones disponibles. Menú con acceso directo a Sobres, Equipo local identificado y Muestras retirado del menú (su ruta se conserva). Los botones principales llevan a Colección y Combate; el recorrido enlaza Cuenta → Colección/equipo inicial → Combate → Sobres, con acceso a Práctica y aviso explícito de que PvP/salas/reloj están pendientes.
 
-Verificación previa: lint, build/TypeScript y las 19 pruebas de colección correctos. Portada revisada en escritorio en ES/EN y en marcos de 320/390 px en inglés. Sin dependencias nuevas, migraciones, cambios económicos ni operaciones sobre el inventario. El usuario autoriza integrar en `chore/vercel-lumemon` y actualizar la web pública; registrar la evidencia del despliegue al confirmarlo. Los apartados anteriores son históricos y sus avisos de publicación pendiente quedan sustituidos por este bloque.
+Verificación previa: lint, build/TypeScript y las 19 pruebas de colección correctos. Portada revisada en escritorio en ES/EN y en marcos de 320/390 px en inglés. Sin dependencias nuevas, migraciones, cambios económicos ni operaciones sobre el inventario. Los apartados anteriores son históricos y sus avisos de publicación pendiente quedan sustituidos por este bloque.
+
+Publicación completada: commit `18d916c37253cc1b3a6add40bbd294a87df92003`, subido en la rama de trabajo e integrado por fast-forward en `chore/vercel-lumemon`. El panel de Vercel confirma Production / Ready, despliegue `dpl_GFuUhCRBzd5udd8U2pk7DiQezTM3`, URL `https://lumemon-eip3dcsbe-cachumbas1.vercel.app` y dominio actual `https://lumemon.vercel.app`. Comprobación en el dominio público: portada y menú nuevos, álbum con la colección existente, visor de carta, selector Perla/Noche y revelado de una apertura histórica. Sin errores de consola observados; se conserva el inventario y no se repitieron compras ni partidas. Este registro documental posterior se conserva en la rama de trabajo; producción ejecuta `18d916c`.
 
 ## Bloque anterior: álbum de colección — 2026-10-22
 
