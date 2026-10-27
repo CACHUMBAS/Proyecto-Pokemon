@@ -335,14 +335,27 @@
   color: var(--muted);
   margin-bottom: 22px;
 }
-.planned-label {
+.feature-link {
   align-self: flex-start;
   margin-top: auto;
-  font-size: 9px;
-  color: #bbc9d5;
-  border: 1px solid #49607166;
-  padding: 6px 10px;
-  border-radius: 5px;
+  min-height: 44px;
+}
+.step-title h3 a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: inherit;
+  text-decoration-color: var(--mint);
+  text-underline-offset: 5px;
+}
+.step-title h3 a:hover {
+  color: var(--mint);
+}
+.roadmap-copy .roadmap-future {
+  margin-top: 24px;
+  padding-left: 16px;
+  border-left: 2px solid #b4a6f6;
+  font-size: 12px;
 }
 .pack-art,
 .team-art,

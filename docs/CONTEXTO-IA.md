@@ -1,8 +1,14 @@
 # Lumemon — contexto de continuidad
 
-Actualizado: 2026-10-22 (álbum visual y visor de cartas implementados; publicación pendiente). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
+Actualizado: 2026-10-27 (publicación de la experiencia de colección autorizada y preparada). Es un resumen del estado del repositorio, no una autorización para desarrollar todas las fases. No contiene el historial completo del chat ni datos de otros proyectos.
 
-## Bloque actual: álbum de colección — 2026-10-22
+## Bloque actual: publicación de colección y portada — 2026-10-27
+
+El usuario pide realizar y publicar las mejoras propuestas tras la revisión. Rama `feat/publish-collection-experience`, desde `d3bed79`: integra el álbum, visor y sobres Perla/Noche ya terminados y actualiza Inicio en ES/EN para describir funciones disponibles. Menú con acceso directo a Sobres, Equipo local identificado y Muestras retirado del menú (su ruta se conserva). Los botones principales llevan a Colección y Combate; el recorrido enlaza Cuenta → Colección/equipo inicial → Combate → Sobres, con acceso a Práctica y aviso explícito de que PvP/salas/reloj están pendientes.
+
+Verificación previa: lint, build/TypeScript y las 19 pruebas de colección correctos. Portada revisada en escritorio en ES/EN y en marcos de 320/390 px en inglés. Sin dependencias nuevas, migraciones, cambios económicos ni operaciones sobre el inventario. El usuario autoriza integrar en `chore/vercel-lumemon` y actualizar la web pública; registrar la evidencia del despliegue al confirmarlo. Los apartados anteriores son históricos y sus avisos de publicación pendiente quedan sustituidos por este bloque.
+
+## Bloque anterior: álbum de colección — 2026-10-22
 
 Rama `feat/collection-album`, desde `3d8d6e1` (sobres Perla/Noche ya subidos a GitHub). Continuación autorizada del diseño: álbum con más espacio para las ilustraciones, progreso de variantes Prisma, total de copias y sobrantes; conserva búsqueda por nombre/ID/expansión y filtros por rareza, tipo y duplicados, con restablecimiento. Ficha ampliada con imagen de alta resolución, navegación por las cartas filtradas, datos del catálogo, idioma real, procedencia y cantidad poseída. Perla/Noche, ES/EN, teclado y adaptación móvil. La conversión de duplicados se abre desde la ficha y mantiene la confirmación existente. La ficha se cierra antes de confirmar para mostrar los estados de guardado/error del servidor; se corrige la restauración del foco en ConfirmOperation con useLayoutEffect.
 

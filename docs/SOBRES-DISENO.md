@@ -21,4 +21,4 @@ Demo local: http://localhost:5174/scripts/qa/pack-gallery.html. Usa componentes 
 
 ## Entrega y siguiente fase
 
-Rama feat/pearl-violet-packs. Mantener las referencias a esta evidencia y las claves anteriores del juego. No publicar ni fusionar en chore/vercel-lumemon sin autorización para este bloque. Producción permanece en 35aecc3. Extender el tema al resto de pantallas, rediseñar el álbum completo, añadir sonidos a los sobres o introducir otras expansiones son fases posteriores, no funciones incluidas aquí.
+Rama original `feat/pearl-violet-packs`. Publicación autorizada el 2026-10-27 junto con el álbum de `feat/collection-album`, desde `feat/publish-collection-experience` hacia `chore/vercel-lumemon`. Consultar [CONTEXTO-IA.md](CONTEXTO-IA.md) para el resultado verificado. Mantener las referencias a esta evidencia y las claves anteriores del juego. Extender el tema al resto de pantallas, añadir sonidos a los sobres o introducir otras expansiones son fases posteriores, no funciones incluidas aquí.

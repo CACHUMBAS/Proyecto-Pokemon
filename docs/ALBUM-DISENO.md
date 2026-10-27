@@ -1,6 +1,6 @@
 # Álbum de Lumemon
 
-Implementación local del 2026-10-22, rama `feat/collection-album` sobre `3d8d6e1`. Continúa el diseño aprobado de Colección/Sobres, con temas Perla y Noche. No se ha publicado en producción.
+Implementación del 2026-10-22, rama `feat/collection-album` sobre `3d8d6e1`. Continúa el diseño aprobado de Colección/Sobres, con temas Perla y Noche. Publicación autorizada el 2026-10-27 en `feat/publish-collection-experience`; el estado verificado se registra en [CONTEXTO-IA.md](CONTEXTO-IA.md).
 
 ## Comportamiento
 
@@ -20,4 +20,4 @@ Revisión visual en Perla y Noche, ES/EN, 1440/390/320 px: sin desbordamiento ho
 
 ## Alcance pendiente
 
-Publicar requiere autorización expresa. No incorpora favoritos, clasificación nueva, logros, nuevas cartas, sonidos ni cambios de probabilidades. El resto de pantallas sigue pendiente de una decisión de diseño propia. Preservar claves, IDs y estado de cuenta.
+La publicación de este bloque ya está autorizada. No incorpora favoritos, clasificación nueva, logros, nuevas cartas, sonidos ni cambios de probabilidades. El resto de pantallas sigue pendiente de una decisión de diseño propia. Preservar claves, IDs y estado de cuenta.

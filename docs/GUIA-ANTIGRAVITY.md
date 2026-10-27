@@ -1,6 +1,10 @@
 # Lumemon — empezar con Antigravity
 
-## Bloque actual: álbum de colección — 2026-10-22
+## Bloque actual: publicación de la experiencia — 2026-10-27
+
+El usuario ha autorizado publicar álbum, visor y sobres Perla/Noche junto con la actualización de portada y navegación. Rama `feat/publish-collection-experience` desde `d3bed79`; destino de producción `chore/vercel-lumemon`. Consultar primero el bloque actual de [CONTEXTO-IA.md](CONTEXTO-IA.md) para el resultado del despliegue. Los avisos anteriores de publicación pendiente son históricos. No ampliar a PvP, equipos persistidos ni rediseñar todas las rutas por esta autorización.
+
+## Bloque anterior: álbum de colección — 2026-10-22
 
 Rama `feat/collection-album`, desde `3d8d6e1` (sobres Perla/Noche ya subidos a GitHub). Continuación autorizada del diseño: álbum con más espacio para las ilustraciones, progreso de variantes Prisma, total de copias y sobrantes; conserva búsqueda por nombre/ID/expansión y filtros por rareza, tipo y duplicados, con restablecimiento. Ficha ampliada con imagen de alta resolución, navegación por las cartas filtradas, datos del catálogo, idioma real, procedencia y cantidad poseída. Perla/Noche, ES/EN, teclado y adaptación móvil. La conversión de duplicados se abre desde la ficha y mantiene la confirmación existente. La ficha se cierra antes de confirmar para mostrar los estados de guardado/error del servidor; se corrige la restauración del foco en ConfirmOperation con useLayoutEffect.
 

@@ -26,11 +26,11 @@ export function AppShell({ children }: { children: ReactNode }) {
           </NavLink>
           <NavLink to="/catalogo">{t('nav.catalog')}</NavLink>
           <NavLink to="/coleccion">{t('nav.collection')}</NavLink>
-          <NavLink to="/equipo">{t('nav.team')}</NavLink>
+          <NavLink to="/sobres">{t('nav.packs')}</NavLink>
           <NavLink to="/combate">{t('nav.battle')}</NavLink>
           <NavLink to="/practica">{t('nav.practice')}</NavLink>
+          <NavLink to="/equipo">{t('nav.localTeam')}</NavLink>
           <NavLink to="/cuenta">{t('nav.account')}</NavLink>
-          <NavLink to="/diseno">{t('nav.preview')}</NavLink>
         </nav>
         <LanguageSwitcher />
       </header>

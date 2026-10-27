@@ -27,11 +27,11 @@ export function LandingPage() {
           </h1>
           <p className="hero-description">{t('hero.description')}</p>
           <div className="hero-actions">
-            <Link className="button button-primary" to="/catalogo">
+            <Link className="button button-primary" to="/coleccion">
               {t('hero.cta')}
               <span aria-hidden="true">↗</span>
             </Link>
-            <Link className="text-link" to="/practica">
+            <Link className="text-link" to="/combate">
               {t('hero.secondary')}
               <span aria-hidden="true">↗</span>
             </Link>
@@ -150,7 +150,9 @@ export function LandingPage() {
             </div>
             <h3>{t('universe.packsTitle')}</h3>
             <p>{t('universe.packsText')}</p>
-            <span className="planned-label">{t('universe.planned')}</span>
+            <Link className="text-link feature-link" to="/sobres">
+              {t('universe.packsCta')} <span aria-hidden="true">↗</span>
+            </Link>
           </article>
           <article className="feature feature-team">
             <div className="feature-top">
@@ -167,7 +169,9 @@ export function LandingPage() {
             </div>
             <h3>{t('universe.teamTitle')}</h3>
             <p>{t('universe.teamText')}</p>
-            <span className="planned-label">{t('universe.planned')}</span>
+            <Link className="text-link feature-link" to="/coleccion">
+              {t('universe.teamCta')} <span aria-hidden="true">↗</span>
+            </Link>
           </article>
           <article className="feature feature-battle">
             <div className="feature-top">
@@ -183,7 +187,9 @@ export function LandingPage() {
             </div>
             <h3>{t('universe.battleTitle')}</h3>
             <p>{t('universe.battleText')}</p>
-            <span className="planned-label">{t('universe.planned')}</span>
+            <Link className="text-link feature-link" to="/combate">
+              {t('universe.battleCta')} <span aria-hidden="true">↗</span>
+            </Link>
           </article>
         </div>
       </section>
@@ -193,21 +199,24 @@ export function LandingPage() {
             <p className="eyebrow">{t('roadmap.eyebrow')}</p>
             <h2 id="roadmap-title">{t('roadmap.title')}</h2>
             <p>{t('roadmap.intro')}</p>
-            <Link className="text-link" to="/catalogo">
+            <Link className="text-link" to="/practica">
               {t('roadmap.cta')}
               <span aria-hidden="true">↗</span>
             </Link>
+            <p className="roadmap-future">{t('roadmap.future')}</p>
           </div>
           <ol className="roadmap-list">
-            {[1, 2, 3, 4].map((step) => (
-              <li key={step} className={step === 2 ? 'current-step' : ''}>
-                <span className="step-index">0{step}</span>
+            {['/cuenta', '/coleccion', '/combate', '/sobres'].map((path, index) => (
+              <li key={path}>
+                <span className="step-index">0{index + 1}</span>
                 <div>
                   <div className="step-title">
-                    <h3>{t(`roadmap.step${step}`)}</h3>
-                    <span>{t(step < 3 ? 'roadmap.done' : 'roadmap.later')}</span>
+                    <h3>
+                      <Link to={path}>{t(`roadmap.step${index + 1}`)}</Link>
+                    </h3>
+                    <span>{t('roadmap.done')}</span>
                   </div>
-                  <p>{t(`roadmap.desc${step}`)}</p>
+                  <p>{t(`roadmap.desc${index + 1}`)}</p>
                 </div>
               </li>
             ))}
